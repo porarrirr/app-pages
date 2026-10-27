@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>プライバシーポリシー — YamabikoChat</title>
+    <meta name="description" content="YamabikoChatが端末に保存する情報、選択したAIプロバイダーへ送信する情報、その取り扱いを日本語・英語・スペイン語・中国語でご案内します。" />
+    <meta name="theme-color" content="#131A34" />
+    <link rel="canonical" href="https://porarrirr.github.io/app-pages/yamabikochat/privacy.html" />
+    <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png" />
+    <link rel="stylesheet" href="site.css" />
+  </head>
+  <body>
+    <header class="site-header"><div class="nav-wrap">
+      <a class="brand" href="index.html"><img src="images/app-icon.png" alt="" />YamabikoChat</a>
+      <nav class="site-nav" aria-label="メインナビゲーション"><a href="index.html">ホーム</a><a href="privacy.html" aria-current="page">プライバシー</a><a href="support.html">サポート</a></nav>
+    </div></header>
+    <main class="container">
+      <section class="subpage-hero" aria-labelledby="privacy-title">
+        <p class="kicker">PRIVACY, CLEARLY EXPLAINED</p>
+        <h1 id="privacy-title">プライバシーポリシー</h1>
+        <p>YamabikoChatが端末に保存する情報、選択したサービスへ送信する情報と、その取り扱いについて説明します。最終更新: 2026年5月21日</p>
+        <nav class="policy-links" aria-label="言語を選択"><a href="#ja">日本語</a><a href="#en">English</a><a href="#es">Español</a><a href="#zh-hans">简体中文</a></nav>
+      </section>
+      <div class="policy-summary" aria-label="プライバシーの概要">
+        <div><b>端末内に保存</b><span>会話・設定・診断ログ</span></div>
+        <div><b>選んだ接続先へ送信</b><span>プロンプト・添付ファイル</span></div>
+        <div><b>認証情報を保護</b><span>APIキーとトークンはKeychainへ</span></div>
+      </div>
+      <div class="legal-document">
+      <section class="card lang-block" id="ja">
+        <p class="lang-label">日本語</p>
+        <p>
+          YamabikoChat（以下「本アプリ」）は、ユーザー自身の API キーまたは OAuth
+          アカウントを用いて第三者の AI サービスと通信する BYOK 型チャットクライアントです。
+        </p>
+        <h2>端末に保存する情報</h2>
+        <ul>
+          <li>会話履歴、プロジェクト、各種設定</li>
+          <li>API キーおよび OAuth トークン（iOS Keychain）</li>
+          <li>ユーザーが任意で保存・共有できる診断ログ</li>
+        </ul>
+        <h2>第三者へ送信する情報</h2>
+        <ul>
+          <li>メッセージ送信時、ユーザーが選択したプロバイダーへプロンプト、モデル設定、添付を送信します。</li>
+          <li>
+            リモート MCP、検索、コード実行などのオプション機能は既定で無効です。有効化した場合、ユーザーが設定した
+            HTTPS エンドポイントまたは選択プロバイダーへ関連情報が送信されます。
+          </li>
+          <li>iOSのクライアントWeb検索を有効にすると、検索語をBing、日本語検索ではYahoo! JAPANにも送信します。取得できない場合はDuckDuckGoを使用します。出典の閲覧時にはそのWebサイトへリクエストを送信します。検索APIキーやアカウントは不要です。</li>
+          <li>Share Extension は共有テキストまたは URL をアプリグループに保存し、本体アプリで下書き会話を開きます。</li>
+        </ul>
+        <h2>行わないこと</h2>
+        <ul>
+          <li>アプリ内での AI 利用枠・サブスクリプションの販売</li>
+          <li>App Tracking Transparency によるクロスアプリ追跡</li>
+          <li>診断ログへの API キー、トークン、プロンプト全文の意図的な記録</li>
+        </ul>
+        <h2>権限</h2>
+        <ul>
+          <li>写真: 会話への添付のための読み取り専用アクセス</li>
+          <li>マイク・音声認識: 音声入力（任意）のみ</li>
+        </ul>
+        <h2>免責（データ・セキュリティ）</h2>
+        <ul>
+          <li>
+            本アプリは端末内保存およびユーザー選択の送信先への通信を前提としますが、完全な安全性、漏えい防止、データ復旧を保証しません。
+          </li>
+          <li>
+            会話履歴・設定・診断ログのバックアップ、削除、端末紛失時の対応はユーザーの責任です。
+          </li>
+          <li>
+            ユーザーが診断ログをコピー・共有した場合、その内容と共有先の管理はユーザーの責任です。
+          </li>
+          <li>
+            接続先プロバイダー、カスタム API、リモート MCP 等の第三者によるデータ取扱いについて、開発者は管理・保証せず、それらのプライバシー慣行に関する責任を負いません。
+          </li>
+        </ul>
+        <p>
+          本ポリシーはデータの取扱いを説明するものであり、本アプリの利用に関する責任制限は
+          <a href="terms.html">利用規約</a>に従います。
+        </p>
+
+        <h2>お問い合わせ</h2>
+        <p>
+          <a href="https://github.com/porarrirr/yamabikochat-public/issues">GitHub Issues</a>
+          または <a href="support.html">サポートページ</a>
+        </p>
+      </section>
+
+      <section class="card lang-block" id="en">
+        <p class="lang-label">English (U.S.)</p>
+        <p>
+          YamabikoChat is a bring-your-own-key (BYOK) chat client. This policy describes how the app
+          handles information on your device.
+        </p>
+        <h2>Stored locally</h2>
+        <ul>
+          <li>Conversation history, projects, and app settings</li>
+          <li>API keys and OAuth tokens in the platform secure store</li>
+          <li>Optional diagnostic logs you can view, copy, share, or clear</li>
+        </ul>
+        <h2>Sent to third parties</h2>
+        <ul>
+          <li>
+            When you send a message, your prompt, model settings, and attachments go only to the provider
+            you selected (for example OpenAI, Google Gemini, OpenRouter, or a custom endpoint you configure).
+          </li>
+          <li>
+            Optional tools (remote MCP, search, code execution, and similar features) are off by default.
+            When enabled, related requests are sent to the provider or HTTPS endpoint you configure.
+          </li>
+          <li>On iOS, enabled client web search sends queries to Bing and, for Japanese searches, Yahoo! JAPAN. DuckDuckGo is used when those searches are unavailable. Reading a source sends a request to that website. No search API key or account is required.</li>
+          <li>
+            The Share Extension stores shared text or a URL in the app group so the main app can open a
+            draft conversation.
+          </li>
+        </ul>
+        <h2>What we do not do</h2>
+        <ul>
+          <li>Sell subscriptions, tokens, or provider access inside the app</li>
+          <li>Use cross-app tracking via ATT</li>
+          <li>Record API keys, tokens, refresh tokens, or full prompts in diagnostic logs by design</li>
+        </ul>
+        <h2>Permissions</h2>
+        <ul>
+          <li>Photos: read-only access to attach recent images</li>
+          <li>Microphone and speech recognition: optional voice dictation only</li>
+        </ul>
+        <h2>Disclaimer (data and security)</h2>
+        <ul>
+          <li>
+            The App is designed for on-device storage and user-selected destinations, but does not
+            guarantee complete security, prevention of leaks, or data recovery.
+          </li>
+          <li>
+            You are responsible for backing up, deleting, and protecting conversation history, settings,
+            and diagnostic logs, including if your device is lost.
+          </li>
+          <li>
+            If you copy or share diagnostic logs, you are responsible for their contents and recipients.
+          </li>
+          <li>
+            The developers do not control or guarantee how third-party providers, custom APIs, or remote
+            MCP servers handle your data.
+          </li>
+        </ul>
+        <p>
+          This policy explains data practices. Limitations of liability for use of the App are set out in
+          the <a href="terms.html">Terms of Use</a>.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          <a href="https://github.com/porarrirr/yamabikochat-public/issues">GitHub Issues</a> or the
+          <a href="support.html">support page</a>.
+        </p>
+      </section>
+
+      <section class="card lang-block" id="es">
+        <p class="lang-label">Español (España)</p>
+        <p>
+          YamabikoChat (la «App») es un cliente de chat BYOK (bring your own key): usted conecta su
+          propia cuenta o clave API de proveedores de IA de terceros. Esta política describe cómo la App
+          trata la información en su dispositivo.
+        </p>
+        <h2>Datos almacenados localmente</h2>
+        <ul>
+          <li>Historial de conversaciones, proyectos y ajustes de la app</li>
+          <li>Claves API y tokens OAuth en el almacén seguro del sistema (Keychain / almacenamiento seguro)</li>
+          <li>Registros de diagnóstico opcionales que puede ver, copiar, compartir o borrar</li>
+        </ul>
+        <h2>Datos enviados a terceros</h2>
+        <ul>
+          <li>
+            Al enviar un mensaje, el prompt, la configuración del modelo y los adjuntos se envían solo al
+            proveedor que usted seleccione (por ejemplo OpenAI, Google Gemini, OpenRouter o un endpoint
+            personalizado).
+          </li>
+          <li>
+            Las herramientas opcionales (MCP remoto, búsqueda, ejecución de código, etc.) están desactivadas
+            por defecto. Si las activa, las solicitudes relacionadas se envían al proveedor o al endpoint HTTPS
+            que configure.
+          </li>
+          <li>
+            La extensión Compartir guarda texto o una URL en el grupo de la app para abrir un borrador en la
+            app principal.
+          </li>
+        </ul>
+        <h2>Lo que no hacemos</h2>
+        <ul>
+          <li>Vender suscripciones, tokens o acceso a proveedores dentro de la app</li>
+          <li>Seguimiento entre apps mediante App Tracking Transparency</li>
+          <li>Registrar intencionadamente claves API, tokens o prompts completos en los registros de diagnóstico</li>
+        </ul>
+        <h2>Permisos</h2>
+        <ul>
+          <li>Fotos: acceso de solo lectura para adjuntar imágenes recientes</li>
+          <li>Micrófono y reconocimiento de voz: solo para dictado por voz (opcional)</li>
+        </ul>
+        <h2>Exención de responsabilidad (datos y seguridad)</h2>
+        <ul>
+          <li>
+            La App está pensada para almacenamiento en el dispositivo y destinos elegidos por el usuario, pero
+            no garantiza seguridad total, prevención de fugas ni recuperación de datos.
+          </li>
+          <li>
+            Usted es responsable de las copias de seguridad, la eliminación y la protección del historial, los
+            ajustes y los registros de diagnóstico, incluso si pierde el dispositivo.
+          </li>
+          <li>
+            Si copia o comparte registros de diagnóstico, es responsable de su contenido y de los destinatarios.
+          </li>
+          <li>
+            Los desarrolladores no controlan ni garantizan cómo los proveedores externos, las API personalizadas
+            o los servidores MCP remotos tratan sus datos.
+          </li>
+        </ul>
+        <p>
+          Esta política describe las prácticas de datos. Las limitaciones de responsabilidad por el uso de la
+          App figuran en los <a href="terms.html">Términos de uso</a>.
+        </p>
+        <h2>Contacto</h2>
+        <p>
+          <a href="https://github.com/porarrirr/yamabikochat-public/issues">GitHub Issues</a> o la
+          <a href="support.html">página de soporte</a>.
+        </p>
+      </section>
+
+      <section class="card lang-block" id="zh-hans">
+        <p class="lang-label">简体中文</p>
+        <p>
+          YamabikoChat（「本应用」）是一款 BYOK（自带密钥）聊天客户端。您使用自己的 API 密钥或 OAuth
+          账户连接第三方 AI 服务。本政策说明应用如何在您的设备上处理信息。
+        </p>
+        <h2>本地存储的信息</h2>
+        <ul>
+          <li>对话记录、项目和应用设置</li>
+          <li>API 密钥和 OAuth 令牌（存储于 iOS 钥匙串）</li>
+          <li>您可自行查看、复制、分享或清除的可选诊断日志</li>
+        </ul>
+        <h2>发送给第三方的信息</h2>
+        <ul>
+          <li>
+            发送消息时，您的提示词、模型设置和附件仅会发送到您为该对话选择的提供商（例如 OpenAI、Google
+            Gemini、OpenRouter 或您配置的自定义 API 端点）。
+          </li>
+          <li>
+            远程 MCP、搜索、代码执行等可选工具默认关闭。启用后，相关请求会发送到您配置的提供商或 HTTPS
+            端点。
+          </li>
+          <li>共享扩展将共享的文本或 URL 保存在应用组中，供主应用打开草稿对话。</li>
+        </ul>
+        <h2>我们不会做的事</h2>
+        <ul>
+          <li>在应用内销售订阅、令牌或提供商访问权限</li>
+          <li>通过 App Tracking Transparency 进行跨应用追踪</li>
+          <li>在诊断日志中故意记录 API 密钥、令牌或完整提示词</li>
+        </ul>
+        <h2>权限</h2>
+        <ul>
+          <li>照片：只读访问，用于将最近的照片附加到对话</li>
+          <li>麦克风和语音识别：仅用于可选的语音听写输入</li>
+        </ul>
+        <h2>免责声明（数据与安全）</h2>
+        <ul>
+          <li>本应用以设备本地存储和用户选择的传输目标为前提，但不保证绝对安全、防泄露或数据恢复。</li>
+          <li>您须自行负责对话记录、设置和诊断日志的备份、删除与保护，包括设备丢失的情况。</li>
+          <li>若您复制或分享诊断日志，须自行对其内容及接收方负责。</li>
+          <li>开发者不控制也不保证第三方提供商、自定义 API 或远程 MCP 服务器如何处理您的数据。</li>
+        </ul>
+        <p>
+          本政策说明数据处理方式。有关应用使用的责任限制，请参阅<a href="terms.html">使用条款</a>。
+        </p>
+        <h2>联系</h2>
+        <p>
+          <a href="https://github.com/porarrirr/yamabikochat-public/issues">GitHub Issues</a> 或
+          <a href="support.html">支持页面</a>。
+        </p>
+      </section>
+      </div>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner">
+      <a class="brand" href="index.html"><img src="images/app-icon.png" alt="" />YamabikoChat</a>
+      <nav class="footer-links" aria-label="関連ページ"><a href="support.html">サポート</a><a href="terms.html">利用規約</a><a href="licenses.html">ライセンス</a><a href="https://github.com/porarrirr/yamabikochat-public">GitHub</a></nav>
+    </div></footer>
+  </body>
+</html>

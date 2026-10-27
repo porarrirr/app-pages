@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index,follow" />
+  <title>SonicLens</title>
+  <meta name="description" content="SonicLens — on-device music analysis for iPhone. Tempo, key, structure, instruments." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23637A99'/%3E%3Cpath d='M8 16h2l2-5 3 10 3-8 2 3h4' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 12h2l2-6 3 12 3-9 2 3h6"/></svg>
+        </span>
+        SonicLens
+      </a>
+      <span class="badge-lock" id="onDevice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span></span>
+      </span>
+    </header>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <button type="button" data-lang="es" aria-pressed="false">Español</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+    </div>
+
+    <section class="hero">
+      <p class="hero-eyebrow" id="eyebrow"></p>
+      <h1 id="title"></h1>
+      <p class="hero-lead" id="lead"></p>
+    </section>
+
+    <section class="card">
+      <h2 id="linksTitle"></h2>
+      <p id="linksBody"></p>
+      <div class="page-nav" style="margin-top:16px">
+        <a href="support.html"><small id="supHint"></small><span id="supLabel"></span></a>
+        <a href="privacy.html"><small id="privHint"></small><span id="privLabel"></span></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p id="footerApple"></p>
+      <p id="footerCopy"></p>
+    </footer>
+  </div>
+
+  <script>
+    const I18N = {
+      ja: {
+        onDevice: "端末内で解析",
+        eyebrow: "SonicLens for iPhone",
+        title: "音楽を、読み解く。",
+        lead: "テンポ、キー、曲の構成。\n気になる曲を選んで、音の中身を見てみよう。\n解析も保存も、この端末の中だけで。",
+        linksTitle: "公式ページ",
+        linksBody: "App Store の申請で使うサポート用とプライバシー用のページです。言語は右上のボタンで切り替えられます。",
+        supHint: "FAQ・問い合わせ",
+        supLabel: "サポート",
+        privHint: "データの扱い",
+        privLabel: "プライバシーポリシー",
+        footerApple: "Apple および App Store は Apple Inc. の商標です。",
+        footerCopy: "© {year} SonicLens"
+      },
+      en: {
+        onDevice: "On-device analysis",
+        eyebrow: "SonicLens for iPhone",
+        title: "Decode the music.",
+        lead: "Tempo, key, and song structure.\nPick a track and look inside the sound.\nAnalysis and storage stay on this device.",
+        linksTitle: "Official pages",
+        linksBody: "Support and privacy pages used for App Store listing. Switch language with the buttons above.",
+        supHint: "FAQ & contact",
+        supLabel: "Support",
+        privHint: "How data is handled",
+        privLabel: "Privacy Policy",
+        footerApple: "Apple and App Store are trademarks of Apple Inc.",
+        footerCopy: "© {year} SonicLens"
+      },
+      es: {
+        onDevice: "Análisis en el dispositivo",
+        eyebrow: "SonicLens para iPhone",
+        title: "Descifra la música.",
+        lead: "Tempo, tonalidad y estructura.\nElige una canción y mira dentro del sonido.\nAnálisis y guardado solo en este dispositivo.",
+        linksTitle: "Páginas oficiales",
+        linksBody: "Soporte y privacidad para la ficha de la App Store. Cambia el idioma con los botones superiores.",
+        supHint: "FAQ y contacto",
+        supLabel: "Soporte",
+        privHint: "Tratamiento de datos",
+        privLabel: "Política de privacidad",
+        footerApple: "Apple y App Store son marcas de Apple Inc.",
+        footerCopy: "© {year} SonicLens"
+      },
+      zh: {
+        onDevice: "本机分析",
+        eyebrow: "SonicLens for iPhone",
+        title: "读懂音乐。",
+        lead: "速度、调性、歌曲结构。\n选一首歌，看看声音的内部。\n分析与保存都只在这台设备上。",
+        linksTitle: "官方页面",
+        linksBody: "用于 App Store 申请的支持页与隐私页。可用上方按钮切换语言。",
+        supHint: "常见问题与联系",
+        supLabel: "支持",
+        privHint: "数据如何处理",
+        privLabel: "隐私政策",
+        footerApple: "Apple 与 App Store 是 Apple Inc. 的商标。",
+        footerCopy: "© {year} SonicLens"
+      },
+      fr: {
+        onDevice: "Analyse sur l’appareil",
+        eyebrow: "SonicLens pour iPhone",
+        title: "Déchiffrez la musique.",
+        lead: "Tempo, tonalité et structure.\nChoisissez un morceau et explorez le son.\nAnalyse et stockage uniquement sur cet appareil.",
+        linksTitle: "Pages officielles",
+        linksBody: "Pages d’assistance et de confidentialité pour l’App Store. Changez de langue avec les boutons ci-dessus.",
+        supHint: "FAQ et contact",
+        supLabel: "Assistance",
+        privHint: "Traitement des données",
+        privLabel: "Politique de confidentialité",
+        footerApple: "Apple et App Store sont des marques d’Apple Inc.",
+        footerCopy: "© {year} SonicLens"
+      }
+    };
+
+    function detectLang() {
+      const params = new URLSearchParams(location.search);
+      const q = (params.get("lang") || params.get("hl") || "").toLowerCase();
+      if (q.startsWith("zh")) return "zh";
+      if (q.startsWith("es")) return "es";
+      if (q.startsWith("fr")) return "fr";
+      if (q.startsWith("en")) return "en";
+      if (q.startsWith("ja")) return "ja";
+      const nav = (navigator.language || "ja").toLowerCase();
+      if (nav.startsWith("zh")) return "zh";
+      if (nav.startsWith("es")) return "es";
+      if (nav.startsWith("fr")) return "fr";
+      if (nav.startsWith("en")) return "en";
+      return "ja";
+    }
+
+    function applyLang(lang) {
+      const t = I18N[lang] || I18N.ja;
+      document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
+      document.getElementById("onDevice").querySelector("span").textContent = t.onDevice;
+      document.getElementById("eyebrow").textContent = t.eyebrow;
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("lead").textContent = t.lead;
+      document.getElementById("linksTitle").textContent = t.linksTitle;
+      document.getElementById("linksBody").textContent = t.linksBody;
+      document.getElementById("supHint").textContent = t.supHint;
+      document.getElementById("supLabel").textContent = t.supLabel;
+      document.getElementById("privHint").textContent = t.privHint;
+      document.getElementById("privLabel").textContent = t.privLabel;
+      document.getElementById("footerApple").textContent = t.footerApple;
+      document.getElementById("footerCopy").textContent = t.footerCopy.replace("{year}", String(new Date().getFullYear()));
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+      });
+      try { localStorage.setItem("soniclens-lang", lang); } catch (_) {}
+    }
+
+    const stored = (() => { try { return localStorage.getItem("soniclens-lang"); } catch (_) { return null; } })();
+    applyLang(stored && I18N[stored] ? stored : detectLang());
+    document.querySelectorAll(".lang-switch button").forEach((btn) => {
+      btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+    });
+  </script>
+</body>
+</html>

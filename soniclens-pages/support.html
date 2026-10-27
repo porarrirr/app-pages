@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="robots" content="index,follow" />
+  <title>SonicLens — Support</title>
+  <meta name="description" content="SonicLens support — FAQ, troubleshooting, and contact. On-device music analysis for iPhone." />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23637A99'/%3E%3Cpath d='M8 16h2l2-5 3 10 3-8 2 3h4' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 12h2l2-6 3 12 3-9 2 3h6"/></svg>
+        </span>
+        SonicLens
+      </a>
+      <span class="badge-lock" data-i18n="onDevice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        <span></span>
+      </span>
+    </header>
+
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <button type="button" data-lang="es" aria-pressed="false">Español</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      <button type="button" data-lang="fr" aria-pressed="false">Français</button>
+    </div>
+
+    <section class="hero">
+      <p class="hero-eyebrow" data-i18n="eyebrow"></p>
+      <h1 data-i18n="title"></h1>
+      <p class="hero-lead" data-i18n="lead"></p>
+    </section>
+
+    <div class="page-nav">
+      <a href="#faq"><small data-i18n="navFaqHint"></small><span data-i18n="navFaq"></span></a>
+      <a href="#howto"><small data-i18n="navHowHint"></small><span data-i18n="navHow"></span></a>
+      <a href="#contact"><small data-i18n="navContactHint"></small><span data-i18n="navContact"></span></a>
+      <a href="privacy.html"><small data-i18n="navPrivacyHint"></small><span data-i18n="navPrivacy"></span></a>
+    </div>
+
+    <h2 class="section-label" id="howto" data-i18n="howTitle"></h2>
+
+    <section class="card">
+      <h2 data-i18n="howIntroTitle"></h2>
+      <p data-i18n="howIntroBody"></p>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="feature-icon c-cyan" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+          <strong data-i18n="how1T"></strong>
+          <span data-i18n="how1B"></span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon c-violet" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 12h2l2-5 3 10 3-8 2 3h4"/></svg>
+          </div>
+          <strong data-i18n="how2T"></strong>
+          <span data-i18n="how2B"></span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon c-pink" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 14v-2M12 16V8M16 13v-1"/></svg>
+          </div>
+          <strong data-i18n="how3T"></strong>
+          <span data-i18n="how3B"></span>
+        </div>
+        <div class="feature">
+          <div class="feature-icon c-lime" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+          </div>
+          <strong data-i18n="how4T"></strong>
+          <span data-i18n="how4B"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="formatsTitle"></h2>
+      <p data-i18n="formatsBody"></p>
+      <p data-i18n="drmBody"></p>
+    </section>
+
+    <h2 class="section-label" id="faq" data-i18n="faqTitle"></h2>
+
+    <section class="card" id="faqList">
+      <!-- FAQ items injected by script for i18n -->
+    </section>
+
+    <h2 class="section-label" data-i18n="limitsTitle"></h2>
+    <section class="card">
+      <h2 data-i18n="limitsHeading"></h2>
+      <p data-i18n="limitsBody"></p>
+      <div class="callout">
+        <p data-i18n="limitsCallout"></p>
+      </div>
+    </section>
+
+    <h2 class="section-label" id="contact" data-i18n="contactTitle"></h2>
+    <section class="card contact-box">
+      <h2 data-i18n="contactHeading"></h2>
+      <p data-i18n="contactBody"></p>
+      <div class="contact-row">
+        <a class="btn" id="mailLink" href="#"><span data-i18n="contactEmailLabel"></span></a>
+        <a class="btn btn-ghost" href="privacy.html"><span data-i18n="contactPrivacyLink"></span></a>
+      </div>
+      <p class="note" data-i18n="contactNote"></p>
+    </section>
+
+    <footer class="footer">
+      <nav class="footer-nav">
+        <a href="./" data-i18n="footerHome"></a>
+        <a href="support.html" data-i18n="footerSupport"></a>
+        <a href="privacy.html" data-i18n="footerPrivacy"></a>
+      </nav>
+      <p data-i18n="footerApple"></p>
+      <p id="footerCopy"></p>
+    </footer>
+  </div>
+
+  <script>
+    const CONTACT_EMAIL = "musicbunseiki@rarari.org";
+    const LAST_UPDATED = "2026-09-14";
+
+    const I18N = {
+      ja: {
+        pageTitle: "SonicLens — サポート",
+        onDevice: "端末内で解析",
+        eyebrow: "サポート",
+        title: "困ったときは、ここから。",
+        lead: "SonicLens は、iPhone に取り込んだ音源をその場で解析するアプリです。\n解析データも音源も、あなたの端末から出ていきません。",
+        navFaqHint: "よくある質問",
+        navFaq: "FAQ",
+        navHowHint: "はじめ方",
+        navHow: "使い方",
+        navContactHint: "ご連絡",
+        navContact: "問い合わせ",
+        navPrivacyHint: "データの扱い",
+        navPrivacy: "プライバシー",
+        howTitle: "使い方のながれ",
+        howIntroTitle: "3タップで、音の中身が見える",
+        howIntroBody: "アカウントもサーバー送信もありません。ファイルを選ぶ → 解析を待つ → 結果を見る、だけです。",
+        how1T: "曲を選ぶ",
+        how1B: "ファイルAppから、1曲または複数の音楽ファイルを選びます。",
+        how2T: "端末内で解析",
+        how2B: "テンポ、キー、構成、楽器、音量をその場で計算します。",
+        how3T: "結果を見る",
+        how3B: "ライブラリに保存され、いつでも開いて再生しながら確認できます。",
+        how4T: "書き出す",
+        how4B: "必要なときだけ、解析結果を JSON ファイルとして保存できます。",
+        formatsTitle: "対応フォーマット",
+        formatsBody: "MP3 / AAC / WAV / AIFF / M4A / MP4 / MOV に対応しています。iPhone のファイルApp、または共有シート経由で選択できます。",
+        drmBody: "Apple Music やその他の DRM で保護された曲は、iOS の制約により解析できません。保護のない音源ファイルをご用意ください。",
+        faqTitle: "よくある質問",
+        limitsTitle: "解析結果について",
+        limitsHeading: "数値はあくまで推定です",
+        limitsBody: "BPM・キー・区間・楽器の検出は、すべて機械的な推定です。人間の耳による正確な採譜や、スタジオ機材による計測と同値ではありません。参考値としてお使いください。",
+        limitsCallout: "本アプリの解析結果を、医療・法律・安全に関わる判断や、有償の業務成果物の根拠として利用しないでください。開発者は、解析結果の正確性・完全性・特定目的への適合性について、いかなる保証も行いません。",
+        contactTitle: "お問い合わせ",
+        contactHeading: "サポート窓口",
+        contactBody: "不具合のご報告、ご質問、改善のご要望は、下記メールアドレスまでどうぞ。アプリのバージョン号、iOS のバージョン、機種名、再現手順を書いていただけると、調査がスムーズです。",
+        contactEmailLabel: "メールで問い合わせる",
+        contactPrivacyLink: "プライバシーポリシー",
+        contactNote: "通常は数日以内に返信しますが、必ず返信することをお約束するものではありません。個人情報や音源そのものは添付しないでください。",
+        footerHome: "ホーム",
+        footerSupport: "サポート",
+        footerPrivacy: "プライバシー",
+        footerApple: "Apple および App Store は Apple Inc. の商標です。SonicLens は Apple Inc. とは独立した開発者が提供するアプリです。",
+        footerCopy: "© {year} SonicLens · 最終更新 {updated}",
+        mailSubject: "[SonicLens] Support",
+        faq: [
+          {
+            q: "解析が終わらない、または途中で止まる",
+            a: "端末の空き容量と、解析中のメモリ使用状況を確認してください。長時間の曲や、同時に多数の曲を解析すると時間がかかります。アプリを再起動し、1曲ずつ試すと切り分けやすくなります。"
+          },
+          {
+            q: "「解析できません」と表示される",
+            a: "DRM で保護された曲（Apple Music など）は解析できません。自ら所有・権利を持つ、保護のない音源ファイルを選んでください。非対応のコーデックの場合もあります。"
+          },
+          {
+            q: "解析結果（BPM など）がおかしい気がする",
+            a: "推定のため、実際のテンポの半分・倍になったり、キーが隣接調で表示されたりすることがあります。参考値として扱ってください。正確な計測が必要な用途には向きません。"
+          },
+          {
+            q: "保存した曲や履歴を消したい",
+            a: "ライブラリの一覧から、その曲のメニュー（…）から「履歴を削除」を選ぶと、解析結果と保存された音源が端末から削除されます。取り消せませんのでご注意ください。"
+          },
+          {
+            q: "アプリを消したらデータはどうなる？",
+            a: "SonicLens のデータは端末内に保存されています。アプリをアンインストールすると、解析履歴と保存音源も一緒に消えます。必要なら先に「まとめて書き出す」で JSON を保存してください。"
+          },
+          {
+            q: "課金・サブスクリプションはありますか？",
+            a: "現時点で、買い切り・サブスクリプションを含む課金は行っていません。今後変更する場合は、App Store の表示に従ってください。"
+          },
+          {
+            q: "データはサーバーに送られますか？",
+            a: "いいえ。解析はすべて端末内で完結し、音源や解析結果を当方のサーバーへ送信する機能はありません。詳しくはプライバシーポリシーをご覧ください。"
+          },
+          {
+            q: "サポートの返信が来ない",
+            a: "迷惑メールフォルダをご確認ください。返信はベストエフォートであり、応答時間の保証はしていません。"
+          }
+        ]
+      },
+
+      en: {
+        pageTitle: "SonicLens — Support",
+        onDevice: "On-device analysis",
+        eyebrow: "Support",
+        title: "Need a hand?",
+        lead: "SonicLens analyzes music files right on your iPhone.\nYour audio and analysis data stay on your device.",
+        navFaqHint: "Common questions",
+        navFaq: "FAQ",
+        navHowHint: "Getting started",
+        navHow: "How it works",
+        navContactHint: "Get in touch",
+        navContact: "Contact",
+        navPrivacyHint: "How data is handled",
+        navPrivacy: "Privacy",
+        howTitle: "How it works",
+        howIntroTitle: "Pick a track. Look inside the sound.",
+        howIntroBody: "No account. No upload. Choose a file, wait for the analysis, open the results.",
+        how1T: "Choose a song",
+        how1B: "Select one or more audio files from the Files app.",
+        how2T: "Analyze on device",
+        how2B: "Tempo, key, structure, instruments, and loudness are computed locally.",
+        how3T: "Browse results",
+        how3B: "Results are saved in your library and can be reopened with playback anytime.",
+        how4T: "Export if you need",
+        how4B: "You can save analysis results as a JSON file when you choose to.",
+        formatsTitle: "Supported formats",
+        formatsBody: "MP3 / AAC / WAV / AIFF / M4A / MP4 / MOV. Select files through the system file picker or the share sheet.",
+        drmBody: "DRM-protected tracks (for example Apple Music downloads) cannot be analyzed due to iOS restrictions. Use unprotected audio files you have the right to use.",
+        faqTitle: "Frequently asked questions",
+        limitsTitle: "About the numbers",
+        limitsHeading: "Results are estimates",
+        limitsBody: "BPM, key, section, and instrument detection are machine estimates. They are not a substitute for a human transcription or calibrated studio measurement. Treat them as a reference.",
+        limitsCallout: "Do not rely on this app for medical, legal, or safety decisions, or as the sole basis for paid professional deliverables. The developer makes no warranty as to accuracy, completeness, or fitness for a particular purpose.",
+        contactTitle: "Contact",
+        contactHeading: "Support channel",
+        contactBody: "For bugs, questions, or feedback, email the address below. Including the app version, iOS version, device model, and steps to reproduce helps a lot.",
+        contactEmailLabel: "Email support",
+        contactPrivacyLink: "Privacy Policy",
+        contactNote: "We usually reply within a few days, but a reply is not guaranteed. Please do not attach personal data or original audio files.",
+        footerHome: "Home",
+        footerSupport: "Support",
+        footerPrivacy: "Privacy",
+        footerApple: "Apple and App Store are trademarks of Apple Inc. SonicLens is provided by an independent developer and is not affiliated with Apple Inc.",
+        footerCopy: "© {year} SonicLens · Last updated {updated}",
+        mailSubject: "[SonicLens] Support",
+        faq: [
+          {
+            q: "Analysis stalls or never finishes",
+            a: "Check free storage and keep other heavy apps closed. Long tracks or large batches take more time. Restart the app and try a single track to narrow things down."
+          },
+          {
+            q: "It says the file can’t be analyzed",
+            a: "DRM-protected songs (such as Apple Music) are not supported. Choose an unprotected file you own or have rights to use. Some codecs may also be unsupported."
+          },
+          {
+            q: "The BPM or key looks wrong",
+            a: "Estimates can appear at half/double tempo or in a nearby key. Use them as a guide, not as ground truth for professional delivery."
+          },
+          {
+            q: "How do I delete a track from my library?",
+            a: "Open the row menu (…) and choose Delete. This removes the analysis result and the stored audio copy from the device. It cannot be undone."
+          },
+          {
+            q: "What happens if I delete the app?",
+            a: "Library data lives on the device. Uninstalling removes analysis history and stored audio. Export JSON first if you want a copy."
+          },
+          {
+            q: "Is there any paid subscription?",
+            a: "Not at this time. If pricing changes later, follow what is shown on the App Store listing."
+          },
+          {
+            q: "Do you upload my music?",
+            a: "No. Analysis runs entirely on device. There is no upload of audio or results to our servers. See the Privacy Policy for details."
+          },
+          {
+            q: "I never got a reply",
+            a: "Please check spam. Replies are best-effort and response times are not guaranteed."
+          }
+        ]
+      },
+
+      es: {
+        pageTitle: "SonicLens — Soporte",
+        onDevice: "Análisis en el dispositivo",
+        eyebrow: "Soporte",
+        title: "¿Necesitas ayuda?",
+        lead: "SonicLens analiza archivos de audio directamente en tu iPhone.\nTu música y los datos de análisis no salen del dispositivo.",
+        navFaqHint: "Preguntas frecuentes",
+        navFaq: "FAQ",
+        navHowHint: "Primeros pasos",
+        navHow: "Cómo funciona",
+        navContactHint: "Contacto",
+        navContact: "Escribir",
+        navPrivacyHint: "Tratamiento de datos",
+        navPrivacy: "Privacidad",
+        howTitle: "Cómo funciona",
+        howIntroTitle: "Elige una canción y mira dentro del sonido",
+        howIntroBody: "Sin cuenta y sin subidas. Eliges un archivo, esperas el análisis y abres los resultados.",
+        how1T: "Elige una canción",
+        how1B: "Selecciona uno o varios archivos desde Archivos.",
+        how2T: "Analiza en el dispositivo",
+        how2B: "Tempo, tonalidad, estructura, instrumentos y volumen se calculan en local.",
+        how3T: "Revisa los resultados",
+        how3B: "Se guardan en la biblioteca y puedes reabrirlos con reproducción cuando quieras.",
+        how4T: "Exportar si lo necesitas",
+        how4B: "Puedes guardar los resultados como archivo JSON cuando lo desees.",
+        formatsTitle: "Formatos compatibles",
+        formatsBody: "MP3 / AAC / WAV / AIFF / M4A / MP4 / MOV. Selecciona archivos con el selector del sistema o desde la hoja de compartir.",
+        drmBody: "Las pistas protegidas con DRM (por ejemplo de Apple Music) no se pueden analizar por restricciones de iOS. Usa archivos sin protección y con los derechos necesarios.",
+        faqTitle: "Preguntas frecuentes",
+        limitsTitle: "Sobre los resultados",
+        limitsHeading: "Los valores son estimaciones",
+        limitsBody: "La detección de BPM, tonalidad, secciones e instrumentos es una estimación mecánica. No equivale a una transcripción humana ni a una medición de estudio calibrada. Úsalos como referencia.",
+        limitsCallout: "No uses esta app para decisiones médicas, legales o de seguridad, ni como único fundamento de entregables profesionales remunerados. El desarrollador no garantiza exactitud, idoneidad ni integridad.",
+        contactTitle: "Contacto",
+        contactHeading: "Canal de soporte",
+        contactBody: "Para errores, dudas o sugerencias, escribe al correo de abajo. Indicar versión de la app, versión de iOS, modelo y pasos para reproducir el problema ayuda mucho.",
+        contactEmailLabel: "Escribir por correo",
+        contactPrivacyLink: "Política de privacidad",
+        contactNote: "Solemos responder en unos días, pero no hay garantía de respuesta. No adjuntes datos personales ni archivos de audio originales.",
+        footerHome: "Inicio",
+        footerSupport: "Soporte",
+        footerPrivacy: "Privacidad",
+        footerApple: "Apple y App Store son marcas de Apple Inc. SonicLens se ofrece desde un desarrollador independiente y no está afiliada a Apple Inc.",
+        footerCopy: "© {year} SonicLens · Actualizado el {updated}",
+        mailSubject: "[SonicLens] Soporte",
+        faq: [
+          {
+            q: "El análisis se queda bloqueado o no termina",
+            a: "Comprueba el espacio libre y cierra otras apps pesadas. Las pistas largas o los lotes grandes tardan más. Reinicia la app y prueba con una sola canción."
+          },
+          {
+            q: "Dice que no se puede analizar el archivo",
+            a: "Las canciones con DRM (como Apple Music) no son compatibles. Elige un archivo sin protección y con derechos de uso. Algunos códecs tampoco están soportados."
+          },
+          {
+            q: "El BPM o la tonalidad parece incorrecto",
+            a: "Las estimaciones pueden salir a mitad/doble de tempo o en una tonalidad cercana. Úsalas como guía, no como verdad absoluta."
+          },
+          {
+            q: "¿Cómo borro una canción de la biblioteca?",
+            a: "Abre el menú (…) de la fila y elige Eliminar. Se borran el resultado y el audio guardado en el dispositivo. No se puede deshacer."
+          },
+          {
+            q: "¿Qué pasa si desinstalo la app?",
+            a: "Los datos viven en el dispositivo. Al desinstalar se eliminan el historial y el audio guardado. Exporta JSON si quieres conservar una copia."
+          },
+          {
+            q: "¿Hay suscripción de pago?",
+            a: "Por ahora no. Si en el futuro cambia, sigue lo que se muestre en la ficha de la App Store."
+          },
+          {
+            q: "¿Subís mi música a un servidor?",
+            a: "No. El análisis se hace íntegramente en el dispositivo. No hay subida de audio ni de resultados a nuestros servidores."
+          },
+          {
+            q: "No recibí respuesta",
+            a: "Revisa el correo no deseado. Las respuestas son un esfuerzo razonable, sin garantía de plazo."
+          }
+        ]
+      },
+
+      zh: {
+        pageTitle: "SonicLens — 支持",
+        onDevice: "本机分析",
+        eyebrow: "支持",
+        title: "需要帮助？",
+        lead: "SonicLens 在你的 iPhone 本机分析音乐文件。\n音频与分析数据不会离开这台设备。",
+        navFaqHint: "常见问题",
+        navFaq: "常见问题",
+        navHowHint: "快速上手",
+        navHow: "如何使用",
+        navContactHint: "联系我们",
+        navContact: "联系",
+        navPrivacyHint: "数据如何处理",
+        navPrivacy: "隐私",
+        howTitle: "使用流程",
+        howIntroTitle: "选一首歌，看清声音内部",
+        howIntroBody: "无需账号，也不上传文件。选择文件 → 等待分析 → 查看结果。",
+        how1T: "选择歌曲",
+        how1B: "从「文件」中选择一首或多首音频。",
+        how2T: "本机分析",
+        how2B: "速度、调性、结构、乐器与响度均在设备上计算。",
+        how3T: "查看结果",
+        how3B: "结果保存在资料库，可随时打开并同步播放。",
+        how4T: "需要时导出",
+        how4B: "可按需将分析结果保存为 JSON 文件。",
+        formatsTitle: "支持的格式",
+        formatsBody: "支持 MP3 / AAC / WAV / AIFF / M4A / MP4 / MOV。可通过系统文件选择器或共享表单选取。",
+        drmBody: "受 DRM 保护的曲目（例如 Apple Music）因 iOS 限制无法分析。请使用你有权使用的未加密音频文件。",
+        faqTitle: "常见问题",
+        limitsTitle: "关于分析结果",
+        limitsHeading: "数值均为估算",
+        limitsBody: "BPM、调性、段落与乐器检测属于机器估算，并不等同于人工听写或专业测量。请作为参考使用。",
+        limitsCallout: "请勿将本应用用于医疗、法律或安全决策，也不应作为有偿专业交付物的唯一依据。开发者不对准确性、完整性或特定用途适用性作任何保证。",
+        contactTitle: "联系我们",
+        contactHeading: "支持渠道",
+        contactBody: "反馈问题、提出疑问或建议，请发送邮件至下方地址。附上应用版本、iOS 版本、机型与复现步骤会更有帮助。",
+        contactEmailLabel: "发送邮件",
+        contactPrivacyLink: "隐私政策",
+        contactNote: "通常会在数日内回复，但不保证一定回复。请勿附带个人隐私或原始音频文件。",
+        footerHome: "首页",
+        footerSupport: "支持",
+        footerPrivacy: "隐私",
+        footerApple: "Apple 与 App Store 是 Apple Inc. 的商标。SonicLens 由独立开发者提供，与 Apple Inc. 无隶属关系。",
+        footerCopy: "© {year} SonicLens · 最近更新 {updated}",
+        mailSubject: "[SonicLens] Support",
+        faq: [
+          {
+            q: "分析卡住或无法完成",
+            a: "请检查设备可用空间，并尽量关闭其他占用内存的应用。长曲或批量分析会更耗时。可重启应用后单曲尝试。"
+          },
+          {
+            q: "提示无法分析该文件",
+            a: "受 DRM 保护的歌曲（如 Apple Music）不支持。请选择你拥有权利的未保护音频文件。部分编码也可能不受支持。"
+          },
+          {
+            q: "BPM 或调性看起来不对",
+            a: "估算结果可能出现半速/倍速，或显示为邻近调。请作为参考，不要当作绝对准确值。"
+          },
+          {
+            q: "如何从资料库删除歌曲？",
+            a: "打开该行的菜单（…）并选择删除，会同时移除分析结果与本机保存的音频，且无法撤销。"
+          },
+          {
+            q: "卸载应用后数据会怎样？",
+            a: "数据保存在设备本机。卸载会一并删除分析历史与保存的音频。如需保留，请先导出 JSON。"
+          },
+          {
+            q: "是否有付费订阅？",
+            a: "目前没有。若将来调整收费方式，请以 App Store 页面显示为准。"
+          },
+          {
+            q: "你们会上传我的音乐吗？",
+            a: "不会。分析完全在本机完成，不会把音频或结果上传到我们的服务器。详情见隐私政策。"
+          },
+          {
+            q: "没有收到回复",
+            a: "请检查垃圾邮件。回复为尽力而为，不保证响应时限。"
+          }
+        ]
+      },
+
+      fr: {
+        pageTitle: "SonicLens — Assistance",
+        onDevice: "Analyse sur l’appareil",
+        eyebrow: "Assistance",
+        title: "Besoin d’aide ?",
+        lead: "SonicLens analyse les fichiers audio directement sur votre iPhone.\nVos morceaux et résultats restent sur l’appareil.",
+        navFaqHint: "Questions fréquentes",
+        navFaq: "FAQ",
+        navHowHint: "Prise en main",
+        navHow: "Mode d’emploi",
+        navContactHint: "Nous écrire",
+        navContact: "Contact",
+        navPrivacyHint: "Traitement des données",
+        navPrivacy: "Confidentialité",
+        howTitle: "Mode d’emploi",
+        howIntroTitle: "Choisissez un morceau, explorez le son",
+        howIntroBody: "Pas de compte, pas d’envoi. Choisissez un fichier, attendez l’analyse, ouvrez les résultats.",
+        how1T: "Choisir un morceau",
+        how1B: "Sélectionnez un ou plusieurs fichiers dans Fichiers.",
+        how2T: "Analyser sur l’appareil",
+        how2B: "Tempo, tonalité, structure, instruments et sonie sont calculés localement.",
+        how3T: "Lire les résultats",
+        how3B: "Ils sont enregistrés dans la bibliothèque et restent ouverts avec la lecture.",
+        how4T: "Exporter si besoin",
+        how4B: "Vous pouvez enregistrer les résultats en JSON lorsque vous le souhaitez.",
+        formatsTitle: "Formats pris en charge",
+        formatsBody: "MP3 / AAC / WAV / AIFF / M4A / MP4 / MOV. Sélection via le sélecteur système ou le menu de partage.",
+        drmBody: "Les pistes protégées par DRM (par ex. Apple Music) ne peuvent pas être analysées sous iOS. Utilisez des fichiers non protégés dont vous détenez les droits.",
+        faqTitle: "Questions fréquentes",
+        limitsTitle: "À propos des résultats",
+        limitsHeading: "Les valeurs sont des estimations",
+        limitsBody: "BPM, tonalité, sections et instruments sont des estimations automatiques. Ce n’est ni une transcription humaine ni une mesure de studio calibrée. À considérer comme une référence.",
+        limitsCallout: "N’utilisez pas cette application pour des décisions médicales, juridiques ou de sécurité, ni comme unique fondement d’un livrable professionnel rémunéré. Le développeur ne garantit ni exactitude, ni exhaustivité, ni adéquation à un usage particulier.",
+        contactTitle: "Contact",
+        contactHeading: "Canal d’assistance",
+        contactBody: "Pour un bug, une question ou une suggestion, écrivez à l’adresse ci-dessous. Indiquer la version de l’app, la version d’iOS, le modèle et les étapes de reproduction aide beaucoup.",
+        contactEmailLabel: "Écrire par e-mail",
+        contactPrivacyLink: "Politique de confidentialité",
+        contactNote: "Nous répondons en général sous quelques jours, sans garantie. N’joignez pas de données personnelles ni de fichiers audio originaux.",
+        footerHome: "Accueil",
+        footerSupport: "Assistance",
+        footerPrivacy: "Confidentialité",
+        footerApple: "Apple et App Store sont des marques d’Apple Inc. SonicLens est fournie par un développeur indépendant et n’est pas affiliée à Apple Inc.",
+        footerCopy: "© {year} SonicLens · Mis à jour le {updated}",
+        mailSubject: "[SonicLens] Support",
+        faq: [
+          {
+            q: "L’analyse bloque ou ne se termine pas",
+            a: "Vérifiez l’espace libre et fermez les apps gourmandes. Les titres longs ou les lots importants prennent plus de temps. Redémarrez l’app et testez un seul morceau."
+          },
+          {
+            q: "Impossible d’analyser ce fichier",
+            a: "Les morceaux protégés par DRM (p. ex. Apple Music) ne sont pas pris en charge. Choisissez un fichier non protégé dont vous avez les droits. Certains codecs peuvent aussi être absents."
+          },
+          {
+            q: "Le BPM ou la tonalité semble faux",
+            a: "Les estimations peuvent apparaître à la moitié/double du tempo ou dans une tonalité voisine. À utiliser comme guide, pas comme référence absolue."
+          },
+          {
+            q: "Comment supprimer un morceau de la bibliothèque ?",
+            a: "Ouvrez le menu (…) de la ligne et choisissez Supprimer. Le résultat et l’audio enregistré sont effacés de l’appareil. Action irréversible."
+          },
+          {
+            q: "Que se passe-t-il si je désinstalle l’app ?",
+            a: "Les données restent sur l’appareil. La désinstallation efface l’historique et l’audio enregistré. Exportez d’abord en JSON si nécessaire."
+          },
+          {
+            q: "Y a-t-il un abonnement payant ?",
+            a: "Pas pour le moment. Si cela change, suivez ce qui est indiqué sur l’App Store."
+          },
+          {
+            q: "Envoyez-vous ma musique sur un serveur ?",
+            a: "Non. L’analyse est entièrement locale. Aucun envoi d’audio ni de résultats vers nos serveurs."
+          },
+          {
+            q: "Je n’ai pas reçu de réponse",
+            a: "Vérifiez les indésirables. Les réponses sont fournies au mieux, sans délai garanti."
+          }
+        ]
+      }
+    };
+
+    const LANG_ORDER = ["ja", "en", "es", "zh", "fr"];
+
+    function detectLang() {
+      const params = new URLSearchParams(location.search);
+      const q = (params.get("lang") || params.get("hl") || "").toLowerCase();
+      if (q) {
+        if (q.startsWith("zh")) return "zh";
+        if (q.startsWith("es")) return "es";
+        if (q.startsWith("fr")) return "fr";
+        if (q.startsWith("en")) return "en";
+        if (q.startsWith("ja")) return "ja";
+      }
+      const nav = (navigator.language || "ja").toLowerCase();
+      if (nav.startsWith("zh")) return "zh";
+      if (nav.startsWith("es")) return "es";
+      if (nav.startsWith("fr")) return "fr";
+      if (nav.startsWith("en")) return "en";
+      return "ja";
+    }
+
+    function applyLang(lang) {
+      const t = I18N[lang] || I18N.ja;
+      document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
+      document.title = t.pageTitle;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (key === "onDevice") {
+          const span = el.querySelector("span");
+          if (span) span.textContent = t.onDevice;
+          return;
+        }
+        if (t[key] != null) el.textContent = t[key];
+      });
+
+      const faqList = document.getElementById("faqList");
+      faqList.innerHTML = "";
+      t.faq.forEach((item) => {
+        const wrap = document.createElement("article");
+        wrap.className = "faq-item";
+        const q = document.createElement("h3");
+        q.className = "faq-q";
+        q.textContent = item.q;
+        const a = document.createElement("p");
+        a.className = "faq-a";
+        a.textContent = item.a;
+        wrap.appendChild(q);
+        wrap.appendChild(a);
+        faqList.appendChild(wrap);
+      });
+
+      const year = String(new Date().getFullYear());
+      document.getElementById("footerCopy").textContent = t.footerCopy
+        .replace("{year}", year)
+        .replace("{updated}", LAST_UPDATED);
+
+      const mail = document.getElementById("mailLink");
+      mail.href =
+        "mailto:" +
+        CONTACT_EMAIL +
+        "?subject=" +
+        encodeURIComponent(t.mailSubject);
+
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.setAttribute("aria-pressed", btn.dataset.lang === lang ? "true" : "false");
+      });
+
+      try {
+        localStorage.setItem("soniclens-lang", lang);
+      } catch (_) {}
+    }
+
+    function init() {
+      const stored = (() => {
+        try {
+          return localStorage.getItem("soniclens-lang");
+        } catch (_) {
+          return null;
+        }
+      })();
+      const lang = stored && I18N[stored] ? stored : detectLang();
+      applyLang(lang);
+
+      document.querySelectorAll(".lang-switch button").forEach((btn) => {
+        btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+      });
+    }
+
+    init();
+  </script>
+</body>
+</html>
