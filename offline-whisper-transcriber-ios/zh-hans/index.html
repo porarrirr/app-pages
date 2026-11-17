@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whisper 离线语音转文字 — iPhone 和 iPad 上的设备端语音转文字</title>
+<meta name="description" content="一款免费的 iPhone 和 iPad App，使用 Whisper 在你的设备上为录音、音频文件和视频进行转写。一次性下载模型后，即使没有网络连接也可以进行转写。无广告、无 App 内购买、无需账户。">
+<link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/">
+<!-- HREFLANG -->
+<link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hant/">
+<link rel="alternate" hreflang="ko" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ko/">
+<link rel="alternate" hreflang="es" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/es/">
+<link rel="alternate" hreflang="fr" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/fr/">
+<link rel="alternate" hreflang="de" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/de/">
+<link rel="alternate" hreflang="it" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
+<link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<!-- /HREFLANG -->
+<meta name="theme-color" content="#e9eae6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6771686580">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Whisper 离线语音转文字">
+<meta property="og:title" content="Whisper 离线语音转文字 — 设备端语音转文字">
+<meta property="og:description" content="在 iPhone 或 iPad 上录制或导入音频和视频，把语音变成文字。免费，无广告，无 App 内购买。">
+<meta property="og:url" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/">
+<meta property="og:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Whisper 离线语音转文字">
+<meta name="twitter:description" content="适用于 iPhone 和 iPad 的设备端语音转文字。免费，无广告，无 App 内购买。">
+<meta name="twitter:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Whisper 离线语音转文字",
+  "alternateName": ["Whisper Transcriber", "Whisper文字起こし"],
+  "url": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/",
+  "image": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/icon-512.png",
+  "screenshot": [
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/zh-hans/screen-result.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/zh-hans/screen-home.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/zh-hans/screen-history.jpg"
+  ],
+  "description": "一款 iPhone 和 iPad App，使用 Whisper（whisper.cpp）在设备上为麦克风录音、音频文件和视频进行转写。一次性下载模型后，转写可以在离线状态下运行。可导出 TXT、CSV、JSON 和 SRT。",
+  "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
+  "applicationCategory": "ProductivityApplication",
+  "installUrl": "https://apps.apple.com/app/id6771686580",
+  "downloadUrl": "https://apps.apple.com/app/id6771686580",
+  "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant", "ko", "es", "fr", "de", "it", "pt-BR", "ru"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "porarrirr" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "App 免费吗？", "acceptedAnswer": {"@type": "Answer", "text": "是的。目前所有功能都可以免费使用。App 没有广告，没有 App 内购买，没有订阅，也无需注册账户。"}},
+    {"@type": "Question", "name": "没有网络连接也能用吗？", "acceptedAnswer": {"@type": "Answer", "text": "Whisper 转写设计为在设备上运行。下载语音识别模型时需要联网一次；之后使用该模型进行转写通常可以在离线状态下完成。"}},
+    {"@type": "Question", "name": "我的音频会被上传到服务器吗？", "acceptedAnswer": {"@type": "Answer", "text": "Whisper 转写在你的设备上运行，App 不会将音频或转写文本发送给开发者。如果你开启 Apple Intelligence 的可选私有云计算设置，转写文本和你的问题将由 Apple 处理。该选项默认关闭。"}},
+    {"@type": "Question", "name": "可以导入和导出哪些文件格式？", "acceptedAnswer": {"@type": "Answer", "text": "你可以从“文件”或“照片”导入 M4A、WAV、MP3、MP4 和 MOV 等常见音频和视频文件。转写文本可导出为 TXT、CSV、JSON 或 SRT 字幕。"}},
+    {"@type": "Question", "name": "准确度如何？", "acceptedAnswer": {"@type": "Answer", "text": "准确度取决于模型、语言、音频质量、背景噪音和说话方式。较大的模型通常更准确，但速度更慢。请将重要的转写内容与原始音频进行核对。"}},
+    {"@type": "Question", "name": "支持哪些语言？", "acceptedAnswer": {"@type": "Answer", "text": "你可以选择自动检测，或从 18 种语言中选择，包括英语、日语、中文、韩语、西班牙语、法语、德语等。App 界面支持 11 种语言。"}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Whisper 离线语音转文字：首页">
+      <img src="../assets/img/icon-180.png" alt="" width="32" height="32">
+      <span><b>Whisper</b> <span class="brand-sub">离线语音转文字</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">菜单</button>
+    <nav class="nav" id="nav" aria-label="主导航">
+      <a href="#features">功能</a>
+      <a href="#all-features">全部功能</a>
+      <a href="#models">模型</a>
+      <a href="#privacy">隐私</a>
+      <a href="#faq">常见问题</a>
+      <a href="support.html">支持</a>
+      <!-- LANG-SWITCH -->
+      <details class="lang-switch">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9s1.3-6.3 3.8-9z"/></svg><span class="sr-only">语言: 简体中文</span><span aria-hidden="true">简中</span></summary>
+        <ul>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="./" hreflang="zh-Hans" lang="zh-Hans" aria-current="page">简体中文</a></li>
+          <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </details>
+      <script>(function(){var d=document.querySelector(".lang-switch");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&d.open){d.open=false;d.querySelector("summary").focus();}});})();</script>
+      <!-- /LANG-SWITCH -->
+      <a class="btn small" href="https://apps.apple.com/app/id6771686580?ct=official-site-header-zh-hans">获取 App</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">设备端语音转文字</div>
+      <h1>你的声音，<span class="line2">化作文字。</span></h1>
+      <p class="lead">录下一场会议、一堂课或一次访谈，或者导入音频、视频文件，就能在 iPhone 或 iPad 上得到转写文本。语音识别由 Whisper 在你的设备上完成，因此只需一次性下载模型，之后即使没有网络连接也能使用。</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-zh-hans">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          在 App Store 下载
+        </a>
+        <a class="btn ghost" href="#all-features">查看全部功能</a>
+      </div>
+      <ul class="pills" aria-label="亮点">
+        <li>全部功能免费</li>
+        <li>无广告</li>
+        <li>无 App 内购买</li>
+        <li>无需账户</li>
+        <li>iPhone 和 iPad</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone"><img src="../assets/img/zh-hans/screen-home.jpg" alt="" width="600" height="1304"></div>
+      <div class="phone"><img src="../assets/img/zh-hans/screen-result.jpg" alt="" width="600" height="1304"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE -->
+<section id="free" style="padding-top:24px">
+  <div class="wrap">
+    <div class="free">
+      <div>
+        <div class="eyebrow">价格</div>
+        <h2>所有功能，<span class="neon">免费</span>。</h2>
+        <p class="muted mb-0">没有付费版本。本页面列出的所有内容——录音、文件导入、全部 Whisper 模型、导出、历史记录、标签、Apple Intelligence 对话和快捷指令——都可以免费使用。无需创建账户，App 也不会显示广告。</p>
+      </div>
+      <ul>
+        <li>无需订阅，也无需一次性购买</li>
+        <li>没有 App 内购买，也没有锁定功能</li>
+        <li>无广告，也没有第三方跟踪</li>
+        <li>无需注册或登录</li>
+        <li><span>App 不对录音时长或文件数量设限 <span class="note">——但仍受设备存储空间、内存和电量限制</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">使用方式</div>
+      <h2>三步获得转写文本</h2>
+    </div>
+    <div class="grid c3 steps">
+      <div class="card">
+        <h3>一次性下载模型</h3>
+        <p>首次打开时，选择一个 Whisper 模型并下载。默认的 Base 模型约为 142&nbsp;MB。这是唯一需要网络连接的步骤。</p>
+      </div>
+      <div class="card">
+        <h3>录音或导入</h3>
+        <p>轻点即可用麦克风录音，也可以从“文件”或“照片”中选择音频或视频文件。录音过程中可以暂停和继续。</p>
+      </div>
+      <div class="card">
+        <h3>阅读、编辑和导出</h3>
+        <p>查看带时间戳的文本，修正错误，然后以 TXT、CSV、JSON 或 SRT 字幕的形式分享。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE DETAIL -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">功能</div>
+      <h2>你可以用它做什么</h2>
+      <p class="lead">进一步了解 App 的几个主要部分。</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/zh-hans/screen-home.jpg" alt="转写标签页，带一个大号录音按钮、“选择文件”和从“照片”选择视频" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">采集</div>
+        <h3 style="font-size:28px">录音，或导入你自己的文件</h3>
+        <p class="muted">轻点一下即可开始录音，也可以导入现有的音频或视频。App 会在设备上转换音频并完成转写。</p>
+        <ul>
+          <li>麦克风录音，支持暂停和继续，并可切换外接麦克风</li>
+          <li>在支持的 iPhone 上，通过实时活动在锁定屏幕和灵动岛显示录音状态</li>
+          <li>从“文件”App 导入 M4A、WAV、MP3、MP4 和 MOV 等音频和视频</li>
+          <li>直接从“照片”图库中选择视频</li>
+          <li>可选“保持屏幕常亮”，适合长时间录音</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/zh-hans/screen-result.jpg" alt="一次产品规划会议的转写文本，带对话、拷贝和分享按钮" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">识别</div>
+        <h3 style="font-size:28px">Whisper，在你的设备上运行</h3>
+        <p class="muted">App 通过 <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a> 使用 OpenAI 开放发布的 Whisper 模型，并在可用时启用 Metal GPU 加速。你可以更换模型，在速度和准确度之间做出取舍。</p>
+        <ul>
+          <li>10 款 Whisper 模型，从 Tiny（约 15&nbsp;MB）到 Large v3 Turbo 和 Medium（最大约 1.5&nbsp;GB）</li>
+          <li>自动语言检测，或从 18 种语言中选择</li>
+          <li>可选将结果翻译成英语</li>
+          <li>可选下载 Core ML 编码器，在支持的设备上可能加快处理速度</li>
+          <li>在 iOS 26 或更高版本上，还可以选择使用 Apple 的设备端语音引擎</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/zh-hans/screen-timeline.jpg" alt="时间线视图，显示带时间戳的转写段落" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">阅读与编辑</div>
+        <h3 style="font-size:28px">时间线视图或阅读视图</h3>
+        <p class="muted">在简洁的文本视图和带时间戳的时间线之间切换。可以回放原始音频来核对内容，并在需要时修正文字。</p>
+        <ul>
+          <li>文本视图和时间线视图，可选择显示时间戳</li>
+          <li>音频播放，可调整速度和位置</li>
+          <li>编辑转写文本及其标题</li>
+          <li>复制单个段落或全文</li>
+          <li>在转写文本内搜索</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/zh-hans/screen-history.jpg" alt="历史记录列表，带搜索栏和三份已保存的转写" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">整理</div>
+        <h3 style="font-size:28px">可搜索的历史记录</h3>
+        <p class="muted">每份转写都保存在你的设备上，方便之后随时回看。</p>
+        <ul>
+          <li>按标题、文本或标签搜索</li>
+          <li>收藏与排序</li>
+          <li>可跨所有转写添加、重命名、合并和删除标签</li>
+          <li>按标签筛选历史记录</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/zh-hans/screen-export.jpg" alt="导出面板，包含文本、JSON、CSV 和字幕格式，以及“包含时间戳”开关" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">导出</div>
+        <h3 style="font-size:28px">文本、数据或字幕</h3>
+        <p class="muted">以适合下一步的格式分享转写文本——笔记、表格、脚本或视频剪辑。</p>
+        <ul>
+          <li>TXT，适合笔记和文档</li>
+          <li>CSV，适合表格</li>
+          <li>包含分段的 JSON，适合你自己的工具</li>
+          <li>SRT 字幕，适合视频剪辑</li>
+          <li>将原始录音作为音频文件分享</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid c2" style="margin-top:28px">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>围绕转写提问 <span class="tag">iOS 26+</span></h3>
+        <p>在支持 Apple Intelligence 的设备上，你可以就某份转写进行对话——请它生成摘要、关键决策或待办事项——并生成标题。对话会按转写分别保存。较长的转写会分段读取。可选的私有云计算模式（iOS 27 或更高版本）默认关闭。</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>快捷指令与 Siri</h3>
+        <p>使用 App 快捷指令来开始或停止录音、转写媒体文件、查找转写、获取转写文本，或添加标签和收藏——很适合自动化流程。部分操作需要较新版本的 iOS。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES -->
+<section id="all-features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">功能列表</div>
+      <h2>全部功能——全部免费</h2>
+      <p class="lead">App 目前提供的完整功能列表。以下各项都无需付费。</p>
+    </div>
+    <div class="feature-list">
+      <div class="feature-group">
+        <h3>采集</h3>
+        <ul>
+          <li><span>麦克风录音</span><span class="free-chip">免费</span></li>
+          <li><span>暂停和继续录音<small>录音时也能处理来电等中断</small></span><span class="free-chip">免费</span></li>
+          <li><span>切换麦克风</span><span class="free-chip">免费</span></li>
+          <li><span>录音时的实时活动<small>锁定屏幕和灵动岛</small></span><span class="free-chip">免费</span></li>
+          <li><span>导入音频文件<small>M4A、WAV、MP3 等常见格式</small></span><span class="free-chip">免费</span></li>
+          <li><span>导入视频文件<small>MP4、MOV 等常见格式</small></span><span class="free-chip">免费</span></li>
+          <li><span>从“照片”导入视频</span><span class="free-chip">免费</span></li>
+          <li><span>实时转写<small>说话时文字即时出现 · iOS 26+</small></span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>语音识别</h3>
+        <ul>
+          <li><span>设备端 Whisper（whisper.cpp）</span><span class="free-chip">免费</span></li>
+          <li><span>全部 10 款 Whisper 模型<small>Tiny、Base、Small、Medium、Large v3 Turbo 及精简变体</small></span><span class="free-chip">免费</span></li>
+          <li><span>Apple 设备端语音引擎<small>iOS 26+，语言由 iOS 管理</small></span><span class="free-chip">免费</span></li>
+          <li><span>自动检测或从 18 种语言中选择</span><span class="free-chip">免费</span></li>
+          <li><span>翻译成英语</span><span class="free-chip">免费</span></li>
+          <li><span>Metal GPU 加速<small>在设备支持的情况下</small></span><span class="free-chip">免费</span></li>
+          <li><span>Core ML 编码器（可选下载）</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>准确度与性能工具</h3>
+        <ul>
+          <li><span>跳过静音片段<small>语音活动检测（VAD）</small></span><span class="free-chip">免费</span></li>
+          <li><span>音频清理<small>降噪和音量标准化</small></span><span class="free-chip">免费</span></li>
+          <li><span>词汇提示<small>让模型预先了解的人名和术语</small></span><span class="free-chip">免费</span></li>
+          <li><span>Flash Attention<small>可能降低内存占用并加快处理速度</small></span><span class="free-chip">免费</span></li>
+          <li><span>包含时间戳</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>阅读与编辑</h3>
+        <ul>
+          <li><span>文本视图和时间线视图</span><span class="free-chip">免费</span></li>
+          <li><span>音频播放，可调节速度</span><span class="free-chip">免费</span></li>
+          <li><span>编辑转写文本和标题</span><span class="free-chip">免费</span></li>
+          <li><span>复制段落或全文</span><span class="free-chip">免费</span></li>
+          <li><span>在转写文本内搜索</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>历史记录与整理</h3>
+        <ul>
+          <li><span>保存转写历史记录</span><span class="free-chip">免费</span></li>
+          <li><span>按标题、文本或标签搜索</span><span class="free-chip">免费</span></li>
+          <li><span>收藏和排序</span><span class="free-chip">免费</span></li>
+          <li><span>标签：添加、重命名、合并、删除</span><span class="free-chip">免费</span></li>
+          <li><span>按标签筛选</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>导出与分享</h3>
+        <ul>
+          <li><span>文本（.txt）</span><span class="free-chip">免费</span></li>
+          <li><span>CSV（.csv）</span><span class="free-chip">免费</span></li>
+          <li><span>JSON（.json）</span><span class="free-chip">免费</span></li>
+          <li><span>字幕（.srt）</span><span class="free-chip">免费</span></li>
+          <li><span>分享原始音频</span><span class="free-chip">免费</span></li>
+          <li><span>通过分享面板分享文本</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Apple Intelligence</h3>
+        <ul>
+          <li><span>围绕转写进行对话<small>iOS 26+，需设备支持</small></span><span class="free-chip">免费</span></li>
+          <li><span>按转写保存对话历史</span><span class="free-chip">免费</span></li>
+          <li><span>生成标题</span><span class="free-chip">免费</span></li>
+          <li><span>私有云计算模式<small>可选 · iOS 27+ · 默认关闭</small></span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>自动化与 App</h3>
+        <ul>
+          <li><span>快捷指令与 Siri 操作</span><span class="free-chip">免费</span></li>
+          <li><span>iPhone 和 iPad 布局</span><span class="free-chip">免费</span></li>
+          <li><span>浅色、深色或跟随系统外观</span><span class="free-chip">免费</span></li>
+          <li><span>11 种语言的界面</span><span class="free-chip">免费</span></li>
+          <li><span>模型与存储空间管理</span><span class="free-chip">免费</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px">标注了 iOS 版本的功能需要该版本或更高版本。Apple Intelligence 功能还取决于设备支持情况、所在地区和语言设置。</p>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section id="models">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">模型</div>
+      <h2>选择适合你的平衡点</h2>
+      <p class="lead">较小的模型通常更快、更轻；较大的模型通常更准确，但需要更多存储空间、内存和时间。你可以随时在“设置”中切换模型。</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>模型</th><th>下载大小（约）</th><th>通常适合</th></tr></thead>
+        <tbody>
+          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>在旧款或存储空间有限的设备上快速生成草稿</td></tr>
+          <tr><td>Tiny</td><td>39 MB</td><td>快速、基础的转写</td></tr>
+          <tr><td>Base Q5_1</td><td>60 MB</td><td>默认模型的轻量版本</td></tr>
+          <tr><td>Base <span class="tag">默认</span></td><td>142 MB</td><td>日常使用，速度与准确度均衡</td></tr>
+          <tr><td>Small Q5_1</td><td>163 MB</td><td>下载体积更小，准确度更好</td></tr>
+          <tr><td>Small</td><td>466 MB</td><td>更高的准确度</td></tr>
+          <tr><td>Medium Q5_0</td><td>568 MB</td><td>高准确度，下载体积比 Medium 更小</td></tr>
+          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>快速且准确，轻量变体</td></tr>
+          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>快速且准确</td></tr>
+          <tr><td>Medium</td><td>1.5 GB</td><td>各选项中准确度最高，速度较慢</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:14px">模型文件从 Hugging Face 下载。实际速度和准确度会因设备、语言、音频质量和时长而异。</p>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">隐私</div>
+      <h2>旨在让音频留在你的设备上</h2>
+      <p class="lead">Whisper 转写在本地运行。App 不含广告、分析 SDK 或第三方跟踪，也不会将你的音频或转写文本发送给开发者。</p>
+    </div>
+    <div class="grid c3">
+      <div class="card">
+        <h3>留在你的设备上</h3>
+        <p>录音、导入的媒体、转写文本、标签、对话和设置都存储在设备上的 App 内。你可以随时在 App 中删除它们。</p>
+      </div>
+      <div class="card">
+        <h3>App 何时联网</h3>
+        <p>从 Hugging Face 下载 Whisper、VAD 和 Core ML 模型文件；向 App Store 检查是否有新版本；以及 iOS 为 Apple 的引擎下载语音模型时。</p>
+      </div>
+      <div class="card">
+        <h3>由你来决定</h3>
+        <p>用于 Apple Intelligence 的私有云计算默认关闭。如果你开启它，转写文本和你的问题将由 Apple 的私有云计算处理。分享导出内容时，内容会发送到你选择的位置。</p>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a href="privacy-policy.html">阅读完整的隐私政策 →</a></p>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">系统要求</div>
+      <h2>开始之前</h2>
+    </div>
+    <div class="grid c2">
+      <div class="card">
+        <h3>设备与系统</h3>
+        <p>运行 iOS / iPadOS 17.0 或更高版本的 iPhone 或 iPad。实时转写、Apple 的语音引擎和设备端 Apple Intelligence 需要 iOS 26 或更高版本；私有云计算需要 iOS 27 或更高版本。</p>
+      </div>
+      <div class="card">
+        <h3>存储空间与网络</h3>
+        <p>下载模型需要网络连接和可用存储空间（视模型不同，约 15&nbsp;MB 到 1.5&nbsp;GB）。录音需要麦克风权限。</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <strong>请注意：</strong>AI 转写可能出现错误、漏词或听错人名。请对照原始音频核对重要内容；录制他人之前，请遵守当地法律并取得同意。详情请参阅<a href="disclaimer.html">免责声明</a>。
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>常见问题</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>App 真的免费吗？</summary>
+        <div><p>是的。目前所有功能都可以免费使用。没有广告，没有 App 内购买，没有订阅，也无需注册账户。</p></div>
+      </details>
+      <details>
+        <summary>可以离线使用吗？</summary>
+        <div><p>Whisper 转写设计为在你的设备上运行。下载模型时需要联网一次；之后使用该模型录音和转写通常无需网络连接。下载其他模型、检查更新以及可选的私有云计算模式则需要联网。</p></div>
+      </details>
+      <details>
+        <summary>我的音频会被发送到服务器吗？</summary>
+        <div><p>Whisper 转写在本地运行，App 不会将音频或转写文本发送给开发者。唯一由你控制的例外是用于 Apple Intelligence 对话的可选私有云计算模式，它会将转写文本和你的问题发送到 Apple 的私有云计算。该模式默认关闭。</p></div>
+      </details>
+      <details>
+        <summary>应该选择哪个模型？</summary>
+        <div><p>对大多数人来说，Base 是比较合适的起点。如果结果漏词较多，可以试试 Small、Medium 或 Large v3 Turbo。如果转写速度太慢，或设备内存吃紧，Tiny 或 Q5 变体可能会有帮助。</p></div>
+      </details>
+      <details>
+        <summary>可以导入和导出哪些文件？</summary>
+        <div><p>你可以从“文件”导入 M4A、WAV、MP3、MP4 和 MOV 等常见音频和视频格式，也可以从“照片”导入视频。转写文本可导出为 TXT、CSV、JSON 或 SRT，录音可以作为音频文件分享。</p></div>
+      </details>
+      <details>
+        <summary>支持哪些语言？</summary>
+        <div><p>转写时可以使用自动检测，也可以选择英语、日语、中文、韩语、西班牙语、法语、德语、意大利语、葡萄牙语、俄语、阿拉伯语、印地语、荷兰语、波兰语、土耳其语、越南语、泰语或印尼语。结果可能因语言而异。App 界面支持 11 种语言。</p></div>
+      </details>
+      <details>
+        <summary>可以为视频生成字幕吗？</summary>
+        <div><p>可以。导入视频、完成转写，然后导出为 SRT。大多数视频剪辑软件都能导入 SRT 文件。字幕时间轴与识别出的分段一致，你可能需要在剪辑软件中再作调整。</p></div>
+      </details>
+      <details>
+        <summary>录音最长可以多长？</summary>
+        <div><p>App 不设固定上限。实际上，超长音频能否处理取决于设备的可用存储空间、内存和电量，模型越大耗时越长。如果长文件处理失败，改用较小的模型或开启 Flash Attention 可能会有帮助。</p></div>
+      </details>
+      <details>
+        <summary>这是 OpenAI 的官方 App 吗？</summary>
+        <div><p>不是。这是一款独立 App，通过开源项目 whisper.cpp 运行 OpenAI 公开发布的 Whisper 模型，与 OpenAI 没有关联，也未获得其认可。</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="eyebrow">在 App Store 免费提供</div>
+      <h2>不妨试试你的下一次录音</h2>
+      <p class="lead">下载 App，下载一次模型，看看它如何处理你自己的会议、课程和视频。</p>
+      <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-zh-hans">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        在 App Store 下载
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="../assets/img/icon-180.png" alt="" width="32" height="32"><span><b>Whisper</b> <span class="brand-sub">离线语音转文字</span></span></a>
+      <p style="margin-top:14px">由 porarrirr 开发的独立 App。与 OpenAI 没有关联，也未获得其认可。语音识别使用 <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a> 和 Whisper 模型。</p>
+      <p>© 2026 porarrirr</p>
+    </div>
+    <div>
+      <h4>App</h4>
+      <ul>
+        <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-zh-hans">App Store</a></li>
+        <li><a href="#all-features">全部功能</a></li>
+        <li><a href="#models">模型</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>帮助与法律信息</h4>
+      <ul>
+        <li><a href="support.html">支持</a></li>
+        <li><a href="privacy-policy.html">隐私政策</a></li>
+        <li><a href="disclaimer.html">免责声明</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.querySelector('.nav-toggle'), n = document.getElementById('nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+})();
+</script>
+</body>
+</html>

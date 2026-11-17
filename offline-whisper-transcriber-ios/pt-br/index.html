@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whisper: Transcrição offline — Transcrição de voz no dispositivo para iPhone e iPad</title>
+<meta name="description" content="Um app grátis para iPhone e iPad que transcreve gravações, arquivos de áudio e vídeos no seu dispositivo com o Whisper. Depois de baixar um modelo uma única vez, a transcrição pode funcionar sem conexão com a internet. Sem anúncios, sem compras dentro do app e sem conta.">
+<link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/">
+<!-- HREFLANG -->
+<link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hant/">
+<link rel="alternate" hreflang="ko" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ko/">
+<link rel="alternate" hreflang="es" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/es/">
+<link rel="alternate" hreflang="fr" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/fr/">
+<link rel="alternate" hreflang="de" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/de/">
+<link rel="alternate" hreflang="it" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
+<link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<!-- /HREFLANG -->
+<meta name="theme-color" content="#e9eae6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6771686580">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Whisper: Transcrição offline">
+<meta property="og:title" content="Whisper: Transcrição offline — Transcrição de voz no dispositivo">
+<meta property="og:description" content="Grave ou importe áudio e vídeo e transforme fala em texto no seu iPhone ou iPad. Grátis, sem anúncios nem compras dentro do app.">
+<meta property="og:url" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/">
+<meta property="og:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Whisper: Transcrição offline">
+<meta name="twitter:description" content="Transcrição de voz no dispositivo para iPhone e iPad. Grátis, sem anúncios e sem compras dentro do app.">
+<meta name="twitter:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Whisper: Transcrição offline",
+  "alternateName": ["Whisper Transcriber", "Whisper文字起こし"],
+  "url": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/",
+  "image": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/icon-512.png",
+  "screenshot": [
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/pt-br/screen-result.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/pt-br/screen-home.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/pt-br/screen-history.jpg"
+  ],
+  "description": "Um app para iPhone e iPad que transcreve gravações de microfone, arquivos de áudio e vídeos no dispositivo usando Whisper (whisper.cpp). Depois de baixar um modelo uma única vez, a transcrição pode rodar offline. Exporta TXT, CSV, JSON e SRT.",
+  "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
+  "applicationCategory": "ProductivityApplication",
+  "installUrl": "https://apps.apple.com/app/id6771686580",
+  "downloadUrl": "https://apps.apple.com/app/id6771686580",
+  "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant", "ko", "es", "fr", "de", "it", "pt-BR", "ru"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "porarrirr" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "O app é grátis?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. No momento, todos os recursos são gratuitos. O app não tem anúncios, compras dentro do app, assinaturas nem cadastro de conta."}},
+    {"@type": "Question", "name": "Funciona sem conexão com a internet?", "acceptedAnswer": {"@type": "Answer", "text": "A transcrição com Whisper é projetada para rodar no dispositivo. É preciso conexão com a internet uma vez para baixar um modelo de reconhecimento de fala; depois disso, a transcrição com esse modelo geralmente pode rodar offline."}},
+    {"@type": "Question", "name": "Meu áudio é enviado para um servidor?", "acceptedAnswer": {"@type": "Answer", "text": "A transcrição com Whisper roda no seu dispositivo, e o app não envia áudio ou transcrições ao desenvolvedor. Se você ativar a configuração opcional Private Cloud Compute do Apple Intelligence, o texto da transcrição e sua pergunta são processados pela Apple. Essa opção vem desativada por padrão."}},
+    {"@type": "Question", "name": "Quais formatos de arquivo posso importar e exportar?", "acceptedAnswer": {"@type": "Answer", "text": "Você pode importar arquivos comuns de áudio e vídeo, como M4A, WAV, MP3, MP4 e MOV, do app Arquivos ou do Fotos. As transcrições podem ser exportadas como TXT, CSV, JSON ou legendas SRT."}},
+    {"@type": "Question", "name": "Qual é a precisão?", "acceptedAnswer": {"@type": "Answer", "text": "A precisão depende do modelo, do idioma, da qualidade do áudio, do ruído de fundo e do modo de falar. Modelos maiores tendem a ser mais precisos, mas mais lentos. Confira as transcrições importantes com o áudio original."}},
+    {"@type": "Question", "name": "Quais idiomas são compatíveis?", "acceptedAnswer": {"@type": "Answer", "text": "Você pode escolher a detecção automática ou um entre 18 idiomas, incluindo inglês, japonês, chinês, coreano, espanhol, francês, alemão e outros. A interface do app está disponível em 11 idiomas."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Página inicial do Whisper: Transcrição offline">
+      <img src="../assets/img/icon-180.png" alt="" width="32" height="32">
+      <span><b>Whisper</b> <span class="brand-sub">Transcrição offline</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#features">Recursos</a>
+      <a href="#all-features">Todos os recursos</a>
+      <a href="#models">Modelos</a>
+      <a href="#privacy">Privacidade</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Suporte</a>
+      <!-- LANG-SWITCH -->
+      <details class="lang-switch">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9s1.3-6.3 3.8-9z"/></svg><span class="sr-only">Idioma: Português (Brasil)</span><span aria-hidden="true">PT</span></summary>
+        <ul>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="./" hreflang="pt-BR" lang="pt-BR" aria-current="page">Português (Brasil)</a></li>
+          <li><a href="../ru/" hreflang="ru" lang="ru">Русский</a></li>
+        </ul>
+      </details>
+      <script>(function(){var d=document.querySelector(".lang-switch");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&d.open){d.open=false;d.querySelector("summary").focus();}});})();</script>
+      <!-- /LANG-SWITCH -->
+      <a class="btn small" href="https://apps.apple.com/app/id6771686580?ct=official-site-header-pt-br">Obter o app</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Transcrição de voz no dispositivo</div>
+      <h1>Sua voz,<span class="line2">transformada em texto.</span></h1>
+      <p class="lead">Grave uma reunião, uma aula ou uma entrevista — ou importe um arquivo de áudio ou vídeo — e receba a transcrição no seu iPhone ou iPad. O reconhecimento de fala roda no seu dispositivo com o Whisper, então, depois de baixar um modelo uma única vez, ele pode funcionar sem conexão com a internet.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-pt-br">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Baixar na App Store
+        </a>
+        <a class="btn ghost" href="#all-features">Ver todos os recursos</a>
+      </div>
+      <ul class="pills" aria-label="Destaques">
+        <li>Todos os recursos grátis</li>
+        <li>Sem anúncios</li>
+        <li>Sem compras dentro do app</li>
+        <li>Sem conta</li>
+        <li>iPhone e iPad</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone"><img src="../assets/img/pt-br/screen-home.jpg" alt="" width="600" height="1304"></div>
+      <div class="phone"><img src="../assets/img/pt-br/screen-result.jpg" alt="" width="600" height="1304"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE -->
+<section id="free" style="padding-top:24px">
+  <div class="wrap">
+    <div class="free">
+      <div>
+        <div class="eyebrow">Preço</div>
+        <h2>Todos os recursos, <span class="neon">grátis</span>.</h2>
+        <p class="muted mb-0">Não existe plano pago. Tudo o que está nesta página — gravação, importação de arquivos, todos os modelos Whisper, exportações, histórico, etiquetas, chat com Apple Intelligence e Atalhos — está disponível sem custo. Você não precisa criar uma conta, e o app não exibe anúncios.</p>
+      </div>
+      <ul>
+        <li>Sem assinatura nem compra única</li>
+        <li>Sem compras dentro do app nem recursos bloqueados</li>
+        <li>Sem anúncios e sem rastreamento de terceiros</li>
+        <li>Sem cadastro ou login</li>
+        <li><span>O app não define limite de duração da gravação nem de quantidade de arquivos <span class="note">— o armazenamento, a memória e a bateria do dispositivo continuam valendo</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Como funciona</div>
+      <h2>Três passos até a transcrição</h2>
+    </div>
+    <div class="grid c3 steps">
+      <div class="card">
+        <h3>Baixe um modelo uma vez</h3>
+        <p>Na primeira vez que abrir o app, escolha um modelo Whisper e baixe. O modelo Base padrão tem cerca de 142&nbsp;MB. Esta é a única etapa que precisa de conexão com a internet.</p>
+      </div>
+      <div class="card">
+        <h3>Grave ou importe</h3>
+        <p>Toque para gravar com o microfone ou selecione um arquivo de áudio ou vídeo no app Arquivos ou em Fotos. É possível pausar e retomar durante a gravação.</p>
+      </div>
+      <div class="card">
+        <h3>Leia, edite e exporte</h3>
+        <p>Revise o texto com marcações de tempo, corrija eventuais erros e compartilhe como TXT, CSV, JSON ou legendas SRT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE DETAIL -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Recursos</div>
+      <h2>O que você pode fazer com ele</h2>
+      <p class="lead">Uma visão mais detalhada das principais partes do app.</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/pt-br/screen-home.jpg" alt="Aba Transcrever com um botão de gravação grande, Selecionar arquivo e Selecionar vídeo do Fotos" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Captura</div>
+        <h3 style="font-size:28px">Grave ou use seus próprios arquivos</h3>
+        <p class="muted">Comece uma gravação com um toque ou importe algo que você já tem. O app converte o áudio e o transcreve no dispositivo.</p>
+        <ul>
+          <li>Gravação pelo microfone com pausa e retomada, e seletor de microfone para microfones externos</li>
+          <li>Status da gravação na Tela Bloqueada e na Dynamic Island por meio de uma Atividade ao Vivo (em iPhones compatíveis)</li>
+          <li>Importe áudio e vídeo, como M4A, WAV, MP3, MP4 e MOV, do app Arquivos</li>
+          <li>Escolha um vídeo diretamente da sua fototeca</li>
+          <li>“Manter tela ligada” opcional para sessões longas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/pt-br/screen-result.jpg" alt="Transcrição de uma reunião de planejamento de produto com os botões Conversar, Copiar e Compartilhar" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Reconhecimento</div>
+        <h3 style="font-size:28px">Whisper rodando no seu dispositivo</h3>
+        <p class="muted">O app usa os modelos Whisper abertos da OpenAI por meio do <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a>, com aceleração de GPU Metal quando disponível. Você pode trocar velocidade por precisão escolhendo outro modelo.</p>
+        <ul>
+          <li>10 modelos Whisper, do Tiny (cerca de 15&nbsp;MB) ao Large v3 Turbo e Medium (até cerca de 1,5&nbsp;GB)</li>
+          <li>Detecção automática de idioma ou escolha entre 18 idiomas</li>
+          <li>Tradução opcional do resultado para inglês</li>
+          <li>Download opcional do codificador Core ML, que pode acelerar o processamento em dispositivos compatíveis</li>
+          <li>No iOS 26 ou mais recente, o mecanismo de fala da Apple no dispositivo também está disponível como alternativa</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/pt-br/screen-timeline.jpg" alt="Visualização de linha do tempo mostrando parágrafos da transcrição com marcações de tempo" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Leitura e edição</div>
+        <h3 style="font-size:28px">Linha do tempo ou modo de leitura</h3>
+        <p class="muted">Alterne entre uma visualização de texto limpa e uma linha do tempo com marcações de tempo. Reproduza o áudio original para conferir o que foi dito e corrija o texto quando necessário.</p>
+        <ul>
+          <li>Visualizações de texto e de linha do tempo, com marcações de tempo opcionais</li>
+          <li>Reprodução de áudio com velocidade e posição ajustáveis</li>
+          <li>Edição da transcrição e do título</li>
+          <li>Cópia de um parágrafo ou do texto inteiro</li>
+          <li>Busca dentro de uma transcrição</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/pt-br/screen-history.jpg" alt="Lista de histórico com campo de busca e três transcrições salvas" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Organização</div>
+        <h3 style="font-size:28px">Um histórico pesquisável</h3>
+        <p class="muted">Todas as transcrições ficam salvas no seu dispositivo para você consultá-las depois.</p>
+        <ul>
+          <li>Busca por título, texto ou etiqueta</li>
+          <li>Favoritos e ordenação</li>
+          <li>Etiquetas que você pode adicionar, renomear, mesclar e excluir em todas as transcrições</li>
+          <li>Filtro do histórico por etiqueta</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/pt-br/screen-export.jpg" alt="Tela de exportação com os formatos Texto, JSON, CSV e Legendas e um interruptor Incluir marcações de tempo" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Exportação</div>
+        <h3 style="font-size:28px">Texto, dados ou legendas</h3>
+        <p class="muted">Compartilhe uma transcrição no formato que combina com o próximo passo: anotações, planilha, roteiro ou editor de vídeo.</p>
+        <ul>
+          <li>TXT para anotações e documentos</li>
+          <li>CSV para planilhas</li>
+          <li>JSON com segmentos para suas próprias ferramentas</li>
+          <li>Legendas SRT para edição de vídeo</li>
+          <li>Compartilhamento da gravação original como arquivo de áudio</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid c2" style="margin-top:28px">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Pergunte sobre uma transcrição <span class="tag">iOS 26+</span></h3>
+        <p>Em dispositivos compatíveis com o Apple Intelligence, você pode conversar sobre uma transcrição — pedir um resumo, as principais decisões ou itens de ação — e gerar um título. As conversas ficam salvas por transcrição. Transcrições longas são lidas em seções. Um modo opcional de Private Cloud Compute (iOS 27 ou mais recente) vem desativado por padrão.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Atalhos e Siri</h3>
+        <p>Use os Atalhos do app para iniciar ou parar uma gravação, transcrever um arquivo de mídia, encontrar transcrições, obter o texto de uma transcrição ou adicionar etiquetas e favoritos — útil para automações. Algumas ações exigem uma versão mais recente do iOS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES -->
+<section id="all-features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lista de recursos</div>
+      <h2>Todos os recursos — todos grátis</h2>
+      <p class="lead">Uma lista completa do que o app oferece atualmente. Nada aqui exige compra.</p>
+    </div>
+    <div class="feature-list">
+      <div class="feature-group">
+        <h3>Captura</h3>
+        <ul>
+          <li><span>Gravação pelo microfone</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Pausa e retomada da gravação<small>A gravação também lida com interrupções, como ligações</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Troca de microfone</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Atividade ao Vivo durante a gravação<small>Tela Bloqueada e Dynamic Island</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Importação de arquivos de áudio<small>M4A, WAV, MP3 e outros formatos comuns</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Importação de arquivos de vídeo<small>MP4, MOV e outros formatos comuns</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Importação de vídeo do app Fotos</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Transcrição ao vivo<small>O texto aparece enquanto você fala · iOS 26+</small></span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Reconhecimento de fala</h3>
+        <ul>
+          <li><span>Whisper no dispositivo (whisper.cpp)</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Todos os 10 modelos Whisper<small>Tiny, Base, Small, Medium, Large v3 Turbo e variantes compactas</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Mecanismo de fala da Apple no dispositivo<small>iOS 26+, idiomas gerenciados pelo iOS</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Detecção automática ou escolha entre 18 idiomas</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Tradução para inglês</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Aceleração por GPU Metal<small>Quando o dispositivo é compatível</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Codificador Core ML (download opcional)</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Ferramentas de precisão e desempenho</h3>
+        <ul>
+          <li><span>Pular trechos silenciosos<small>Detecção de atividade de voz (VAD)</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Limpeza do áudio<small>Redução de ruído e normalização de volume</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Dicas de vocabulário<small>Nomes e termos que o modelo deve esperar</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Flash Attention<small>Pode reduzir o uso de memória e acelerar o processamento</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Inclusão de marcações de tempo</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Leitura e edição</h3>
+        <ul>
+          <li><span>Visualização de texto e de linha do tempo</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Reprodução de áudio com controle de velocidade</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Edição do texto e do título da transcrição</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Cópia de parágrafo ou do texto completo</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Busca dentro de uma transcrição</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Histórico e organização</h3>
+        <ul>
+          <li><span>Histórico de transcrições salvo</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Busca por título, texto ou etiqueta</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Favoritos e ordenação</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Etiquetas: adicionar, renomear, mesclar e excluir</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Filtro por etiqueta</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Exportação e compartilhamento</h3>
+        <ul>
+          <li><span>Texto (.txt)</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>CSV (.csv)</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>JSON (.json)</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Legendas (.srt)</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Compartilhamento do áudio original</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Compartilhamento de texto pela folha de compartilhamento</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Apple Intelligence</h3>
+        <ul>
+          <li><span>Conversa sobre uma transcrição<small>iOS 26+ em dispositivos compatíveis</small></span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Histórico de conversas salvo por transcrição</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Geração de título</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Modo Private Cloud Compute<small>Opcional · iOS 27+ · desativado por padrão</small></span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Automação e app</h3>
+        <ul>
+          <li><span>Ações de Atalhos e Siri</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Layouts para iPhone e iPad</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Aparência clara, escura ou do sistema</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Interface em 11 idiomas</span><span class="free-chip">GRÁTIS</span></li>
+          <li><span>Gerenciamento de modelos e armazenamento</span><span class="free-chip">GRÁTIS</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px">Os recursos indicados com uma versão do iOS exigem essa versão ou mais recente. Os recursos do Apple Intelligence também dependem da compatibilidade do dispositivo, da região e das configurações de idioma.</p>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section id="models">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Modelos</div>
+      <h2>Escolha o equilíbrio que combina com você</h2>
+      <p class="lead">Modelos menores tendem a ser mais rápidos e leves; modelos maiores tendem a ser mais precisos, mas exigem mais armazenamento, memória e tempo. Você pode trocar de modelo a qualquer momento nos Ajustes.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Modelo</th><th>Tamanho do download (aprox.)</th><th>Costuma ser bom para</th></tr></thead>
+        <tbody>
+          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Rascunhos rápidos em dispositivos mais antigos ou com pouco armazenamento</td></tr>
+          <tr><td>Tiny</td><td>39 MB</td><td>Transcrição básica e rápida</td></tr>
+          <tr><td>Base Q5_1</td><td>60 MB</td><td>Uma versão mais leve do modelo padrão</td></tr>
+          <tr><td>Base <span class="tag">padrão</span></td><td>142 MB</td><td>Uso cotidiano com velocidade e precisão equilibradas</td></tr>
+          <tr><td>Small Q5_1</td><td>163 MB</td><td>Mais precisão com um download menor</td></tr>
+          <tr><td>Small</td><td>466 MB</td><td>Precisão maior</td></tr>
+          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Alta precisão com download menor que o do Medium</td></tr>
+          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Rápido e preciso, variante mais leve</td></tr>
+          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Rápido e preciso</td></tr>
+          <tr><td>Medium</td><td>1.5 GB</td><td>Maior precisão entre as opções, mais lento</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:14px">Os arquivos de modelo são baixados do Hugging Face. A velocidade e a precisão reais variam conforme o dispositivo, o idioma, a qualidade do áudio e a duração.</p>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Privacidade</div>
+      <h2>Feito para manter seu áudio no seu dispositivo</h2>
+      <p class="lead">A transcrição com Whisper roda localmente. O app não inclui anúncios, SDKs de análise nem rastreamento de terceiros, e não envia seu áudio ou suas transcrições ao desenvolvedor.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card">
+        <h3>Fica no seu dispositivo</h3>
+        <p>Gravações, mídias importadas, transcrições, etiquetas, conversas e ajustes ficam armazenados no app, no seu dispositivo. Você pode excluí-los no app a qualquer momento.</p>
+      </div>
+      <div class="card">
+        <h3>Quando o app se conecta</h3>
+        <p>Para baixar os arquivos de modelo Whisper, VAD e Core ML do Hugging Face; para verificar na App Store se há uma versão mais recente; e quando o iOS baixa modelos de fala para o mecanismo da Apple.</p>
+      </div>
+      <div class="card">
+        <h3>A escolha é sua</h3>
+        <p>O Private Cloud Compute para o Apple Intelligence vem desativado por padrão. Se você o ativar, o texto da transcrição e sua pergunta são processados pelo Private Cloud Compute da Apple. Ao compartilhar uma exportação, ela é enviada para onde você escolher.</p>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a href="privacy-policy.html">Ler a política de privacidade completa →</a></p>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Requisitos</div>
+      <h2>Antes de começar</h2>
+    </div>
+    <div class="grid c2">
+      <div class="card">
+        <h3>Dispositivo e sistema</h3>
+        <p>iPhone ou iPad com iOS / iPadOS 17.0 ou mais recente. A Transcrição ao vivo, o mecanismo de fala da Apple e o Apple Intelligence no dispositivo exigem iOS 26 ou mais recente; o Private Cloud Compute exige iOS 27 ou mais recente.</p>
+      </div>
+      <div class="card">
+        <h3>Armazenamento e rede</h3>
+        <p>Uma conexão com a internet e espaço livre são necessários para baixar um modelo (cerca de 15&nbsp;MB a 1,5&nbsp;GB, dependendo do modelo). A permissão de microfone é necessária para gravar.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <strong>Atenção:</strong> Transcrições geradas por IA podem conter erros, palavras faltando ou nomes ouvidos incorretamente. Confira o conteúdo importante com o áudio original e siga as leis locais e obtenha o consentimento necessário antes de gravar outras pessoas. Consulte o <a href="disclaimer.html">aviso legal</a> para mais detalhes.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>O app é realmente grátis?</summary>
+        <div><p>Sim. No momento, todos os recursos são gratuitos. Não há anúncios, compras dentro do app, assinaturas nem cadastro de conta.</p></div>
+      </details>
+      <details>
+        <summary>Funciona offline?</summary>
+        <div><p>A transcrição com Whisper é projetada para rodar no seu dispositivo. Você precisa de conexão com a internet uma vez para baixar um modelo; depois disso, gravar e transcrever com esse modelo geralmente pode ser feito sem conexão. Baixar outros modelos, verificar atualizações e o modo opcional Private Cloud Compute precisam de conexão.</p></div>
+      </details>
+      <details>
+        <summary>Meu áudio é enviado para algum servidor?</summary>
+        <div><p>A transcrição com Whisper roda localmente e o app não envia áudio ou transcrições ao desenvolvedor. A única exceção, que você controla, é o modo opcional Private Cloud Compute para conversas com Apple Intelligence, que envia o texto da transcrição e sua pergunta ao Private Cloud Compute da Apple. Esse modo vem desativado por padrão.</p></div>
+      </details>
+      <details>
+        <summary>Qual modelo devo escolher?</summary>
+        <div><p>O Base é um bom ponto de partida para a maioria das pessoas. Se os resultados deixarem muitas palavras de fora, experimente o Small, o Medium ou o Large v3 Turbo. Se a transcrição parecer lenta ou o dispositivo ficar sem memória, uma variante Tiny ou Q5 pode ajudar.</p></div>
+      </details>
+      <details>
+        <summary>Quais arquivos posso importar e exportar?</summary>
+        <div><p>Você pode importar formatos de áudio e vídeo comuns, como M4A, WAV, MP3, MP4 e MOV, do app Arquivos, além de vídeos do Fotos. As transcrições podem ser exportadas como TXT, CSV, JSON ou SRT, e as gravações podem ser compartilhadas como arquivos de áudio.</p></div>
+      </details>
+      <details>
+        <summary>Quais idiomas são compatíveis?</summary>
+        <div><p>Para transcrever, você pode usar a detecção automática ou escolher inglês, japonês, chinês, coreano, espanhol, francês, alemão, italiano, português, russo, árabe, hindi, holandês, polonês, turco, vietnamita, tailandês ou indonésio. Os resultados podem variar conforme o idioma. A interface do app está disponível em 11 idiomas.</p></div>
+      </details>
+      <details>
+        <summary>Dá para criar legendas para um vídeo?</summary>
+        <div><p>Sim. Importe um vídeo, transcreva e exporte como SRT. A maioria dos editores de vídeo consegue importar arquivos SRT. O sincronismo das legendas segue os segmentos reconhecidos, então talvez você queira ajustá-lo no seu editor.</p></div>
+      </details>
+      <details>
+        <summary>Quanto tempo pode durar uma gravação?</summary>
+        <div><p>O app não define um limite fixo. Na prática, áudios muito longos dependem do espaço livre, da memória e da bateria do seu dispositivo, e modelos maiores levam mais tempo. Se um arquivo longo falhar, um modelo menor ou o Flash Attention podem ajudar.</p></div>
+      </details>
+      <details>
+        <summary>Este é um app oficial da OpenAI?</summary>
+        <div><p>Não. Este é um app independente que executa os modelos Whisper disponibilizados abertamente pela OpenAI por meio do projeto de código aberto whisper.cpp. Ele não é afiliado nem endossado pela OpenAI.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="eyebrow">Grátis na App Store</div>
+      <h2>Experimente com sua próxima gravação</h2>
+      <p class="lead">Baixe o app, obtenha um modelo uma única vez e veja como ele lida com suas próprias reuniões, aulas e vídeos.</p>
+      <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-pt-br">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Baixar na App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="../assets/img/icon-180.png" alt="" width="32" height="32"><span><b>Whisper</b> <span class="brand-sub">Transcrição offline</span></span></a>
+      <p style="margin-top:14px">Um app independente de porarrirr. Não é afiliado nem endossado pela OpenAI. O reconhecimento de fala usa <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a> e modelos Whisper.</p>
+      <p>© 2026 porarrirr</p>
+    </div>
+    <div>
+      <h4>App</h4>
+      <ul>
+        <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-pt-br">App Store</a></li>
+        <li><a href="#all-features">Todos os recursos</a></li>
+        <li><a href="#models">Modelos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ajuda e informações legais</h4>
+      <ul>
+        <li><a href="support.html">Suporte</a></li>
+        <li><a href="privacy-policy.html">Política de Privacidade</a></li>
+        <li><a href="disclaimer.html">Aviso legal</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.querySelector('.nav-toggle'), n = document.getElementById('nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+})();
+</script>
+</body>
+</html>

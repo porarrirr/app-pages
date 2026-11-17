@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whisper: транскрибация аудио — распознавание речи на устройстве для iPhone и iPad</title>
+<meta name="description" content="Бесплатное приложение для iPhone и iPad, которое расшифровывает записи, аудиофайлы и видео на вашем устройстве с помощью Whisper. После однократной загрузки модели транскрибация может работать без подключения к интернету. Без рекламы, без встроенных покупок, без аккаунта.">
+<link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
+<!-- HREFLANG -->
+<link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hans/">
+<link rel="alternate" hreflang="zh-Hant" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hant/">
+<link rel="alternate" hreflang="ko" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ko/">
+<link rel="alternate" hreflang="es" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/es/">
+<link rel="alternate" hreflang="fr" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/fr/">
+<link rel="alternate" hreflang="de" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/de/">
+<link rel="alternate" hreflang="it" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/it/">
+<link rel="alternate" hreflang="pt-BR" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/pt-br/">
+<link rel="alternate" hreflang="ru" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
+<link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
+<!-- /HREFLANG -->
+<meta name="theme-color" content="#e9eae6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0c0e" media="(prefers-color-scheme: dark)">
+<meta name="apple-itunes-app" content="app-id=6771686580">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Whisper: транскрибация аудио">
+<meta property="og:title" content="Whisper: транскрибация аудио — распознавание речи на устройстве">
+<meta property="og:description" content="Запишите или импортируйте аудио и видео, а затем превратите речь в текст на iPhone или iPad. Бесплатно, без рекламы и встроенных покупок.">
+<meta property="og:url" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
+<meta property="og:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Whisper: транскрибация аудио">
+<meta name="twitter:description" content="Распознавание речи на устройстве для iPhone и iPad. Бесплатно, без рекламы, без встроенных покупок.">
+<meta name="twitter:image" content="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/og-image.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Whisper: транскрибация аудио",
+  "alternateName": ["Whisper Transcriber", "Whisper文字起こし"],
+  "url": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/",
+  "image": "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/icon-512.png",
+  "screenshot": [
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ru/screen-result.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ru/screen-home.jpg",
+    "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ru/screen-history.jpg"
+  ],
+  "description": "Приложение для iPhone и iPad, которое расшифровывает записи с микрофона, аудиофайлы и видео на устройстве с помощью Whisper (whisper.cpp). После однократной загрузки модели транскрибация может работать офлайн. Экспорт в TXT, CSV, JSON и SRT.",
+  "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
+  "applicationCategory": "ProductivityApplication",
+  "installUrl": "https://apps.apple.com/app/id6771686580",
+  "downloadUrl": "https://apps.apple.com/app/id6771686580",
+  "inLanguage": ["en", "ja", "zh-Hans", "zh-Hant", "ko", "es", "fr", "de", "it", "pt-BR", "ru"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "porarrirr" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Приложение бесплатное?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Сейчас все функции доступны бесплатно. В приложении нет рекламы, встроенных покупок, подписок и регистрации аккаунта."}},
+    {"@type": "Question", "name": "Приложение работает без интернета?", "acceptedAnswer": {"@type": "Answer", "text": "Транскрибация Whisper рассчитана на работу на устройстве. Подключение к интернету нужно один раз — чтобы загрузить модель распознавания речи; после этого транскрибация с этой моделью обычно может работать офлайн."}},
+    {"@type": "Question", "name": "Моё аудио загружается на сервер?", "acceptedAnswer": {"@type": "Answer", "text": "Транскрибация Whisper выполняется на вашем устройстве, и приложение не отправляет аудио или расшифровки разработчику. Если вы включите необязательную настройку Private Cloud Compute для Apple Intelligence, текст расшифровки и ваш вопрос обрабатываются Apple. По умолчанию эта функция выключена."}},
+    {"@type": "Question", "name": "Какие форматы файлов можно импортировать и экспортировать?", "acceptedAnswer": {"@type": "Answer", "text": "Можно импортировать распространённые аудио- и видеофайлы, например M4A, WAV, MP3, MP4 и MOV, из приложения «Файлы» или «Фото». Расшифровки можно экспортировать в TXT, CSV, JSON или субтитры SRT."}},
+    {"@type": "Question", "name": "Насколько это точно?", "acceptedAnswer": {"@type": "Answer", "text": "Точность зависит от модели, языка, качества аудио, фонового шума и манеры речи. Модели побольше обычно точнее, но работают медленнее. Пожалуйста, сверяйте важные расшифровки с исходным аудио."}},
+    {"@type": "Question", "name": "Какие языки поддерживаются?", "acceptedAnswer": {"@type": "Answer", "text": "Можно выбрать автоопределение или один из 18 языков, включая английский, японский, китайский, корейский, испанский, французский, немецкий и другие. Интерфейс приложения доступен на 11 языках."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Whisper: транскрибация аудио — главная">
+      <img src="../assets/img/icon-180.png" alt="" width="32" height="32">
+      <span><b>Whisper</b> <span class="brand-sub">Транскрибация</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Меню</button>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#features">Функции</a>
+      <a href="#all-features">Все функции</a>
+      <a href="#models">Модели</a>
+      <a href="#privacy">Приватность</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Поддержка</a>
+      <!-- LANG-SWITCH -->
+      <details class="lang-switch">
+        <summary><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9s1.3-6.3 3.8-9z"/></svg><span class="sr-only">Язык: Русский</span><span aria-hidden="true">RU</span></summary>
+        <ul>
+          <li><a href="../" hreflang="en" lang="en">English</a></li>
+          <li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li>
+          <li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li>
+          <li><a href="../zh-hant/" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a></li>
+          <li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li>
+          <li><a href="../es/" hreflang="es" lang="es">Español</a></li>
+          <li><a href="../fr/" hreflang="fr" lang="fr">Français</a></li>
+          <li><a href="../de/" hreflang="de" lang="de">Deutsch</a></li>
+          <li><a href="../it/" hreflang="it" lang="it">Italiano</a></li>
+          <li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li>
+          <li><a href="./" hreflang="ru" lang="ru" aria-current="page">Русский</a></li>
+        </ul>
+      </details>
+      <script>(function(){var d=document.querySelector(".lang-switch");if(!d)return;document.addEventListener("click",function(e){if(d.open&&!d.contains(e.target))d.open=false;});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&d.open){d.open=false;d.querySelector("summary").focus();}});})();</script>
+      <!-- /LANG-SWITCH -->
+      <a class="btn small" href="https://apps.apple.com/app/id6771686580?ct=official-site-header-ru">Скачать</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Распознавание речи на устройстве</div>
+      <h1>Ваш голос —<span class="line2">теперь текст.</span></h1>
+      <p class="lead">Запишите встречу, лекцию или интервью — или импортируйте аудио- или видеофайл — и получите расшифровку на iPhone или iPad. Распознавание речи выполняется на вашем устройстве с помощью Whisper, поэтому после однократной загрузки модели оно может работать без подключения к интернету.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-ru">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          Загрузить в App Store
+        </a>
+        <a class="btn ghost" href="#all-features">Все возможности</a>
+      </div>
+      <ul class="pills" aria-label="Ключевые преимущества">
+        <li>Все возможности бесплатно</li>
+        <li>Без рекламы</li>
+        <li>Без встроенных покупок</li>
+        <li>Без аккаунта</li>
+        <li>iPhone &amp; iPad</li>
+      </ul>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="phone"><img src="../assets/img/ru/screen-home.jpg" alt="" width="600" height="1304"></div>
+      <div class="phone"><img src="../assets/img/ru/screen-result.jpg" alt="" width="600" height="1304"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE -->
+<section id="free" style="padding-top:24px">
+  <div class="wrap">
+    <div class="free">
+      <div>
+        <div class="eyebrow">Стоимость</div>
+        <h2>Все возможности — <span class="neon">бесплатно</span>.</h2>
+        <p class="muted mb-0">Платных тарифов нет. Всё, что перечислено на этой странице, — запись, импорт файлов, все модели Whisper, экспорт, история, теги, чат с Apple Intelligence и «Быстрые команды» — доступно бесплатно. Создавать аккаунт не нужно, и приложение не показывает рекламу.</p>
+      </div>
+      <ul>
+        <li>Без подписки и без разовых покупок</li>
+        <li>Без встроенных покупок и заблокированных функций</li>
+        <li>Без рекламы и без стороннего отслеживания</li>
+        <li>Без регистрации и входа</li>
+        <li><span>Приложение не ограничивает длительность записи и количество файлов <span class="note">— но свободное место, память и заряд аккумулятора устройства по-прежнему имеют значение</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Как это работает</div>
+      <h2>Три шага до расшифровки</h2>
+    </div>
+    <div class="grid c3 steps">
+      <div class="card">
+        <h3>Скачайте модель один раз</h3>
+        <p>При первом запуске выберите модель Whisper и скачайте её. По умолчанию используется модель Base — около 142&nbsp;MB. Это единственный шаг, для которого нужно подключение к интернету.</p>
+      </div>
+      <div class="card">
+        <h3>Запишите или импортируйте</h3>
+        <p>Нажмите, чтобы начать запись с микрофона, или выберите аудио- или видеофайл в приложении «Файлы» или «Фото». Запись можно приостанавливать и продолжать.</p>
+      </div>
+      <div class="card">
+        <h3>Читайте, редактируйте и экспортируйте</h3>
+        <p>Проверьте текст с метками времени, исправьте ошибки, а затем поделитесь им в формате TXT, CSV, JSON или субтитров SRT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE DETAIL -->
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Возможности</div>
+      <h2>Что можно делать в приложении</h2>
+      <p class="lead">Подробнее об основных разделах приложения.</p>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/ru/screen-home.jpg" alt="Вкладка расшифровки с большой кнопкой записи, пунктами «Выбрать файл» и «Выбрать видео из „Фото“»" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Запись</div>
+        <h3 style="font-size:28px">Записывайте или используйте свои файлы</h3>
+        <p class="muted">Начните запись одним нажатием или импортируйте готовый файл. Приложение конвертирует аудио и расшифровывает его на устройстве.</p>
+        <ul>
+          <li>Запись с микрофона с паузой и продолжением и переключение на внешний микрофон</li>
+          <li>Статус записи на экране блокировки и в Dynamic Island через Live Activity (на поддерживаемых iPhone)</li>
+          <li>Импорт аудио и видео (M4A, WAV, MP3, MP4, MOV и других) из приложения «Файлы»</li>
+          <li>Выбор видео прямо из медиатеки приложения «Фото»</li>
+          <li>Необязательный режим «Не выключать экран» для долгих записей</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/ru/screen-result.jpg" alt="Расшифровка встречи по планированию продукта с кнопками «Чат», «Копировать» и «Поделиться»" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Распознавание</div>
+        <h3 style="font-size:28px">Whisper работает на вашем устройстве</h3>
+        <p class="muted">Приложение использует открытые модели Whisper от OpenAI через <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a> с ускорением на GPU Metal, где оно доступно. Выбирая другую модель, можно уравновесить скорость и точность.</p>
+        <ul>
+          <li>10 моделей Whisper — от Tiny (около 15&nbsp;MB) до Large v3 Turbo и Medium (до 1.5&nbsp;GB)</li>
+          <li>Автоопределение языка или выбор из 18 языков</li>
+          <li>Необязательный перевод результата на английский</li>
+          <li>Необязательная загрузка энкодера Core ML, которая может ускорить обработку на поддерживаемых устройствах</li>
+          <li>В iOS 26 и новее также доступна альтернатива — встроенный механизм распознавания речи Apple</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/ru/screen-timeline.jpg" alt="Вид «Таймлайн» с абзацами расшифровки и метками времени" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Чтение и правка</div>
+        <h3 style="font-size:28px">Таймлайн или режим чтения</h3>
+        <p class="muted">Переключайтесь между чистым текстом и таймлайном с метками времени. Прослушивайте исходное аудио, чтобы проверить сказанное, и при необходимости исправляйте текст.</p>
+        <ul>
+          <li>Текстовый вид и таймлайн, метки времени по желанию</li>
+          <li>Воспроизведение аудио с регулировкой скорости и позиции</li>
+          <li>Редактирование расшифровки и её названия</li>
+          <li>Копирование отдельного абзаца или всего текста</li>
+          <li>Поиск по расшифровке</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/ru/screen-history.jpg" alt="Список истории с полем поиска и тремя сохранёнными расшифровками" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Организация</div>
+        <h3 style="font-size:28px">История с поиском</h3>
+        <p class="muted">Каждая расшифровка сохраняется на вашем устройстве, чтобы вы могли вернуться к ней позже.</p>
+        <ul>
+          <li>Поиск по названию, тексту или тегу</li>
+          <li>Избранное и сортировка</li>
+          <li>Теги, которые можно добавлять, переименовывать, объединять и удалять для всех расшифровок</li>
+          <li>Фильтрация истории по тегу</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-media"><div class="phone sm"><img src="../assets/img/ru/screen-export.jpg" alt="Меню экспорта с форматами «Текст», JSON, CSV и «Субтитры» и переключателем «Добавить метки времени»" width="600" height="1304" loading="lazy"></div></div>
+      <div class="feature-text">
+        <div class="eyebrow">Экспорт</div>
+        <h3 style="font-size:28px">Текст, данные или субтитры</h3>
+        <p class="muted">Поделитесь расшифровкой в формате, который подходит для следующего шага: заметки, таблица, сценарий или видеоредактор.</p>
+        <ul>
+          <li>TXT для заметок и документов</li>
+          <li>CSV для таблиц</li>
+          <li>JSON с сегментами для ваших собственных инструментов</li>
+          <li>Субтитры SRT для монтажа видео</li>
+          <li>Отправка исходной записи как аудиофайла</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid c2" style="margin-top:28px">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <h3>Задавайте вопросы о расшифровке <span class="tag">iOS 26+</span></h3>
+        <p>На устройствах с поддержкой Apple Intelligence можно общаться с расшифровкой — просить краткое изложение, ключевые решения или задачи — и создавать название. Чаты сохраняются для каждой расшифровки отдельно. Длинные расшифровки читаются по частям. Необязательный режим Private Cloud Compute (iOS 27 и новее) по умолчанию выключен.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>«Быстрые команды» и Siri</h3>
+        <p>Используйте быстрые команды приложения, чтобы начинать и останавливать запись, расшифровывать медиафайл, находить расшифровки, получать текст расшифровки, добавлять теги и избранное. Это удобно для автоматизаций. Некоторые действия требуют более новой версии iOS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL FEATURES -->
+<section id="all-features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Список возможностей</div>
+      <h2>Все возможности — бесплатно</h2>
+      <p class="lead">Полный список того, что приложение предлагает сейчас. Ничего из этого не требует покупки.</p>
+    </div>
+    <div class="feature-list">
+      <div class="feature-group">
+        <h3>Запись</h3>
+        <ul>
+          <li><span>Запись с микрофона</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Пауза и продолжение записи<small>Запись также учитывает прерывания, например входящие звонки</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Переключение микрофона</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Live Activity во время записи<small>Экран блокировки и Dynamic Island</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Импорт аудиофайлов<small>M4A, WAV, MP3 и другие распространённые форматы</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Импорт видеофайлов<small>MP4, MOV и другие распространённые форматы</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Импорт видео из приложения «Фото»</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Расшифровка в реальном времени<small>Текст появляется по мере речи · iOS 26+</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Распознавание речи</h3>
+        <ul>
+          <li><span>Whisper на устройстве (whisper.cpp)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Все 10 моделей Whisper<small>Tiny, Base, Small, Medium, Large v3 Turbo и компактные варианты</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Встроенный механизм распознавания речи Apple<small>iOS 26+, языки управляются iOS</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Автоопределение или выбор из 18 языков</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Перевод на английский</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Ускорение на GPU Metal<small>Если устройство это поддерживает</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Энкодер Core ML (необязательная загрузка)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Точность и производительность</h3>
+        <ul>
+          <li><span>Пропуск тихих участков<small>Определение голосовой активности (VAD)</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Очистка аудио<small>Шумоподавление и нормализация громкости</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Подсказки словаря<small>Имена и термины, которые модель должна учитывать</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Flash Attention<small>Может снизить расход памяти и ускорить обработку</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Добавление меток времени</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Чтение и редактирование</h3>
+        <ul>
+          <li><span>Текстовый вид и таймлайн</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Воспроизведение аудио с регулировкой скорости</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Редактирование текста и названия расшифровки</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Копирование абзаца или всего текста</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Поиск по расшифровке</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>История и организация</h3>
+        <ul>
+          <li><span>Сохранённая история расшифровок</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Поиск по названию, тексту или тегу</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Избранное и сортировка</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Теги: добавление, переименование, объединение, удаление</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Фильтрация по тегу</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Экспорт и отправка</h3>
+        <ul>
+          <li><span>Текст (.txt)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>CSV (.csv)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>JSON (.json)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Субтитры (.srt)</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Отправка исходного аудио</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Отправка текста через меню «Поделиться»</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Apple Intelligence</h3>
+        <ul>
+          <li><span>Чат о расшифровке<small>iOS 26+ на поддерживаемых устройствах</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Сохранённая история чатов для каждой расшифровки</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Создание названия</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Режим Private Cloud Compute<small>Необязательно · iOS 27+ · по умолчанию выключен</small></span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+      <div class="feature-group">
+        <h3>Автоматизация и приложение</h3>
+        <ul>
+          <li><span>Действия «Быстрых команд» и Siri</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Интерфейс для iPhone и iPad</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Светлое, тёмное или системное оформление</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Интерфейс на 11 языках</span><span class="free-chip">БЕСПЛАТНО</span></li>
+          <li><span>Управление моделями и хранилищем</span><span class="free-chip">БЕСПЛАТНО</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note" style="margin-top:18px">Функции с указанием версии iOS требуют этой версии или новее. Функции Apple Intelligence также зависят от поддержки устройства, региона и языковых настроек.</p>
+  </div>
+</section>
+
+<!-- MODELS -->
+<section id="models">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Модели</div>
+      <h2>Найдите подходящий баланс</h2>
+      <p class="lead">Модели поменьше обычно быстрее и легче; модели побольше, как правило, точнее, но требуют больше места, памяти и времени. Модель можно сменить в любое время в «Настройках».</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Модель</th><th>Размер загрузки (прибл.)</th><th>Обычно подходит для</th></tr></thead>
+        <tbody>
+          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Быстрые черновики на старых устройствах или устройствах с малым объёмом памяти</td></tr>
+          <tr><td>Tiny</td><td>39 MB</td><td>Быстрая базовая транскрибация</td></tr>
+          <tr><td>Base Q5_1</td><td>60 MB</td><td>Более лёгкая версия модели по умолчанию</td></tr>
+          <tr><td>Base <span class="tag">по умолчанию</span></td><td>142 MB</td><td>Повседневное использование с балансом скорости и точности</td></tr>
+          <tr><td>Small Q5_1</td><td>163 MB</td><td>Более высокая точность при меньшем размере загрузки</td></tr>
+          <tr><td>Small</td><td>466 MB</td><td>Повышенная точность</td></tr>
+          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Высокая точность при меньшем размере загрузки, чем у Medium</td></tr>
+          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Быстро и точно, более лёгкий вариант</td></tr>
+          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Быстро и точно</td></tr>
+          <tr><td>Medium</td><td>1.5 GB</td><td>Наивысшая точность среди вариантов, но медленнее</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:14px">Файлы моделей загружаются с Hugging Face. Фактическая скорость и точность зависят от устройства, языка, качества и длительности аудио.</p>
+  </div>
+</section>
+
+<!-- PRIVACY -->
+<section id="privacy">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Приватность</div>
+      <h2>Аудио остаётся на вашем устройстве</h2>
+      <p class="lead">Транскрибация Whisper выполняется локально. В приложении нет рекламы, аналитических SDK и стороннего отслеживания, и оно не отправляет ваше аудио или расшифровки разработчику.</p>
+    </div>
+    <div class="grid c3">
+      <div class="card">
+        <h3>Остаётся на устройстве</h3>
+        <p>Записи, импортированные медиафайлы, расшифровки, теги, чаты и настройки хранятся в приложении на вашем устройстве. Их можно удалить в приложении в любое время.</p>
+      </div>
+      <div class="card">
+        <h3>Когда приложение подключается к сети</h3>
+        <p>Чтобы загрузить файлы моделей Whisper, VAD и Core ML с Hugging Face; чтобы проверить в App Store наличие новой версии; а также когда iOS загружает модели речи для механизма Apple.</p>
+      </div>
+      <div class="card">
+        <h3>Ваш выбор</h3>
+        <p>Private Cloud Compute для Apple Intelligence по умолчанию выключен. Если вы его включите, текст расшифровки и ваш вопрос обрабатываются в Private Cloud Compute от Apple. Если вы поделитесь экспортированным файлом, он отправится туда, куда вы укажете.</p>
+      </div>
+    </div>
+    <p style="margin-top:22px"><a href="privacy-policy.html">Читать полную политику конфиденциальности →</a></p>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section id="requirements">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Требования</div>
+      <h2>Перед началом работы</h2>
+    </div>
+    <div class="grid c2">
+      <div class="card">
+        <h3>Устройство и система</h3>
+        <p>iPhone или iPad с iOS / iPadOS 17.0 или новее. «Расшифровка в реальном времени», механизм распознавания речи Apple и Apple Intelligence на устройстве требуют iOS 26 или новее; Private Cloud Compute — iOS 27 или новее.</p>
+      </div>
+      <div class="card">
+        <h3>Хранилище и сеть</h3>
+        <p>Для загрузки модели нужны подключение к интернету и свободное место (примерно от 15&nbsp;MB до 1.5&nbsp;GB в зависимости от модели). Для записи требуется разрешение на доступ к микрофону.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <strong>Обратите внимание:</strong> в расшифровках с ИИ могут встречаться ошибки, пропущенные слова и неверно распознанные имена. Сверяйте важные материалы с исходным аудио, соблюдайте местные законы и получайте согласие, прежде чем записывать других людей. Подробности — в разделе <a href="disclaimer.html">«Отказ от ответственности»</a>.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Вопросы и ответы</div>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Приложение действительно бесплатное?</summary>
+        <div><p>Да. Сейчас все функции доступны бесплатно. В приложении нет рекламы, встроенных покупок, подписок и регистрации аккаунта.</p></div>
+      </details>
+      <details>
+        <summary>Приложение работает офлайн?</summary>
+        <div><p>Транскрибация Whisper рассчитана на работу на вашем устройстве. Интернет нужен один раз — чтобы загрузить модель; после этого записывать и расшифровывать с этой моделью обычно можно без подключения. Загрузка других моделей, проверка обновлений и необязательный режим Private Cloud Compute требуют подключения.</p></div>
+      </details>
+      <details>
+        <summary>Моё аудио отправляется на сервер?</summary>
+        <div><p>Транскрибация Whisper выполняется локально, и приложение не отправляет аудио или расшифровки разработчику. Единственное исключение, которое зависит от вас, — необязательный режим Private Cloud Compute для чата с Apple Intelligence: он отправляет текст расшифровки и ваш вопрос в Private Cloud Compute от Apple. По умолчанию он выключен.</p></div>
+      </details>
+      <details>
+        <summary>Какую модель выбрать?</summary>
+        <div><p>Base — разумная отправная точка для большинства. Если в результатах пропадает слишком много слов, попробуйте Small, Medium или Large v3 Turbo. Если транскрибация идёт медленно или устройству не хватает памяти, может помочь Tiny или вариант Q5.</p></div>
+      </details>
+      <details>
+        <summary>Какие файлы можно импортировать и экспортировать?</summary>
+        <div><p>Можно импортировать распространённые аудио- и видеоформаты, например M4A, WAV, MP3, MP4 и MOV, из приложения «Файлы», а также видео из «Фото». Расшифровки можно экспортировать в TXT, CSV, JSON или SRT, а записи — отправлять как аудиофайлы.</p></div>
+      </details>
+      <details>
+        <summary>Какие языки поддерживаются?</summary>
+        <div><p>Для транскрибации можно использовать автоопределение или выбрать английский, японский, китайский, корейский, испанский, французский, немецкий, итальянский, португальский, русский, арабский, хинди, нидерландский, польский, турецкий, вьетнамский, тайский или индонезийский. Результаты могут различаться в зависимости от языка. Интерфейс приложения доступен на 11 языках.</p></div>
+      </details>
+      <details>
+        <summary>Можно ли сделать субтитры для видео?</summary>
+        <div><p>Да. Импортируйте видео, расшифруйте его, а затем экспортируйте в SRT. Большинство видеоредакторов поддерживают импорт файлов SRT. Тайминг субтитров соответствует распознанным сегментам, поэтому его, возможно, стоит подкорректировать в редакторе.</p></div>
+      </details>
+      <details>
+        <summary>Какой длины может быть запись?</summary>
+        <div><p>Приложение не устанавливает фиксированного ограничения. На практике длительность очень длинной записи ограничена свободным местом, памятью и зарядом вашего устройства, а большие модели работают дольше. Если длинный файл не обрабатывается, может помочь модель поменьше или Flash Attention.</p></div>
+      </details>
+      <details>
+        <summary>Это официальное приложение OpenAI?</summary>
+        <div><p>Нет. Это независимое приложение, которое запускает открыто опубликованные модели Whisper от OpenAI через проект whisper.cpp с открытым исходным кодом. Оно не связано с OpenAI и не одобрено ею.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section>
+  <div class="wrap">
+    <div class="cta-band">
+      <div class="eyebrow">Бесплатно в App Store</div>
+      <h2>Попробуйте на своей следующей записи</h2>
+      <p class="lead">Загрузите приложение, один раз скачайте модель и посмотрите, как оно справится с вашими встречами, лекциями и видео.</p>
+      <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-ru">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+        Загрузить в App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="../assets/img/icon-180.png" alt="" width="32" height="32"><span><b>Whisper</b> <span class="brand-sub">Транскрибация</span></span></a>
+      <p style="margin-top:14px">Независимое приложение от porarrirr. Не связано с OpenAI и не одобрено ею. Для распознавания речи используются <a href="https://github.com/ggml-org/whisper.cpp" rel="noopener">whisper.cpp</a> и модели Whisper.</p>
+      <p>© 2026 porarrirr</p>
+    </div>
+    <div>
+      <h4>Приложение</h4>
+      <ul>
+        <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-ru">App Store</a></li>
+        <li><a href="#all-features">Все функции</a></li>
+        <li><a href="#models">Модели</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Помощь и документы</h4>
+      <ul>
+        <li><a href="support.html">Поддержка</a></li>
+        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+        <li><a href="disclaimer.html">Отказ от ответственности</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.querySelector('.nav-toggle'), n = document.getElementById('nav');
+  if (!b || !n) return;
+  b.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  n.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { n.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }
+  });
+})();
+</script>
+</body>
+</html>
