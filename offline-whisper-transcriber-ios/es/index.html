@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper: Transcripción Offline — Voz a texto en el dispositivo para iPhone y iPad</title>
-<meta name="description" content="Una app gratuita para iPhone y iPad que transcribe grabaciones, archivos de audio y vídeos en tu dispositivo con Whisper. Después de descargar un modelo una sola vez, la transcripción puede funcionar sin conexión a internet. Sin anuncios, sin compras dentro de la app y sin cuenta.">
+<meta name="description" content="Una app gratuita para iPhone y iPad que transcribe grabaciones, archivos de audio y vídeos en tu dispositivo con Whisper. Sin anuncios, sin compras dentro de la app y sin cuenta.">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/es/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/es/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/es/screen-history.jpg"
   ],
-  "description": "Una app para iPhone y iPad que transcribe grabaciones de micrófono, archivos de audio y vídeos en el dispositivo con Whisper (whisper.cpp). Después de descargar un modelo una sola vez, la transcripción puede funcionar sin conexión. Exporta a TXT, CSV, JSON y SRT.",
+  "description": "Una app para iPhone y iPad que transcribe grabaciones de micrófono, archivos de audio y vídeos en el dispositivo con Whisper (whisper.cpp). Exporta a TXT, CSV, JSON y SRT.",
   "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#features">Funciones</a>
       <a href="#all-features">Todas las funciones</a>
-      <a href="#models">Modelos</a>
       <a href="#privacy">Privacidad</a>
       <a href="#faq">FAQ</a>
       <a href="support.html">Soporte</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">Voz a texto en el dispositivo</div>
       <h1>Tu voz,<span class="line2">convertida en texto.</span></h1>
-      <p class="lead">Graba una reunión, una clase o una entrevista —o importa un archivo de audio o vídeo— y obtén una transcripción en tu iPhone o iPad. El reconocimiento de voz se ejecuta en tu dispositivo con Whisper, así que, después de descargar un modelo una sola vez, puede funcionar sin conexión a internet.</p>
+      <p class="lead">Graba una reunión, una clase o una entrevista —o importa un archivo de audio o vídeo— y obtén una transcripción en tu iPhone o iPad.</p>
+      <p>Transcribe en directo mientras grabas en dispositivos compatibles con iOS 26 o posterior. Con Apple Intelligence activado, pide un resumen con IA en el chat de la transcripción.</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-es">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Cómo funciona</div>
-      <h2>Tres pasos para obtener una transcripción</h2>
+      <h2>Del audio a la transcripción</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>Descarga un modelo una vez</h3>
-        <p>La primera vez que abras la app, elige un modelo de Whisper y descárgalo. El modelo Base predeterminado ocupa unos 142&nbsp;MB. Este es el único paso que necesita conexión a internet.</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>Graba o importa</h3>
         <p>Toca para grabar con el micrófono o elige un archivo de audio o vídeo desde Archivos o Fotos. Puedes pausar y reanudar mientras grabas.</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Modelos</div>
-      <h2>Elige el equilibrio que más te convenga</h2>
-      <p class="lead">Los modelos más pequeños suelen ser más rápidos y ligeros; los más grandes suelen ser más precisos, pero necesitan más almacenamiento, memoria y tiempo. Puedes cambiar de modelo en cualquier momento en Ajustes.</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Modelo</th><th>Tamaño de descarga (aprox.)</th><th>Suele funcionar bien para</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Borradores rápidos en dispositivos antiguos o con poco almacenamiento</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>Transcripción rápida y básica</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>Una versión más ligera del modelo predeterminado</td></tr>
-          <tr><td>Base <span class="tag">predeterminado</span></td><td>142 MB</td><td>Uso diario con un equilibrio entre velocidad y precisión</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>Mejor precisión con una descarga más pequeña</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>Mayor precisión</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Alta precisión con una descarga más pequeña que Medium</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Rápido y preciso, en una variante más ligera</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Rápido y preciso</td></tr>
-          <tr><td>Medium</td><td>1.5 GB</td><td>La mayor precisión entre las opciones, aunque más lento</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">Los archivos de los modelos se descargan de Hugging Face. La velocidad y la precisión reales varían según el dispositivo, el idioma, la calidad del audio y la duración.</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>La transcripción con Whisper se ejecuta de forma local y la app no envía audio ni transcripciones al desarrollador. La única excepción que controlas tú es el modo opcional Private Cloud Compute para el chat de Apple Intelligence, que envía el texto de la transcripción y tu pregunta a Private Cloud Compute de Apple. Está desactivado de forma predeterminada.</p></div>
       </details>
       <details>
-        <summary>¿Qué modelo debería elegir?</summary>
-        <div><p>Base es un punto de partida razonable para la mayoría de la gente. Si los resultados omiten demasiadas palabras, prueba con Small, Medium o Large v3 Turbo. Si la transcripción va lenta o al dispositivo le falta memoria, una variante Tiny o Q5 puede ayudar.</p></div>
-      </details>
-      <details>
         <summary>¿Qué archivos puedo importar y exportar?</summary>
         <div><p>Puedes importar formatos de audio y vídeo habituales como M4A, WAV, MP3, MP4 y MOV desde Archivos, y vídeos desde Fotos. Las transcripciones se pueden exportar como TXT, CSV, JSON o SRT, y las grabaciones se pueden compartir como archivos de audio.</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">Gratis en el App Store</div>
       <h2>Prueba con tu próxima grabación</h2>
-      <p class="lead">Descarga la app, consigue un modelo una vez y descubre cómo se maneja con tus propias reuniones, clases y vídeos.</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-es">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Descargar en el App Store
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-es">App Store</a></li>
         <li><a href="#all-features">Todas las funciones</a></li>
-        <li><a href="#models">Modelos</a></li>
         <li><a href="#faq">Preguntas frecuentes</a></li>
       </ul>
     </div>

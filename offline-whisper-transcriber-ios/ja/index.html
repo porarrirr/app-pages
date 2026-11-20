@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper文字起こし - オフライン議事録 — iPhone・iPadで使えるデバイス上の音声認識</title>
-<meta name="description" content="Whisperを使って、録音・音声ファイル・動画をデバイス上で文字起こしできるiPhone・iPad向けの無料アプリです。モデルを一度ダウンロードすれば、インターネット接続なしでも文字起こしを実行できます。広告なし、App内課金なし、アカウント不要。">
+<meta name="description" content="Whisperを使って、録音・音声ファイル・動画をデバイス上で文字起こしできるiPhone・iPad向けの無料アプリです。広告なし、App内課金なし、アカウント不要。">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ja/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ja/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ja/screen-history.jpg"
   ],
-  "description": "Whisper(whisper.cpp)を使って、マイクの録音、音声ファイル、動画をデバイス上で文字起こしするiPhone・iPad向けアプリです。モデルを一度ダウンロードすれば、オフラインでも文字起こしを実行できます。TXT、CSV、JSON、SRTで書き出せます。",
+  "description": "Whisper(whisper.cpp)を使って、マイクの録音、音声ファイル、動画をデバイス上で文字起こしするiPhone・iPad向けアプリです。TXT、CSV、JSON、SRTで書き出せます。",
   "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="メイン">
       <a href="#features">機能</a>
       <a href="#all-features">すべての機能</a>
-      <a href="#models">モデル</a>
       <a href="#privacy">プライバシー</a>
       <a href="#faq">よくある質問</a>
       <a href="support.html">サポート</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">デバイス上で音声をテキストに</div>
       <h1>声を、<span class="line2">テキストに変える。</span></h1>
-      <p class="lead">会議や講義、インタビューを録音するか、音声や動画のファイルを読み込むだけで、iPhoneやiPadで文字起こしを取得できます。音声認識はWhisperによってデバイス上で動作するため、モデルを一度ダウンロードすれば、インターネット接続なしでも使えます。</p>
+      <p class="lead">会議や講義、インタビューを録音するか、音声や動画のファイルを読み込むだけで、iPhoneやiPadで文字起こしを取得できます。</p>
+      <p>iOS 26以降の対応端末では、録音しながらリアルタイムで文字を表示できます。iOS 26以降でApple Intelligenceが有効なら、履歴チャットで文字起こしのAI要約を依頼できます。</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-ja">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">使い方</div>
-      <h2>文字起こしまでの3ステップ</h2>
+      <h2>文字起こしの流れ</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>モデルを一度ダウンロード</h3>
-        <p>初回起動時にWhisperモデルを選んでダウンロードします。デフォルトのBaseモデルは約142&nbsp;MBです。インターネット接続が必要なのはこの手順だけです。</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>録音または読み込み</h3>
         <p>タップしてマイクで録音するか、「ファイル」Appや「写真」から音声・動画ファイルを選びます。録音中は一時停止と再開ができます。</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">モデル</div>
-      <h2>自分に合ったバランスを選ぶ</h2>
-      <p class="lead">小さいモデルは一般的に高速で軽く、大きいモデルは一般的に精度が高い反面、より多くのストレージ、メモリ、時間を必要とします。モデルは「設定」でいつでも切り替えられます。</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>モデル</th><th>ダウンロードサイズ(目安)</th><th>向いている用途</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>古いデバイスや空き容量が少ないデバイスでの手軽な下書き</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>高速で基本的な文字起こし</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>デフォルトモデルの軽量版</td></tr>
-          <tr><td>Base <span class="tag">デフォルト</span></td><td>142 MB</td><td>速度と精度のバランスが取れた日常利用</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>より小さなダウンロードで精度を向上</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>より高い精度</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Mediumより小さなダウンロードで高い精度</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>高速で高精度な軽量バリエーション</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>高速で高精度</td></tr>
-          <tr><td>Medium</td><td>1.5 GB</td><td>選択肢の中で最も高い精度、処理は低速</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">モデルファイルはHugging Faceからダウンロードされます。実際の速度と精度は、デバイス、言語、音声の品質、長さによって異なります。</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>Whisperの文字起こしはローカルで動作し、アプリが音声や文字起こしを開発者に送信することはありません。唯一の例外は、ご自身で選択できるApple Intelligenceチャット用の任意のPrivate Cloud Computeモードで、文字起こしのテキストと質問がAppleのPrivate Cloud Computeに送信されます。この設定は初期状態でオフです。</p></div>
       </details>
       <details>
-        <summary>どのモデルを選べばよいですか？</summary>
-        <div><p>ほとんどの方にとって、Baseが最初の選択肢として適しています。単語の抜けが多い場合は、Small、Medium、Large v3 Turboを試してください。文字起こしが遅い、またはデバイスのメモリが不足する場合は、TinyやQ5系のバリエーションが役立つことがあります。</p></div>
-      </details>
-      <details>
         <summary>どのファイルを読み込めて、何に書き出せますか？</summary>
         <div><p>「ファイル」AppからM4A、WAV、MP3、MP4、MOVなどの一般的な音声・動画形式を読み込めます。「写真」からは動画を読み込めます。文字起こしはTXT、CSV、JSON、SRTとして書き出せ、録音は音声ファイルとして共有できます。</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">App Storeで無料</div>
       <h2>次の録音で試してみてください</h2>
-      <p class="lead">アプリをダウンロードし、モデルを一度入手して、自分の会議や講義、動画がどう処理されるかを確かめてみましょう。</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-ja">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         App Storeでダウンロード
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-ja">App Store</a></li>
         <li><a href="#all-features">すべての機能</a></li>
-        <li><a href="#models">モデル</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
     </div>

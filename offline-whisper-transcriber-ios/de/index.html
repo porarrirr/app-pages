@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper: Offline-Transkription — Sprache zu Text direkt auf iPhone und iPad</title>
-<meta name="description" content="Eine kostenlose App für iPhone und iPad, die Aufnahmen, Audiodateien und Videos direkt auf deinem Gerät mit Whisper transkribiert. Nach einem einmaligen Modelldownload kann die Transkription ohne Internetverbindung laufen. Keine Werbung, keine In-App-Käufe, kein Konto.">
+<meta name="description" content="Eine kostenlose App für iPhone und iPad, die Aufnahmen, Audiodateien und Videos direkt auf deinem Gerät mit Whisper transkribiert. Keine Werbung, keine In-App-Käufe, kein Konto.">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/de/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/de/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/de/screen-history.jpg"
   ],
-  "description": "Eine App für iPhone und iPad, die Mikrofonaufnahmen, Audiodateien und Videos direkt auf dem Gerät mit Whisper (whisper.cpp) transkribiert. Nach einem einmaligen Modelldownload kann die Transkription offline laufen. Exportiert TXT, CSV, JSON und SRT.",
+  "description": "Eine App für iPhone und iPad, die Mikrofonaufnahmen, Audiodateien und Videos direkt auf dem Gerät mit Whisper (whisper.cpp) transkribiert. Exportiert TXT, CSV, JSON und SRT.",
   "operatingSystem": "iOS 17.0 oder neuer, iPadOS 17.0 oder neuer",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="Hauptnavigation">
       <a href="#features">Funktionen</a>
       <a href="#all-features">Alle Funktionen</a>
-      <a href="#models">Modelle</a>
       <a href="#privacy">Datenschutz</a>
       <a href="#faq">FAQ</a>
       <a href="support.html">Support</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">Sprache zu Text direkt auf dem Gerät</div>
       <h1>Deine Stimme,<span class="line2">in Text verwandelt.</span></h1>
-      <p class="lead">Nimm ein Meeting, eine Vorlesung oder ein Interview auf – oder importiere eine Audio- oder Videodatei – und erhalte eine Mitschrift auf deinem iPhone oder iPad. Die Spracherkennung läuft mit Whisper direkt auf deinem Gerät und kann nach einem einmaligen Modelldownload auch ohne Internetverbindung arbeiten.</p>
+      <p class="lead">Nimm ein Meeting, eine Vorlesung oder ein Interview auf – oder importiere eine Audio- oder Videodatei – und erhalte eine Mitschrift auf deinem iPhone oder iPad.</p>
+      <p>Live-Transkription beim Aufnehmen auf unterstützten Geräten ab iOS 26. Mit aktiviertem Apple Intelligence ab iOS 26 kannst du im Chat eine KI-Zusammenfassung anfordern.</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-de">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">So funktioniert es</div>
-      <h2>In drei Schritten zur Mitschrift</h2>
+      <h2>Von der Aufnahme zur Mitschrift</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>Modell einmal herunterladen</h3>
-        <p>Beim ersten Start wählst du ein Whisper-Modell und lädst es herunter. Das Standardmodell Base ist etwa 142&nbsp;MB groß. Das ist der einzige Schritt, für den du eine Internetverbindung brauchst.</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>Aufnehmen oder importieren</h3>
         <p>Tippe, um mit dem Mikrofon aufzunehmen, oder wähle eine Audio- oder Videodatei aus der Dateien-App oder aus Fotos. Während der Aufnahme kannst du pausieren und fortsetzen.</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Modelle</div>
-      <h2>Wähle die Balance, die zu dir passt</h2>
-      <p class="lead">Kleinere Modelle sind in der Regel schneller und leichter; größere Modelle sind tendenziell genauer, brauchen aber mehr Speicher, Arbeitsspeicher und Zeit. Du kannst das Modell jederzeit in den Einstellungen wechseln.</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Modell</th><th>Downloadgröße (ca.)</th><th>Eignet sich tendenziell für</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Schnelle Entwürfe auf älteren Geräten oder solchen mit wenig Speicher</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>Schnelle, einfache Transkription</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>Eine leichtere Version des Standardmodells</td></tr>
-          <tr><td>Base <span class="tag">Standard</span></td><td>142 MB</td><td>Alltägliche Nutzung mit ausgewogener Geschwindigkeit und Genauigkeit</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>Bessere Genauigkeit bei kleinerem Download</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>Höhere Genauigkeit</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Hohe Genauigkeit mit kleinerem Download als Medium</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Schnell und genau, leichtere Variante</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Schnell und genau</td></tr>
-          <tr><td>Medium</td><td>1,5 GB</td><td>Höchste Genauigkeit unter den Optionen, langsamer</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">Die Modelldateien werden von Hugging Face heruntergeladen. Tatsächliche Geschwindigkeit und Genauigkeit variieren je nach Gerät, Sprache, Audioqualität und Länge.</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>Die Whisper-Transkription läuft lokal, und die App sendet weder Audio noch Mitschriften an den Entwickler. Die einzige Ausnahme, die du steuerst, ist der optionale Private-Cloud-Compute-Modus für den Apple-Intelligence-Chat: Er sendet Mitschriftentext und deine Frage an Apples Private Cloud Compute. Er ist standardmäßig aus.</p></div>
       </details>
       <details>
-        <summary>Welches Modell sollte ich wählen?</summary>
-        <div><p>Für die meisten ist Base ein sinnvoller Ausgangspunkt. Wenn im Ergebnis zu viele Wörter fehlen, probiere Small, Medium oder Large v3 Turbo. Wenn die Transkription langsam wirkt oder dem Gerät der Arbeitsspeicher ausgeht, kann eine Tiny- oder Q5-Variante helfen.</p></div>
-      </details>
-      <details>
         <summary>Welche Dateien kann ich importieren und exportieren?</summary>
         <div><p>Du kannst gängige Audio- und Videoformate wie M4A, WAV, MP3, MP4 und MOV aus der Dateien-App sowie Videos aus Fotos importieren. Mitschriften lassen sich als TXT, CSV, JSON oder SRT exportieren, und Aufnahmen können als Audiodateien geteilt werden.</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">Kostenlos im App Store</div>
       <h2>Probiere deine nächste Aufnahme aus</h2>
-      <p class="lead">Lade die App herunter, hol dir einmal ein Modell und sieh, wie sie mit deinen eigenen Meetings, Vorlesungen und Videos umgeht.</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-de">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Im App Store laden
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-de">App Store</a></li>
         <li><a href="#all-features">Alle Funktionen</a></li>
-        <li><a href="#models">Modelle</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>

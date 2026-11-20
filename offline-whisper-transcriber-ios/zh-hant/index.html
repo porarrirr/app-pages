@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper 離線語音轉文字 — iPhone 與 iPad 的裝置端語音轉文字</title>
-<meta name="description" content="一款免費的 iPhone 與 iPad App，使用 Whisper 在你的裝置上將錄音、音訊檔與影片轉成文字。模型只要下載一次，之後即使沒有網路連線也能進行語音轉文字。沒有廣告、沒有 App 內購買，也不需要帳號。">
+<meta name="description" content="一款免費的 iPhone 與 iPad App，使用 Whisper 在你的裝置上將錄音、音訊檔與影片轉成文字。沒有廣告、沒有 App 內購買，也不需要帳號。">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/zh-hant/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/zh-hant/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/zh-hant/screen-history.jpg"
   ],
-  "description": "一款 iPhone 與 iPad App，使用 Whisper（whisper.cpp）在裝置上將麥克風錄音、音訊檔與影片轉成文字。模型只要下載一次，之後即可離線轉寫。可匯出 TXT、CSV、JSON 與 SRT。",
+  "description": "一款 iPhone 與 iPad App，使用 Whisper（whisper.cpp）在裝置上將麥克風錄音、音訊檔與影片轉成文字。可匯出 TXT、CSV、JSON 與 SRT。",
   "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="主要">
       <a href="#features">功能</a>
       <a href="#all-features">所有功能</a>
-      <a href="#models">模型</a>
       <a href="#privacy">隱私權</a>
       <a href="#faq">常見問題</a>
       <a href="support.html">支援</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">裝置端語音轉文字</div>
       <h1>讓你的聲音，<span class="line2">變成文字。</span></h1>
-      <p class="lead">錄下會議、課堂或訪談，或匯入音訊、影片檔案，就能在 iPhone 或 iPad 上取得逐字稿。語音辨識由 Whisper 在你的裝置上執行，因此只要下載一次模型，之後即使沒有網路連線也能使用。</p>
+      <p class="lead">錄下會議、課堂或訪談，或匯入音訊、影片檔案，就能在 iPhone 或 iPad 上取得逐字稿。</p>
+      <p>在支援 iOS 26 或更新版本的裝置上，錄音時可即時顯示轉錄文字。 啟用 Apple Intelligence 後，可在轉錄記錄的聊天中要求 AI 摘要。</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-zh-hant">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">使用方式</div>
-      <h2>三個步驟完成逐字稿</h2>
+      <h2>從錄音到逐字稿</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>下載一次模型</h3>
-        <p>第一次開啟 App 時，選擇一個 Whisper 模型並下載。預設的 Base 模型約 142&nbsp;MB。這是唯一需要網路連線的步驟。</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>錄音或匯入</h3>
         <p>點一下就能用麥克風錄音，或從「檔案」或「照片」中選擇音訊、影片檔。錄音過程中可以暫停與繼續。</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">模型</div>
-      <h2>選擇適合你的平衡點</h2>
-      <p class="lead">模型越小，通常速度越快、佔用越少；模型越大，通常越準確，但也需要更多儲存空間、記憶體與時間。你隨時可以在「設定」中切換模型。</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>模型</th><th>下載大小（約）</th><th>適合用途</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>在較舊或儲存空間有限的裝置上快速產生草稿</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>快速的基本轉寫</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>預設模型的輕量版本</td></tr>
-          <tr><td>Base <span class="tag">預設</span></td><td>142 MB</td><td>日常使用，速度與準確度兼顧</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>更準確，下載量也更小</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>更高的準確度</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>高準確度，下載量比 Medium 小</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>快速又準確的精簡版本</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>快速又準確</td></tr>
-          <tr><td>Medium</td><td>1.5 GB</td><td>選項中準確度最高，但速度較慢</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">模型檔案會從 Hugging Face 下載。實際速度與準確度會因裝置、語言、音訊品質與長度而有所不同。</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>Whisper 轉寫在本機執行，App 不會把音訊或逐字稿傳送給開發者。唯一由你決定的例外，是選用的 Apple Intelligence 對話 Private Cloud Compute 模式，它會將逐字稿文字與你的問題傳送到 Apple 的 Private Cloud Compute。此模式預設為關閉。</p></div>
       </details>
       <details>
-        <summary>我該選哪個模型？</summary>
-        <div><p>對多數人來說，Base 是合理的起點。如果結果漏掉太多字，可以試試 Small、Medium 或 Large v3 Turbo。若轉寫速度偏慢，或裝置記憶體不足，改用 Tiny 或 Q5 版本可能會有幫助。</p></div>
-      </details>
-      <details>
         <summary>可以匯入與匯出哪些檔案？</summary>
         <div><p>你可以從「檔案」匯入 M4A、WAV、MP3、MP4、MOV 等常見音訊與影片格式，也能從「照片」匯入影片。逐字稿可匯出為 TXT、CSV、JSON 或 SRT，錄音則可以音訊檔分享。</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">App Store 免費下載</div>
       <h2>下一次錄音，就來試試看</h2>
-      <p class="lead">下載 App、下載一次模型，看看它如何處理你自己的會議、課堂與影片。</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-zh-hant">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         在 App Store 下載
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-zh-hant">App Store</a></li>
         <li><a href="#all-features">所有功能</a></li>
-        <li><a href="#models">模型</a></li>
         <li><a href="#faq">常見問題</a></li>
       </ul>
     </div>

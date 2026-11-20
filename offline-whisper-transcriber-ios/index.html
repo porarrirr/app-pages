@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper: Offline Transcription — On-device speech-to-text for iPhone and iPad</title>
-<meta name="description" content="A free iPhone and iPad app that transcribes recordings, audio files and videos on your device with Whisper. After a one-time model download, transcription can run without an internet connection. No ads, no in-app purchases, no account.">
+<meta name="description" content="A free iPhone and iPad app that transcribes recordings, audio files and videos on your device with Whisper. No ads, no in-app purchases, no account.">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/screen-history.jpg"
   ],
-  "description": "An iPhone and iPad app that transcribes microphone recordings, audio files and videos on the device using Whisper (whisper.cpp). After a one-time model download, transcription can run offline. Exports TXT, CSV, JSON and SRT.",
+  "description": "An iPhone and iPad app that transcribes microphone recordings, audio files and videos on the device using Whisper (whisper.cpp). Exports TXT, CSV, JSON and SRT.",
   "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#features">Features</a>
       <a href="#all-features">All features</a>
-      <a href="#models">Models</a>
       <a href="#privacy">Privacy</a>
       <a href="#faq">FAQ</a>
       <a href="support.html">Support</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">On-device speech-to-text</div>
       <h1>Your voice,<span class="line2">turned into text.</span></h1>
-      <p class="lead">Record a meeting, a lecture or an interview — or import an audio or video file — and get a transcript on your iPhone or iPad. Speech recognition runs on your device with Whisper, so after a one-time model download it can work without an internet connection.</p>
+      <p class="lead">Record a meeting, a lecture or an interview — or import an audio or video file — and get a transcript on your iPhone or iPad.</p>
+      <p>Live transcription while recording on supported iOS 26+ devices. With Apple Intelligence enabled on iOS 26+, ask for an AI summary in transcript chat.</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">How it works</div>
-      <h2>Three steps to a transcript</h2>
+      <h2>From audio to transcript</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>Download a model once</h3>
-        <p>On first launch, choose a Whisper model and download it. The default Base model is about 142&nbsp;MB. This is the only step that needs an internet connection.</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>Record or import</h3>
         <p>Tap to record with the microphone, or pick an audio or video file from Files or Photos. You can pause and resume while recording.</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Models</div>
-      <h2>Pick the balance that suits you</h2>
-      <p class="lead">Smaller models tend to be faster and lighter; larger models tend to be more accurate but need more storage, memory and time. You can switch models at any time in Settings.</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Model</th><th>Download size (approx.)</th><th>Tends to be good for</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Quick drafts on older or low-storage devices</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>Fast, basic transcription</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>A lighter version of the default</td></tr>
-          <tr><td>Base <span class="tag">default</span></td><td>142 MB</td><td>Everyday use with balanced speed and accuracy</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>Better accuracy with a smaller download</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>Higher accuracy</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>High accuracy with a smaller download than Medium</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Fast and accurate, lighter variant</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Fast and accurate</td></tr>
-          <tr><td>Medium</td><td>1.5 GB</td><td>Highest accuracy among the options, slower</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">Model files are downloaded from Hugging Face. Actual speed and accuracy vary with the device, language, audio quality and length.</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>Whisper transcription runs locally and the app doesn't send audio or transcripts to the developer. The only exception you control is the optional Private Cloud Compute mode for Apple Intelligence chat, which sends transcript text and your question to Apple's Private Cloud Compute. It is off by default.</p></div>
       </details>
       <details>
-        <summary>Which model should I choose?</summary>
-        <div><p>Base is a reasonable starting point for most people. If the results miss too many words, try Small, Medium or Large v3 Turbo. If transcription feels slow or the device runs short of memory, a Tiny or Q5 variant may help.</p></div>
-      </details>
-      <details>
         <summary>What files can I import and export?</summary>
         <div><p>You can import common audio and video formats such as M4A, WAV, MP3, MP4 and MOV from Files, and videos from Photos. Transcripts can be exported as TXT, CSV, JSON or SRT, and recordings can be shared as audio files.</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">Free on the App Store</div>
       <h2>Give your next recording a try</h2>
-      <p class="lead">Download the app, get a model once, and see how it handles your own meetings, lectures and videos.</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Download on the App Store
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link">App Store</a></li>
         <li><a href="#all-features">All features</a></li>
-        <li><a href="#models">Models</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>

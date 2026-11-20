@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Whisper: транскрибация аудио — распознавание речи на устройстве для iPhone и iPad</title>
-<meta name="description" content="Бесплатное приложение для iPhone и iPad, которое расшифровывает записи, аудиофайлы и видео на вашем устройстве с помощью Whisper. После однократной загрузки модели транскрибация может работать без подключения к интернету. Без рекламы, без встроенных покупок, без аккаунта.">
+<meta name="description" content="Бесплатное приложение для iPhone и iPad, которое расшифровывает записи, аудиофайлы и видео на вашем устройстве с помощью Whisper. Без рекламы, без встроенных покупок, без аккаунта.">
 <link rel="canonical" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/ru/">
 <!-- HREFLANG -->
 <link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/">
@@ -52,7 +52,7 @@
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ru/screen-home.jpg",
     "https://porarrirr.github.io/app-pages/offline-whisper-transcriber-ios/assets/img/ru/screen-history.jpg"
   ],
-  "description": "Приложение для iPhone и iPad, которое расшифровывает записи с микрофона, аудиофайлы и видео на устройстве с помощью Whisper (whisper.cpp). После однократной загрузки модели транскрибация может работать офлайн. Экспорт в TXT, CSV, JSON и SRT.",
+  "description": "Приложение для iPhone и iPad, которое расшифровывает записи с микрофона, аудиофайлы и видео на устройстве с помощью Whisper (whisper.cpp). Экспорт в TXT, CSV, JSON и SRT.",
   "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
   "applicationCategory": "ProductivityApplication",
   "installUrl": "https://apps.apple.com/app/id6771686580",
@@ -91,7 +91,6 @@
     <nav class="nav" id="nav" aria-label="Основная навигация">
       <a href="#features">Функции</a>
       <a href="#all-features">Все функции</a>
-      <a href="#models">Модели</a>
       <a href="#privacy">Приватность</a>
       <a href="#faq">FAQ</a>
       <a href="support.html">Поддержка</a>
@@ -127,7 +126,8 @@
     <div>
       <div class="eyebrow">Распознавание речи на устройстве</div>
       <h1>Ваш голос —<span class="line2">теперь текст.</span></h1>
-      <p class="lead">Запишите встречу, лекцию или интервью — или импортируйте аудио- или видеофайл — и получите расшифровку на iPhone или iPad. Распознавание речи выполняется на вашем устройстве с помощью Whisper, поэтому после однократной загрузки модели оно может работать без подключения к интернету.</p>
+      <p class="lead">Запишите встречу, лекцию или интервью — или импортируйте аудио- или видеофайл — и получите расшифровку на iPhone или iPad.</p>
+      <p>Получайте текст в реальном времени во время записи на совместимых устройствах с iOS 26 или новее. Если включён Apple Intelligence, запросите ИИ-резюме в чате расшифровки.</p>
       <div class="cta">
         <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-hero-ru">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
@@ -175,13 +175,9 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Как это работает</div>
-      <h2>Три шага до расшифровки</h2>
+      <h2>От записи к расшифровке</h2>
     </div>
-    <div class="grid c3 steps">
-      <div class="card">
-        <h3>Скачайте модель один раз</h3>
-        <p>При первом запуске выберите модель Whisper и скачайте её. По умолчанию используется модель Base — около 142&nbsp;MB. Это единственный шаг, для которого нужно подключение к интернету.</p>
-      </div>
+    <div class="grid c2 steps">
       <div class="card">
         <h3>Запишите или импортируйте</h3>
         <p>Нажмите, чтобы начать запись с микрофона, или выберите аудио- или видеофайл в приложении «Файлы» или «Фото». Запись можно приостанавливать и продолжать.</p>
@@ -396,35 +392,6 @@
   </div>
 </section>
 
-<!-- MODELS -->
-<section id="models">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Модели</div>
-      <h2>Найдите подходящий баланс</h2>
-      <p class="lead">Модели поменьше обычно быстрее и легче; модели побольше, как правило, точнее, но требуют больше места, памяти и времени. Модель можно сменить в любое время в «Настройках».</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Модель</th><th>Размер загрузки (прибл.)</th><th>Обычно подходит для</th></tr></thead>
-        <tbody>
-          <tr><td>Tiny Q5_1</td><td>15 MB</td><td>Быстрые черновики на старых устройствах или устройствах с малым объёмом памяти</td></tr>
-          <tr><td>Tiny</td><td>39 MB</td><td>Быстрая базовая транскрибация</td></tr>
-          <tr><td>Base Q5_1</td><td>60 MB</td><td>Более лёгкая версия модели по умолчанию</td></tr>
-          <tr><td>Base <span class="tag">по умолчанию</span></td><td>142 MB</td><td>Повседневное использование с балансом скорости и точности</td></tr>
-          <tr><td>Small Q5_1</td><td>163 MB</td><td>Более высокая точность при меньшем размере загрузки</td></tr>
-          <tr><td>Small</td><td>466 MB</td><td>Повышенная точность</td></tr>
-          <tr><td>Medium Q5_0</td><td>568 MB</td><td>Высокая точность при меньшем размере загрузки, чем у Medium</td></tr>
-          <tr><td>Large v3 Turbo Q5_0</td><td>574 MB</td><td>Быстро и точно, более лёгкий вариант</td></tr>
-          <tr><td>Large v3 Turbo Q8_0</td><td>874 MB</td><td>Быстро и точно</td></tr>
-          <tr><td>Medium</td><td>1.5 GB</td><td>Наивысшая точность среди вариантов, но медленнее</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note" style="margin-top:14px">Файлы моделей загружаются с Hugging Face. Фактическая скорость и точность зависят от устройства, языка, качества и длительности аудио.</p>
-  </div>
-</section>
-
 <!-- PRIVACY -->
 <section id="privacy">
   <div class="wrap">
@@ -495,10 +462,6 @@
         <div><p>Транскрибация Whisper выполняется локально, и приложение не отправляет аудио или расшифровки разработчику. Единственное исключение, которое зависит от вас, — необязательный режим Private Cloud Compute для чата с Apple Intelligence: он отправляет текст расшифровки и ваш вопрос в Private Cloud Compute от Apple. По умолчанию он выключен.</p></div>
       </details>
       <details>
-        <summary>Какую модель выбрать?</summary>
-        <div><p>Base — разумная отправная точка для большинства. Если в результатах пропадает слишком много слов, попробуйте Small, Medium или Large v3 Turbo. Если транскрибация идёт медленно или устройству не хватает памяти, может помочь Tiny или вариант Q5.</p></div>
-      </details>
-      <details>
         <summary>Какие файлы можно импортировать и экспортировать?</summary>
         <div><p>Можно импортировать распространённые аудио- и видеоформаты, например M4A, WAV, MP3, MP4 и MOV, из приложения «Файлы», а также видео из «Фото». Расшифровки можно экспортировать в TXT, CSV, JSON или SRT, а записи — отправлять как аудиофайлы.</p></div>
       </details>
@@ -528,7 +491,6 @@
     <div class="cta-band">
       <div class="eyebrow">Бесплатно в App Store</div>
       <h2>Попробуйте на своей следующей записи</h2>
-      <p class="lead">Загрузите приложение, один раз скачайте модель и посмотрите, как оно справится с вашими встречами, лекциями и видео.</p>
       <a class="btn" href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-ru">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
         Загрузить в App Store
@@ -551,7 +513,6 @@
       <ul>
         <li><a href="https://apps.apple.com/app/id6771686580?ct=official-site-footer-link-ru">App Store</a></li>
         <li><a href="#all-features">Все функции</a></li>
-        <li><a href="#models">Модели</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
