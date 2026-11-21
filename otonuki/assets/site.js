@@ -30,12 +30,14 @@ async function localize() {
   const requested = [page.searchParams.get('lang'), ...navigator.languages].filter(Boolean);
   const locale = requested.map(language => matchLocale(language, locales)).find(Boolean) ?? 'ja';
   if (locale !== 'ja') {
-    const strings = await getJson(`locales/${locale}.json`);
-    for (const element of document.querySelectorAll('[data-text]')) {
-      element.textContent = strings[element.dataset.text];
-    }
     const section = document.body.dataset.page;
-    document.title = `OtoNuki | ${strings[section]}`;
+    const revision = section === 'home' ? '?v=2' : '';
+    const strings = await getJson(`locales/${locale}.json${revision}`);
+    for (const element of document.querySelectorAll('[data-text]')) {
+      element.textContent = strings[element.dataset.text] ?? element.textContent;
+    }
+    const localizedTitle = section === 'home' ? strings.marketingTitle : undefined;
+    document.title = localizedTitle ?? `OtoNuki | ${strings[section]}`;
     document.querySelector('meta[name="description"]').content = strings[descriptionKeys[section]];
   }
   document.documentElement.lang = locale;
