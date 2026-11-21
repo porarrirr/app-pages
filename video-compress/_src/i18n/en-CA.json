@@ -1,0 +1,210 @@
+{
+  "app_name": "Video Compress",
+  "common": {
+    "nav_home": "Home",
+    "nav_support": "Support",
+    "nav_privacy": "Privacy",
+    "language": "Language",
+    "skip_to_content": "Skip to content",
+    "footer_support": "Support",
+    "footer_privacy": "Privacy Policy",
+    "footer_contact": "Contact",
+    "requirements": "For iPhone and iPad with iOS 18 or later"
+  },
+  "index": {
+    "meta_title": "{app} — Compress videos under a size limit on iPhone and iPad",
+    "meta_description": "Compress videos on your device to fit under the size limit of wherever you're sending them. Compare with the original, then save or share. No uploads, no account.",
+    "hero_eyebrow": "For iPhone and iPad",
+    "hero_title": "Any video, under the size you choose.",
+    "hero_lead": "Compress videos entirely on your device to fit the limit of wherever you're sending them. Compare the result with the original, then save it to Photos or Files, or share it.",
+    "hero_cta_support": "Get support",
+    "hero_badge_offline": "Processed on device",
+    "hero_badge_no_account": "No account needed",
+    "hero_badge_no_tracking": "No tracking",
+    "features_title": "What it does",
+    "features": [
+      {
+        "title": "Set by size",
+        "body": "Just enter a limit, like \"25 MB or less\". The app checks the actual size of the exported file and, if it's over, adjusts the settings and exports again automatically."
+      },
+      {
+        "title": "Common limits in one tap",
+        "body": "Pick the limits of popular services such as Discord, Gmail, Slack, WhatsApp and Mail Drop from presets."
+      },
+      {
+        "title": "Set by quality",
+        "body": "Prefer not to pick a size? Choose \"Small\", \"Balanced\" or \"High quality\" instead."
+      },
+      {
+        "title": "Compare before saving",
+        "body": "Compare the compressed video with the original, then save it to Photos, save it to Files, or share it."
+      },
+      {
+        "title": "Compress in batches",
+        "body": "Add several videos at once and compress them one after another with the same settings. You can also add videos from the Share menu."
+      },
+      {
+        "title": "Fine-tune format and quality",
+        "body": "Supports H.264, HEVC, AV1, ProRes 422 Proxy and Motion JPEG. Choose resolution, frame rate and audio too. HEVC can keep HDR."
+      }
+    ],
+    "privacy_title": "Your videos never leave your device",
+    "privacy_body": "All compression happens on your iPhone or iPad. Videos are never uploaded to a server, and there's no account sign-up, no ads and no analytics. Location data is removed from the output by default.",
+    "privacy_link": "Read the privacy policy",
+    "steps_title": "How it works",
+    "steps": [
+      {
+        "title": "Add videos",
+        "body": "Choose videos from Photos or Files."
+      },
+      {
+        "title": "Set a goal",
+        "body": "Enter a size limit or pick a quality."
+      },
+      {
+        "title": "Compress and save",
+        "body": "Check the result, then save or share it."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Support — {app}",
+    "meta_description": "Frequently asked questions and contact information for {app}.",
+    "title": "Support",
+    "lead": "Answers to common questions about using {app} and fixing problems. If you can't find what you need, please contact us by email.",
+    "contact_title": "Contact",
+    "contact_body": "Send questions, bug reports and feature requests to the email address below.",
+    "contact_button": "Email us",
+    "contact_mail_subject": "{app} Support",
+    "contact_include_title": "When reporting a problem, the following details help us investigate:",
+    "contact_include": [
+      "App version",
+      "Device model and iOS / iPadOS version",
+      "The settings you chose (target size or quality, format, resolution, frame rate)",
+      "Length and size of the original video, and the device or app it was recorded with",
+      "Any error message that appeared"
+    ],
+    "contact_note": "Please don't send video files unless we ask for them.",
+    "faq_title": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "The video doesn't fit within the size I set.",
+        "a": "{app} checks the actual size of the exported file and, if it's over the limit, adjusts the settings and exports again, up to four times in total. If it still doesn't fit, the target size may be too small for the length of the video. Using the minimum estimate shown in the error as a guide, try a larger target size, set resolution and frame rate to \"Auto (recommended)\", or remove the audio."
+      },
+      {
+        "q": "Where are compressed videos saved?",
+        "a": "On the result screen, choose \"Save to Photos\", \"Save to Files\", or share. Until you save it, the compressed video exists only inside the app."
+      },
+      {
+        "q": "I can't save to Photos.",
+        "a": "The app may not be allowed to add to your photo library. In Settings → Privacy & Security → Photos, allow {app} \"Add Photos Only\" or \"Full Access\"."
+      },
+      {
+        "q": "Is the original video deleted?",
+        "a": "No. {app} compresses a copy of the original, so the original video in your photo library or the Files app is never changed or deleted."
+      },
+      {
+        "q": "A video won't load.",
+        "a": "Copy-protected (DRM) videos, damaged files and formats your device can't decode can't be loaded. For videos stored in iCloud Photos, wait until they've finished downloading to your device."
+      },
+      {
+        "q": "Compression stopped partway through.",
+        "a": "If you switch to another app or lock the screen while compressing, iOS may interrupt the process. Interrupted videos are shown when you open the app; keep the app open and run them again."
+      },
+      {
+        "q": "Which format should I choose?",
+        "a": "If you're not sure, choose H.264. It plays in almost every app and device. HEVC gives better quality at the same size, but may not play on older devices or some services. AV1 plays only in apps and devices that support it. ProRes 422 Proxy and Motion JPEG are editing formats that can be larger than the original, and are available only when setting by quality."
+      },
+      {
+        "q": "What happens to HDR videos?",
+        "a": "Exporting as H.264 converts them to SDR. To keep HDR, choose HEVC."
+      },
+      {
+        "q": "Are location and recording date kept?",
+        "a": "The recording date is kept. Location is removed by default and kept only when you turn on \"Keep location\" in Advanced settings. No other metadata is written."
+      },
+      {
+        "q": "The app is using too much storage.",
+        "a": "Tap \"Manage\" at the top of the screen to delete compressed videos and temporary files. Compressed videos you haven't saved will be lost, but your original videos are not deleted."
+      },
+      {
+        "q": "Can I add videos from other apps?",
+        "a": "Yes. Select a video in Photos or Files, tap Share, and choose \"Add to Video Compress\". The video will be there the next time you open {app}."
+      }
+    ],
+    "requirements_title": "Requirements",
+    "requirements_body": "iPhone with iOS 18 or later, or iPad with iPadOS 18 or later. Available formats vary by device."
+  },
+  "privacy": {
+    "meta_title": "Privacy Policy — {app}",
+    "meta_description": "Privacy policy for {app}. Videos are processed on your device, and the developer does not collect personal information.",
+    "title": "Privacy Policy",
+    "updated": "Last updated: November 21, 2026",
+    "summary_title": "Summary",
+    "summary": [
+      "All video compression happens on your device. Videos are never sent to a server.",
+      "The developer does not collect personal information such as your name, email address, location or device identifiers.",
+      "There is no account sign-up, no advertising, no analytics and no tracking."
+    ],
+    "sections": [
+      {
+        "title": "Information the app handles on your device",
+        "paragraphs": [
+          "To compress videos, {app} handles the following information only on your device. None of it is sent to the developer or any third party."
+        ],
+        "items": [
+          "Videos you choose: copies of videos you pick from Photos, Files or the Share menu are stored in the app's working folder.",
+          "Compressed results: exported videos are kept in the app until you save or delete them.",
+          "Processing status and settings: the file name, size, length and processing status of each video in the list, and the compression settings you chose.",
+          "Video metadata: the recording date is carried over to the output. Location is carried over only when \"Keep location\" is turned on."
+        ]
+      },
+      {
+        "title": "Permissions",
+        "paragraphs": [
+          "Videos are chosen with the iOS photo picker and file browser, and only the videos you select are loaded. The app never reads your whole photo library.",
+          "The app asks for permission to add to your photo library only when you use \"Save to Photos\". This permission is used solely to save compressed videos."
+        ]
+      },
+      {
+        "title": "Storage and deletion",
+        "paragraphs": [
+          "App data is stored only on your device. The working folder that holds copies of original videos and compressed results is excluded from iCloud and device backups.",
+          "You can delete compressed videos, temporary files and the list at any time from \"Manage\". Deleting the app removes all of its data. Videos you saved to your photo library or the Files app are managed by those apps."
+        ]
+      },
+      {
+        "title": "Sharing with third parties",
+        "paragraphs": [
+          "{app} does not include any third-party services or SDKs and does not share information with third parties.",
+          "When you share a compressed video, the privacy policy of the receiving app or service applies to how it handles that video."
+        ]
+      },
+      {
+        "title": "Information provided by Apple",
+        "paragraphs": [
+          "If you have turned on \"Share with App Developers\" in your device settings, Apple may provide the developer with anonymized diagnostic information such as crash reports. This information is used only to fix problems in the app."
+        ]
+      },
+      {
+        "title": "Children's privacy",
+        "paragraphs": [
+          "{app} does not collect personal information from anyone, regardless of age."
+        ]
+      },
+      {
+        "title": "Changes to this policy",
+        "paragraphs": [
+          "If this policy changes, we will update this page and revise the last updated date."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "If you have questions about this policy, please contact us at the email address below."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} Privacy"
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "app_name": "Compresie video",
+  "common": {
+    "nav_home": "Acasă",
+    "nav_support": "Asistență",
+    "nav_privacy": "Confidențialitate",
+    "language": "Limbă",
+    "skip_to_content": "Sari la conținut",
+    "footer_support": "Asistență",
+    "footer_privacy": "Politica de confidențialitate",
+    "footer_contact": "Contact",
+    "requirements": "Pentru iPhone și iPad cu iOS 18 sau o versiune ulterioară"
+  },
+  "index": {
+    "meta_title": "{app} — Comprimați videoclipuri sub o limită de dimensiune pe iPhone și iPad",
+    "meta_description": "Comprimați videoclipurile pe dispozitiv pentru a se încadra în limita de dimensiune a locului în care le trimiteți. Comparați cu originalul, apoi salvați sau partajați. Fără încărcări, fără cont.",
+    "hero_eyebrow": "Pentru iPhone și iPad",
+    "hero_title": "Orice videoclip, sub dimensiunea aleasă de dvs.",
+    "hero_lead": "Comprimați videoclipurile în întregime pe dispozitiv pentru a se încadra în limita locului în care le trimiteți. Comparați rezultatul cu originalul, apoi salvați-l în Fotografii sau în Fișiere ori partajați-l.",
+    "hero_cta_support": "Vedeți asistența",
+    "hero_badge_offline": "Procesat pe dispozitiv",
+    "hero_badge_no_account": "Fără cont",
+    "hero_badge_no_tracking": "Fără urmărire",
+    "features_title": "Ce face",
+    "features": [
+      {
+        "title": "Specificați după dimensiune",
+        "body": "Introduceți pur și simplu o limită, de exemplu „25 MB sau mai puțin”. App-ul verifică dimensiunea reală a fișierului exportat și, dacă este depășită, ajustează setările și exportă din nou automat."
+      },
+      {
+        "title": "Limite uzuale cu o atingere",
+        "body": "Alegeți limitele serviciilor populare, precum Discord, Gmail, Slack, WhatsApp și Mail Drop, din presetări."
+      },
+      {
+        "title": "Specificați după calitate",
+        "body": "Nu doriți să alegeți o dimensiune? Alegeți în schimb „Mic”, „Echilibrat” sau „Calitate ridicată”."
+      },
+      {
+        "title": "Comparați înainte de salvare",
+        "body": "Comparați videoclipul comprimat cu originalul, apoi salvați-l în Fotografii, salvați-l în Fișiere sau partajați-l."
+      },
+      {
+        "title": "Comprimați în lot",
+        "body": "Adăugați mai multe videoclipuri deodată și comprimați-le unul după altul cu aceleași setări. Puteți adăuga videoclipuri și din meniul Partajare."
+      },
+      {
+        "title": "Reglați fin formatul și calitatea",
+        "body": "Acceptă H.264, HEVC, AV1, ProRes 422 Proxy și Motion JPEG. Alegeți și rezoluția, rata de cadre și sunetul. HEVC poate păstra HDR."
+      }
+    ],
+    "privacy_title": "Videoclipurile dvs. nu părăsesc niciodată dispozitivul",
+    "privacy_body": "Toată compresia are loc pe iPhone sau iPad. Videoclipurile nu sunt niciodată încărcate pe un server și nu există înregistrare de cont, reclame sau analitice. Datele de locație sunt eliminate implicit din rezultat.",
+    "privacy_link": "Citiți politica de confidențialitate",
+    "steps_title": "Cum funcționează",
+    "steps": [
+      {
+        "title": "Adăugați videoclipuri",
+        "body": "Alegeți videoclipuri din Fotografii sau Fișiere."
+      },
+      {
+        "title": "Stabiliți un obiectiv",
+        "body": "Introduceți o limită de dimensiune sau alegeți o calitate."
+      },
+      {
+        "title": "Comprimați și salvați",
+        "body": "Verificați rezultatul, apoi salvați-l sau partajați-l."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Asistență — {app}",
+    "meta_description": "Întrebări frecvente și informații de contact pentru {app}.",
+    "title": "Asistență",
+    "lead": "Răspunsuri la întrebările frecvente despre utilizarea {app} și rezolvarea problemelor. Dacă nu găsiți ce căutați, contactați-ne prin e-mail.",
+    "contact_title": "Contact",
+    "contact_body": "Trimiteți întrebări, rapoarte de erori și solicitări de funcții la adresa de e-mail de mai jos.",
+    "contact_button": "Scrieți-ne",
+    "contact_mail_subject": "{app} Asistență",
+    "contact_include_title": "Când raportați o problemă, următoarele detalii ne ajută să investigăm:",
+    "contact_include": [
+      "Versiunea app-ului",
+      "Modelul dispozitivului și versiunea iOS / iPadOS",
+      "Setările alese (dimensiunea țintă sau calitatea, formatul, rezoluția, rata de cadre)",
+      "Durata și dimensiunea videoclipului original, precum și dispozitivul sau app-ul cu care a fost înregistrat",
+      "Mesajul de eroare afișat"
+    ],
+    "contact_note": "Vă rugăm să nu trimiteți fișiere video decât dacă vă solicităm noi.",
+    "faq_title": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Videoclipul nu se încadrează în dimensiunea stabilită.",
+        "a": "{app} verifică dimensiunea reală a fișierului exportat și, dacă depășește limita, ajustează setările și exportă din nou, de până la patru ori în total. Dacă tot nu se încadrează, dimensiunea țintă poate fi prea mică pentru durata videoclipului. Folosind estimarea minimă afișată în eroare ca reper, încercați o dimensiune țintă mai mare, setați rezoluția și rata de cadre la „Automat (recomandat)” sau eliminați sunetul."
+      },
+      {
+        "q": "Unde sunt salvate videoclipurile comprimate?",
+        "a": "Pe ecranul rezultatului, alegeți „Salvați în Fotografii”, „Salvați în Fișiere” sau partajați. Până nu îl salvați, videoclipul comprimat există doar în app."
+      },
+      {
+        "q": "Nu pot salva în Fotografii.",
+        "a": "Este posibil ca adăugarea în biblioteca de fotografii să nu fie permisă. În app Setări, mergeți la „Confidențialitate și securitate” → „Fotografii” și permiteți app-ului {app} „Doar adăugare” sau „Acces complet”."
+      },
+      {
+        "q": "Videoclipul original este șters?",
+        "a": "Nu. {app} comprimă o copie a originalului, astfel încât videoclipul original din biblioteca de fotografii sau din app-ul Fișiere nu este niciodată modificat sau șters."
+      },
+      {
+        "q": "Un videoclip nu se încarcă.",
+        "a": "Videoclipurile protejate prin drepturi de autor (DRM), fișierele deteriorate și formatele pe care dispozitivul dvs. nu le poate decoda nu pot fi încărcate. Pentru videoclipurile din Fotografii iCloud, așteptați până când descărcarea pe dispozitiv se încheie."
+      },
+      {
+        "q": "Compresia s-a oprit la jumătate.",
+        "a": "Dacă treceți la alt app sau blocați ecranul în timpul compresiei, iOS poate întrerupe procesul. Videoclipurile întrerupte apar când deschideți app-ul; țineți app-ul deschis și rulați-le din nou."
+      },
+      {
+        "q": "Ce format ar trebui să aleg?",
+        "a": "Dacă nu sunteți sigur, alegeți H.264. Se redă în aproape orice app și pe aproape orice dispozitiv. HEVC oferă o calitate mai bună la aceeași dimensiune, dar s-ar putea să nu se redea pe dispozitive mai vechi sau în unele servicii. AV1 se redă doar în app-urile și pe dispozitivele care îl acceptă. ProRes 422 Proxy și Motion JPEG sunt formate pentru editare care pot fi mai mari decât originalul și sunt disponibile doar când specificați după calitate."
+      },
+      {
+        "q": "Ce se întâmplă cu videoclipurile HDR?",
+        "a": "Exportul ca H.264 le convertește în SDR. Pentru a păstra HDR, alegeți HEVC."
+      },
+      {
+        "q": "Locația și data înregistrării sunt păstrate?",
+        "a": "Data înregistrării este păstrată. Locația este eliminată implicit și păstrată doar când activați „Păstrați locația” în Setări avansate. Nu sunt scrise alte metadate."
+      },
+      {
+        "q": "App-ul folosește prea mult spațiu de stocare.",
+        "a": "Atingeți „Gestionare” în partea de sus a ecranului pentru a șterge videoclipurile comprimate și fișierele temporare. Videoclipurile comprimate pe care nu le-ați salvat se vor pierde, dar videoclipurile originale nu sunt șterse."
+      },
+      {
+        "q": "Pot adăuga videoclipuri din alte app-uri?",
+        "a": "Da. Selectați un videoclip în Fotografii sau Fișiere, atingeți Partajare și alegeți „Adaugă la Compresie video”. Videoclipul va fi acolo data viitoare când deschideți {app}."
+      }
+    ],
+    "requirements_title": "Cerințe de sistem",
+    "requirements_body": "iPhone cu iOS 18 sau o versiune ulterioară ori iPad cu iPadOS 18 sau o versiune ulterioară. Formatele disponibile variază în funcție de dispozitiv."
+  },
+  "privacy": {
+    "meta_title": "Politica de confidențialitate — {app}",
+    "meta_description": "Politica de confidențialitate pentru {app}. Videoclipurile sunt procesate pe dispozitivul dvs., iar dezvoltatorul nu colectează informații personale.",
+    "title": "Politica de confidențialitate",
+    "updated": "Ultima actualizare: 21 noiembrie 2026",
+    "summary_title": "Rezumat",
+    "summary": [
+      "Toată compresia videoclipurilor are loc pe dispozitivul dvs. Videoclipurile nu sunt niciodată trimise pe un server.",
+      "Dezvoltatorul nu colectează informații personale precum numele, adresa de e-mail, locația sau identificatorii dispozitivului.",
+      "Nu există înregistrare de cont, publicitate, analitice sau urmărire."
+    ],
+    "sections": [
+      {
+        "title": "Informațiile pe care app-ul le prelucrează pe dispozitivul dvs.",
+        "paragraphs": [
+          "Pentru a comprima videoclipuri, {app} prelucrează următoarele informații numai pe dispozitivul dvs. Niciuna dintre ele nu este trimisă dezvoltatorului sau vreunei terțe părți."
+        ],
+        "items": [
+          "Videoclipurile alese: copiile videoclipurilor selectate din Fotografii, Fișiere sau meniul Partajare sunt stocate în folderul de lucru al app-ului.",
+          "Rezultatele comprimate: videoclipurile exportate sunt păstrate în app până când le salvați sau le ștergeți.",
+          "Starea procesării și setările: numele fișierului, dimensiunea, durata și starea procesării fiecărui videoclip din listă, precum și setările de compresie alese.",
+          "Metadatele videoclipurilor: data înregistrării este preluată în rezultat. Locația este preluată doar când este activată opțiunea „Păstrați locația”."
+        ]
+      },
+      {
+        "title": "Permisiuni",
+        "paragraphs": [
+          "Videoclipurile sunt alese cu selectorul de fotografii și browserul de fișiere din iOS, iar se încarcă doar videoclipurile selectate de dvs. App-ul nu citește niciodată întreaga bibliotecă de fotografii.",
+          "App-ul solicită permisiunea de adăugare în biblioteca de fotografii doar când folosiți „Salvați în Fotografii”. Această permisiune este folosită exclusiv pentru a salva videoclipurile comprimate."
+        ]
+      },
+      {
+        "title": "Stocare și ștergere",
+        "paragraphs": [
+          "Datele app-ului sunt stocate doar pe dispozitivul dvs. Folderul de lucru care conține copiile videoclipurilor originale și rezultatele comprimate este exclus din copiile de siguranță iCloud și ale dispozitivului.",
+          "Puteți șterge oricând videoclipurile comprimate, fișierele temporare și lista din „Gestionare”. Ștergerea app-ului elimină toate datele acestuia. Videoclipurile salvate în biblioteca de fotografii sau în app-ul Fișiere sunt gestionate de acele app-uri."
+        ]
+      },
+      {
+        "title": "Partajarea cu terțe părți",
+        "paragraphs": [
+          "{app} nu include servicii sau SDK-uri ale unor terțe părți și nu partajează informații cu terțe părți.",
+          "Când partajați un videoclip comprimat, politica de confidențialitate a app-ului sau serviciului care îl primește se aplică modului în care acesta îl gestionează."
+        ]
+      },
+      {
+        "title": "Informații furnizate de Apple",
+        "paragraphs": [
+          "Dacă ați activat „Partajare cu dezvoltatorii de aplicații” în setările dispozitivului, Apple poate furniza dezvoltatorului informații de diagnostic anonimizate, precum rapoarte de erori. Aceste informații sunt folosite exclusiv pentru a remedia problemele din app."
+        ]
+      },
+      {
+        "title": "Confidențialitatea copiilor",
+        "paragraphs": [
+          "{app} nu colectează informații personale de la nimeni, indiferent de vârstă."
+        ]
+      },
+      {
+        "title": "Modificări ale acestei politici",
+        "paragraphs": [
+          "Dacă această politică se schimbă, vom actualiza această pagină și vom revizui data ultimei actualizări."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "Dacă aveți întrebări despre această politică, contactați-ne la adresa de e-mail de mai jos."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} Confidențialitate"
+  }
+}

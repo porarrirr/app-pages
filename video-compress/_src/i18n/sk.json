@@ -1,0 +1,210 @@
+{
+  "app_name": "Kompresia videa",
+  "common": {
+    "nav_home": "Domov",
+    "nav_support": "Podpora",
+    "nav_privacy": "Súkromie",
+    "language": "Jazyk",
+    "skip_to_content": "Prejsť na obsah",
+    "footer_support": "Podpora",
+    "footer_privacy": "Zásady ochrany osobných údajov",
+    "footer_contact": "Kontakt",
+    "requirements": "Pre iPhone a iPad s iOS 18 alebo novším"
+  },
+  "index": {
+    "meta_title": "{app} — Komprimujte videá pod zvolený limit veľkosti na iPhone a iPad",
+    "meta_description": "Komprimujte videá priamo v zariadení tak, aby sa zmestili pod limit veľkosti cieľa, kam ich posielate. Porovnajte ich s originálom a potom ich uložte alebo zdieľajte. Bez nahrávania na server, bez účtu.",
+    "hero_eyebrow": "Pre iPhone a iPad",
+    "hero_title": "Akékoľvek video pod vami zvolenú veľkosť.",
+    "hero_lead": "Komprimujte videá úplne vo svojom zariadení tak, aby sa zmestili pod limit cieľa, kam ich posielate. Porovnajte výsledok s originálom a potom ho uložte do Fotiek alebo do Súborov, prípadne ho zdieľajte.",
+    "hero_cta_support": "Zobraziť podporu",
+    "hero_badge_offline": "Spracované v zariadení",
+    "hero_badge_no_account": "Bez účtu",
+    "hero_badge_no_tracking": "Bez sledovania",
+    "features_title": "Čo aplikácia dokáže",
+    "features": [
+      {
+        "title": "Zadať podľa veľkosti",
+        "body": "Stačí zadať limit, napríklad „25 MB alebo menej“. Aplikácia skontroluje skutočnú veľkosť exportovaného súboru, a ak limit prekročí, upraví nastavenia a export automaticky zopakuje."
+      },
+      {
+        "title": "Bežné limity jedným klepnutím",
+        "body": "Vyberte limity obľúbených služieb, ako sú Discord, Gmail, Slack, WhatsApp a Mail Drop, z predvolieb."
+      },
+      {
+        "title": "Zadať podľa kvality",
+        "body": "Nechcete určovať veľkosť? Vyberte namiesto toho „Menšie“, „Vyvážené“ alebo „Vysoká kvalita“."
+      },
+      {
+        "title": "Porovnajte pred uložením",
+        "body": "Porovnajte komprimované video s originálom a potom ho uložte do Fotiek, uložte do Súborov alebo ho zdieľajte."
+      },
+      {
+        "title": "Komprimujte dávkovo",
+        "body": "Pridajte niekoľko videí naraz a komprimujte ich postupne s rovnakými nastaveniami. Videá môžete pridať aj z ponuky Zdieľať."
+      },
+      {
+        "title": "Doladte formát a kvalitu",
+        "body": "Podporuje H.264, HEVC, AV1, ProRes 422 Proxy a Motion JPEG. Zvoľte aj rozlíšenie, snímkovú frekvenciu a zvuk. HEVC dokáže zachovať HDR."
+      }
+    ],
+    "privacy_title": "Vaše videá nikdy neopustia zariadenie",
+    "privacy_body": "Všetka kompresia prebieha na vašom iPhone alebo iPad. Videá sa nikdy nenahrávajú na server a aplikácia nemá registráciu účtu, reklamy ani analytiku. Údaje o polohe sa z výstupu predvolene odstraňujú.",
+    "privacy_link": "Prečítať zásady ochrany osobných údajov",
+    "steps_title": "Ako to funguje",
+    "steps": [
+      {
+        "title": "Pridajte videá",
+        "body": "Vyberte videá z Fotiek alebo zo Súborov."
+      },
+      {
+        "title": "Nastavte cieľ",
+        "body": "Zadajte limit veľkosti alebo zvoľte kvalitu."
+      },
+      {
+        "title": "Komprimujte a uložte",
+        "body": "Skontrolujte výsledok a potom ho uložte alebo zdieľajte."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Podpora — {app}",
+    "meta_description": "Často kladené otázky a kontaktné údaje k aplikácii {app}.",
+    "title": "Podpora",
+    "lead": "Odpovede na časté otázky o používaní aplikácie {app} a riešení problémov. Ak nenájdete, čo potrebujete, kontaktujte nás e-mailom.",
+    "contact_title": "Kontakt",
+    "contact_body": "Otázky, hlásenia chýb a návrhy funkcií posielajte na nižšie uvedenú e-mailovú adresu.",
+    "contact_button": "Napísať e-mail",
+    "contact_mail_subject": "{app} – podpora",
+    "contact_include_title": "Pri hlásení problému nám pomôžu tieto údaje:",
+    "contact_include": [
+      "Verzia aplikácie",
+      "Model zariadenia a verzia iOS / iPadOS",
+      "Zvolené nastavenia (cieľová veľkosť alebo kvalita, formát, rozlíšenie, snímková frekvencia)",
+      "Dĺžka a veľkosť pôvodného videa a zariadenie alebo aplikácia, ktorými bolo nahraté",
+      "Zobrazená chybová správa"
+    ],
+    "contact_note": "Neposielajte prosím video súbory, ak o ne nepožiadame.",
+    "faq_title": "Často kladené otázky",
+    "faq": [
+      {
+        "q": "Video sa nezmestí do nastavenej veľkosti.",
+        "a": "{app} skontroluje skutočnú veľkosť exportovaného súboru, a ak limit prekročí, upraví nastavenia a export zopakuje, celkovo až štyrikrát. Ak sa stále nezmestí, môže byť cieľová veľkosť vzhľadom na dĺžku videa príliš malá. Podľa minimálneho odhadu zobrazeného v chybe skúste zväčšiť cieľovú veľkosť, nastaviť rozlíšenie a snímkovú frekvenciu na „Automaticky (odporúčané)“ alebo odstrániť zvuk."
+      },
+      {
+        "q": "Kam sa ukladajú komprimované videá?",
+        "a": "Na obrazovke s výsledkom zvoľte „Uložiť do fotiek“, „Uložiť do súborov“ alebo Zdieľať. Kým video neuložíte, existuje komprimované video len v aplikácii."
+      },
+      {
+        "q": "Nemôžem uložiť do fotiek.",
+        "a": "Pridávanie do knižnice fotiek možno nie je povolené. V Nastaveniach prejdite na „Súkromie a zabezpečenie“ → „Fotky“ a povoľte aplikácii {app} „Pridať iba fotky“ alebo „Úplný prístup“."
+      },
+      {
+        "q": "Vymaže sa pôvodné video?",
+        "a": "Nie. {app} komprimuje kópiu originálu, takže pôvodné video v knižnici fotiek alebo v aplikácii Súbory sa nikdy nezmení ani nevymaže."
+      },
+      {
+        "q": "Video sa nenačíta.",
+        "a": "Videá s ochranou proti kopírovaniu (DRM), poškodené súbory a formáty, ktoré zariadenie nedokáže dekódovať, sa nedajú načítať. Pri videách uložených v iCloud Fotkách počkajte, kým sa nedokončí ich sťahovanie do zariadenia."
+      },
+      {
+        "q": "Kompresia sa prerušila.",
+        "a": "Ak počas kompresie prepnete do inej aplikácie alebo zamknete obrazovku, iOS môže proces prerušiť. Prerušené videá sa zobrazia po otvorení aplikácie; nechajte aplikáciu otvorenú a spustite ich znova."
+      },
+      {
+        "q": "Ktorý formát mám zvoliť?",
+        "a": "Ak si nie ste istí, zvoľte H.264. Prehráva sa takmer v každej aplikácii a na každom zariadení. HEVC ponúka lepšiu kvalitu pri rovnakej veľkosti, ale nemusí sa prehrávať na starších zariadeniach alebo v niektorých službách. AV1 sa prehráva len v aplikáciách a na zariadeniach, ktoré ho podporujú. ProRes 422 Proxy a Motion JPEG sú formáty na strih, ktoré môžu byť väčšie ako originál, a sú dostupné len pri určení podľa kvality."
+      },
+      {
+        "q": "Čo sa stane s HDR videami?",
+        "a": "Pri exporte do H.264 sa prevedú na SDR. Ak chcete HDR zachovať, zvoľte HEVC."
+      },
+      {
+        "q": "Zostane poloha a dátum nahratia?",
+        "a": "Dátum nahratia zostáva. Poloha sa predvolene odstraňuje a zachová sa len vtedy, keď v Rozšírených nastaveniach zapnete „Zachovať polohu“. Žiadne ďalšie metadáta sa nezapisujú."
+      },
+      {
+        "q": "Aplikácia zaberá príliš veľa úložiska.",
+        "a": "Klepnutím na „Správa“ v hornej časti obrazovky môžete vymazať komprimované videá a dočasné súbory. Neuložené komprimované videá sa stratia, ale pôvodné videá sa nevymažú."
+      },
+      {
+        "q": "Môžem pridať videá z iných aplikácií?",
+        "a": "Áno. Vyberte video vo Fotkách alebo v Súboroch, klepnite na Zdieľať a zvoľte „Pridať do Kompresia videa“. Video tam bude pri najbližšom otvorení aplikácie {app}."
+      }
+    ],
+    "requirements_title": "Požiadavky",
+    "requirements_body": "iPhone s iOS 18 alebo novším alebo iPad s iPadOS 18 alebo novším. Dostupné formáty sa líšia podľa zariadenia."
+  },
+  "privacy": {
+    "meta_title": "Zásady ochrany osobných údajov — {app}",
+    "meta_description": "Zásady ochrany osobných údajov aplikácie {app}. Videá sa spracúvajú vo vašom zariadení a vývojár nezhromažďuje osobné údaje.",
+    "title": "Zásady ochrany osobných údajov",
+    "updated": "Naposledy aktualizované: 21. novembra 2026",
+    "summary_title": "Zhrnutie",
+    "summary": [
+      "Všetka kompresia videí prebieha vo vašom zariadení. Videá sa nikdy neposielajú na server.",
+      "Vývojár nezhromažďuje osobné údaje, ako je vaše meno, e-mailová adresa, poloha alebo identifikátory zariadenia.",
+      "Neexistuje registrácia účtu, reklamy, analytika ani sledovanie."
+    ],
+    "sections": [
+      {
+        "title": "Informácie, ktoré aplikácia spracúva vo vašom zariadení",
+        "paragraphs": [
+          "Na kompresiu videí spracúva {app} nasledujúce informácie iba vo vašom zariadení. Žiadne z nich sa neposielajú vývojárovi ani tretím stranám."
+        ],
+        "items": [
+          "Videá, ktoré zvolíte: kópie videí vybraných z Fotiek, zo Súborov alebo z ponuky Zdieľať sa ukladajú do pracovného priečinka aplikácie.",
+          "Komprimované výsledky: exportované videá zostávajú v aplikácii, kým ich neuložíte alebo nevymažete.",
+          "Stav spracovania a nastavenia: názov súboru, veľkosť, dĺžka a stav spracovania každého videa v zozname a zvolené nastavenia kompresie.",
+          "Metadáta videa: dátum nahratia sa prenáša do výstupu. Poloha sa prenáša len vtedy, keď je zapnutá možnosť „Zachovať polohu“."
+        ]
+      },
+      {
+        "title": "Oprávnenia",
+        "paragraphs": [
+          "Videá sa vyberajú pomocou systémového výberu fotiek v iOS a prehliadača súborov a načítavajú sa len vybrané videá. Aplikácia nikdy nečíta celú knižnicu fotiek.",
+          "Aplikácia požiada o oprávnenie na pridávanie do knižnice fotiek len vtedy, keď použijete „Uložiť do fotiek“. Toto oprávnenie slúži výlučne na ukladanie komprimovaných videí."
+        ]
+      },
+      {
+        "title": "Ukladanie a vymazávanie",
+        "paragraphs": [
+          "Údaje aplikácie sa ukladajú iba vo vašom zariadení. Pracovný priečinok s kópiami pôvodných videí a komprimovanými výsledkami je vylúčený zo záloh iCloud a zariadenia.",
+          "Komprimované videá, dočasné súbory a zoznam môžete kedykoľvek vymazať v časti „Správa“. Vymazaním aplikácie sa odstránia všetky jej údaje. Videá uložené do knižnice fotiek alebo do aplikácie Súbory spravujú tieto aplikácie."
+        ]
+      },
+      {
+        "title": "Poskytovanie tretím stranám",
+        "paragraphs": [
+          "{app} neobsahuje žiadne služby ani sady SDK tretích strán a neposkytuje informácie tretím stranám.",
+          "Keď komprimované video zdieľate, na zaobchádzanie s ním v prijímajúcej aplikácii alebo službe sa vzťahujú zásady ochrany osobných údajov jej poskytovateľa."
+        ]
+      },
+      {
+        "title": "Informácie poskytované spoločnosťou Apple",
+        "paragraphs": [
+          "Ak máte v nastaveniach zariadenia zapnutú možnosť „Zdieľať s vývojármi aplikácií“, môže Apple vývojárovi poskytovať anonymizované diagnostické informácie, ako sú správy o zlyhaniach. Tieto informácie sa používajú výlučne na opravu problémov v aplikácii."
+        ]
+      },
+      {
+        "title": "Súkromie detí",
+        "paragraphs": [
+          "{app} nezhromažďuje osobné údaje od nikoho bez ohľadu na vek."
+        ]
+      },
+      {
+        "title": "Zmeny týchto zásad",
+        "paragraphs": [
+          "Ak sa tieto zásady zmenia, aktualizujeme túto stránku a dátum poslednej aktualizácie."
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "paragraphs": [
+          "Ak máte otázky k týmto zásadám, kontaktujte nás na nižšie uvedenej e-mailovej adrese."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} – súkromie"
+  }
+}

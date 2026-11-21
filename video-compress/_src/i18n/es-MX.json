@@ -1,0 +1,210 @@
+{
+  "app_name": "Compresión de video",
+  "common": {
+    "nav_home": "Inicio",
+    "nav_support": "Ayuda",
+    "nav_privacy": "Privacidad",
+    "language": "Idioma",
+    "skip_to_content": "Ir al contenido",
+    "footer_support": "Ayuda",
+    "footer_privacy": "Política de privacidad",
+    "footer_contact": "Contacto",
+    "requirements": "Para iPhone y iPad con iOS 18 o posterior"
+  },
+  "index": {
+    "meta_title": "{app} — Comprime videos por debajo de un límite de tamaño en iPhone y iPad",
+    "meta_description": "Comprime videos en tu dispositivo para que quepan en el límite del destino al que los envías. Compáralos con el original y guárdalos o compártelos. Sin subidas ni cuenta.",
+    "hero_eyebrow": "Para iPhone y iPad",
+    "hero_title": "Cualquier video, por debajo del tamaño que elijas.",
+    "hero_lead": "Comprime videos por completo en tu dispositivo para que quepan en el límite del destino al que los envías. Compara el resultado con el original y guárdalo en Fotos o Archivos, o compártelo.",
+    "hero_cta_support": "Ver la ayuda",
+    "hero_badge_offline": "Procesado en el dispositivo",
+    "hero_badge_no_account": "Sin cuenta",
+    "hero_badge_no_tracking": "Sin seguimiento",
+    "features_title": "Qué hace",
+    "features": [
+      {
+        "title": "Indicar por tamaño",
+        "body": "Solo tienes que ingresar un límite, como «25 MB o menos». La app verifica el tamaño real del archivo exportado y, si lo supera, ajusta la configuración y vuelve a exportar automáticamente."
+      },
+      {
+        "title": "Límites habituales con un toque",
+        "body": "Elige los límites de servicios populares como Discord, Gmail, Slack, WhatsApp y Mail Drop desde los preajustes."
+      },
+      {
+        "title": "Indicar por calidad",
+        "body": "¿Prefieres no elegir un tamaño? También puedes elegir «Más pequeño», «Equilibrado» o «Alta calidad»."
+      },
+      {
+        "title": "Compara antes de guardar",
+        "body": "Compara el video comprimido con el original y guárdalo en Fotos, guárdalo en Archivos o compártelo."
+      },
+      {
+        "title": "Comprime en lote",
+        "body": "Agrega varios videos a la vez y comprímelos uno tras otro con los mismos ajustes. También puedes agregar videos desde el menú Compartir."
+      },
+      {
+        "title": "Ajusta el formato y la calidad",
+        "body": "Compatible con H.264, HEVC, AV1, ProRes 422 Proxy y Motion JPEG. También puedes elegir la resolución, la velocidad de cuadros y el audio. HEVC puede mantener el HDR."
+      }
+    ],
+    "privacy_title": "Tus videos nunca salen del dispositivo",
+    "privacy_body": "Toda la compresión se realiza en tu iPhone o iPad. Los videos nunca se suben a un servidor y no hay registro de cuenta, anuncios ni análisis. La ubicación se elimina de la salida de forma predeterminada.",
+    "privacy_link": "Leer la política de privacidad",
+    "steps_title": "Cómo funciona",
+    "steps": [
+      {
+        "title": "Agrega videos",
+        "body": "Elige videos de Fotos o Archivos."
+      },
+      {
+        "title": "Define un objetivo",
+        "body": "Ingresa un límite de tamaño o elige una calidad."
+      },
+      {
+        "title": "Comprime y guarda",
+        "body": "Verifica el resultado y guárdalo o compártelo."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Ayuda — {app}",
+    "meta_description": "Preguntas frecuentes e información de contacto de {app}.",
+    "title": "Ayuda",
+    "lead": "Respuestas a las preguntas más comunes sobre el uso de {app} y la solución de problemas. Si no encuentras lo que buscas, escríbenos.",
+    "contact_title": "Contacto",
+    "contact_body": "Envía tus preguntas, informes de errores y sugerencias a la dirección de correo electrónico que aparece a continuación.",
+    "contact_button": "Enviar un correo",
+    "contact_mail_subject": "Ayuda de {app}",
+    "contact_include_title": "Si informas de un problema, estos datos nos ayudan a investigarlo:",
+    "contact_include": [
+      "Versión de la app",
+      "Modelo del dispositivo y versión de iOS / iPadOS",
+      "Los ajustes elegidos (tamaño objetivo o calidad, formato, resolución, velocidad de cuadros)",
+      "Duración y tamaño del video original, y el dispositivo o la app con que se grabó",
+      "Cualquier mensaje de error que haya aparecido"
+    ],
+    "contact_note": "No envíes archivos de video a menos que te lo pidamos.",
+    "faq_title": "Preguntas frecuentes",
+    "faq": [
+      {
+        "q": "El video no cabe en el tamaño que indiqué.",
+        "a": "{app} verifica el tamaño real del archivo exportado y, si supera el límite, ajusta la configuración y vuelve a exportar, hasta cuatro veces en total. Si aun así no cabe, puede que el tamaño objetivo sea demasiado pequeño para la duración del video. Usando como referencia el mínimo que se muestra en el error, prueba a aumentar el tamaño objetivo, a poner la resolución y la velocidad de cuadros en «Automático (recomendado)» o a quitar el audio."
+      },
+      {
+        "q": "¿Dónde se guardan los videos comprimidos?",
+        "a": "En la pantalla de resultado, elige «Guardar en Fotos», «Guardar en Archivos» o Compartir. Hasta que lo guardes, el video comprimido solo existe dentro de la app."
+      },
+      {
+        "q": "No puedo guardar en Fotos.",
+        "a": "Es posible que no se permita agregar a la fototeca. En la app Ajustes, ve a «Privacidad y seguridad» → «Fotos» y permite «Agregar solo fotos» o «Acceso completo» para {app}."
+      },
+      {
+        "q": "¿Se elimina el video original?",
+        "a": "No. {app} comprime una copia del original, así que el video original de tu fototeca o de la app Archivos nunca se modifica ni se elimina."
+      },
+      {
+        "q": "Un video no se carga.",
+        "a": "No se pueden cargar los videos con protección de copia (DRM), los archivos dañados ni los formatos que tu dispositivo no puede decodificar. Si el video está en Fotos de iCloud, espera a que termine de descargarse en el dispositivo."
+      },
+      {
+        "q": "La compresión se detuvo a la mitad.",
+        "a": "Si cambias a otra app o bloqueas la pantalla mientras se comprime, iOS puede interrumpir el proceso. Los videos interrumpidos aparecen al abrir la app; mantén la app abierta y vuelve a ejecutarlos."
+      },
+      {
+        "q": "¿Qué formato debo elegir?",
+        "a": "Si no estás seguro, elige H.264. Se reproduce en casi todas las apps y dispositivos. HEVC ofrece mejor calidad con el mismo tamaño, pero puede no reproducirse en dispositivos antiguos o en algunos servicios. AV1 solo se reproduce en las apps y dispositivos compatibles. ProRes 422 Proxy y Motion JPEG son formatos de edición que pueden ocupar más que el original y solo están disponibles al indicar por calidad."
+      },
+      {
+        "q": "¿Qué pasa con los videos HDR?",
+        "a": "Al exportarlos como H.264 se convierten a SDR. Si quieres mantener el HDR, elige HEVC."
+      },
+      {
+        "q": "¿Se conservan la ubicación y la fecha de grabación?",
+        "a": "La fecha de grabación se conserva. La ubicación se elimina de forma predeterminada y solo se conserva si activas «Conservar ubicación» en los ajustes avanzados. No se escriben otros metadatos."
+      },
+      {
+        "q": "La app está usando demasiado almacenamiento.",
+        "a": "Toca «Gestionar» en la parte superior de la pantalla para eliminar los videos comprimidos y los archivos temporales. Los videos comprimidos que no hayas guardado se perderán, pero tus videos originales no se eliminan."
+      },
+      {
+        "q": "¿Puedo agregar videos desde otras apps?",
+        "a": "Sí. Selecciona un video en Fotos o Archivos, toca Compartir y elige «Agregar a Compresión de video». El video estará ahí la próxima vez que abras {app}."
+      }
+    ],
+    "requirements_title": "Requisitos",
+    "requirements_body": "iPhone con iOS 18 o posterior y iPad con iPadOS 18 o posterior. Los formatos disponibles varían según el dispositivo."
+  },
+  "privacy": {
+    "meta_title": "Política de privacidad — {app}",
+    "meta_description": "Política de privacidad de {app}. Los videos se procesan en tu dispositivo y el desarrollador no recopila información personal.",
+    "title": "Política de privacidad",
+    "updated": "Última actualización: 21 de noviembre de 2026",
+    "summary_title": "Resumen",
+    "summary": [
+      "Toda la compresión de video se realiza en tu dispositivo. Los videos nunca se envían a un servidor.",
+      "El desarrollador no recopila información personal como tu nombre, dirección de correo electrónico, ubicación o identificadores del dispositivo.",
+      "No hay registro de cuenta, publicidad, análisis ni seguimiento."
+    ],
+    "sections": [
+      {
+        "title": "Información que la app maneja en tu dispositivo",
+        "paragraphs": [
+          "Para comprimir videos, {app} maneja la siguiente información únicamente en tu dispositivo. Nada de ella se envía al desarrollador ni a terceros."
+        ],
+        "items": [
+          "Videos que eliges: las copias de los videos que seleccionas en Fotos, Archivos o el menú Compartir se guardan en la carpeta de trabajo de la app.",
+          "Resultados comprimidos: los videos exportados se guardan en la app hasta que los guardas o los eliminas.",
+          "Estado del procesamiento y ajustes: el nombre de archivo, el tamaño, la duración y el estado de procesamiento de cada video de la lista, y los ajustes de compresión que elegiste.",
+          "Metadatos del video: la fecha de grabación se traslada a la salida. La ubicación solo se traslada si «Conservar ubicación» está activado."
+        ]
+      },
+      {
+        "title": "Permisos",
+        "paragraphs": [
+          "Los videos se eligen con el selector de fotos y el explorador de archivos de iOS, y solo se cargan los videos que seleccionas. La app nunca lee toda tu fototeca.",
+          "La app solicita permiso para agregar a tu fototeca solo cuando usas «Guardar en Fotos». Este permiso se utiliza únicamente para guardar los videos comprimidos."
+        ]
+      },
+      {
+        "title": "Almacenamiento y eliminación",
+        "paragraphs": [
+          "Los datos de la app se guardan solo en tu dispositivo. La carpeta de trabajo que contiene las copias de los videos originales y los resultados comprimidos está excluida de las copias de seguridad de iCloud y del dispositivo.",
+          "Puedes eliminar los videos comprimidos, los archivos temporales y la lista en cualquier momento desde «Gestionar». Si eliminas la app, se borran todos sus datos. Los videos que hayas guardado en tu fototeca o en la app Archivos se manejan desde esas apps."
+        ]
+      },
+      {
+        "title": "Compartir con terceros",
+        "paragraphs": [
+          "{app} no incluye servicios ni SDK de terceros y no comparte información con terceros.",
+          "Cuando compartes un video comprimido, la política de privacidad de la app o el servicio receptor se aplica a cómo lo maneja."
+        ]
+      },
+      {
+        "title": "Información proporcionada por Apple",
+        "paragraphs": [
+          "Si activaste «Compartir con los desarrolladores de apps» en los ajustes del dispositivo, Apple puede proporcionar al desarrollador información de diagnóstico anónima, como informes de fallos. Esta información se utiliza solo para corregir problemas de la app."
+        ]
+      },
+      {
+        "title": "Privacidad de los menores",
+        "paragraphs": [
+          "{app} no recopila información personal de nadie, independientemente de su edad."
+        ]
+      },
+      {
+        "title": "Cambios en esta política",
+        "paragraphs": [
+          "Si esta política cambia, actualizaremos esta página y revisaremos la fecha de última actualización."
+        ]
+      },
+      {
+        "title": "Contacto",
+        "paragraphs": [
+          "Si tienes preguntas sobre esta política, escríbenos a la dirección de correo electrónico que aparece a continuación."
+        ]
+      }
+    ],
+    "contact_mail_subject": "Privacidad de {app}"
+  }
+}

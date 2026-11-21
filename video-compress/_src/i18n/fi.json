@@ -1,0 +1,210 @@
+{
+  "app_name": "Videopakkaus",
+  "common": {
+    "nav_home": "Etusivu",
+    "nav_support": "Tuki",
+    "nav_privacy": "Tietosuoja",
+    "language": "Kieli",
+    "skip_to_content": "Siirry sisältöön",
+    "footer_support": "Tuki",
+    "footer_privacy": "Tietosuojakäytäntö",
+    "footer_contact": "Yhteystiedot",
+    "requirements": "iPhone- ja iPad-laitteille, joissa on iOS 18 tai uudempi"
+  },
+  "index": {
+    "meta_title": "{app} — Pakkaa videot määritetyn kokorajan alle iPhone- ja iPad-laitteessa",
+    "meta_description": "Pakkaa videoita laitteessasi niin, että ne mahtuvat vastaanottavan paikan kokorajaan. Vertaa alkuperäiseen ja tallenna tai jaa sen jälkeen. Ei lataamista palvelimelle, ei tiliä.",
+    "hero_eyebrow": "iPhonelle ja iPadille",
+    "hero_title": "Mikä tahansa video, valitsemasi koon alle.",
+    "hero_lead": "Pakkaa videot kokonaan laitteessasi niin, että ne mahtuvat lähetyspaikan kokorajaan. Vertaa tulosta alkuperäiseen ja tallenna se sitten Kuviin tai Tiedostoihin tai jaa se.",
+    "hero_cta_support": "Katso tuki",
+    "hero_badge_offline": "Käsitellään laitteessa",
+    "hero_badge_no_account": "Ei tiliä",
+    "hero_badge_no_tracking": "Ei seurantaa",
+    "features_title": "Mitä sovellus tekee",
+    "features": [
+      {
+        "title": "Koon mukaan",
+        "body": "Anna vain kokoraja, esimerkiksi ”25 MB tai vähemmän”. Sovellus tarkistaa viedyn tiedoston todellisen koon ja, jos raja ylittyy, säätää asetuksia ja vie tiedoston automaattisesti uudelleen."
+      },
+      {
+        "title": "Yleiset kokorajat yhdellä napautuksella",
+        "body": "Valitse suosittujen palvelujen, kuten Discordin, Gmailin, Slackin, WhatsAppin ja Mail Dropin, kokorajat valmiista asetuksista."
+      },
+      {
+        "title": "Laadun mukaan",
+        "body": "Etkö halua valita kokoa? Valitse sen sijaan ”Pienempi”, ”Tasapaino” tai ”Korkea laatu”."
+      },
+      {
+        "title": "Vertaa ennen tallentamista",
+        "body": "Vertaa pakattua videota alkuperäiseen ja tallenna se sitten Kuviin, tallenna Tiedostoihin tai jaa se."
+      },
+      {
+        "title": "Pakkaa useita kerralla",
+        "body": "Lisää useita videoita kerralla ja pakkaa ne peräkkäin samoilla asetuksilla. Voit lisätä videoita myös jakovalikosta."
+      },
+      {
+        "title": "Hienosäädä muotoa ja laatua",
+        "body": "Tukee muotoja H.264, HEVC, AV1, ProRes 422 Proxy ja Motion JPEG. Valitse myös resoluutio, kuvataajuus ja ääni. HEVC voi säilyttää HDR:n."
+      }
+    ],
+    "privacy_title": "Videosi eivät koskaan poistu laitteestasi",
+    "privacy_body": "Kaikki pakkaus tapahtuu iPhonessasi tai iPadissasi. Videoita ei koskaan ladata palvelimelle, eikä sovelluksessa ole tilin luomista, mainoksia tai analytiikkaa. Sijaintitiedot poistetaan tulosteesta oletuksena.",
+    "privacy_link": "Lue tietosuojakäytäntö",
+    "steps_title": "Näin se toimii",
+    "steps": [
+      {
+        "title": "Lisää videoita",
+        "body": "Valitse videoita Kuvista tai Tiedostoista."
+      },
+      {
+        "title": "Aseta tavoite",
+        "body": "Anna kokoraja tai valitse laatu."
+      },
+      {
+        "title": "Pakkaa ja tallenna",
+        "body": "Tarkista tulos ja tallenna tai jaa se."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Tuki — {app}",
+    "meta_description": "Usein kysytyt kysymykset ja yhteystiedot sovellukselle {app}.",
+    "title": "Tuki",
+    "lead": "Vastauksia yleisiin kysymyksiin {app}-sovelluksen käytöstä ja ongelmien ratkaisemisesta. Jos et löydä tarvitsemaasi, ota yhteyttä sähköpostitse.",
+    "contact_title": "Yhteystiedot",
+    "contact_body": "Lähetä kysymykset, virheilmoitukset ja toiveet alla olevaan sähköpostiosoitteeseen.",
+    "contact_button": "Lähetä sähköpostia",
+    "contact_mail_subject": "{app}-tuki",
+    "contact_include_title": "Ongelmaa ilmoittaessasi seuraavat tiedot auttavat meitä tutkimaan asiaa:",
+    "contact_include": [
+      "Sovelluksen versio",
+      "Laitteen malli ja iOS- / iPadOS-versio",
+      "Valitsemasi asetukset (tavoitekoko tai laatu, muoto, resoluutio, kuvataajuus)",
+      "Alkuperäisen videon pituus ja koko sekä laite tai sovellus, jolla se kuvattiin",
+      "Näytetty virheilmoitus"
+    ],
+    "contact_note": "Älä lähetä videotiedostoja, ellemme pyydä niitä.",
+    "faq_title": "Usein kysytyt kysymykset",
+    "faq": [
+      {
+        "q": "Video ei mahdu asettamaani kokoon.",
+        "a": "{app} tarkistaa viedyn tiedoston todellisen koon ja, jos raja ylittyy, säätää asetuksia ja vie tiedoston uudelleen, enintään neljä kertaa. Jos se ei vieläkään mahdu, tavoitekoko voi olla liian pieni videon pituuteen nähden. Käytä virheilmoituksessa näkyvää vähimmäisarviota ohjeena ja kokeile joko suurempaa tavoitekokoa, resoluution ja kuvataajuuden asettamista arvoon ”Automaattinen (suositus)” tai äänen poistamista."
+      },
+      {
+        "q": "Minne pakatut videot tallennetaan?",
+        "a": "Valitse tulosnäytöltä ”Tallenna Kuviin”, ”Tallenna Tiedostoihin” tai Jaa. Ennen tallentamista pakattu video on vain sovelluksen sisällä."
+      },
+      {
+        "q": "En voi tallentaa Kuviin.",
+        "a": "Kuvakirjastoon lisääminen ei ehkä ole sallittua. Salli {app}-sovellukselle Asetukset → Tietosuoja ja turvallisuus → Kuvat -kohdassa ”Lisää vain kuvia” tai ”Täysi käyttöoikeus”."
+      },
+      {
+        "q": "Poistetaanko alkuperäinen video?",
+        "a": "Ei. {app} pakkaa kopion alkuperäisestä, joten kuvakirjastossasi tai Tiedostot-sovelluksessa olevaa alkuperäistä videota ei muuteta eikä poisteta."
+      },
+      {
+        "q": "Videon lataaminen ei onnistu.",
+        "a": "Kopiosuojattuja (DRM) videoita, vahingoittuneita tiedostoja ja muotoja, joita laitteesi ei pysty purkamaan, ei voi ladata. Jos video on iCloud Kuvissa, odota, kunnes sen lataaminen laitteelle on valmis."
+      },
+      {
+        "q": "Pakkaus keskeytyi.",
+        "a": "Jos vaihdat toiseen sovellukseen tai lukitset näytön pakkaamisen aikana, iOS voi keskeyttää käsittelyn. Keskeytyneet videot näytetään, kun avaat sovelluksen; pidä sovellus auki ja suorita ne uudelleen."
+      },
+      {
+        "q": "Mikä muoto kannattaa valita?",
+        "a": "Jos et ole varma, valitse H.264. Se toistuu lähes kaikissa sovelluksissa ja laitteissa. HEVC tarjoaa paremman laadun samassa koossa, mutta se ei välttämättä toistu vanhemmilla laitteilla tai joissakin palveluissa. AV1 toistuu vain sitä tukevissa sovelluksissa ja laitteissa. ProRes 422 Proxy ja Motion JPEG ovat editointimuotoja, jotka voivat olla alkuperäistä suurempia, ja ne ovat valittavissa vain laadun mukaan asetettaessa."
+      },
+      {
+        "q": "Mitä HDR-videoille tapahtuu?",
+        "a": "Kun video viedään H.264-muodossa, se muunnetaan SDR:ksi. Jos haluat säilyttää HDR:n, valitse HEVC."
+      },
+      {
+        "q": "Säilyvätkö sijainti ja kuvauspäivä?",
+        "a": "Kuvauspäivä säilyy. Sijainti poistetaan oletuksena, ja se säilytetään vain, kun otat Lisäasetuksissa käyttöön ”Säilytä sijainti”. Muita metatietoja ei kirjoiteta."
+      },
+      {
+        "q": "Sovellus käyttää liikaa tallennustilaa.",
+        "a": "Napauta näytön yläreunassa ”Hallinta” ja poista pakatut videot ja väliaikaistiedostot. Tallentamattomat pakatut videot menetetään, mutta alkuperäisiä videoita ei poisteta."
+      },
+      {
+        "q": "Voinko lisätä videoita muista sovelluksista?",
+        "a": "Kyllä. Valitse video Kuvista tai Tiedostoista, napauta Jaa ja valitse ”Lisää Videopakkaukseen”. Video on siellä, kun seuraavan kerran avaat {app}-sovelluksen."
+      }
+    ],
+    "requirements_title": "Järjestelmävaatimukset",
+    "requirements_body": "iPhone, jossa on iOS 18 tai uudempi, tai iPad, jossa on iPadOS 18 tai uudempi. Käytettävissä olevat muodot vaihtelevat laitteen mukaan."
+  },
+  "privacy": {
+    "meta_title": "Tietosuojakäytäntö — {app}",
+    "meta_description": "Sovelluksen {app} tietosuojakäytäntö. Videot käsitellään laitteessasi, eikä kehittäjä kerää henkilötietoja.",
+    "title": "Tietosuojakäytäntö",
+    "updated": "Päivitetty viimeksi: 21. marraskuuta 2026",
+    "summary_title": "Yhteenveto",
+    "summary": [
+      "Kaikki videoiden pakkaus tapahtuu laitteessasi. Videoita ei koskaan lähetetä palvelimelle.",
+      "Kehittäjä ei kerää henkilötietoja, kuten nimeäsi, sähköpostiosoitettasi, sijaintiasi tai laitteen tunnisteita.",
+      "Sovelluksessa ei ole tilin luomista, mainontaa, analytiikkaa eikä seurantaa."
+    ],
+    "sections": [
+      {
+        "title": "Tiedot, joita sovellus käsittelee laitteessasi",
+        "paragraphs": [
+          "Videoiden pakkaamiseksi {app} käsittelee seuraavia tietoja vain laitteessasi. Niitä ei lähetetä kehittäjälle eikä kolmansille osapuolille."
+        ],
+        "items": [
+          "Valitsemasi videot: kopiot videoista, jotka valitset Kuvista, Tiedostoista tai jakovalikosta, tallennetaan sovelluksen työkansioon.",
+          "Pakatut tulokset: viedyt videot säilytetään sovelluksessa, kunnes tallennat tai poistat ne.",
+          "Käsittelyn tila ja asetukset: luettelossa olevien videoiden tiedostonimi, koko, pituus ja käsittelyn tila sekä valitsemasi pakkausasetukset.",
+          "Videon metatiedot: kuvauspäivä siirretään tulosteeseen. Sijainti siirretään vain, kun ”Säilytä sijainti” on käytössä."
+        ]
+      },
+      {
+        "title": "Käyttöoikeudet",
+        "paragraphs": [
+          "Videot valitaan iOS:n kuvavalitsimella ja tiedostoselaimella, ja vain valitsemasi videot ladataan. Sovellus ei koskaan lue koko kuvakirjaasi.",
+          "Sovellus pyytää lupaa kuvakirjaan lisäämiseen vain, kun käytät ”Tallenna Kuviin” -toimintoa. Tätä lupaa käytetään ainoastaan pakattujen videoiden tallentamiseen."
+        ]
+      },
+      {
+        "title": "Tallennus ja poistaminen",
+        "paragraphs": [
+          "Sovelluksen tiedot tallennetaan vain laitteeseesi. Työkansio, jossa on alkuperäisten videoiden kopiot ja pakatut tulokset, on jätetty iCloud- ja laitevarmuuskopioiden ulkopuolelle.",
+          "Voit poistaa pakatut videot, väliaikaistiedostot ja luettelon milloin tahansa ”Hallinta”-kohdasta. Sovelluksen poistaminen poistaa kaikki sen tiedot. Kuvakirjaan tai Tiedostot-sovellukseen tallentamiasi videoita hallitaan kyseisissä sovelluksissa."
+        ]
+      },
+      {
+        "title": "Tietojen luovuttaminen kolmansille osapuolille",
+        "paragraphs": [
+          "{app} ei sisällä kolmannen osapuolen palveluita tai SDK:ita eikä luovuta tietoja kolmansille osapuolille.",
+          "Kun jaat pakatun videon, vastaanottavan sovelluksen tai palvelun tapaan käsitellä sitä sovelletaan sen tarjoajan tietosuojakäytäntöä."
+        ]
+      },
+      {
+        "title": "Applen tarjoamat tiedot",
+        "paragraphs": [
+          "Jos olet ottanut laitteen asetuksissa käyttöön ”Jaa sovelluskehittäjien kanssa”, Apple voi tarjota kehittäjälle anonymisoituja diagnoositietoja, kuten kaatumisraportteja. Näitä tietoja käytetään vain sovelluksen ongelmien korjaamiseen."
+        ]
+      },
+      {
+        "title": "Lasten tietosuoja",
+        "paragraphs": [
+          "{app} ei kerää henkilötietoja keneltäkään iästä riippumatta."
+        ]
+      },
+      {
+        "title": "Tämän käytännön muutokset",
+        "paragraphs": [
+          "Jos tämä käytäntö muuttuu, päivitämme tämän sivun ja tarkistamme viimeisen päivityksen päivämäärän."
+        ]
+      },
+      {
+        "title": "Yhteystiedot",
+        "paragraphs": [
+          "Jos sinulla on kysyttävää tästä käytännöstä, ota yhteyttä alla olevaan sähköpostiosoitteeseen."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} tietosuoja"
+  }
+}

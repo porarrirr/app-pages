@@ -1,0 +1,210 @@
+{
+  "app_name": "Kompresja filmów",
+  "common": {
+    "nav_home": "Strona główna",
+    "nav_support": "Pomoc",
+    "nav_privacy": "Prywatność",
+    "language": "Język",
+    "skip_to_content": "Przejdź do treści",
+    "footer_support": "Pomoc",
+    "footer_privacy": "Polityka prywatności",
+    "footer_contact": "Kontakt",
+    "requirements": "Dla iPhone'a i iPada z iOS 18 lub nowszym"
+  },
+  "index": {
+    "meta_title": "{app} — Kompresuj filmy poniżej limitu rozmiaru na iPhonie i iPadzie",
+    "meta_description": "Kompresuj filmy na urządzeniu, aby mieściły się w limicie rozmiaru miejsca, do którego je wysyłasz. Porównaj z oryginałem, a następnie zapisz lub udostępnij. Bez przesyłania na serwer, bez konta.",
+    "hero_eyebrow": "Na iPhone'a i iPada",
+    "hero_title": "Dowolny film, poniżej wybranego rozmiaru.",
+    "hero_lead": "Kompresuj filmy w całości na urządzeniu, aby mieściły się w limicie miejsca, do którego je wysyłasz. Porównaj wynik z oryginałem, a następnie zapisz go w Zdjęciach lub Plikach albo udostępnij.",
+    "hero_cta_support": "Zobacz pomoc",
+    "hero_badge_offline": "Przetwarzane na urządzeniu",
+    "hero_badge_no_account": "Bez konta",
+    "hero_badge_no_tracking": "Bez śledzenia",
+    "features_title": "Co potrafi aplikacja",
+    "features": [
+      {
+        "title": "Określ rozmiarem",
+        "body": "Wystarczy podać limit, np. „25 MB lub mniej”. Aplikacja sprawdza rzeczywisty rozmiar wyeksportowanego pliku i jeśli go przekracza, dostosowuje ustawienia i automatycznie eksportuje ponownie."
+      },
+      {
+        "title": "Popularne limity jednym dotknięciem",
+        "body": "Wybierz limity popularnych usług, takich jak Discord, Gmail, Slack, WhatsApp i Mail Drop, z gotowych ustawień."
+      },
+      {
+        "title": "Określ jakością",
+        "body": "Wolisz nie wybierać rozmiaru? Wybierz zamiast tego „Mniejszy”, „Zrównoważone” lub „Wysoka jakość”."
+      },
+      {
+        "title": "Porównaj przed zapisaniem",
+        "body": "Porównaj skompresowany film z oryginałem, a następnie zapisz go w Zdjęciach, zapisz w Plikach lub udostępnij."
+      },
+      {
+        "title": "Kompresuj partiami",
+        "body": "Dodaj kilka filmów naraz i kompresuj je po kolei przy użyciu tych samych ustawień. Filmy możesz dodawać także z menu Udostępnij."
+      },
+      {
+        "title": "Dostosuj format i jakość",
+        "body": "Obsługuje H.264, HEVC, AV1, ProRes 422 Proxy i Motion JPEG. Wybierz także rozdzielczość, liczbę klatek na sekundę i dźwięk. HEVC może zachować HDR."
+      }
+    ],
+    "privacy_title": "Twoje filmy nigdy nie opuszczają urządzenia",
+    "privacy_body": "Cała kompresja odbywa się na Twoim iPhonie lub iPadzie. Filmy nigdy nie są przesyłane na serwer, a aplikacja nie wymaga zakładania konta, nie zawiera reklam ani analityki. Dane o lokalizacji są domyślnie usuwane z wyniku.",
+    "privacy_link": "Przeczytaj politykę prywatności",
+    "steps_title": "Jak to działa",
+    "steps": [
+      {
+        "title": "Dodaj filmy",
+        "body": "Wybierz filmy ze Zdjęć lub Plików."
+      },
+      {
+        "title": "Ustaw cel",
+        "body": "Podaj limit rozmiaru lub wybierz jakość."
+      },
+      {
+        "title": "Kompresuj i zapisz",
+        "body": "Sprawdź wynik, a następnie zapisz lub udostępnij."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Pomoc — {app}",
+    "meta_description": "Najczęściej zadawane pytania i dane kontaktowe dotyczące aplikacji {app}.",
+    "title": "Pomoc",
+    "lead": "Odpowiedzi na częste pytania dotyczące korzystania z aplikacji {app} i rozwiązywania problemów. Jeśli nie znajdziesz potrzebnych informacji, skontaktuj się z nami e-mailem.",
+    "contact_title": "Kontakt",
+    "contact_body": "Pytania, zgłoszenia błędów i propozycje funkcji wysyłaj na poniższy adres e-mail.",
+    "contact_button": "Napisz do nas",
+    "contact_mail_subject": "{app} — pomoc",
+    "contact_include_title": "Zgłaszając problem, podaj poniższe informacje — ułatwią nam one zbadanie sprawy:",
+    "contact_include": [
+      "Wersja aplikacji",
+      "Model urządzenia i wersja iOS / iPadOS",
+      "Wybrane ustawienia (docelowy rozmiar lub jakość, format, rozdzielczość, liczba klatek na sekundę)",
+      "Długość i rozmiar oryginalnego filmu oraz urządzenie lub aplikacja, którymi go nagrano",
+      "Wyświetlony komunikat o błędzie"
+    ],
+    "contact_note": "Nie przesyłaj plików wideo, chyba że o to poprosimy.",
+    "faq_title": "Najczęściej zadawane pytania",
+    "faq": [
+      {
+        "q": "Film nie mieści się w ustawionym rozmiarze.",
+        "a": "{app} sprawdza rzeczywisty rozmiar wyeksportowanego pliku i jeśli przekracza limit, dostosowuje ustawienia i eksportuje ponownie, łącznie do czterech razy. Jeśli nadal się nie mieści, docelowy rozmiar może być zbyt mały w stosunku do długości filmu. Kierując się minimalnym szacowanym rozmiarem pokazanym w błędzie, spróbuj zwiększyć docelowy rozmiar, ustawić rozdzielczość i liczbę klatek na sekundę na „Auto (zalecane)” albo usunąć dźwięk."
+      },
+      {
+        "q": "Gdzie zapisywane są skompresowane filmy?",
+        "a": "Na ekranie wyniku wybierz „Zapisz w Zdjęciach”, „Zapisz w Plikach” lub Udostępnij. Dopóki go nie zapiszesz, skompresowany film istnieje tylko w aplikacji."
+      },
+      {
+        "q": "Nie mogę zapisać w Zdjęciach.",
+        "a": "Możliwe, że dodawanie do biblioteki zdjęć nie jest dozwolone. W aplikacji Ustawienia przejdź do „Prywatność i bezpieczeństwo” → „Zdjęcia” i zezwól aplikacji {app} na „Tylko dodawanie” lub „Pełny dostęp”."
+      },
+      {
+        "q": "Czy oryginalny film zostanie usunięty?",
+        "a": "Nie. {app} kompresuje kopię oryginału, więc oryginalny film w bibliotece zdjęć lub w aplikacji Pliki nigdy nie jest zmieniany ani usuwany."
+      },
+      {
+        "q": "Nie można wczytać filmu.",
+        "a": "Nie można wczytać filmów z ochroną przed kopiowaniem (DRM), uszkodzonych plików ani formatów, których urządzenie nie potrafi zdekodować. W przypadku filmów przechowywanych w iCloud Zdjęcia poczekaj, aż zakończy się ich pobieranie na urządzenie."
+      },
+      {
+        "q": "Kompresja przerwała się w trakcie.",
+        "a": "Jeśli podczas kompresji przełączysz się do innej aplikacji lub zablokujesz ekran, iOS może przerwać proces. Przerwane filmy są wyświetlane po otwarciu aplikacji; pozostaw aplikację otwartą i uruchom je ponownie."
+      },
+      {
+        "q": "Który format wybrać?",
+        "a": "Jeśli nie masz pewności, wybierz H.264. Odtwarza się w niemal każdej aplikacji i na niemal każdym urządzeniu. HEVC zapewnia lepszą jakość przy tym samym rozmiarze, ale może nie odtwarzać się na starszych urządzeniach lub w niektórych usługach. AV1 odtwarza się tylko w aplikacjach i na urządzeniach, które go obsługują. ProRes 422 Proxy i Motion JPEG to formaty do montażu, które mogą być większe niż oryginał, i są dostępne tylko przy określaniu jakością."
+      },
+      {
+        "q": "Co dzieje się z filmami HDR?",
+        "a": "Przy eksporcie w H.264 są konwertowane do SDR. Aby zachować HDR, wybierz HEVC."
+      },
+      {
+        "q": "Czy lokalizacja i data nagrania są zachowywane?",
+        "a": "Data nagrania jest zachowywana. Lokalizacja jest domyślnie usuwana i zachowywana tylko po włączeniu „Zachowaj lokalizację” w Ustawieniach zaawansowanych. Inne metadane nie są zapisywane."
+      },
+      {
+        "q": "Aplikacja zajmuje zbyt dużo miejsca.",
+        "a": "Dotknij „Zarządzaj” u góry ekranu, aby usunąć skompresowane filmy i pliki tymczasowe. Niezapisane skompresowane filmy zostaną utracone, ale oryginalne filmy nie są usuwane."
+      },
+      {
+        "q": "Czy mogę dodawać filmy z innych aplikacji?",
+        "a": "Tak. Wybierz film w Zdjęciach lub Plikach, dotknij Udostępnij i wybierz „Dodaj do kompresji filmów”. Film będzie tam przy następnym otwarciu aplikacji {app}."
+      }
+    ],
+    "requirements_title": "Wymagania",
+    "requirements_body": "iPhone z iOS 18 lub nowszym albo iPad z iPadOS 18 lub nowszym. Dostępne formaty zależą od urządzenia."
+  },
+  "privacy": {
+    "meta_title": "Polityka prywatności — {app}",
+    "meta_description": "Polityka prywatności aplikacji {app}. Filmy są przetwarzane na urządzeniu, a deweloper nie zbiera danych osobowych.",
+    "title": "Polityka prywatności",
+    "updated": "Ostatnia aktualizacja: 21 listopada 2026",
+    "summary_title": "Podsumowanie",
+    "summary": [
+      "Cała kompresja filmów odbywa się na Twoim urządzeniu. Filmy nigdy nie są wysyłane na serwer.",
+      "Deweloper nie zbiera danych osobowych, takich jak imię i nazwisko, adres e-mail, lokalizacja czy identyfikatory urządzenia.",
+      "Nie ma zakładania konta, reklam, analityki ani śledzenia."
+    ],
+    "sections": [
+      {
+        "title": "Informacje przetwarzane przez aplikację na urządzeniu",
+        "paragraphs": [
+          "Aby kompresować filmy, {app} przetwarza następujące informacje wyłącznie na Twoim urządzeniu. Żadna z nich nie jest wysyłana do dewelopera ani osobom trzecim."
+        ],
+        "items": [
+          "Wybrane filmy: kopie filmów wybranych ze Zdjęć, Plików lub menu Udostępnij są przechowywane w folderze roboczym aplikacji.",
+          "Skompresowane wyniki: wyeksportowane filmy są przechowywane w aplikacji, dopóki ich nie zapiszesz lub nie usuniesz.",
+          "Stan przetwarzania i ustawienia: nazwa pliku, rozmiar, długość i stan przetwarzania każdego filmu na liście oraz wybrane ustawienia kompresji.",
+          "Metadane filmu: data nagrania jest przenoszona do wyniku. Lokalizacja jest przenoszona tylko wtedy, gdy włączono „Zachowaj lokalizację”."
+        ]
+      },
+      {
+        "title": "Uprawnienia",
+        "paragraphs": [
+          "Filmy są wybierane za pomocą systemowego selektora zdjęć iOS i przeglądarki plików, a wczytywane są tylko wybrane filmy. Aplikacja nigdy nie odczytuje całej biblioteki zdjęć.",
+          "Aplikacja prosi o pozwolenie na dodawanie do biblioteki zdjęć tylko wtedy, gdy używasz opcji „Zapisz w Zdjęciach”. To pozwolenie służy wyłącznie do zapisywania skompresowanych filmów."
+        ]
+      },
+      {
+        "title": "Przechowywanie i usuwanie",
+        "paragraphs": [
+          "Dane aplikacji są przechowywane wyłącznie na Twoim urządzeniu. Folder roboczy zawierający kopie oryginalnych filmów i skompresowane wyniki jest wyłączony z kopii zapasowych iCloud i urządzenia.",
+          "Możesz w każdej chwili usunąć skompresowane filmy, pliki tymczasowe i listę w sekcji „Zarządzaj”. Usunięcie aplikacji usuwa wszystkie jej dane. Filmy zapisane w bibliotece zdjęć lub w aplikacji Pliki są zarządzane przez te aplikacje."
+        ]
+      },
+      {
+        "title": "Udostępnianie osobom trzecim",
+        "paragraphs": [
+          "{app} nie zawiera usług ani zestawów SDK osób trzecich i nie udostępnia informacji osobom trzecim.",
+          "Gdy udostępnisz skompresowany film, do sposobu jego przetwarzania przez aplikację lub usługę odbierającą ma zastosowanie polityka prywatności jej dostawcy."
+        ]
+      },
+      {
+        "title": "Informacje udostępniane przez Apple",
+        "paragraphs": [
+          "Jeśli w ustawieniach urządzenia włączono opcję „Udostępniaj deweloperom aplikacji”, Apple może przekazywać deweloperowi anonimowe informacje diagnostyczne, takie jak raporty o awariach. Informacje te są wykorzystywane wyłącznie do naprawiania problemów w aplikacji."
+        ]
+      },
+      {
+        "title": "Prywatność dzieci",
+        "paragraphs": [
+          "{app} nie zbiera danych osobowych od nikogo, niezależnie od wieku."
+        ]
+      },
+      {
+        "title": "Zmiany w tej polityce",
+        "paragraphs": [
+          "Jeśli ta polityka ulegnie zmianie, zaktualizujemy tę stronę i zmienimy datę ostatniej aktualizacji."
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "paragraphs": [
+          "W razie pytań dotyczących tej polityki skontaktuj się z nami pod poniższym adresem e-mail."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} — prywatność"
+  }
+}

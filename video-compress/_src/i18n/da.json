@@ -1,0 +1,210 @@
+{
+  "app_name": "Videokomprimering",
+  "common": {
+    "nav_home": "Hjem",
+    "nav_support": "Support",
+    "nav_privacy": "Privatliv",
+    "language": "Sprog",
+    "skip_to_content": "Gå til indhold",
+    "footer_support": "Support",
+    "footer_privacy": "Privatlivspolitik",
+    "footer_contact": "Kontakt",
+    "requirements": "Til iPhone og iPad med iOS 18 eller nyere"
+  },
+  "index": {
+    "meta_title": "{app} — Komprimér videoer til under en størrelsesgrænse på iPhone og iPad",
+    "meta_description": "Komprimér videoer på din enhed, så de passer under størrelsesgrænsen for det sted, du sender dem til. Sammenlign med originalen, og gem eller del dem derefter. Ingen uploads, ingen konto.",
+    "hero_eyebrow": "Til iPhone og iPad",
+    "hero_title": "Enhver video, under den størrelse du vælger.",
+    "hero_lead": "Komprimér videoer helt på din enhed, så de passer inden for grænsen for det sted, du sender dem til. Sammenlign resultatet med originalen, og gem det derefter i Fotos eller Filer, eller del det.",
+    "hero_cta_support": "Se support",
+    "hero_badge_offline": "Behandles på enheden",
+    "hero_badge_no_account": "Ingen konto nødvendig",
+    "hero_badge_no_tracking": "Ingen sporing",
+    "features_title": "Det kan appen",
+    "features": [
+      {
+        "title": "Angiv efter størrelse",
+        "body": "Angiv blot en grænse, f.eks. »25 MB eller mindre«. Appen kontrollerer den faktiske størrelse på den eksporterede fil og justerer indstillingerne og eksporterer automatisk igen, hvis den er for stor."
+      },
+      {
+        "title": "Almindelige grænser med ét tryk",
+        "body": "Vælg grænserne for populære tjenester som Discord, Gmail, Slack, WhatsApp og Mail Drop fra forudindstillinger."
+      },
+      {
+        "title": "Angiv efter kvalitet",
+        "body": "Vil du ikke vælge en størrelse? Vælg i stedet Lille, Balanceret eller Høj kvalitet."
+      },
+      {
+        "title": "Sammenlign, før du gemmer",
+        "body": "Sammenlign den komprimerede video med originalen, og gem den derefter i Fotos, gem den i Filer, eller del den."
+      },
+      {
+        "title": "Komprimér flere ad gangen",
+        "body": "Føj flere videoer til på én gang, og komprimér dem efter hinanden med de samme indstillinger. Du kan også føje videoer til via delemenuen."
+      },
+      {
+        "title": "Finjustér format og kvalitet",
+        "body": "Understøtter H.264, HEVC, AV1, ProRes 422 Proxy og Motion JPEG. Vælg også opløsning, billedhastighed og lyd. HEVC kan bevare HDR."
+      }
+    ],
+    "privacy_title": "Dine videoer forlader aldrig enheden",
+    "privacy_body": "Al komprimering foregår på din iPhone eller iPad. Videoer uploades aldrig til en server, og der er ingen kontotilmelding, annoncer eller analyse. Placeringsdata fjernes fra outputtet som standard.",
+    "privacy_link": "Læs privatlivspolitikken",
+    "steps_title": "Sådan fungerer det",
+    "steps": [
+      {
+        "title": "Føj videoer til",
+        "body": "Vælg videoer fra Fotos eller Filer."
+      },
+      {
+        "title": "Angiv et mål",
+        "body": "Angiv en størrelsesgrænse, eller vælg en kvalitet."
+      },
+      {
+        "title": "Komprimér og gem",
+        "body": "Tjek resultatet, og gem eller del det derefter."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Support — {app}",
+    "meta_description": "Ofte stillede spørgsmål og kontaktoplysninger for {app}.",
+    "title": "Support",
+    "lead": "Svar på almindelige spørgsmål om brug af {app} og løsning af problemer. Hvis du ikke finder det, du har brug for, kan du kontakte os på e-mail.",
+    "contact_title": "Kontakt",
+    "contact_body": "Send spørgsmål, fejlrapporter og ønsker til e-mailadressen nedenfor.",
+    "contact_button": "Send e-mail",
+    "contact_mail_subject": "{app} Support",
+    "contact_include_title": "Når du rapporterer et problem, hjælper følgende oplysninger os med at undersøge det:",
+    "contact_include": [
+      "Appversion",
+      "Enhedsmodel og version af iOS / iPadOS",
+      "De valgte indstillinger (målstørrelse eller kvalitet, format, opløsning, billedhastighed)",
+      "Længde og størrelse på den originale video samt den enhed eller app, den blev optaget med",
+      "Enhver vist fejlmeddelelse"
+    ],
+    "contact_note": "Send ikke selve videofilerne, medmindre vi beder om det.",
+    "faq_title": "Ofte stillede spørgsmål",
+    "faq": [
+      {
+        "q": "Videoen passer ikke inden for den størrelse, jeg har angivet.",
+        "a": "{app} kontrollerer den faktiske størrelse på den eksporterede fil og justerer indstillingerne og eksporterer igen, hvis grænsen overskrides, op til fire gange i alt. Passer den stadig ikke, er målstørrelsen muligvis for lille til videoens længde. Brug det mindste skøn i fejlmeddelelsen som rettesnor, og prøv en større målstørrelse, indstil opløsning og billedhastighed til »Automatisk (anbefalet)«, eller fjern lyden."
+      },
+      {
+        "q": "Hvor gemmes komprimerede videoer?",
+        "a": "Vælg »Gem i Fotos«, »Gem i Filer« eller del på resultatskærmen. Indtil du gemmer, findes den komprimerede video kun i appen."
+      },
+      {
+        "q": "Jeg kan ikke gemme i Fotos.",
+        "a": "Det er muligvis ikke tilladt at føje til fotobiblioteket. Giv {app} »Føj kun fotos til« eller »Fuld adgang« i Indstillinger → Anonymitet og sikkerhed → Fotos."
+      },
+      {
+        "q": "Slettes den originale video?",
+        "a": "Nej. {app} komprimerer en kopi af originalen, så den originale video i dit fotobibliotek eller i appen Filer ændres eller slettes aldrig."
+      },
+      {
+        "q": "En video kan ikke indlæses.",
+        "a": "Videoer med kopibeskyttelse (DRM), beskadigede filer og formater, som enheden ikke kan afkode, kan ikke indlæses. Vent med videoer i iCloud-fotos, til de er hentet helt ned på enheden."
+      },
+      {
+        "q": "Komprimeringen stoppede undervejs.",
+        "a": "Hvis du skifter til en anden app eller låser skærmen under komprimeringen, kan iOS afbryde processen. Afbrudte videoer vises, når du åbner appen; hold appen åben, og kør dem igen."
+      },
+      {
+        "q": "Hvilket format skal jeg vælge?",
+        "a": "Er du i tvivl, så vælg H.264. Det kan afspilles i næsten alle apps og på næsten alle enheder. HEVC giver bedre kvalitet ved samme størrelse, men kan muligvis ikke afspilles på ældre enheder eller hos nogle tjenester. AV1 kan kun afspilles i apps og på enheder, der understøtter det. ProRes 422 Proxy og Motion JPEG er redigeringsformater, som kan være større end originalen, og kan kun vælges, når du angiver efter kvalitet."
+      },
+      {
+        "q": "Hvad sker der med HDR-videoer?",
+        "a": "Når de eksporteres som H.264, konverteres de til SDR. Vælg HEVC for at bevare HDR."
+      },
+      {
+        "q": "Bevares placering og optagelsesdato?",
+        "a": "Optagelsesdatoen bevares. Placeringen fjernes som standard og bevares kun, når du slår »Behold placering« til i Avancerede indstillinger. Der skrives ingen andre metadata."
+      },
+      {
+        "q": "Appen bruger for meget lagerplads.",
+        "a": "Tryk på »Administrer« øverst på skærmen for at slette komprimerede videoer og midlertidige filer. Komprimerede videoer, du ikke har gemt, går tabt, men dine originale videoer slettes ikke."
+      },
+      {
+        "q": "Kan jeg føje videoer til fra andre apps?",
+        "a": "Ja. Vælg en video i Fotos eller Filer, tryk på Del, og vælg »Føj til Videokomprimering«. Videoen er der, næste gang du åbner {app}."
+      }
+    ],
+    "requirements_title": "Systemkrav",
+    "requirements_body": "iPhone med iOS 18 eller nyere eller iPad med iPadOS 18 eller nyere. De tilgængelige formater afhænger af enheden."
+  },
+  "privacy": {
+    "meta_title": "Privatlivspolitik — {app}",
+    "meta_description": "Privatlivspolitik for {app}. Videoer behandles på din enhed, og udvikleren indsamler ikke personlige oplysninger.",
+    "title": "Privatlivspolitik",
+    "updated": "Senest opdateret: 21. november 2026",
+    "summary_title": "Overblik",
+    "summary": [
+      "Al videokomprimering foregår på din enhed. Videoer sendes aldrig til en server.",
+      "Udvikleren indsamler ikke personlige oplysninger som dit navn, din e-mailadresse, din placering eller enheds-id'er.",
+      "Der er ingen kontotilmelding, ingen reklamer, ingen analyse og ingen sporing."
+    ],
+    "sections": [
+      {
+        "title": "Oplysninger, som appen behandler på din enhed",
+        "paragraphs": [
+          "For at komprimere videoer behandler {app} følgende oplysninger udelukkende på din enhed. Ingen af dem sendes til udvikleren eller tredjeparter."
+        ],
+        "items": [
+          "Videoer, du vælger: kopier af videoer, du vælger i Fotos, Filer eller delemenuen, gemmes i appens arbejdsmappe.",
+          "Komprimerede resultater: eksporterede videoer opbevares i appen, indtil du gemmer eller sletter dem.",
+          "Behandlingsstatus og indstillinger: filnavn, størrelse, længde og behandlingsstatus for hver video på listen samt de valgte komprimeringsindstillinger.",
+          "Videometadata: optagelsesdatoen overføres til outputtet. Placeringen overføres kun, når »Behold placering« er slået til."
+        ]
+      },
+      {
+        "title": "Tilladelser",
+        "paragraphs": [
+          "Videoer vælges med iOS' fotovælger og filbrowser, og kun de videoer, du vælger, indlæses. Appen læser aldrig hele dit fotobibliotek.",
+          "Appen beder kun om tilladelse til at føje til dit fotobibliotek, når du bruger »Gem i Fotos«. Denne tilladelse bruges udelukkende til at gemme komprimerede videoer."
+        ]
+      },
+      {
+        "title": "Lagring og sletning",
+        "paragraphs": [
+          "Appdata gemmes kun på din enhed. Arbejdsmappen med kopier af originale videoer og komprimerede resultater er undtaget fra iCloud og sikkerhedskopieringer af enheden.",
+          "Du kan når som helst slette komprimerede videoer, midlertidige filer og listen via »Administrer«. Sletter du appen, fjernes alle dens data. Videoer, du har gemt i dit fotobibliotek eller i appen Filer, administreres af disse apps."
+        ]
+      },
+      {
+        "title": "Deling med tredjeparter",
+        "paragraphs": [
+          "{app} indeholder ingen tredjepartstjenester eller SDK'er og deler ikke oplysninger med tredjeparter.",
+          "Når du deler en komprimeret video, gælder modtagerappens eller -tjenestens privatlivspolitik for, hvordan den behandler videoen."
+        ]
+      },
+      {
+        "title": "Oplysninger fra Apple",
+        "paragraphs": [
+          "Hvis du har slået »Del med appudviklere« til i enhedens indstillinger, kan Apple give udvikleren anonymiserede diagnostiske oplysninger, f.eks. nedbrudsrapporter. Disse oplysninger bruges kun til at rette problemer i appen."
+        ]
+      },
+      {
+        "title": "Børns privatliv",
+        "paragraphs": [
+          "{app} indsamler ikke personlige oplysninger fra nogen, uanset alder."
+        ]
+      },
+      {
+        "title": "Ændringer i denne politik",
+        "paragraphs": [
+          "Hvis denne politik ændres, opdaterer vi denne side og ændrer datoen for seneste opdatering."
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "paragraphs": [
+          "Hvis du har spørgsmål til denne politik, kan du kontakte os på e-mailadressen nedenfor."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} Privatliv"
+  }
+}

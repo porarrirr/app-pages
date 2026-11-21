@@ -1,0 +1,210 @@
+{
+  "app_name": "Videokomprimering",
+  "common": {
+    "nav_home": "Hem",
+    "nav_support": "Support",
+    "nav_privacy": "Integritet",
+    "language": "Språk",
+    "skip_to_content": "Hoppa till innehåll",
+    "footer_support": "Support",
+    "footer_privacy": "Integritetspolicy",
+    "footer_contact": "Kontakt",
+    "requirements": "För iPhone och iPad med iOS 18 eller senare"
+  },
+  "index": {
+    "meta_title": "{app} — Komprimera videor till under en storleksgräns på iPhone och iPad",
+    "meta_description": "Komprimera videor på din enhet så att de ryms under storleksgränsen hos mottagaren. Jämför med originalet och spara eller dela sedan. Inga uppladdningar, inget konto.",
+    "hero_eyebrow": "För iPhone och iPad",
+    "hero_title": "Vilken video som helst, under storleken du väljer.",
+    "hero_lead": "Komprimera videor helt på din enhet så att de ryms inom gränsen hos mottagaren. Jämför resultatet med originalet och spara det sedan i Foton eller Filer, eller dela det.",
+    "hero_cta_support": "Visa support",
+    "hero_badge_offline": "Bearbetas på enheten",
+    "hero_badge_no_account": "Inget konto behövs",
+    "hero_badge_no_tracking": "Ingen spårning",
+    "features_title": "Det här kan appen",
+    "features": [
+      {
+        "title": "Ange efter storlek",
+        "body": "Ange bara en gräns, till exempel ”25 MB eller mindre”. Appen kontrollerar den faktiska storleken på den exporterade filen och justerar inställningarna och exporterar automatiskt igen om den är för stor."
+      },
+      {
+        "title": "Vanliga gränser med ett tryck",
+        "body": "Välj gränserna för populära tjänster som Discord, Gmail, Slack, WhatsApp och Mail Drop från förval."
+      },
+      {
+        "title": "Ange efter kvalitet",
+        "body": "Vill du inte välja storlek? Välj Mindre, Balanserat eller Hög kvalitet i stället."
+      },
+      {
+        "title": "Jämför innan du sparar",
+        "body": "Jämför den komprimerade videon med originalet och spara den sedan i Foton, spara den i Filer eller dela den."
+      },
+      {
+        "title": "Komprimera flera samtidigt",
+        "body": "Lägg till flera videor på en gång och komprimera dem efter varandra med samma inställningar. Du kan också lägga till videor via delningsmenyn."
+      },
+      {
+        "title": "Finjustera format och kvalitet",
+        "body": "Stöder H.264, HEVC, AV1, ProRes 422 Proxy och Motion JPEG. Välj även upplösning, bildfrekvens och ljud. HEVC kan behålla HDR."
+      }
+    ],
+    "privacy_title": "Dina videor lämnar aldrig enheten",
+    "privacy_body": "All komprimering sker på din iPhone eller iPad. Videor laddas aldrig upp till en server och det finns ingen kontoregistrering, inga annonser och ingen analys. Platsdata tas bort från resultatet som standard.",
+    "privacy_link": "Läs integritetspolicyn",
+    "steps_title": "Så fungerar det",
+    "steps": [
+      {
+        "title": "Lägg till videor",
+        "body": "Välj videor från Foton eller Filer."
+      },
+      {
+        "title": "Ange ett mål",
+        "body": "Ange en storleksgräns eller välj en kvalitet."
+      },
+      {
+        "title": "Komprimera och spara",
+        "body": "Kontrollera resultatet och spara eller dela det sedan."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Support — {app}",
+    "meta_description": "Vanliga frågor och kontaktuppgifter för {app}.",
+    "title": "Support",
+    "lead": "Svar på vanliga frågor om hur du använder {app} och löser problem. Om du inte hittar det du behöver kan du kontakta oss via e-post.",
+    "contact_title": "Kontakt",
+    "contact_body": "Skicka frågor, felrapporter och önskemål till e-postadressen nedan.",
+    "contact_button": "Mejla oss",
+    "contact_mail_subject": "{app} Support",
+    "contact_include_title": "När du rapporterar ett problem hjälper följande uppgifter oss att undersöka det:",
+    "contact_include": [
+      "Appversion",
+      "Enhetsmodell och version av iOS / iPadOS",
+      "Inställningarna du valde (målstorlek eller kvalitet, format, upplösning, bildfrekvens)",
+      "Längd och storlek på originalvideon samt enheten eller appen den spelades in med",
+      "Eventuella felmeddelanden som visades"
+    ],
+    "contact_note": "Skicka inte själva videofilerna om vi inte ber om det.",
+    "faq_title": "Vanliga frågor",
+    "faq": [
+      {
+        "q": "Videon ryms inte inom storleken jag angav.",
+        "a": "{app} kontrollerar den faktiska storleken på den exporterade filen och justerar inställningarna och exporterar igen om gränsen överskrids, upp till fyra gånger totalt. Om den fortfarande inte ryms kan målstorleken vara för liten för videons längd. Använd den minsta uppskattningen i felmeddelandet som riktmärke och prova en större målstorlek, ställ in upplösning och bildfrekvens på ”Automatisk (rekommenderas)” eller ta bort ljudet."
+      },
+      {
+        "q": "Var sparas komprimerade videor?",
+        "a": "På resultatskärmen väljer du ”Spara i Foton”, ”Spara i Filer” eller delar. Tills du sparar finns den komprimerade videon bara i appen."
+      },
+      {
+        "q": "Jag kan inte spara i Foton.",
+        "a": "Det är möjligen inte tillåtet att lägga till i fotobiblioteket. Gå till ”Integritet och säkerhet” → ”Foton” i appen Inställningar och tillåt ”Lägg bara till foton” eller ”Full åtkomst” för {app}."
+      },
+      {
+        "q": "Raderas originalvideon?",
+        "a": "Nej. {app} komprimerar en kopia av originalet, så originalvideon i ditt fotobibliotek eller i appen Filer ändras eller raderas aldrig."
+      },
+      {
+        "q": "En video kan inte läsas in.",
+        "a": "Videor med kopieringsskydd (DRM), skadade filer och format som enheten inte kan avkoda kan inte läsas in. Vänta med videor i iCloud-foton tills de har laddats ned helt till enheten."
+      },
+      {
+        "q": "Komprimeringen avbröts.",
+        "a": "Om du byter till en annan app eller låser skärmen under komprimeringen kan iOS avbryta processen. Avbrutna videor visas när du öppnar appen; håll appen öppen och kör dem igen."
+      },
+      {
+        "q": "Vilket format ska jag välja?",
+        "a": "Om du är osäker väljer du H.264. Det kan spelas upp i nästan alla appar och på nästan alla enheter. HEVC ger bättre kvalitet vid samma storlek men kanske inte kan spelas upp på äldre enheter eller hos vissa tjänster. AV1 kan bara spelas upp i appar och på enheter som stöder det. ProRes 422 Proxy och Motion JPEG är redigeringsformat som kan bli större än originalet och är bara tillgängliga när du anger efter kvalitet."
+      },
+      {
+        "q": "Vad händer med HDR-videor?",
+        "a": "När de exporteras som H.264 konverteras de till SDR. Välj HEVC för att behålla HDR."
+      },
+      {
+        "q": "Behålls plats och inspelningsdatum?",
+        "a": "Inspelningsdatumet behålls. Platsen tas bort som standard och behålls bara när du slår på ”Behåll plats” i Avancerade inställningar. Ingen annan metadata skrivs."
+      },
+      {
+        "q": "Appen använder för mycket lagringsutrymme.",
+        "a": "Tryck på ”Hantera” högst upp på skärmen för att radera komprimerade videor och tillfälliga filer. Komprimerade videor som du inte har sparat går förlorade, men dina originalvideor raderas inte."
+      },
+      {
+        "q": "Kan jag lägga till videor från andra appar?",
+        "a": "Ja. Markera en video i Foton eller Filer, tryck på Dela och välj ”Lägg till i Videokomprimering”. Videon finns där nästa gång du öppnar {app}."
+      }
+    ],
+    "requirements_title": "Systemkrav",
+    "requirements_body": "iPhone med iOS 18 eller senare, eller iPad med iPadOS 18 eller senare. Tillgängliga format varierar beroende på enhet."
+  },
+  "privacy": {
+    "meta_title": "Integritetspolicy — {app}",
+    "meta_description": "Integritetspolicy för {app}. Videor bearbetas på din enhet och utvecklaren samlar inte in personuppgifter.",
+    "title": "Integritetspolicy",
+    "updated": "Senast uppdaterad: 21 november 2026",
+    "summary_title": "Sammanfattning",
+    "summary": [
+      "All videokomprimering sker på din enhet. Videor skickas aldrig till en server.",
+      "Utvecklaren samlar inte in personuppgifter som namn, e-postadress, plats eller enhetsidentifierare.",
+      "Det finns ingen kontoregistrering, inga annonser, ingen analys och ingen spårning."
+    ],
+    "sections": [
+      {
+        "title": "Uppgifter som appen hanterar på din enhet",
+        "paragraphs": [
+          "För att komprimera videor hanterar {app} följande uppgifter endast på din enhet. Ingen av dem skickas till utvecklaren eller till tredje part."
+        ],
+        "items": [
+          "Videor du väljer: kopior av videor som du väljer i Foton, Filer eller delningsmenyn lagras i appens arbetsmapp.",
+          "Komprimerade resultat: exporterade videor finns kvar i appen tills du sparar eller raderar dem.",
+          "Bearbetningsstatus och inställningar: filnamn, storlek, längd och bearbetningsstatus för varje video i listan samt de komprimeringsinställningar du valde.",
+          "Videometadata: inspelningsdatumet följer med till resultatet. Platsen följer bara med när ”Behåll plats” är på."
+        ]
+      },
+      {
+        "title": "Behörigheter",
+        "paragraphs": [
+          "Videor väljs med iOS fotoväljare och filbläddrare, och bara de videor du markerar läses in. Appen läser aldrig hela ditt fotobibliotek.",
+          "Appen begär bara behörighet att lägga till i ditt fotobibliotek när du använder ”Spara i Foton”. Behörigheten används enbart för att spara komprimerade videor."
+        ]
+      },
+      {
+        "title": "Lagring och radering",
+        "paragraphs": [
+          "Appdata lagras bara på din enhet. Arbetsmappen som innehåller kopior av originalvideor och komprimerade resultat undantas från iCloud och enhetens säkerhetskopior.",
+          "Du kan när som helst radera komprimerade videor, tillfälliga filer och listan via ”Hantera”. Om du raderar appen tas alla dess data bort. Videor som du har sparat i fotobiblioteket eller i appen Filer hanteras av dessa appar."
+        ]
+      },
+      {
+        "title": "Delning med tredje part",
+        "paragraphs": [
+          "{app} innehåller inga tredjepartstjänster eller SDK:er och delar inte uppgifter med tredje part.",
+          "När du delar en komprimerad video gäller integritetspolicyn för den mottagande appen eller tjänsten för hur den hanterar videon."
+        ]
+      },
+      {
+        "title": "Uppgifter från Apple",
+        "paragraphs": [
+          "Om du har slagit på ”Dela med apputvecklare” i enhetens inställningar kan Apple ge utvecklaren anonymiserad diagnostisk information, till exempel kraschrapporter. Informationen används bara för att åtgärda problem i appen."
+        ]
+      },
+      {
+        "title": "Barns integritet",
+        "paragraphs": [
+          "{app} samlar inte in personuppgifter från någon, oavsett ålder."
+        ]
+      },
+      {
+        "title": "Ändringar i policyn",
+        "paragraphs": [
+          "Om policyn ändras uppdaterar vi den här sidan och ändrar datumet för senast uppdaterad."
+        ]
+      },
+      {
+        "title": "Kontakt",
+        "paragraphs": [
+          "Om du har frågor om policyn kan du kontakta oss på e-postadressen nedan."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} Integritet"
+  }
+}

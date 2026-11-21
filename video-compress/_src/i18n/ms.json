@@ -1,0 +1,210 @@
+{
+  "app_name": "Pemampatan Video",
+  "common": {
+    "nav_home": "Utama",
+    "nav_support": "Sokongan",
+    "nav_privacy": "Privasi",
+    "language": "Bahasa",
+    "skip_to_content": "Langkau ke kandungan",
+    "footer_support": "Sokongan",
+    "footer_privacy": "Dasar Privasi",
+    "footer_contact": "Hubungi",
+    "requirements": "Untuk iPhone dan iPad dengan iOS 18 atau lebih baharu"
+  },
+  "index": {
+    "meta_title": "{app} — App iPhone dan iPad untuk memampatkan video di bawah had saiz",
+    "meta_description": "Mampatkan video pada peranti anda supaya muat di bawah had saiz destinasi penghantaran. Bandingkan dengan video asal, kemudian simpan atau kongsi. Tiada muat naik, tiada akaun.",
+    "hero_eyebrow": "Untuk iPhone dan iPad",
+    "hero_title": "Video apa pun, di bawah saiz yang anda pilih.",
+    "hero_lead": "Mampatkan video sepenuhnya pada peranti anda supaya muat dengan had destinasi penghantaran. Bandingkan hasilnya dengan video asal, kemudian simpan ke Foto atau Fail, atau kongsi.",
+    "hero_cta_support": "Lihat sokongan",
+    "hero_badge_offline": "Diproses pada peranti",
+    "hero_badge_no_account": "Tiada akaun diperlukan",
+    "hero_badge_no_tracking": "Tiada penjejakan",
+    "features_title": "Apa yang boleh dilakukan",
+    "features": [
+      {
+        "title": "Nyatakan mengikut saiz",
+        "body": "Hanya masukkan had, seperti “25 MB atau kurang”. App menyemak saiz sebenar fail yang dieksport dan, jika melebihi, menyesuaikan tetapan lalu mengeksport semula secara automatik."
+      },
+      {
+        "title": "Had biasa dalam satu ketikan",
+        "body": "Pilih had perkhidmatan popular seperti Discord, Gmail, Slack, WhatsApp dan Mail Drop daripada pratetap."
+      },
+      {
+        "title": "Nyatakan mengikut kualiti",
+        "body": "Tidak mahu menetapkan saiz? Pilih “Kecil”, “Seimbang” atau “Kualiti tinggi”."
+      },
+      {
+        "title": "Bandingkan sebelum menyimpan",
+        "body": "Bandingkan video yang dimampatkan dengan video asal, kemudian simpan ke Foto, simpan ke Fail, atau kongsi."
+      },
+      {
+        "title": "Mampatkan beberapa video sekali gus",
+        "body": "Tambah beberapa video sekali gus dan mampatkannya satu demi satu dengan tetapan yang sama. Anda juga boleh menambah video daripada menu Kongsi."
+      },
+      {
+        "title": "Laraskan format dan kualiti dengan terperinci",
+        "body": "Menyokong H.264, HEVC, AV1, ProRes 422 Proxy dan Motion JPEG. Pilih resolusi, kadar bingkai dan audio juga. HEVC boleh mengekalkan HDR."
+      }
+    ],
+    "privacy_title": "Video anda tidak pernah meninggalkan peranti anda",
+    "privacy_body": "Semua pemampatan berlaku pada iPhone atau iPad anda. Video tidak pernah dimuat naik ke pelayan, dan tiada pendaftaran akaun, tiada iklan dan tiada analitik. Data lokasi dibuang daripada hasil secara lalai.",
+    "privacy_link": "Baca dasar privasi",
+    "steps_title": "Cara ia berfungsi",
+    "steps": [
+      {
+        "title": "Tambah video",
+        "body": "Pilih video daripada Foto atau Fail."
+      },
+      {
+        "title": "Tetapkan sasaran",
+        "body": "Masukkan had saiz atau pilih kualiti."
+      },
+      {
+        "title": "Mampatkan dan simpan",
+        "body": "Semak hasilnya, kemudian simpan atau kongsi."
+      }
+    ]
+  },
+  "support": {
+    "meta_title": "Sokongan — {app}",
+    "meta_description": "Soalan lazim dan maklumat hubungan untuk {app}.",
+    "title": "Sokongan",
+    "lead": "Jawapan kepada soalan lazim tentang penggunaan {app} dan penyelesaian masalah. Jika anda tidak menemui apa yang diperlukan, sila hubungi kami melalui e-mel.",
+    "contact_title": "Hubungi",
+    "contact_body": "Hantar soalan, laporan pepijat dan permintaan ciri ke alamat e-mel di bawah.",
+    "contact_button": "E-mel kami",
+    "contact_mail_subject": "{app} Sokongan",
+    "contact_include_title": "Semasa melaporkan masalah, butiran berikut membantu kami menyiasat:",
+    "contact_include": [
+      "Versi app",
+      "Model peranti dan versi iOS / iPadOS",
+      "Tetapan yang anda pilih (saiz sasaran atau kualiti, format, resolusi, kadar bingkai)",
+      "Tempoh dan saiz video asal, serta peranti atau app yang digunakan untuk merakam",
+      "Mesej ralat yang dipaparkan"
+    ],
+    "contact_note": "Jangan hantar fail video melainkan kami memintanya.",
+    "faq_title": "Soalan lazim",
+    "faq": [
+      {
+        "q": "Video tidak muat dalam saiz yang saya tetapkan.",
+        "a": "{app} menyemak saiz sebenar fail yang dieksport dan, jika melebihi had, menyesuaikan tetapan lalu mengeksport semula, sehingga empat kali. Jika masih tidak muat, saiz sasaran mungkin terlalu kecil untuk tempoh video. Gunakan anggaran minimum yang dipaparkan dalam ralat sebagai panduan, kemudian cuba besarkan saiz sasaran, tetapkan resolusi dan kadar bingkai kepada “Auto (disyorkan)”, atau padam audio."
+      },
+      {
+        "q": "Di manakah video yang dimampatkan disimpan?",
+        "a": "Pada skrin hasil, pilih “Simpan ke Foto”, “Simpan ke Fail”, atau kongsi. Sehingga anda menyimpannya, video yang dimampatkan hanya wujud di dalam app."
+      },
+      {
+        "q": "Saya tidak dapat menyimpan ke Foto.",
+        "a": "Menambah ke pustaka foto mungkin tidak dibenarkan. Dalam app Tetapan, pergi ke “Privasi & Keselamatan” → “Foto” dan benarkan “Tambah sahaja” atau “Akses penuh” untuk {app}."
+      },
+      {
+        "q": "Adakah video asal dipadamkan?",
+        "a": "Tidak. {app} memampatkan salinan video asal, jadi video asal dalam pustaka foto atau app Fail tidak pernah diubah atau dipadamkan."
+      },
+      {
+        "q": "Video tidak dapat dimuatkan.",
+        "a": "Video yang dilindungi hak cipta (DRM), fail yang rosak dan format yang tidak dapat dinyahkod oleh peranti tidak dapat dimuatkan. Untuk video yang disimpan dalam iCloud Photos, tunggu sehingga muat turun ke peranti selesai."
+      },
+      {
+        "q": "Pemampatan berhenti di tengah jalan.",
+        "a": "Jika anda bertukar ke app lain atau mengunci skrin semasa memampatkan, iOS mungkin menghentikan prosesnya. Video yang terhenti akan dipaparkan apabila anda membuka app; biarkan app terbuka dan jalankannya semula."
+      },
+      {
+        "q": "Format manakah yang patut saya pilih?",
+        "a": "Jika tidak pasti, pilih H.264. Ia boleh dimainkan dalam hampir semua app dan peranti. HEVC memberikan kualiti lebih baik pada saiz yang sama, tetapi mungkin tidak dapat dimainkan pada peranti lama atau sesetengah perkhidmatan. AV1 hanya boleh dimainkan dalam app dan peranti yang menyokongnya. ProRes 422 Proxy dan Motion JPEG ialah format untuk penyuntingan yang mungkin lebih besar daripada asal, dan hanya tersedia apabila menyatakan mengikut kualiti."
+      },
+      {
+        "q": "Apa yang berlaku kepada video HDR?",
+        "a": "Mengeksport sebagai H.264 akan menukarnya kepada SDR. Untuk mengekalkan HDR, pilih HEVC."
+      },
+      {
+        "q": "Adakah lokasi dan tarikh rakaman dikekalkan?",
+        "a": "Tarikh rakaman dikekalkan. Lokasi dibuang secara lalai dan dikekalkan hanya apabila anda menghidupkan “Kekalkan lokasi” dalam Tetapan lanjutan. Tiada metadata lain ditulis."
+      },
+      {
+        "q": "App menggunakan terlalu banyak storan.",
+        "a": "Ketik “Urus” di bahagian atas skrin untuk memadam video yang dimampatkan dan fail sementara. Video yang dimampatkan dan belum disimpan akan hilang, tetapi video asal anda tidak dipadamkan."
+      },
+      {
+        "q": "Bolehkah saya menambah video daripada app lain?",
+        "a": "Boleh. Pilih video dalam Foto atau Fail, ketik Kongsi, kemudian pilih “Tambah ke Pemampatan Video”. Video akan tersedia apabila anda membuka {app} seterusnya."
+      }
+    ],
+    "requirements_title": "Keperluan",
+    "requirements_body": "iPhone dengan iOS 18 atau lebih baharu, atau iPad dengan iPadOS 18 atau lebih baharu. Format yang tersedia berbeza mengikut peranti."
+  },
+  "privacy": {
+    "meta_title": "Dasar Privasi — {app}",
+    "meta_description": "Dasar privasi untuk {app}. Video diproses pada peranti anda dan pembangun tidak mengumpul maklumat peribadi.",
+    "title": "Dasar Privasi",
+    "updated": "Dikemas kini terakhir: 21 November 2026",
+    "summary_title": "Ringkasan",
+    "summary": [
+      "Semua pemampatan video berlaku pada peranti anda. Video tidak pernah dihantar ke pelayan.",
+      "Pembangun tidak mengumpul maklumat peribadi seperti nama, alamat e-mel, lokasi atau pengecam peranti.",
+      "Tiada pendaftaran akaun, tiada pengiklanan, tiada analitik dan tiada penjejakan."
+    ],
+    "sections": [
+      {
+        "title": "Maklumat yang dikendalikan oleh app pada peranti anda",
+        "paragraphs": [
+          "Untuk memampatkan video, {app} mengendalikan maklumat berikut hanya pada peranti anda. Tiada satu pun dihantar kepada pembangun atau mana-mana pihak ketiga."
+        ],
+        "items": [
+          "Video yang anda pilih: salinan video yang anda pilih daripada Foto, Fail atau menu Kongsi disimpan dalam folder kerja app.",
+          "Hasil pemampatan: video yang dieksport disimpan dalam app sehingga anda menyimpan atau memadamkannya.",
+          "Status pemprosesan dan tetapan: nama fail, saiz, tempoh dan status pemprosesan setiap video dalam senarai, serta tetapan pemampatan yang anda pilih.",
+          "Metadata video: tarikh rakaman dibawa ke hasil. Lokasi hanya dibawa apabila “Kekalkan lokasi” dihidupkan."
+        ]
+      },
+      {
+        "title": "Kebenaran",
+        "paragraphs": [
+          "Video dipilih dengan pemilih foto iOS dan pelayar fail, dan hanya video yang anda pilih dimuatkan. App tidak pernah membaca keseluruhan pustaka foto anda.",
+          "App meminta kebenaran untuk menambah ke pustaka foto hanya apabila anda menggunakan “Simpan ke Foto”. Kebenaran ini digunakan semata-mata untuk menyimpan video yang dimampatkan."
+        ]
+      },
+      {
+        "title": "Storan dan pemadaman",
+        "paragraphs": [
+          "Data app disimpan hanya pada peranti anda. Folder kerja yang menyimpan salinan video asal dan hasil pemampatan dikecualikan daripada iCloud dan sandaran peranti.",
+          "Anda boleh memadam video yang dimampatkan, fail sementara dan senarai pada bila-bila masa daripada “Urus”. Memadam app akan memadamkan semua datanya. Video yang anda simpan ke pustaka foto atau app Fail diuruskan oleh app tersebut."
+        ]
+      },
+      {
+        "title": "Perkongsian dengan pihak ketiga",
+        "paragraphs": [
+          "{app} tidak mengandungi perkhidmatan atau SDK pihak ketiga dan tidak berkongsi maklumat dengan pihak ketiga.",
+          "Apabila anda berkongsi video yang dimampatkan, dasar privasi app atau perkhidmatan penerima terpakai pada cara ia mengendalikan video tersebut."
+        ]
+      },
+      {
+        "title": "Maklumat yang disediakan oleh Apple",
+        "paragraphs": [
+          "Jika anda menghidupkan “Kongsi dengan Pembangun App” dalam tetapan peranti, Apple mungkin memberikan maklumat diagnostik tanpa nama seperti laporan ranap kepada pembangun. Maklumat ini digunakan hanya untuk membaiki masalah dalam app."
+        ]
+      },
+      {
+        "title": "Privasi kanak-kanak",
+        "paragraphs": [
+          "{app} tidak mengumpul maklumat peribadi daripada sesiapa, tanpa mengira umur."
+        ]
+      },
+      {
+        "title": "Perubahan pada dasar ini",
+        "paragraphs": [
+          "Jika dasar ini berubah, kami akan mengemas kini halaman ini dan menyemak semula tarikh kemas kini terakhir."
+        ]
+      },
+      {
+        "title": "Hubungi",
+        "paragraphs": [
+          "Jika anda mempunyai soalan tentang dasar ini, sila hubungi kami di alamat e-mel di bawah."
+        ]
+      }
+    ],
+    "contact_mail_subject": "{app} Privasi"
+  }
+}
