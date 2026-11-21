@@ -31,7 +31,7 @@ async function localize() {
   const locale = requested.map(language => matchLocale(language, locales)).find(Boolean) ?? 'ja';
   if (locale !== 'ja') {
     const section = document.body.dataset.page;
-    const revision = section === 'home' ? '?v=2' : '';
+    const revision = section === 'home' ? '?v=3' : '';
     const strings = await getJson(`locales/${locale}.json${revision}`);
     for (const element of document.querySelectorAll('[data-text]')) {
       element.textContent = strings[element.dataset.text] ?? element.textContent;
