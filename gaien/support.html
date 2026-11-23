@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>サポート — StudyApp</title>
-  <meta name="description" content="StudyApp のサポートページです。よくある質問、使い方ガイド、お問い合わせ先をご案内します。" />
+  <title>サポート — StudyTrail</title>
+  <meta name="description" content="StudyTrail のサポートページです。よくある質問、使い方ガイド、お問い合わせ先をご案内します。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
@@ -80,7 +80,7 @@
     }
     .support-hero p { color: var(--text2); max-width: 500px; margin: 0 auto; font-size: 1rem; }
 
-    /* ── SEARCH (decorative) ── */
+    /* ── SEARCH ── */
     .search-bar {
       display: flex; align-items: center; gap: 12px;
       max-width: 560px; margin: 40px auto 0;
@@ -210,7 +210,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo">Study<span>App</span></a>
+  <a href="index.html" class="nav-logo">Study<span>Trail</span></a>
   <a href="index.html" class="nav-back">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
     ホームへ戻る
@@ -320,7 +320,7 @@
     <details>
       <summary>ISBNバーコードスキャンが使えません（Android）</summary>
       <div class="answer">
-        カメラへのアクセス許可が必要です。端末の設定 &gt; アプリ &gt; StudyApp &gt; 権限 からカメラを許可してください。また、十分な明るさのある場所でバーコードをスキャンしてください。
+        カメラへのアクセス許可が必要です。端末の設定 &gt; アプリ &gt; StudyTrail &gt; 権限 からカメラを許可してください。また、十分な明るさのある場所でバーコードをスキャンしてください。
       </div>
     </details>
 
@@ -365,21 +365,21 @@
     <details>
       <summary>iOS でウィジェットを追加するには？</summary>
       <div class="answer">
-        ホーム画面を長押し &gt; 左上の「+」をタップ &gt; StudyApp を検索して追加してください。サイズや種類は複数から選択できます。
+        ホーム画面を長押し &gt; 左上の「+」をタップ &gt; StudyTrail を検索して追加してください。サイズや種類は複数から選択できます。
       </div>
     </details>
 
     <details>
       <summary>Android でウィジェットを追加するには？</summary>
       <div class="answer">
-        ホーム画面を長押し &gt; ウィジェット &gt; StudyApp から6種類のウィジェットを選択できます。タップして目的のウィジェットをホーム画面に配置してください。
+        ホーム画面を長押し &gt; ウィジェット &gt; StudyTrail から6種類のウィジェットを選択できます。タップして目的のウィジェットをホーム画面に配置してください。
       </div>
     </details>
 
     <details>
       <summary>ウィジェットが更新されません</summary>
       <div class="answer">
-        バッテリー最適化の設定によって更新頻度が制限される場合があります。端末の設定でStudyAppのバッテリー最適化を「制限なし」に変更することをお試しください。
+        バッテリー最適化の設定によって更新頻度が制限される場合があります。端末の設定でStudyTrailのバッテリー最適化を「制限なし」に変更することをお試しください。
       </div>
     </details>
   </div>
@@ -398,23 +398,21 @@
     <details>
       <summary>AnkiDroid のデータを取り込むには？（Android）</summary>
       <div class="answer">
-        設定画面 &gt; AnkiDroid 連携 から設定できます。AnkiDroid がインストールされている必要があります。連携を有効にすると、AnkiDroidの学習データ（カード数、学習時間）がStudyAppに反映されます。
+        設定画面 &gt; AnkiDroid 連携 から設定できます。AnkiDroid がインストールされている必要があります。連携を有効にすると、AnkiDroidの学習データ（カード数、学習時間）がStudyTrailに反映されます。
       </div>
     </details>
   </div>
+
+  <p id="search-empty" hidden style="text-align:center; color:var(--text2); margin-bottom:48px;">該当する質問が見つかりませんでした。</p>
 
   <!-- CONTACT -->
   <div class="contact-card" id="contact">
     <h2>解決しませんでしたか？</h2>
     <p>お気軽にお問い合わせください。できる限り早くご返信します。</p>
     <div class="contact-methods">
-      <a href="https://github.com/porarrirr/gaien/issues/new?template=support.md&labels=support" class="contact-btn contact-btn-primary" id="contact-github-btn" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        GitHub で報告する
-      </a>
-      <a href="mailto:toiawasestudyapp@rarari.org" class="contact-btn contact-btn-secondary" id="contact-email-btn">
+      <a href="mailto:toiawasestudyapp@rarari.org?subject=StudyTrail%20サポート" class="contact-btn contact-btn-primary" id="contact-email-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        メールで問い合わせ
+        メールで問い合わせ（toiawasestudyapp@rarari.org）
       </a>
     </div>
   </div>
@@ -422,7 +420,7 @@
   <!-- PRIVACY -->
   <div class="privacy-section" id="privacy">
     <h2>🔒 プライバシー・データについて</h2>
-    <p>StudyApp は以下のデータを収集・利用する場合があります：</p>
+    <p>StudyTrail は以下のデータを収集・利用する場合があります：</p>
     <ul>
       <li>学習記録データ（タイマー、教材、科目、目標など）</li>
       <li>アカウント情報（メールアドレス）※クラウド同期利用時のみ</li>
@@ -432,7 +430,7 @@
       収集したデータは Firebase (Google LLC) のサーバーに保存されます。第三者への販売・提供は行いません。アカウント削除時にはクラウドデータを完全に削除します。
     </p>
     <p>
-      お問い合わせ：<a href="https://github.com/porarrirr/gaien/issues" style="color: var(--accent);">GitHub Issues</a>
+      お問い合わせ：<a href="mailto:toiawasestudyapp@rarari.org" style="color: var(--accent);">toiawasestudyapp@rarari.org</a>
     </p>
   </div>
 
@@ -440,11 +438,10 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 StudyApp. All rights reserved.</p>
+  <p>© 2026 StudyTrail. All rights reserved.</p>
   <p style="margin-top:8px">
     <a href="index.html">ホーム</a> &nbsp;·&nbsp;
-    <a href="privacy.html">プライバシーポリシー</a> &nbsp;·&nbsp;
-    <a href="https://github.com/porarrirr/gaien" target="_blank" rel="noopener">GitHub</a>
+    <a href="privacy.html">プライバシーポリシー</a>
   </p>
 </footer>
 
@@ -457,6 +454,31 @@
       if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  // Live FAQ filter
+  const searchInput = document.getElementById('support-search');
+  const faqSections = Array.from(document.querySelectorAll('.faq-section'));
+  const emptyMsg = document.getElementById('search-empty');
+  if (searchInput) {
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+      faqSections.forEach(section => {
+        let sectionVisible = 0;
+        section.querySelectorAll('details').forEach(item => {
+          const matched = !query || item.textContent.toLowerCase().includes(query);
+          item.hidden = !matched;
+          if (matched) {
+            sectionVisible += 1;
+            visibleCount += 1;
+            if (query) item.open = true;
+          }
+        });
+        section.hidden = sectionVisible === 0;
+      });
+      if (emptyMsg) emptyMsg.hidden = visibleCount > 0 || !query;
+    });
+  }
 </script>
 </body>
 </html>
