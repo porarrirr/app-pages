@@ -3,12 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ABC Studio — ABC譜を、読む。聴く。自分で整える。</title>
-  <meta name="description" content="ABC記譜法の楽譜を表示・再生・編集できるiPhone / iPadアプリ。78種類の楽器割り当て、パート別の音量調整、ライブラリ、5形式の書き出しに対応。">
+  <title>ABC Studio — 楽譜を表示・再生・編集</title>
+  <meta name="description" content="ABC記譜法、MusicXML、LilyPondの楽譜を表示・再生・編集できるiPhoneとiPad向けアプリ。パート別のミキサーと楽譜・音声の書き出しに対応。">
   <meta name="theme-color" content="#faf9f5">
-  <meta name="apple-itunes-app" content="app-id=6820972807">
-  <meta property="og:title" content="ABC Studio — ABC譜を、読む。聴く。自分で整える。">
-  <meta property="og:description" content="ABC記譜法の楽譜を表示・再生・編集できるiPhone / iPadアプリ。完全オフラインで動作し、PDF・PNG・MIDI・WAVにも書き出せます。">
+  <meta property="og:title" content="ABC Studio — 楽譜を表示・再生・編集">
+  <meta property="og:description" content="ABC記譜法、MusicXML、LilyPondの楽譜を端末内で表示・再生・編集。PDF、PNG、MusicXML、MIDI、WAVなどに書き出せます。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://porarrirr.github.io/app-pages/abc-studio/">
   <meta property="og:image" content="https://porarrirr.github.io/app-pages/abc-studio/icon.png">
@@ -40,8 +39,8 @@
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
           A SCORE YOU CAN HEAR
         </div>
-        <h1 id="hero-title">ABC譜を、読む。<br><em>聴く。自分で整える。</em></h1>
-        <p class="lead">文字で書かれた音楽を、美しい五線譜とリアルな演奏に。<br>フレーズを確かめるときも、パートを聴き分けたいときも。<br>ABC Studio は iPhone と iPad のための直感的な楽譜プレイヤー＆エディタです。</p>
+        <h1 id="hero-title">楽譜を開く。聴く。<br><em>ソースを編集する。</em></h1>
+        <p class="lead">ABC記譜法、MusicXML、LilyPondの楽譜をiPhoneやiPadで開けます。譜面を見ながら演奏を聴き、練習したいパートの音量を調整したり、楽譜のソースを編集したりできます。</p>
         
         <div class="badge-row">
           <span class="pill-badge">
@@ -59,13 +58,14 @@
         </div>
 
         <div class="actions">
-          <a class="button-primary" href="https://apps.apple.com/app/id6820972807" rel="noopener">
-            App Store で入手
+          <a class="button-primary" href="support.html#start">
+            使い方を見る
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a class="button-secondary" href="support.html#start">
-            使い方を見る
-          </a>
+        </div>
+        <div class="app-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>App Store 公開準備中</span>
         </div>
       </div>
 
@@ -95,8 +95,8 @@
             <div class="fact-label">練習に合わせた柔軟な再生速度</div>
           </div>
           <div class="fact-item">
-            <div class="fact-number">5 形式</div>
-            <div class="fact-label">ABC · PDF · PNG · MIDI · WAV</div>
+            <div class="fact-number">3 種類</div>
+            <div class="fact-label">ABC · MusicXML · LilyPond の記譜に対応</div>
           </div>
         </section>
       </div>
@@ -117,7 +117,7 @@
           </div>
           <div class="feature-tag">01 / SCORE</div>
           <h3>譜面を見ながら聴く。</h3>
-          <p>ABCテキストからSMuFL準拠の美しい五線譜を瞬時に描画。ピンチで滑らかに拡大し、気になる音符をタップするだけでその位置から即座に再生。演奏中は音符の色付けと自動スクロールで追従します。</p>
+          <p>ABCやMusicXMLは五線譜に描画し、LilyPondは内蔵コンパイラが生成したPDFで表示します。ABCの譜面では、音符をタップして再生位置を移動でき、演奏中はハイライトと自動スクロールで位置を追えます。</p>
         </article>
 
         <article class="feature-card">
@@ -126,7 +126,7 @@
           </div>
           <div class="feature-tag">02 / PARTS</div>
           <h3>パートごとの音を確かめる。</h3>
-          <p>ピアノ、弦楽器、管楽器、ギター、打楽器など78種類の楽器音色に対応。パートごとの個別音量、ミュート、ソロ再生を活用することで、合奏曲の中で自分の担当パートを明瞭に把握できます。</p>
+          <p>ピアノ、弦楽器、管楽器、ギター、打楽器など78種類の楽器音色に対応。ミキサーで各パートの音量、ミュート、ソロや楽器の配置を調整できます。イヤホンでは音の定位も調整できます。</p>
         </article>
 
         <article class="feature-card">
@@ -144,7 +144,7 @@
           </div>
           <div class="feature-tag">04 / LIBRARY</div>
           <h3>編集して、手元に残す。</h3>
-          <p><code>.abc</code> / <code>.txt</code> ファイルやクリップボードから簡単にインポート。入力ミスを通知する構文診断と下書きの自動保存を備えた内蔵エディタで修正し、ライブラリで安全に整理・管理できます。</p>
+          <p>ファイルやクリップボードから楽譜を読み込み、内蔵エディタでソースを修正できます。診断結果を確認しながら編集し、作業中の曲をライブラリに保存できます。</p>
         </article>
       </div>
     </section>
@@ -155,22 +155,29 @@
         <div class="export-content">
           <div class="eyebrow">KEEP CREATING</div>
           <h2 id="export-title">できた譜面を、<br>次の場所へ。</h2>
-          <p>練習用にとどまらず、印刷・共有・他ツールとの連携もシームレス。譜面のPDF出力からDAW連携用のMIDI・高品質WAVレンダリングまで、5つの形式で手軽に共有できます。</p>
+          <p>PDFやPNGはページをプレビューしてから共有できます。楽譜ソースのほか、他の楽譜ソフト向けのMusicXMLやMXL、音楽制作ソフト向けのMIDI、内蔵音源で演奏を生成したWAVを書き出せます。</p>
         </div>
 
         <div class="format-cards" aria-label="対応している書き出し形式">
           <div class="format-card">
-            <div class="format-badge">ABC</div>
+            <div class="format-badge">SRC</div>
             <div class="format-info">
-              <strong>ABC テキスト</strong>
-              <span>共有やバックアップに最適な記譜ソース</span>
+              <strong>楽譜ソース</strong>
+              <span>ABC、MusicXML、LilyPondの編集用ファイル</span>
             </div>
           </div>
           <div class="format-card">
             <div class="format-badge">PDF</div>
             <div class="format-info">
               <strong>PDF / PNG 楽譜</strong>
-              <span>ベクター品質の印刷用・画像用楽譜</span>
+              <span>全ページをまとめたPDF、またはページごとのPNG画像</span>
+            </div>
+          </div>
+          <div class="format-card">
+            <div class="format-badge">XML</div>
+            <div class="format-info">
+              <strong>MusicXML / MXL</strong>
+              <span>対応する記譜を他の楽譜アプリで編集できる形式</span>
             </div>
           </div>
           <div class="format-card">
@@ -206,9 +213,9 @@
       </div>
 
       <aside class="info-box" aria-labelledby="abc-note-title">
-        <h3 id="abc-note-title">ABC記法の対応範囲について</h3>
-        <p>複数声部（<code>V:</code>）、タイ、連符、装飾音、フェルマータ、反復記号と番号付き括弧（<code>|1 |2</code>）などの標準的な記譜に対応しています。なお、<code>P:</code> による演奏順指定や <code>&amp;</code> による声部分割には現在未対応です。</p>
-        <p>合唱音色は General MIDI の「Choir Aahs」による楽器音色であり、歌詞の歌唱合成機能ではありません。</p>
+        <h3 id="abc-note-title">記譜形式ごとの対応範囲</h3>
+        <p>複数声部（<code>V:</code>）、タイ、連符、装飾音、フェルマータ、反復記号と番号付き括弧（<code>|1 |2</code>）などの標準的な記譜に対応しています。<code>P:</code> によるパートの演奏順指定や、小節内で <code>&amp;</code> を使った声部の重ね合わせも扱えます。</p>
+        <p>MusicXMLの特殊な記譜や細かな用紙レイアウトは、表示や演奏が元の楽譜と異なる場合があります。LilyPondは同梱のLilyPond 2.26で処理します。</p>
         <p style="margin-top: 14px;">
           <a href="support.html#faq">対応範囲とよくある質問を見る →</a>
         </p>
@@ -226,12 +233,11 @@
         <nav aria-label="フッターナビゲーション">
           <a href="support.html">サポート</a>
           <a href="privacy.html">プライバシーポリシー</a>
-          <a href="https://apps.apple.com/app/id6820972807" rel="noopener">App Store</a>
           <a href="mailto:musicabc@rarari.org">お問い合わせ</a>
         </nav>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 porari · iPhone / iPad のための ABC 楽譜アプリ</p>
+        <p>&copy; 2026 porari · iPhone / iPad 向け楽譜アプリ</p>
         <p>Bravura Font (OFL 1.1)</p>
       </div>
     </div>
