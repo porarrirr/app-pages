@@ -1,167 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>サポート — NagiVoice</title>
-  <meta name="description" content="NagiVoice のサポート窓口とよくある質問。お問い合わせは onsei@rarari.org。">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="wrap inner">
-      <a class="brand" href="index.html">NagiVoice <span>iOS</span></a>
-      <nav class="nav" aria-label="主要ナビゲーション">
-        <a href="index.html">ホーム</a>
-        <a href="support.html" aria-current="page">サポート</a>
-        <a href="privacy.html">プライバシー</a>
-        <a href="terms.html">利用規約</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <h1 class="page-title">サポート</h1>
-    <p class="page-sub">最終更新日: 2026年7月16日 · 提供者: NagiVoice 開発者</p>
-
-    <section aria-labelledby="contact">
-      <h2 id="contact">お問い合わせ</h2>
-      <div class="card">
-        <p>
-          メール: <a class="mono" href="mailto:onsei@rarari.org">onsei@rarari.org</a><br>
-          件名の例: <span class="mono">[NagiVoice] 不具合報告</span> / <span class="mono">[NagiVoice] 使い方の質問</span>
-        </p>
-        <p>
-          個人開発による提供のため、対応は<strong>ベストエフォート</strong>です。
-          返信期限や解決の保証はいたしません。土日・深夜は対応が遅れることがあります。
-        </p>
-      </div>
-    </section>
-
-    <section aria-labelledby="scope">
-      <h2 id="scope">対応できること / できないこと</h2>
-      <ul>
-        <li><strong>対応し得るもの:</strong> アプリの起動・モデル取得・生成・再生に関する不具合の受付、利用上の一般的な案内</li>
-        <li><strong>対応外:</strong> カスタムモデルの学習代行、商用利用の個別ライセンス交渉、法令適合の法的助言、第三者サービス（Hugging Face・Apple 等）側の障害そのもの</li>
-        <li>サポート対応は日本語を基本とします。</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="report">
-      <h2 id="report">不具合報告のとき</h2>
-      <p>調査に役立つ範囲で、次を記載してください（個人を特定できる情報は必要最小限にしてください）。</p>
-      <ul>
-        <li>端末の機種名</li>
-        <li>iOS のバージョン</li>
-        <li>NagiVoice のバージョン（設定のライセンス画面等に表示）</li>
-        <li>何をしようとしたか、再現手順</li>
-        <li>エラーメッセージや画面の状況（可能な範囲）</li>
-      </ul>
-      <div class="note">
-        <p>
-          参照用に録音した他人の声データや、機密性の高い文章をメールに添付しないでください。
-          調査に必要な場合でも、同意のない第三者の音声は送らないでください。
-        </p>
-      </div>
-    </section>
-
-    <section aria-labelledby="faq">
-      <h2 id="faq">よくある質問</h2>
-
-      <details class="faq">
-        <summary>初回のモデルダウンロードが失敗する</summary>
-        <p>
-          初回は Hugging Face（<span class="mono">huggingface.co</span>）から数 GB のモデルを取得します。
-          安定した Wi‑Fi、十分な空き容量（目安として 3 GB 以上の余裕）、端末のスリープを避けた状態で再度お試しください。
-          途中で失敗した場合は、ネットワーク復旧後に再試行すると不足分の取得が進むことがあります。
-          ダウンロード元の障害や地域制限がある場合、提供者側では復旧できないことがあります。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>オフラインで使えますか？</summary>
-        <p>
-          モデルパックが端末に正しく入っていれば、音声の合成・再生・参照録音はネットワークなしで行えます。
-          初回のモデル取得や、設定画面からの出典リンク閲覧には接続が必要です。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>マイクの許可を求められた</summary>
-        <p>
-          声クローン用の<strong>参照音声の録音</strong>にのみ使用します。
-          許可しなくても、参照なしの合成や、ファイルから参照音声を読み込む使い方は可能な場合があります。
-          iOS の「設定」→「プライバシーとセキュリティ」→「マイク」から変更できます。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>生成が遅い / 熱い / 電池が減る</summary>
-        <p>
-          オンデバイス推論は負荷が大きい処理です。ステップ数や長さを下げると負荷が軽減されることがあります。
-          端末の性能や温度により時間がかかるのは想定内です。過熱が続く場合は生成を中断し、端末を冷やしてから再開してください。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>モデルや参照音声はどこに保存されますか？</summary>
-        <p>
-          モデルはアプリの Application Support 領域、参照音声は Documents 配下（ファイル共有が有効な場合、Finder 等から見えることがあります）、生成結果は一時領域に保存される実装です。
-          アプリを削除すると、通常これらも端末から削除されます。詳細は
-          <a href="privacy.html">プライバシーポリシー</a> を参照してください。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>他人の声をクローンしてよいですか？</summary>
-        <p>
-          <strong>本人の明示的な同意がある場合に限り</strong>使用してください。
-          なりすまし、詐欺、権利侵害、誤認を狙った利用は禁止です。詳細は
-          <a href="terms.html">利用規約</a> を必ず読んでください。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>生成した音声は自動でウォーターマークされますか？</summary>
-        <p>
-          現在の iOS 版では、SilentCipher 等による透かしは付与しません。
-          合成音声であることを必要に応じて明示する責任は利用者にあります。
-        </p>
-      </details>
-
-      <details class="faq">
-        <summary>個人情報は収集されますか？</summary>
-        <p>
-          提供者は、合成用テキストや参照音声・生成音声をサーバーに収集する仕組みをアプリに設けていません。
-          モデル取得時に通信先（Hugging Face）が接続メタデータを処理し得る点は
-          <a href="privacy.html">プライバシーポリシー</a> に記載しています。
-        </p>
-      </details>
-    </section>
-
-    <section aria-labelledby="legal-links">
-      <h2 id="legal-links">関連文書</h2>
-      <ul>
-        <li><a href="privacy.html">プライバシーポリシー</a></li>
-        <li><a href="terms.html">利用規約</a></li>
-        <li><a href="index.html">アプリ紹介</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap inner">
-      <nav aria-label="フッター">
-        <a href="index.html">ホーム</a>
-        <a href="support.html">サポート</a>
-        <a href="privacy.html">プライバシー</a>
-        <a href="terms.html">利用規約</a>
-      </nav>
-      <p>© 2026 NagiVoice 開発者 · お問い合わせ: <a href="mailto:onsei@rarari.org">onsei@rarari.org</a></p>
-      <p class="disclaimer-foot">
-        本ページ群は一般的な情報提供であり、弁護士による個別の法的助言ではありません。
-      </p>
-    </div>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>サポート — NagiVoice</title>
+    <meta
+      name="description"
+      content="NagiVoice のサポート窓口、不具合報告ガイド、よくある質問（FAQ）。お問い合わせは onsei@rarari.org。"
+    />
+    <meta name="apple-itunes-app" content="app-id=6791536036" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=JetBrains+Mono:wght@500;700&family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="./assets/entry-client-BFxvrskm.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/entry-client-DkfJp8I8.css">
+  </head>
+  <body data-page="support">
+    <div id="root"><link rel="preload" as="image" href="./assets/app-icon.webp"/><div class="flex min-h-screen flex-col"><header class="sticky top-0 z-40 border-b-[3px] border-ink bg-cream/95 backdrop-blur-md"><div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6"><a href="./index.html" class="group flex items-center gap-2.5 focus:outline-none"><img src="./assets/app-icon.webp" alt="NagiVoice Icon" width="40" height="40" class="h-10 w-10 rounded-[12px] border-[2.5px] border-ink shadow-[0_3px_0_rgba(46,51,82,0.2)] transition-transform duration-150 group-hover:-rotate-3 group-hover:scale-105"/><div class="leading-tight"><div class="flex items-center gap-1.5"><span class="font-display text-lg font-black tracking-tight text-ink-strong sm:text-xl">NagiVoice</span><span class="hidden rounded-md border-2 border-ink bg-star px-1.5 py-0.5 text-[10px] font-black uppercase text-ink-strong sm:inline-block">iOS</span></div><div class="hidden items-center gap-1.5 text-[11px] font-bold text-text-secondary sm:flex"><span class="relative inline-flex h-4 w-4 items-center justify-center shrink-0" aria-hidden="true"><span class="relative inline-flex h-3 w-3 rounded-full border-[1.5px] border-ink bg-lime"></span></span><span>100% 端末内AI</span></div></div></a><nav class="hidden items-center gap-1.5 md:flex" aria-label="Main navigation"><a href="./index.html" class="rounded-xl px-3.5 py-2 text-sm font-extrabold transition-all border-2 border-transparent text-text-secondary hover:border-ink/25 hover:bg-panel/60 hover:text-ink-strong">ホーム</a><a href="./support.html" aria-current="page" class="rounded-xl px-3.5 py-2 text-sm font-extrabold transition-all border-2 border-ink bg-panel text-ink-strong shadow-[0_2px_0_rgba(46,51,82,0.18)]">サポート</a><a href="./privacy.html" class="rounded-xl px-3.5 py-2 text-sm font-extrabold transition-all border-2 border-transparent text-text-secondary hover:border-ink/25 hover:bg-panel/60 hover:text-ink-strong">プライバシー</a><a href="./terms.html" class="rounded-xl px-3.5 py-2 text-sm font-extrabold transition-all border-2 border-transparent text-text-secondary hover:border-ink/25 hover:bg-panel/60 hover:text-ink-strong">利用規約</a></nav><div class="flex items-center gap-2"><div class="relative"><button type="button" aria-expanded="false" aria-label="Select language" class="studio-chip inline-flex cursor-pointer items-center gap-1.5 bg-panel px-2.5 py-1.5 text-xs font-extrabold text-ink-strong transition hover:bg-panel-elevated"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-3.5 w-3.5 text-sky" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg><span>🇯🇵</span><span class="hidden sm:inline">JA</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-3.5 w-3.5 transition-transform" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><a href="https://apps.apple.com/app/id6791536036" target="_blank" rel="noopener noreferrer" class="studio-btn hidden items-center gap-1.5 bg-coral px-3.5 py-2 text-xs font-black text-white sm:inline-flex"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download h-3.5 w-3.5" aria-hidden="true"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg><span>App Store</span></a><button type="button" aria-label="Toggle menu" class="studio-chip inline-flex h-9 w-9 cursor-pointer items-center justify-center bg-panel text-ink-strong md:hidden"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu h-5 w-5" aria-hidden="true"><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M4 6h16"></path></svg></button></div></div></header><main class="flex-1"><div class="mx-auto max-w-4xl px-4 pt-10 pb-8 sm:px-6 sm:pt-14"><div style="opacity:0;transform:translateY(16px)"><span class="inline-flex items-center gap-1.5 rounded-full border-2 px-3 py-1 text-xs font-extrabold tracking-wide shadow-[0_2px_0_rgba(46,51,82,0.18)] bg-sky text-white border-ink "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-life-buoy h-3.5 w-3.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path><circle cx="12" cy="12" r="4"></circle></svg><span>SUPPORT CENTER</span></span><h1 class="mt-4 font-display text-4xl font-black text-ink-strong sm:text-5xl">サポート・FAQ</h1><p class="mt-2.5 text-sm font-bold text-text-secondary">最終更新日: 2026年11月26日 · 提供者: NagiVoice 開発者</p></div><section class="mt-8" aria-labelledby="contact"><div class="studio-panel-elevated p-6 sm:p-7"><div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center"><div><h2 id="contact" class="text-xl font-black text-ink-strong">お問い合わせ窓口</h2><p class="mt-1 text-xs font-bold text-text-secondary">件名の例: [NagiVoice] 不具合報告 / [NagiVoice] 使い方の質問</p><div class="mt-3 inline-flex items-center gap-2 rounded-2xl border-2 border-ink bg-panel px-4 py-2.5 font-mono text-base font-bold text-ink-strong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 text-coral" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><span>onsei@rarari.org</span></div></div><div class="flex flex-wrap gap-2.5"><button type="button" class="studio-btn inline-flex cursor-pointer items-center gap-2 bg-panel px-4 py-2.5 text-sm font-extrabold text-ink-strong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy h-4 w-4 text-sky" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg><span>アドレスをコピー</span></button><a href="mailto:onsei@rarari.org?subject=%5BNagiVoice%5D%20" class="studio-btn inline-flex items-center gap-2 bg-coral px-5 py-2.5 text-sm font-black text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send h-4 w-4" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>メールアプリで開く</span></a></div></div><p class="mt-4 border-t-2 border-dashed border-ink/15 pt-4 text-xs font-bold leading-relaxed text-text-secondary">個人開発による提供のため、対応はベストエフォートです。返信期限や解決の保証はいたしません。土日・深夜は対応が遅れることがあります。</p></div></section><section class="mt-8 grid gap-5 md:grid-cols-2" aria-labelledby="scope"><div class="studio-panel p-6"><h2 id="scope" class="flex items-center gap-2 text-lg font-black text-ink-strong"><span class="flex h-7 w-7 items-center justify-center rounded-full border-2 border-ink bg-lime text-ink-strong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check h-4 w-4" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><span>対応し得るもの</span></h2><ul class="mt-4 space-y-2.5 text-sm font-medium text-text-secondary"><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-lime border border-ink"></span><span>アプリの起動・モデル取得・音声合成・再生・MP3書き出しに関する不具合の受付</span></li><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-lime border border-ink"></span><span>機能や設定に関する一般的なご利用案内</span></li><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-lime border border-ink"></span><span>プライバシーポリシー・利用規約に関するお問い合わせ</span></li></ul></div><div class="studio-panel p-6"><h2 class="flex items-center gap-2 text-lg font-black text-ink-strong"><span class="flex h-7 w-7 items-center justify-center rounded-full border-2 border-ink bg-inset text-text-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x h-4 w-4" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path></svg></span><span>対応外のもの</span></h2><ul class="mt-4 space-y-2.5 text-sm font-medium text-text-secondary"><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-text-tertiary"></span><span>カスタムモデルの学習代行や個別チューニング</span></li><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-text-tertiary"></span><span>商用利用に関する個別ライセンス交渉・法的助言</span></li><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-text-tertiary"></span><span>第三者サービス（Hugging Face・Apple 等）側の障害そのもの</span></li><li class="flex items-start gap-2"><span class="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-text-tertiary"></span><span>日本語以外の言語での詳細サポート（基本は日本語対応）</span></li></ul></div></section><section class="mt-8" aria-labelledby="report"><div class="studio-panel p-6"><h2 id="report" class="text-xl font-black text-ink-strong">不具合報告のときにお知らせいただきたいこと</h2><p class="mt-2 text-sm font-medium text-text-secondary">調査に役立つ範囲で次をご記載ください（個人を特定できる情報は必要最小限にしてください）。</p><ol class="mt-4 grid gap-2.5 sm:grid-cols-2"><li class="studio-inset flex items-start gap-2.5 px-3.5 py-2.5 text-xs font-extrabold text-ink-strong"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-star font-mono text-[10px] font-black">1</span><span>端末の機種名（例: iPhone 16 Pro, iPad Air 等）</span></li><li class="studio-inset flex items-start gap-2.5 px-3.5 py-2.5 text-xs font-extrabold text-ink-strong"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-star font-mono text-[10px] font-black">2</span><span>iOS / iPadOS のバージョン</span></li><li class="studio-inset flex items-start gap-2.5 px-3.5 py-2.5 text-xs font-extrabold text-ink-strong"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-star font-mono text-[10px] font-black">3</span><span>NagiVoice のバージョン（設定のライセンス画面等に表示）</span></li><li class="studio-inset flex items-start gap-2.5 px-3.5 py-2.5 text-xs font-extrabold text-ink-strong"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-star font-mono text-[10px] font-black">4</span><span>使用していた読み上げ言語・モデル（日本語 / 多言語）</span></li><li class="studio-inset flex items-start gap-2.5 px-3.5 py-2.5 text-xs font-extrabold text-ink-strong"><span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-ink bg-star font-mono text-[10px] font-black">5</span><span>何をしようとしたか、再現手順、表示されたエラーメッセージ</span></li></ol><div class="mt-4 flex items-start gap-3 rounded-2xl border-2 border-coral bg-coral/10 p-4 text-xs font-bold leading-relaxed text-ink-strong"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-triangle-alert mt-0.5 h-5 w-5 shrink-0 text-coral" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><p>参照用に録音した他人の声データや、機密性の高い文章をメールに添付しないでください。調査に必要な場合でも、同意のない第三者の音声は送らないでください。</p></div></div></section><section class="mt-10" aria-labelledby="faq"><div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><span class="inline-flex items-center gap-1.5 rounded-full border-2 px-3 py-1 text-xs font-extrabold tracking-wide shadow-[0_2px_0_rgba(46,51,82,0.18)] bg-star text-ink-strong border-ink "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help h-3.5 w-3.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg><span>FAQ</span></span><h2 id="faq" class="mt-2.5 text-2xl font-black text-ink-strong sm:text-3xl">よくある質問（FAQ）</h2></div><div class="relative w-full sm:w-80"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search pointer-events-none absolute top-1/2 left-3.5 h-4 w-4 -translate-y-1/2 text-text-tertiary" aria-hidden="true"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg><input type="search" placeholder="キーワードでFAQを検索（例: オフライン, マイク, モデル, MP3）" class="studio-chip w-full bg-panel py-2.5 pr-4 pl-10 text-xs font-bold text-ink-strong placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-coral" value=""/></div></div><div class="mt-5 space-y-3"><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="true" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">モデル取得</span><span class="text-sm font-black text-ink-strong sm:text-base">初回のモデルダウンロードが失敗する・進まない</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200 rotate-180 text-coral" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><div class="overflow-hidden" style="height:auto;opacity:1"><div class="border-t-2 border-dashed border-ink/15 bg-panel-elevated/50 px-5 py-4 text-sm font-medium leading-relaxed text-text-secondary">初回は Hugging Face（huggingface.co）から数 GB のモデルパックを取得します。安定した Wi-Fi、十分な空き容量（目安として 3〜4 GB 以上の余裕）、端末のスリープを避けた状態で再度お試しください。レジューム対応のため、途中で止まってもネットワーク復旧後に再試行すると続きから再開できる場合があります。</div></div></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">オフライン</span><span class="text-sm font-black text-ink-strong sm:text-base">本当にオフラインで使えますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">多言語</span><span class="text-sm font-black text-ink-strong sm:text-base">日本語以外の言語も読み上げられますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">マイク</span><span class="text-sm font-black text-ink-strong sm:text-base">マイクの許可を求められました。何に使いますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">パフォーマンス</span><span class="text-sm font-black text-ink-strong sm:text-base">生成に時間がかかる / 端末が熱くなる / 電池消費が大きい</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">ポッドキャスト</span><span class="text-sm font-black text-ink-strong sm:text-base">複数人の掛け合い音声を1本のMP3にまとめられますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">保存場所</span><span class="text-sm font-black text-ink-strong sm:text-base">モデルや参照音声、生成した音声はどこに保存されますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">利用ルール</span><span class="text-sm font-black text-ink-strong sm:text-base">他人の声をクローンして使ってもよいですか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">透かし</span><span class="text-sm font-black text-ink-strong sm:text-base">生成した音声に自動で電子透かし（ウォーターマーク）は入りますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div><div class="studio-panel overflow-hidden"><button type="button" aria-expanded="false" class="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-panel-elevated/70"><div class="flex flex-wrap items-center gap-2.5"><span class="rounded-lg border-2 border-ink bg-panel-elevated px-2 py-0.5 text-[10px] font-black text-ink-strong">プライバシー</span><span class="text-sm font-black text-ink-strong sm:text-base">入力した文章や音声データは収集されますか？</span></div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-5 w-5 shrink-0 text-ink-strong transition-transform duration-200" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button></div></div></section><section class="mt-10 flex flex-wrap gap-3"><a href="./privacy.html" class="studio-btn bg-panel px-4 py-2.5 text-xs font-extrabold text-ink-strong">プライバシー<!-- --> →</a><a href="./terms.html" class="studio-btn bg-panel px-4 py-2.5 text-xs font-extrabold text-ink-strong">利用規約<!-- --> →</a><a href="./index.html" class="studio-btn bg-panel px-4 py-2.5 text-xs font-extrabold text-ink-strong">ホーム<!-- --> →</a></section></div></main><footer class="mt-20 border-t-[3px] border-ink bg-panel"><div class="mx-auto max-w-6xl px-4 py-10 sm:px-6"><div class="flex flex-col justify-between gap-8 md:flex-row md:items-center"><div class="flex items-center gap-3"><img src="./assets/app-icon.webp" alt="NagiVoice" width="44" height="44" class="h-11 w-11 rounded-[14px] border-[2.5px] border-ink shadow-[0_3px_0_rgba(46,51,82,0.2)]"/><div><div class="font-display text-lg font-black text-ink-strong">NagiVoice</div><p class="text-xs font-bold text-text-secondary">オンデバイスAI音声合成・ボイスクローン・ポッドキャスト</p></div></div><nav class="flex flex-wrap items-center gap-2" aria-label="Footer navigation"><a href="./index.html" class="rounded-xl border-2 border-ink/20 bg-inset px-3 py-1.5 text-xs font-extrabold text-ink-strong transition hover:border-ink hover:bg-panel-elevated">ホーム</a><a href="./support.html" class="rounded-xl border-2 border-ink/20 bg-inset px-3 py-1.5 text-xs font-extrabold text-ink-strong transition hover:border-ink hover:bg-panel-elevated">サポート</a><a href="./privacy.html" class="rounded-xl border-2 border-ink/20 bg-inset px-3 py-1.5 text-xs font-extrabold text-ink-strong transition hover:border-ink hover:bg-panel-elevated">プライバシー</a><a href="./terms.html" class="rounded-xl border-2 border-ink/20 bg-inset px-3 py-1.5 text-xs font-extrabold text-ink-strong transition hover:border-ink hover:bg-panel-elevated">利用規約</a><a href="mailto:onsei@rarari.org" class="inline-flex items-center gap-1.5 rounded-xl border-2 border-sky bg-panel px-3 py-1.5 text-xs font-extrabold text-sky transition hover:bg-sky/10"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-3.5 w-3.5" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><span class="font-mono">onsei@rarari.org</span></a></nav></div><div class="mt-8 flex flex-col gap-2 border-t-2 border-dashed border-ink/20 pt-5 text-xs text-text-secondary sm:flex-row sm:items-center sm:justify-between"><p class="font-bold">© 2026 NagiVoice 開発者<!-- --> · <!-- -->お問い合わせ<!-- -->:<!-- --> <a href="mailto:onsei@rarari.org" class="font-mono font-bold text-ink-strong underline decoration-coral decoration-2 underline-offset-2">onsei@rarari.org</a></p><p class="text-[11px] text-text-tertiary">本ページ群は一般的な情報提供を目的としており、弁護士による個別の法的助言ではありません。</p></div></div></footer></div></div>
+  </body>
 </html>
