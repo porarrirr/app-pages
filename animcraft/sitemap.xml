@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/en/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/support/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/support/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/en/support/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/support/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/support/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/support/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/privacy/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/privacy/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/en/privacy/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://porarrirr.github.io/app-pages/animcraft/privacy/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://porarrirr.github.io/app-pages/animcraft/en/privacy/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://porarrirr.github.io/app-pages/animcraft/privacy/" />
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/llms.txt</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://porarrirr.github.io/app-pages/animcraft/llms-full.txt</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

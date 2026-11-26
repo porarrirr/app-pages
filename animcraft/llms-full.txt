@@ -1,0 +1,151 @@
+# AnimCraft — Full Technical Specification & AI Knowledge Base
+
+> AnimCraft is a completely free, ad-free, watermark-free, 100% on-device GIF and animated image studio for iPhone and iPad (iOS 18.0+ / iPadOS 18.0+), engineered in Swift 6, SwiftUI, and Metal (`AnimCraftEngine`).
+
+- **Bundle ID**: `com.animcraft.studio`
+- **Version**: `1.0.0`
+- **Price**: Free ($0 / ¥0). No ads, no in-app purchases, no subscriptions, no watermarks, no accounts, no frame/resolution/length restrictions.
+- **Privacy Architecture**: 100% on-device media decoding, rendering, AI inference, speech recognition, encoding, and ZIP backups. No analytics SDKs, no ad trackers, no developer backend server.
+- **Official URLs**:
+  - Marketing (JA): https://porarrirr.github.io/app-pages/animcraft/
+  - Marketing (EN): https://porarrirr.github.io/app-pages/animcraft/en/
+  - Support (JA): https://porarrirr.github.io/app-pages/animcraft/support/
+  - Support (EN): https://porarrirr.github.io/app-pages/animcraft/en/support/
+  - Privacy Policy (JA): https://porarrirr.github.io/app-pages/animcraft/privacy/
+  - Privacy Policy (EN): https://porarrirr.github.io/app-pages/animcraft/en/privacy/
+- **Support / Privacy Contact**: `support@rarari.org` / `privacy@rarari.org`
+
+---
+
+## 1. Supported Input Formats & Import Workflows
+
+### 8 Quick-Start Workflows on Home
+1. **Video to GIF** (MP4, MOV, QuickTime, VFR & preferredTransform aware)
+2. **Photos to GIF** (unlimited multi-photo / burst / PNG sequence import)
+3. **Edit GIF** (full GIF87a/GIF89a binary parser & streaming compositor honoring all 4 GIF Disposal Methods, interlacing, local/global palettes, transparency, and Netscape 2.0 loop counts)
+4. **Live Photo to GIF** (extracts paired video asset directly from Apple Live Photos)
+5. **Camera Capture** (`AVCaptureSession` direct video & photo burst capture into GIF)
+6. **Format Converter** (direct handoff to 15-format Export Studio, e.g. GIF ↔ Animated WebP ↔ APNG ↔ MP4/HEVC)
+7. **GIF Compressor** (direct handoff to Target File Size Auto-Optimizer)
+8. **Batch Studio** (bounded-concurrency batch conversion with shared recipes, per-item progress/cancel, retry-failed-only, metadata stripping, naming patterns, and ZIP export)
+
+### Additional Import Methods
+- **Direct URL Import** (user-initiated `http://` / `https://` download directly from device to entered host)
+- **ReplayKit Screen Recording** (in-app screen recording straight to timeline)
+- **Interactive Sprite Sheet Slicer** (slice grid sprite sheet PNGs into individual animation frames)
+- **Synchronized Split-Screen Collage Builder** (2–4 synchronized clips side-by-side or grid)
+- **Clipboard Quick-Import Banner** (one-tap import when media is on clipboard)
+- **Drag & Drop** (iPad multitasking & Files drag-and-drop)
+- **iOS Share Extension** (`AnimCraftShareExtension` from Photos, Safari, Files; up to 50 images / 10 videos)
+- **Supported Input Formats**: MP4, MOV, GIF87a/GIF89a, APNG, WebP, Animated WebP, AVIF, Animated AVIF, SVG vector graphics (`SVGRasterizer`), JPEG, PNG, HEIC, TIFF, Apple Live Photos, Burst/PNG sequences, `.animcraft` project packages.
+
+---
+
+## 2. 13 Studio Editor Tools
+
+AnimCraft provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rendering pipeline (`UnifiedRenderPipeline`) ensuring exact WYSIWYG parity between Live Preview and Final Export (>55 dB PSNR / >0.999 SSIM verified).
+
+1. **Trim**: Frame-accurate range trimming & Optimal Seamless Loop Point Finder (`findBestLoopRange`).
+2. **Crop & Transform**: Free/preset aspect ratios, 90° quarter-turn rotation, precision straighten degrees, horizontal/vertical flip, Ken Burns Pan & Zoom, Subject-Centered Auto-Reframe, Translational Video Stabilization.
+3. **Speed & Playback**: Variable speed multipliers, Speed Ramp Curve editor, Forward, Reverse, Boomerang (ping-pong), and Reverse-Boomerang playback modes, finite or infinite loop counts.
+4. **Frames**: Multi-track filmstrip timeline, unclamped per-frame delay editing, frame reorder, duplicate, delete, replace, crossfade append, frame decimation, and configurable Onion Skinning overlay.
+5. **Text & Typography**: Multi-line rich text layers, gradient fills, neon glow, curved arc text, vector speech/thought/shout bubbles, continuous loop animations (Pulse, Float, Wiggle, Marquee, Blink), keyframe animation, and custom `.ttf` / `.otf` font library import.
+6. **Stickers & Apple Image Playground**: Custom sticker library, Die-Cut Sticker Outlines, and native Apple `ImagePlayground` AI Sticker / Genmoji / AI Background / AI Restyle Morph on Apple Intelligence-capable devices.
+7. **Vector Draw & Privacy Redaction**: Pressure- and tilt-aware vector strokes (Apple Pencil supported on iPad), plus built-in Privacy Redaction layers with Mosaic, Gaussian Blur, and Blackout modes (combinable with AI Face/Object Tracking).
+8. **Filters, 3D LUTs & Animated FX**: Built-in color presets, custom GPU 3D `.cube` LUT color grading library, and 7 time-varying Animated FX: Glitch, RGB Split, VHS Scanlines, Film Grain, Camera Shake, Zoom Pulse, and Ripple.
+9. **Color Adjustments**: Precision tap-to-reset sliders for exposure, contrast, saturation, highlights, shadows, warmth, sharpness, and vignette.
+10. **Background & Chroma Key**: Checkerboard transparent canvas, solid/gradient/image backgrounds, Green/Blue/Custom Chroma Key with interactive canvas Eyedropper, padding, corner radius, borders, and mask shapes.
+11. **Audio, BGM Mixer & Auto Captions**: PCM Float32 `AudioTimelineRenderer` supporting forward/reverse/boomerang audio sync, BGM track mixing (volume, mute, loop, offset, raised-cosine fade-in/fade-out), and 100% On-Device Auto Captions via `SFSpeechRecognizer` (`requiresOnDeviceRecognition = true`).
+12. **AI Studio**: On-device Background Removal, 2×/4× Super Resolution, 2×/4× Frame Interpolation, Object & Face Tracking, Cinemagraph Selective Freeze Mask, Video Stabilization, Seamless Loop Finder, Auto-Reframe.
+13. **Canvas**: Custom pixel dimensions, aspect presets, collage layouts, and transparency preservation.
+
+---
+
+## 3. On-Device AI & Metal Compute Engine
+
+- **AI Background Removal (`AIBackgroundRemover`)**: Apple Vision `VNGenerateForegroundInstanceMaskRequest` (people, animals, objects) + `VNGeneratePersonSegmentationRequest` (people), edge feathering, morphological shrink/expand, custom Metal temporal mask stabilization to prevent flicker, and manual Keep/Erase mask refinement brushes.
+- **AI Super Resolution 2× / 4× (`AISuperResolutionEngine`)**: Dual-backend — Apple VideoToolbox ML `VTFrameProcessor` (`VTLowLatencySuperResolutionScalerConfiguration`) on supported physical iOS 26+ Apple Silicon devices, and progressive Lanczos + Metal edge-preserving bilateral denoise + Contrast-Adaptive Sharpening (CAS) on older devices. Includes `AlphaChannelProcessor` edge-dilated RGB+Alpha split/recombine so transparent GIFs/stickers upscale without dark edge halos.
+- **AI Frame Interpolation 2× / 4× (`AIFrameInterpolator`)**: Bidirectional dense optical flow (`VNGenerateOpticalFlowRequest` A→B & B→A) + custom Metal occlusion-aware flow warping (plus VideoToolbox ML on physical iOS 26+ hardware), guarded by automatic histogram + structural scene-cut detection to eliminate ghosting across scene cuts.
+- **AI Object & Face Tracking (`AIObjectTracker`)**: Forward & backward tracking via `VNTrackObjectRequest` and `VNDetectFaceRectanglesRequest` (IoU + centroid matching), producing editable layer keyframes with confidence-based lost-frame indicators.
+
+---
+
+## 4. Native GIF Compression Engine & Real-Encode Target Size Optimizer
+
+### Quantization, Dithering & LZW Controls
+- **4 Color Quantizers**: Xiaolin Wu 3D variance-minimizing quantizer, Median Cut, Octree (ideal for crisp UI/pixel art/text), K-Means++ refiner, accelerated by a 6-6-6 centered perceptual color lookup cache.
+- **5 Dithering Engines**: None, serpentine Floyd-Steinberg, Atkinson, Sierra Lite (with adaptive anti-noise deadzone), subtle 4×4 Ordered Bayer, plus **Temporal Dither Lock** to stop background shimmer on static pixels.
+- **Palette Modes**: Global, Local (per-frame), Adaptive Hybrid, 8–256 colors.
+- **GIF89a Optimization**: Gifsicle-style Lossy LZW (`0–160`), Sub-rectangle Delta Compression, transparent unchanged-pixel masking, automatic Disposal Method switching, duplicate frame merging with duration preservation, alpha threshold & matte color control, diff tolerance.
+- **Target File Size Auto-Optimizer (`TargetSizeOptimizer`)**: Executes real GIF encodes along a binary/Pareto quality ladder to guarantee exact output size (`actualBytes <= targetBytes`). Presets for 128 KB, 256 KB, 512 KB, 1 MB, 2 MB, 5 MB, 10 MB, or custom KB. 5 optimization policies: Balanced, Resolution, Smoothness, Color Fidelity, Smallest Size. Includes interactive Before/After split slider with live animated comparison and PSNR/SSIM readouts.
+
+### Measured GIF Compression Benchmarks (Apple Silicon Release Build vs Apple ImageIO)
+| Content Type | Profile | Apple ImageIO Size | AnimCraft Size | Size Diff | ImageIO PSNR / SSIM | AnimCraft PSNR / SSIM | Encode Time |
+| :--- | :--- | ---: | ---: | ---: | :---: | :---: | ---: |
+| PhotoGradient (240×180, 8f) | Photo/Video (Wu + Bayer ±3) | 118,114 B | 133,893 B (-40.5% vs v1) | +13.4% | 27.75 dB / 0.7750 | **27.83 dB / 0.7792** | 66 ms |
+| Illustration (240×180, 8f) | Crisp Text/UI (Octree + None) | 5,478 B | 5,478 B | 0.0% | 99.90 dB / 1.0000 | **99.90 dB / 1.0000** | 7 ms |
+| CrispUI (240×180, 10f) | Crisp Text/UI (Octree + Delta) | 1,775 B | **1,742 B** | **-1.9%** | 99.90 dB / 1.0000 | **99.90 dB / 1.0000** | 10 ms |
+| LowMotion (240×180, 10f) | Balanced (Dedup + Delta) | 868 B | **659 B** | **-24.1%** | 99.90 dB / 1.0000 | **99.90 dB / 1.0000** | 3 ms |
+| HighMotion (200×150, 8f) | Smallest Size (Wu 96c + Delta) | 89,499 B | **55,591 B** | **-37.9%** | 27.72 dB / 0.8296 | 25.05 dB / 0.7173 | 31 ms |
+
+---
+
+## 5. All 15 Export Formats & Built-In Presets
+
+### 15 Export Formats
+1. **GIF** (`.gif`) — Animated, 1-bit alpha, full optimizer & target size search
+2. **Animated WebP** (`.webp`) — Native Google `libwebp`, full 8-bit alpha, lossy/lossless, quality & effort 0–6, max size limit
+3. **APNG** (`.png`) — Lossless animated PNG, full 8-bit alpha, loop control
+4. **MP4 (H.264)** (`.mp4`) — Hardware `AVAssetWriter`, configurable quality/bitrate/max size, synced/reversed/mixed audio
+5. **MP4 (HEVC / H.265)** (`.mp4`) — Hardware HEVC video + audio
+6. **MOV** (`.mov`) — QuickTime video + audio
+7. **HEVC with Alpha** (`.mov`) — Transparent video with full alpha channel + audio
+8. **Apple Live Photo** (`.jpg` + `.mov`) — Paired MakerApple asset identifier + `still-image-time` metadata track, direct save to Photos.app with iOS Lock Screen clock preview
+9. **Sprite Sheet PNG + JSON Atlas** (`.png` + `.json`) — Configurable grid columns & padding for game engines (Unity, Godot, SpriteKit)
+10. **PNG Sequence ZIP** (`.zip`) — Lossless individual frames packaged natively
+11. **JPEG Sequence ZIP** (`.zip`) — Quality-controlled frame archive
+12. **Still PNG** (`.png`) — Single frame lossless extraction
+13. **Still JPEG** (`.jpg`) — Single frame quality-controlled extraction
+14. **Still WebP** (`.webp`) — Single frame WebP via `libwebp`
+15. **Still AVIF** (`.avif`) — Single frame next-gen AVIF
+
+### 8 Built-In Messenger & Developer Presets + Sticker Spec Validator
+- **Discord Sticker (≤ 512 KB)**: GIF, 320×320, alpha, Adaptive Hybrid 128c, Wu + Atkinson
+- **Slack Emoji (≤ 128 KB)**: GIF, 128×128, alpha, Global 64c, Octree + None
+- **LINE Animated Sticker (APNG ≤ 300 KB)**: APNG, 320×270, 10 fps, 4 loops, alpha, validated against LINE specs
+- **WhatsApp Animated Sticker (512px WebP)**: Animated WebP, 512×512, 15 fps, ≤ 500 KB, alpha
+- **Telegram Video Sticker (512px)**: Animated WebP, 512×512, 30 fps, ≤ 256 KB, alpha
+- **GitHub Demo (Crisp UI ≤ 5 MB)**: GIF, 800×600, Global 128c, Octree + None, Resolution priority
+- **WebP High Efficiency**: Animated WebP, original resolution, quality 84, alpha
+- **HEVC Transparent MOV**: HEVC with Alpha, original resolution, quality 90%, audio kept
+
+---
+
+## 6. iPad Pro Workspace, Extensions, Shortcuts & Localization
+
+- **iPad Pro 3-Pane NLE Workspace**: Collapsible left Tool/Layer sidebar, central interactive canvas (Eyedropper, Crop, Apple Pencil Draw, AI Mask Brush, Cinemagraph Brush), right Live Inspector, wide bottom multi-track Filmstrip Timeline, Hardware Keyboard Shortcuts, Drag & Drop, and Multitasking.
+- **iMessage Sticker Pack (`AnimCraftMessagesExtension`)**: Save exported animated GIF/APNG/WebP stickers directly into the shared local App Group vault (`group.com.animcraft.studio`) and send them from iMessage.
+- **iOS Share Extension (`AnimCraftShareExtension`)**: Send media directly from Photos, Safari, or Files into AnimCraft.
+- **Apple Shortcuts & Siri (`AppIntents`)**:
+  - `Convert to GIF with AnimCraft` (headless on-device conversion with configurable max width & FPS)
+  - `Compress GIF to Target Size` (headless real-encode optimization to target KB)
+  - `Open AnimCraft Tool` (deep-link into Batch Studio, Camera Capture, or Screen Recording)
+- **Local Data Safety**: Atomic JSON project manifests, crash-recovery autosave journals, Trash with Restore, `.animcraft` shareable project packages, Full Local ZIP Backup & Restore, Storage Breakdown & Cache Cleaner, and coalesced Undo/Redo history.
+- **16 UI Languages**: Japanese (`ja`), English (`en`), Korean (`ko`), Simplified Chinese (`zh-Hans`), Traditional Chinese (`zh-Hant`), German (`de`), French (`fr`), Spanish (`es`), Italian (`it`), Portuguese Brazil (`pt-BR`), Russian (`ru`), Arabic (`ar`, full RTL), Hindi (`hi`), Thai (`th`), Vietnamese (`vi`), Indonesian (`id`).
+- **Accessibility**: Full Light & Dark Mode, VoiceOver accessibility labels, Dynamic Type scaling, Reduce Motion support, and icon+text status indicators (never color alone).
+
+---
+
+## 7. Frequently Asked Questions
+
+**Q: Is AnimCraft really free with no watermarks or subscriptions?**
+A: Yes. AnimCraft is 100% free with zero ads, zero subscriptions, zero in-app purchases, zero watermarks, and no limits on frame count, resolution, or clip duration.
+
+**Q: Does AnimCraft upload my videos or photos to a cloud server for GIF conversion or AI background removal?**
+A: Never. All decoding, Metal rendering, Vision/VideoToolbox AI processing, on-device speech recognition (`requiresOnDeviceRecognition = true`), encoding, and backups execute 100% locally on your iPhone or iPad. The only network request the app can make is when you explicitly use "Import from URL" to download a file from a URL you enter.
+
+**Q: Can AnimCraft compress a GIF to stay strictly under Discord (512 KB) or Slack (128 KB) limits?**
+A: Yes. AnimCraft includes a real-encode Target File Size Auto-Optimizer that encodes candidate GIFs using Xiaolin Wu/Octree quantization, delta compression, temporal dither lock, and lossy LZW, verifying that the actual encoded file is at or below your exact KB limit.
+
+**Q: Can I create LINE animated stickers (APNG) or WhatsApp/Telegram animated stickers (WebP) on iPhone?**
+A: Yes. AnimCraft includes native APNG and `libwebp` Animated WebP encoders, built-in presets for LINE (320×270 APNG ≤ 300 KB), WhatsApp (512×512 WebP ≤ 500 KB), Telegram (512px ≤ 256 KB), Discord, and Slack, plus a built-in Sticker Spec Validator.
