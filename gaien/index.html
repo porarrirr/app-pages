@@ -1,479 +1,1091 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html lang="ja" data-lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StudyTrail — 学習記録・管理アプリ</title>
-  <meta name="description" content="StudyTrailは学習時間を記録・分析するアプリです。タイマー、教材管理、カレンダー、目標設定、テスト管理、Firebaseクラウド同期に対応。" />
-  <meta name="apple-itunes-app" content="app-id=6771300607" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --accent: #6C63FF;
-      --accent2: #FF6584;
-      --accent3: #43CFAB;
-      --bg: #0B0E1A;
-      --bg2: #12162A;
-      --bg3: #1A2040;
-      --text: #E8EAFF;
-      --text2: #9AA0C0;
-      --card: rgba(255,255,255,0.04);
-      --card-border: rgba(108,99,255,0.25);
-      --radius: 20px;
-      --glow: 0 0 60px rgba(108,99,255,0.35);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Noto Sans JP', 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 40px;
-      background: rgba(11,14,26,0.75);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(108,99,255,0.15);
-    }
-    .nav-logo { font-size: 1.3rem; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 32px; }
-    .nav-links a { color: var(--text2); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      background: linear-gradient(135deg, var(--accent), #8B5CF6);
-      color: #fff; text-decoration: none; padding: 10px 24px;
-      border-radius: 50px; font-size: 0.9rem; font-weight: 500;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(108,99,255,0.4);
-    }
-    .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,99,255,0.6); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 120px 24px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(108,99,255,0.25) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(67,207,171,0.15) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 40% at 20% 60%, rgba(255,101,132,0.12) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.35);
-      border-radius: 50px; padding: 6px 16px; font-size: 0.8rem;
-      color: #a99fff; margin-bottom: 28px;
-      animation: fadeUp 0.6s ease both;
-    }
-    .hero-badge::before { content: '✦'; font-size: 0.7rem; }
-    .hero-title {
-      font-size: clamp(2.8rem, 8vw, 5.5rem);
-      font-weight: 900; line-height: 1.1; letter-spacing: -2px;
-      animation: fadeUp 0.7s 0.1s ease both;
-    }
-    .hero-title .grad {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent3) 50%, #a78bfa 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-sub {
-      font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text2); max-width: 600px;
-      margin: 24px auto 48px; font-weight: 300;
-      animation: fadeUp 0.7s 0.2s ease both;
-    }
-    .hero-buttons {
-      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
-      animation: fadeUp 0.7s 0.3s ease both;
-    }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: linear-gradient(135deg, var(--accent), #8B5CF6);
-      color: #fff; text-decoration: none; padding: 16px 36px;
-      border-radius: 50px; font-size: 1rem; font-weight: 600;
-      box-shadow: 0 8px 32px rgba(108,99,255,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(108,99,255,0.6); }
-    .btn-secondary {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--card); border: 1px solid var(--card-border);
-      color: var(--text); text-decoration: none; padding: 16px 36px;
-      border-radius: 50px; font-size: 1rem; font-weight: 500;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-3px); }
-
-    /* phone mockup */
-    .hero-mockup {
-      margin-top: 72px;
-      position: relative;
-      animation: fadeUp 0.9s 0.4s ease both;
-    }
-    .mockup-glow {
-      position: absolute; inset: -40px;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(108,99,255,0.3) 0%, transparent 70%);
-      pointer-events: none; filter: blur(20px);
-    }
-    .mockup-frame {
-      width: 280px; height: 560px;
-      background: linear-gradient(145deg, #1e2340, #0d1020);
-      border-radius: 44px;
-      border: 2px solid rgba(108,99,255,0.4);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(108,99,255,0.2);
-      overflow: hidden; position: relative;
-    }
-    .mockup-screen {
-      position: absolute; inset: 8px;
-      background: linear-gradient(160deg, #141830, #0c1020);
-      border-radius: 36px; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .mockup-header {
-      background: linear-gradient(135deg, rgba(108,99,255,0.3), rgba(139,92,246,0.2));
-      padding: 20px 16px 16px;
-      border-bottom: 1px solid rgba(108,99,255,0.2);
-    }
-    .mockup-title { font-size: 0.75rem; color: #9AA0C0; margin-bottom: 4px; }
-    .mockup-time { font-size: 2rem; font-weight: 700; color: #fff; letter-spacing: 2px; }
-    .mockup-body { padding: 12px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
-    .mockup-card {
-      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
-      border-radius: 12px; padding: 10px 12px;
-    }
-    .mockup-card-label { font-size: 0.65rem; color: #9AA0C0; margin-bottom: 3px; }
-    .mockup-card-val { font-size: 0.9rem; font-weight: 600; color: var(--text); }
-    .mockup-bar { height: 6px; background: rgba(255,255,255,0.08); border-radius: 10px; margin-top: 6px; overflow: hidden; }
-    .mockup-bar-fill { height: 100%; border-radius: 10px; background: linear-gradient(90deg, var(--accent), var(--accent3)); }
-    .mockup-notch {
-      position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-      width: 80px; height: 22px; background: #0B0E1A;
-      border-radius: 0 0 14px 14px; z-index: 5;
-    }
-
-    /* ── FEATURES ── */
-    section { padding: 100px 24px; }
-    .section-label {
-      text-align: center; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--accent); font-weight: 500; margin-bottom: 16px;
-    }
-    .section-title {
-      text-align: center; font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; letter-spacing: -1px; margin-bottom: 16px;
-    }
-    .section-sub { text-align: center; color: var(--text2); max-width: 520px; margin: 0 auto 64px; font-size: 1rem; }
-
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px; max-width: 1100px; margin: 0 auto;
-    }
-    .feature-card {
-      background: var(--card); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 32px;
-      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .feature-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(108,99,255,0.08) 0%, transparent 60%);
-      opacity: 0; transition: opacity 0.3s;
-    }
-    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); border-color: rgba(108,99,255,0.5); }
-    .feature-card:hover::before { opacity: 1; }
-    .feature-icon {
-      font-size: 2rem; margin-bottom: 16px; display: block;
-      filter: drop-shadow(0 0 12px rgba(108,99,255,0.5));
-    }
-    .feature-name { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-    .feature-desc { color: var(--text2); font-size: 0.9rem; line-height: 1.6; }
-
-    /* ── STATS ── */
-    .stats-section {
-      background: var(--bg2);
-      border-top: 1px solid rgba(108,99,255,0.1);
-      border-bottom: 1px solid rgba(108,99,255,0.1);
-    }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px; max-width: 900px; margin: 0 auto; text-align: center;
-    }
-    .stat-num {
-      font-size: 3rem; font-weight: 900; letter-spacing: -2px;
-      background: linear-gradient(135deg, var(--accent), var(--accent3));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .stat-label { color: var(--text2); font-size: 0.9rem; margin-top: 4px; }
-
-    /* ── PLATFORM ── */
-    .platform-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 32px; max-width: 900px; margin: 0 auto;
-    }
-    @media (max-width: 640px) { .platform-grid { grid-template-columns: 1fr; } }
-    .platform-card {
-      background: var(--card); border: 1px solid var(--card-border);
-      border-radius: var(--radius); padding: 40px 32px; text-align: center;
-    }
-    .platform-icon { font-size: 3rem; display: block; margin-bottom: 16px; }
-    .platform-name { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; }
-    .platform-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .platform-items li { color: var(--text2); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
-    .platform-items li::before { content: '✓'; color: var(--accent3); font-weight: 700; }
-
-    /* ── CTA ── */
-    .cta-section {
-      text-align: center;
-      background: linear-gradient(135deg, rgba(108,99,255,0.15) 0%, rgba(67,207,171,0.1) 100%);
-      border-top: 1px solid rgba(108,99,255,0.2);
-    }
-    .cta-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 16px; }
-    .cta-sub { color: var(--text2); max-width: 480px; margin: 0 auto 40px; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--bg); border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 40px 24px; text-align: center; color: var(--text2); font-size: 0.85rem;
-    }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal {
-      opacity: 0; transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      nav { padding: 16px 20px; }
-      .nav-links { display: none; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyTrail｜今日も、一歩ずつ。勉強タイマー・参考書管理・スマホ集中制限</title>
+  <meta name="description" content="StudyTrailは、勉強タイマー・参考書の進捗管理と自動復習・スマホの集中制限・時間割・試験カウントダウン・9種のウィジェットをひとつにまとめた学習記録アプリです。登録不要・広告なしですぐ始められます。">
+  <meta name="st-title-ja" content="StudyTrail｜今日も、一歩ずつ。勉強タイマー・参考書管理・スマホ集中制限">
+  <meta name="st-title-en" content="StudyTrail — Study Timer, Textbook Progress &amp; Focus Blocker">
+  <meta name="st-desc-ja" content="StudyTrailは、勉強タイマー・参考書の進捗管理と自動復習・スマホの集中制限・時間割・試験カウントダウン・9種のウィジェットをひとつにまとめた学習記録アプリです。登録不要・広告なしですぐ始められます。">
+  <meta name="st-desc-en" content="StudyTrail combines a study timer, textbook problem grid, spaced review, Screen Time app blocker, timetable, exam countdowns, and 9 widgets in one calm workspace. No signup, no ads.">
+  <meta name="apple-itunes-app" content="app-id=6771300607">
+  <meta name="theme-color" content="#F2F3F7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141D1A" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://porarrirr.github.io/app-pages/gaien/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="StudyTrail">
+  <meta property="og:url" content="https://porarrirr.github.io/app-pages/gaien/">
+  <meta property="og:title" content="StudyTrail｜今日も、一歩ずつ。学習記録・タイマー・スマホ集中制限">
+  <meta property="og:description" content="勉強タイマー、参考書の問題進捗グリッドと自動復習、スクリーンタイム集中制限、時間割、9種のウィジェットをひとつに。アカウント不要・広告なし。">
+  <meta property="og:image" content="https://porarrirr.github.io/app-pages/gaien/assets/app-icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="assets/app-icon.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/remixicon/remixicon.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem('studytrail-theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+        const p = new URLSearchParams(location.search).get('lang');
+        const l = (p === 'en' || p === 'ja') ? p : localStorage.getItem('studytrail-lang');
+        if (l === 'en') {
+          document.documentElement.dataset.lang = 'en';
+          document.documentElement.lang = 'en';
+        }
+      } catch (_) {}
+    })();
+  </script>
+  <script src="assets/site.js" defer></script>
 </head>
-<body>
+<body class="min-h-screen selection:bg-forest-800 selection:text-white dark:selection:bg-forest-300 dark:selection:text-forest-950">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-forest-800 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
+    <span data-lang-ja>本文へ移動</span>
+    <span data-lang-en>Skip to content</span>
+  </a>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Study<span>Trail</span></div>
-  <div class="nav-links">
-    <a href="#features">機能</a>
-    <a href="#platform">対応OS</a>
-    <a href="support.html">サポート</a>
-  </div>
-  <a href="https://apps.apple.com/app/id6771300607" class="nav-cta" rel="noopener">ダウンロード</a>
-</nav>
+  <!-- Header -->
+  <header class="st-glass-nav sticky top-0 z-40">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+      <a href="index.html" class="flex items-center gap-2.5 text-[17px] font-bold tracking-tight text-[#111815] dark:text-[#F1F5F3]" aria-current="page">
+        <img src="assets/app-icon.webp" alt="" width="34" height="34" class="h-[34px] w-[34px] rounded-[9px] shadow-sm ring-1 ring-black/5 dark:ring-white/10">
+        <span>StudyTrail</span>
+      </a>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">iOS 対応</div>
-  <h1 class="hero-title">
-    学習を、<br /><span class="grad">もっとスマートに。</span>
-  </h1>
-  <p class="hero-sub">
-    StudyTrail は学習時間の記録・分析・管理を一括してサポートするアプリです。タイマー、教材管理、カレンダー、目標設定、クラウド同期まで完備。
-  </p>
-  <div class="hero-buttons">
-    <a href="https://apps.apple.com/app/id6771300607" class="btn-primary" id="hero-appstore-btn" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      App Store で入手
-    </a>
-    <a href="#features" class="btn-secondary">機能を見る</a>
-  </div>
+      <nav class="hidden items-center gap-1 rounded-full bg-black/[0.04] p-1 dark:bg-white/[0.06] md:flex" aria-label="Main navigation">
+        <a href="#features" class="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-[#111815] shadow-xs dark:bg-[#2A3733] dark:text-[#F1F5F3]">
+          <span data-lang-ja>機能</span>
+          <span data-lang-en>Features</span>
+        </a>
+        <a href="#all-features" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
+          <span data-lang-ja>全機能一覧</span>
+          <span data-lang-en>All Features</span>
+        </a>
+        <a href="support.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
+          <span data-lang-ja>サポート</span>
+          <span data-lang-en>Support</span>
+        </a>
+        <a href="privacy.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
+          <span data-lang-ja>プライバシー</span>
+          <span data-lang-en>Privacy</span>
+        </a>
+      </nav>
 
-  <div class="hero-mockup">
-    <div class="mockup-glow"></div>
-    <div class="mockup-frame">
-      <div class="mockup-notch"></div>
-      <div class="mockup-screen">
-        <div class="mockup-header">
-          <div class="mockup-title">今日の学習時間</div>
-          <div class="mockup-time">03:42:15</div>
+      <div class="flex items-center gap-2">
+        <button type="button" data-lang-toggle class="inline-flex h-9 items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-white/80 px-3 text-xs font-semibold text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+          <i class="ri-translate-2 text-sm text-forest-800 dark:text-forest-300" aria-hidden="true"></i>
+          <span data-lang-label>EN</span>
+        </button>
+        <button type="button" data-theme-toggle aria-label="Toggle color theme" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+          <i class="ri-sun-line hidden text-base" data-icon-sun aria-hidden="true"></i>
+          <i class="ri-moon-clear-line text-base" data-icon-moon aria-hidden="true"></i>
+        </button>
+        <a href="https://apps.apple.com/jp/app/id6771300607" target="_blank" rel="noopener noreferrer" class="hidden h-9 items-center gap-1.5 rounded-full bg-forest-800 px-4 text-xs font-semibold text-white transition hover:bg-forest-900 dark:bg-forest-300 dark:text-forest-950 dark:hover:bg-forest-200 sm:inline-flex">
+          <i class="ri-apple-fill text-sm" aria-hidden="true"></i>
+          <span data-lang-ja>App Store</span>
+          <span data-lang-en>App Store</span>
+        </a>
+        <button type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Menu" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#111815] dark:border-[#303E37] dark:bg-[#202A27] dark:text-white md:hidden">
+          <i class="ri-menu-3-line text-lg" data-menu-open aria-hidden="true"></i>
+          <i class="ri-close-line hidden text-lg" data-menu-close aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div data-mobile-menu class="hidden border-t border-[#E8EBE9] bg-white/95 px-4 py-4 backdrop-blur-xl dark:border-[#303E37] dark:bg-[#141D1A]/95 md:hidden">
+      <div class="flex flex-col gap-1.5">
+        <a href="#features" class="rounded-2xl bg-[#F2F3F7] px-4 py-2.5 text-sm font-semibold text-[#111815] dark:bg-[#202A27] dark:text-white">
+          <span data-lang-ja>機能紹介</span><span data-lang-en>Features</span>
+        </a>
+        <a href="#all-features" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]">
+          <span data-lang-ja>全機能一覧</span><span data-lang-en>All Features</span>
+        </a>
+        <a href="support.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]">
+          <span data-lang-ja>サポート・FAQ</span><span data-lang-en>Support &amp; FAQ</span>
+        </a>
+        <a href="privacy.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]">
+          <span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span>
+        </a>
+        <a href="https://apps.apple.com/jp/app/id6771300607" target="_blank" rel="noopener noreferrer" class="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-forest-800 px-4 py-3 text-sm font-semibold text-white dark:bg-forest-300 dark:text-forest-950">
+          <i class="ri-apple-fill text-base" aria-hidden="true"></i>
+          <span data-lang-ja>App Store で入手</span>
+          <span data-lang-en>Download on App Store</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO SECTION -->
+    <section class="st-hero-bg relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-24 lg:pt-18 lg:pb-28">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
+        <!-- Left Copy -->
+        <div class="lg:col-span-6">
+          <div class="inline-flex items-center gap-2 rounded-full border border-[#DDE2DF] bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-forest-800 shadow-2xs dark:border-[#303E37] dark:bg-[#202A27] dark:text-forest-300">
+            <span class="inline-block h-2 w-2 rounded-full bg-forest-600 dark:bg-forest-300"></span>
+            <span data-lang-ja>登録不要・広告なし・50言語対応</span>
+            <span data-lang-en>No signup · No ads · 50 languages</span>
+          </div>
+
+          <h1 class="mt-5 text-[42px] leading-[1.12] font-extrabold tracking-tight text-[#111815] dark:text-[#F1F5F3] sm:text-[54px] lg:text-[60px]">
+            <span data-lang-ja>今日も、<br><span class="text-forest-800 dark:text-forest-300">一歩ずつ。</span></span>
+            <span data-lang-en>Today too,<br><span class="text-forest-800 dark:text-forest-300">one step at a time.</span></span>
+          </h1>
+
+          <p class="mt-5 max-w-xl text-base leading-relaxed text-[#4C5C56] dark:text-[#A9BCB2] sm:text-[17px]">
+            <span data-lang-ja>勉強タイマー、参考書の問題進捗と自動復習、スマホの集中制限、時間割、試験カウントダウンまで。「どれだけ勉強したか」だけでなく、「次に何を復習すべきか」まで迷わず続けられる学習空間です。</span>
+            <span data-lang-en>StudyTrail brings your study timer, textbook problem grid, spaced review, Screen Time app blocker, class timetable, and exam countdowns into one calm, focused workspace—so you always know what to study next.</span>
+          </p>
+
+          <!-- CTA Row -->
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="https://apps.apple.com/jp/app/id6771300607" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 rounded-full bg-forest-800 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-forest-800/20 transition hover:-translate-y-0.5 hover:bg-forest-900 dark:bg-forest-100 dark:text-forest-950 dark:shadow-black/30 dark:hover:bg-white">
+              <i class="ri-apple-fill text-lg" aria-hidden="true"></i>
+              <span data-lang-ja>App Store で無料ダウンロード</span>
+              <span data-lang-en>Download on App Store</span>
+              <i class="ri-arrow-right-up-line text-base opacity-80" aria-hidden="true"></i>
+            </a>
+            <a href="#features" class="inline-flex items-center gap-2 rounded-full border border-[#D8DFDB] bg-white px-5 py-3.5 text-sm font-semibold text-[#1A2622] transition hover:border-forest-800/40 hover:bg-[#FAFBF9] dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#E8EFEA] dark:hover:border-forest-300/40">
+              <span data-lang-ja>機能を見る</span>
+              <span data-lang-en>Explore features</span>
+              <i class="ri-arrow-down-line text-base" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <!-- Platform note -->
+          <p class="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium text-[#5E6E68] dark:text-[#8FA39A]">
+            <span class="inline-flex items-center gap-1.5"><i class="ri-smartphone-line text-sm"></i><span data-lang-ja>iPhone（iOS 16+）</span><span data-lang-en>iPhone (iOS 16+)</span></span>
+            <span class="inline-flex items-center gap-1.5"><i class="ri-tablet-line text-sm"></i><span data-lang-ja>iPad（Split View対応）</span><span data-lang-en>iPad (Split View)</span></span>
+            <span class="inline-flex items-center gap-1.5"><i class="ri-android-fill text-sm"></i><span data-lang-ja>Android（8.0+）</span><span data-lang-en>Android (8.0+)</span></span>
+          </p>
+
+          <!-- StudyTrail Authentic Metric Strip -->
+          <div class="mt-8 grid grid-cols-3 gap-3">
+            <div class="st-card px-4 py-3.5">
+              <div class="tabular-nums-clean text-xl font-extrabold text-forest-800 dark:text-forest-300 sm:text-2xl">0<span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-ja>広告</span><span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-en> ads</span></div>
+              <p class="mt-0.5 text-[11px] font-medium text-[#5C6B65] dark:text-[#9CB0A6]">
+                <span data-lang-ja>登録なしですぐ開始</span>
+                <span data-lang-en>Start locally, no signup</span>
+              </p>
+            </div>
+            <div class="st-card px-4 py-3.5">
+              <div class="tabular-nums-clean text-xl font-extrabold text-forest-800 dark:text-forest-300 sm:text-2xl">9<span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-ja>種類</span><span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-en> types</span></div>
+              <p class="mt-0.5 text-[11px] font-medium text-[#5C6B65] dark:text-[#9CB0A6]">
+                <span data-lang-ja>ホーム・ロック画面対応</span>
+                <span data-lang-en>Home &amp; Lock widgets</span>
+              </p>
+            </div>
+            <div class="st-card px-4 py-3.5">
+              <div class="tabular-nums-clean text-xl font-extrabold text-forest-800 dark:text-forest-300 sm:text-2xl">50<span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-ja>言語</span><span class="ml-0.5 text-xs font-semibold text-[#64756F] dark:text-[#90A49B]" data-lang-en> langs</span></div>
+              <p class="mt-0.5 text-[11px] font-medium text-[#5C6B65] dark:text-[#9CB0A6]">
+                <span data-lang-ja>ネイティブ多言語対応</span>
+                <span data-lang-en>Native localization</span>
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="mockup-body">
-          <div class="mockup-card">
-            <div class="mockup-card-label">📚 数学</div>
-            <div class="mockup-card-val">01:30:00</div>
-            <div class="mockup-bar"><div class="mockup-bar-fill" style="width:75%"></div></div>
-          </div>
-          <div class="mockup-card">
-            <div class="mockup-card-label">🔬 物理</div>
-            <div class="mockup-card-val">01:12:15</div>
-            <div class="mockup-bar"><div class="mockup-bar-fill" style="width:60%"></div></div>
-          </div>
-          <div class="mockup-card">
-            <div class="mockup-card-label">📝 英語</div>
-            <div class="mockup-card-val">01:00:00</div>
-            <div class="mockup-bar"><div class="mockup-bar-fill" style="width:50%"></div></div>
-          </div>
-          <div class="mockup-card" style="background:rgba(67,207,171,0.1); border-color:rgba(67,207,171,0.3);">
-            <div class="mockup-card-label">🎯 今週の目標</div>
-            <div class="mockup-card-val" style="color:var(--accent3)">20h / 30h</div>
-            <div class="mockup-bar"><div class="mockup-bar-fill" style="width:67%; background: linear-gradient(90deg,#43CFAB,#6C63FF)"></div></div>
+
+        <!-- Right Interactive Device Showcase -->
+        <div class="lg:col-span-6">
+          <div class="relative mx-auto flex max-w-[440px] flex-col items-center">
+            <!-- iPhone Hardware Mockup -->
+            <div class="device-iphone w-[278px] sm:w-[308px]">
+              <div class="device-iphone-screen">
+                <img
+                  data-hero-screen
+                  data-screen="home"
+                  data-alt-ja="今日の学習時間155分と今日の復習を確認できるStudyTrailのホーム画面"
+                  data-alt-en="StudyTrail Home screen showing 155 minutes studied today and due reviews"
+                  src="assets/screens/home.webp"
+                  alt="今日の学習時間155分と今日の復習を確認できるStudyTrailのホーム画面"
+                  width="720"
+                  height="1559"
+                  fetchpriority="high"
+                >
+              </div>
+            </div>
+
+            <!-- Interactive Screen Switcher -->
+            <div class="mt-5 w-full" role="tablist" aria-label="App screen preview">
+              <div class="no-scrollbar flex items-center justify-start gap-1.5 overflow-x-auto pb-1 sm:justify-center sm:flex-wrap">
+                <button type="button" role="tab" aria-selected="true"
+                  data-hero-tab="home"
+                  data-alt-ja="今日の学習時間155分と今日の復習を確認できるホーム画面"
+                  data-alt-en="Home screen showing today's study time and due reviews"
+                  data-caption-ja="ホーム：今日の学習進捗と「次の一歩」の自動復習を一目で把握"
+                  data-caption-en="Home: Today's goal progress and due reviews surfaced under Next Steps"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-forest-800 px-3.5 py-1.5 text-xs font-semibold text-white shadow-sm transition">
+                  <i class="ri-home-5-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>ホーム</span><span data-lang-en>Home</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false"
+                  data-hero-tab="timer"
+                  data-alt-ja="科目と教材を選んで学習時間を計測するタイマー画面"
+                  data-alt-en="Study timer screen with active focus session and problem logging"
+                  data-caption-ja="タイマー：計測しながら問題正誤の記録・集中表示・見守りペットに対応"
+                  data-caption-en="Timer: Track sessions, log per-problem answers, full-screen focus &amp; Study Pet"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#3B4B45] transition hover:text-[#111815] dark:bg-[#202A27] dark:text-[#B4C5BC]">
+                  <i class="ri-timer-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>タイマー</span><span data-lang-en>Timer</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false"
+                  data-hero-tab="problem-grid"
+                  data-alt-ja="問題ごとの正解・不正解・復習回復度を5段階カラーで見える化する問題集グリッド画面"
+                  data-alt-en="Workbook problem grid showing 5-stage mastery colors per question"
+                  data-caption-ja="問題集グリッド：1問ごとの正誤と復習回復度を5段階の色で一望"
+                  data-caption-en="Problem Grid: See every question's status and 5-stage recovery color"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#3B4B45] transition hover:text-[#111815] dark:bg-[#202A27] dark:text-[#B4C5BC]">
+                  <i class="ri-grid-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>問題集</span><span data-lang-en>Problems</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false"
+                  data-hero-tab="calendar"
+                  data-alt-ja="学習量の濃淡ヒートマップと1日の時系列タイムラインを表示するカレンダー画面"
+                  data-alt-en="Calendar heatmap and daily timeline view"
+                  data-caption-ja="カレンダー：学習量の濃淡ヒートマップと空き時間まで分かる時系列"
+                  data-caption-en="Calendar: Study intensity heatmap and full daily timeline with gaps"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#3B4B45] transition hover:text-[#111815] dark:bg-[#202A27] dark:text-[#B4C5BC]">
+                  <i class="ri-calendar-check-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>カレンダー</span><span data-lang-en>Calendar</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false"
+                  data-hero-tab="reports"
+                  data-alt-ja="連続学習日数と科目別の日別・週別グラフを表示するレポート画面"
+                  data-alt-en="Reports screen showing streaks and subject breakdown charts"
+                  data-caption-ja="レポート：連続学習日数・最長記録と科目別の日・週・月グラフ"
+                  data-caption-en="Reports: Study streaks and daily, weekly, monthly subject charts"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#3B4B45] transition hover:text-[#111815] dark:bg-[#202A27] dark:text-[#B4C5BC]">
+                  <i class="ri-bar-chart-grouped-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>レポート</span><span data-lang-en>Reports</span>
+                </button>
+                <button type="button" role="tab" aria-selected="false"
+                  data-hero-tab="timetable"
+                  data-alt-ja="学期別の時間割と授業復習を切り替えて管理できる時間割画面"
+                  data-alt-en="Class timetable and lesson review scheduler"
+                  data-caption-ja="時間割：学期別の時間割と授業ごとの復習リマインドを一元管理"
+                  data-caption-en="Timetable: Term schedules with built-in per-lesson review tracking"
+                  class="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-white/90 px-3.5 py-1.5 text-xs font-semibold text-[#3B4B45] transition hover:text-[#111815] dark:bg-[#202A27] dark:text-[#B4C5BC]">
+                  <i class="ri-table-line text-sm" aria-hidden="true"></i>
+                  <span data-lang-ja>時間割</span><span data-lang-en>Timetable</span>
+                </button>
+              </div>
+              <p class="mt-2.5 text-center text-xs font-medium text-[#5C6B65] dark:text-[#9CB0A6]">
+                <span data-lang-ja data-hero-caption-ja>ホーム：今日の学習進捗と「次の一歩」の自動復習を一目で把握</span>
+                <span data-lang-en data-hero-caption-en>Home: Today's goal progress and due reviews surfaced under Next Steps</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-grid">
-    <div class="reveal">
-      <div class="stat-num">10+</div>
-      <div class="stat-label">主要機能</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-num">2</div>
-      <div class="stat-label">対応プラットフォーム</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">学習記録数</div>
-    </div>
-    <div class="reveal">
-      <div class="stat-num">24/7</div>
-      <div class="stat-label">クラウド同期</div>
-    </div>
-  </div>
-</section>
+    <!-- FEATURE PILLARS -->
+    <section id="features" class="py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Intro -->
+        <div class="reveal max-w-2xl">
+          <p class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-forest-800 uppercase dark:text-forest-300">
+            <i class="ri-compass-3-line text-sm" aria-hidden="true"></i>
+            <span data-lang-ja>StudyTrail の6つの柱</span>
+            <span data-lang-en>Six Pillars of StudyTrail</span>
+          </p>
+          <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-[#111815] dark:text-[#F1F5F3] sm:text-4xl">
+            <span data-lang-ja>記録して終わらない。<br>次の集中と復習までつながる設計。</span>
+            <span data-lang-en>More than a log.<br>Built to guide your next step.</span>
+          </h2>
+          <p class="mt-3 text-base text-[#54645E] dark:text-[#9CB0A6]">
+            <span data-lang-ja>計測・教材管理・復習提案・スマホ制限・時間割・振り返りをひとつの落ち着いたインターフェースに統合しました。</span>
+            <span data-lang-en>Timer, textbooks, spaced review, Screen Time blocking, class timetable, and analytics—unified in one calm interface.</span>
+          </p>
+        </div>
 
-<!-- FEATURES -->
-<section id="features">
-  <div class="section-label">Features</div>
-  <h2 class="section-title reveal">あなたの学習を変える機能</h2>
-  <p class="section-sub reveal">勉強の記録から分析まで、すべてが揃っています。</p>
-  <div class="features-grid">
-    <div class="feature-card reveal">
-      <span class="feature-icon">⏱️</span>
-      <div class="feature-name">学習タイマー</div>
-      <div class="feature-desc">ストップウォッチ / カウントダウンの2モード対応。バックグラウンドでもタイマーが継続します。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">📚</span>
-      <div class="feature-name">教材管理</div>
-      <div class="feature-desc">教科書・問題集の登録、ページ進捗、問題ごとの正誤記録。ISBNバーコードスキャンで自動メタデータ取得。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">📅</span>
-      <div class="feature-name">カレンダー・ヒートマップ</div>
-      <div class="feature-desc">月間カレンダーにヒートマップ表示。学習量を直感的に把握できます。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">📊</span>
-      <div class="feature-name">詳細レポート</div>
-      <div class="feature-desc">日別 / 週別 / 月別の学習時間内訳、科目別分析、連続学習日数を自動集計。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">🎯</span>
-      <div class="feature-name">目標設定</div>
-      <div class="feature-desc">曜日ごとの学習時間目標を設定。進捗リングで達成率をリアルタイム表示。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">📝</span>
-      <div class="feature-name">テスト管理</div>
-      <div class="feature-desc">テスト日の登録、カウントダウン表示、緊急度バッジで試験対策をサポート。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">📋</span>
-      <div class="feature-name">学習計画</div>
-      <div class="feature-desc">週間計画の作成、実績時間の自動集計、達成率トラッキングで計画的な学習を実現。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">☁️</span>
-      <div class="feature-name">クラウド同期</div>
-      <div class="feature-desc">Firebaseによるクラウド同期。複数デバイスでデータを共有できます。</div>
-    </div>
-    <div class="feature-card reveal">
-      <span class="feature-icon">🔲</span>
-      <div class="feature-name">ホーム画面ウィジェット</div>
-      <div class="feature-desc">Android 6種 + iOS WidgetKit。ホーム画面で学習状況をひと目で確認。</div>
-    </div>
-  </div>
-</section>
+        <!-- PILLAR 1: TIMER & DEEP FOCUS -->
+        <div class="reveal mt-12 st-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-7">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-forest-800/10 px-3 py-1 text-xs font-bold text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+                <i class="ri-timer-line text-sm"></i>
+                <span data-lang-ja>01 · 勉強タイマー＆集中環境</span>
+                <span data-lang-en>01 · Study Timer &amp; Deep Focus</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-[#111815] dark:text-white sm:text-3xl">
+                <span data-lang-ja>測る、解く、振り返るを<br>シームレスに。</span>
+                <span data-lang-en>Focus deeply without<br>breaking your flow.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
+                <span data-lang-ja>ストップウォッチ・カウントダウン（25分ポモドーロ等）・手動入力に対応。計測しながら解いた問題の正誤や小問の進捗までその場で記録できます。</span>
+                <span data-lang-en>Switch seamlessly between stopwatch, countdown (great for 25-minute Pomodoro sessions), and manual entry—and log per-problem answers right while the timer runs.</span>
+              </p>
 
-<!-- PLATFORM -->
-<section id="platform" style="background: var(--bg2);">
-  <div class="section-label">Platform</div>
-  <h2 class="section-title reveal">iOS・Android どちらでも</h2>
-  <p class="section-sub reveal">各プラットフォームの特性を活かした専用機能を搭載しています。</p>
-  <div class="platform-grid">
-    <div class="platform-card reveal">
-      <span class="platform-icon">🍎</span>
-      <div class="platform-name">iOS</div>
-      <ul class="platform-items">
-        <li>SwiftUI ネイティブ UI</li>
-        <li>Live Activity（Dynamic Island）</li>
-        <li>WidgetKit ウィジェット</li>
-        <li>Core Data + Firebase 同期</li>
-        <li>UserNotifications 通知</li>
-      </ul>
+              <div class="mt-6 grid gap-3 sm:grid-cols-2">
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                  <div class="flex items-center gap-2 text-sm font-bold text-[#111815] dark:text-white">
+                    <i class="ri-fullscreen-line text-forest-800 dark:text-forest-300"></i>
+                    <span data-lang-ja>横画面集中＆置き時計モード</span>
+                    <span data-lang-en>Landscape Focus &amp; Desk Clock</span>
+                  </div>
+                  <p class="mt-1.5 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]">
+                    <span data-lang-ja>机に置いて集中できるダーク全画面表示と、余計な情報を省いたシンプルな置き時計表示。</span>
+                    <span data-lang-en>Dark full-screen landscape timer and minimalist desk clock keep distractions out of sight.</span>
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                  <div class="flex items-center gap-2 text-sm font-bold text-[#111815] dark:text-white">
+                    <i class="ri-notification-badge-line text-forest-800 dark:text-forest-300"></i>
+                    <span data-lang-ja>ライブアクティビティ対応</span>
+                    <span data-lang-en>Live Activities &amp; Dynamic Island</span>
+                  </div>
+                  <p class="mt-1.5 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]">
+                    <span data-lang-ja>ロック画面や Dynamic Island から残り時間を常時確認。アプリを閉じても計測が継続します。</span>
+                    <span data-lang-en>Monitor elapsed or remaining time right from your Lock Screen and Dynamic Island.</span>
+                  </p>
+                </div>
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E] sm:col-span-2">
+                  <div class="flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-2 text-sm font-bold text-[#111815] dark:text-white">
+                      <i class="ri-bear-smile-line text-forest-800 dark:text-forest-300"></i>
+                      <span data-lang-ja>見守りペット（オンデバイス人物検出）</span>
+                      <span data-lang-en>Study Pet Companion (On-Device Vision)</span>
+                    </div>
+                    <span class="inline-flex items-center gap-1 rounded-full bg-forest-800/10 px-2.5 py-0.5 text-[11px] font-semibold text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+                      <i class="ri-camera-off-line text-xs"></i>
+                      <span data-lang-ja>映像の表示・保存・送信なし</span>
+                      <span data-lang-en>Never shown, saved, or uploaded</span>
+                    </span>
+                  </div>
+                  <p class="mt-1.5 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]">
+                    <span data-lang-ja>カメラの端末内人物検出だけで勉強中の在席をやさしく見守り。カメラ映像は一切表示・録画・外部送信されない安心設計です。</span>
+                    <span data-lang-en>Optional on-device person detection keeps a friendly pet beside you while you study—camera frames are never displayed, recorded, or transmitted.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center lg:col-span-5">
+              <div class="device-iphone w-[256px] sm:w-[276px]">
+                <div class="device-iphone-screen">
+                  <img data-screen="timer" data-alt-ja="数学問題集を計測中のStudyTrailタイマー画面" data-alt-en="StudyTrail timer screen actively tracking a Math session" src="assets/screens/timer.webp" alt="数学問題集を計測中のStudyTrailタイマー画面" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 2: TEXTBOOKS, PROBLEM GRID & SPACED REVIEW -->
+        <div class="reveal mt-8 st-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="order-2 flex items-center justify-center gap-3 sm:gap-5 lg:order-1 lg:col-span-6">
+              <div class="device-iphone w-[48%] max-w-[235px] -rotate-1 transition duration-500 hover:rotate-0">
+                <div class="device-iphone-screen">
+                  <img data-screen="materials" data-alt-ja="参考書ごとの問題進捗が並ぶ教材一覧画面" data-alt-en="Textbooks and workbooks progress list" src="assets/screens/materials.webp" alt="参考書ごとの問題進捗が並ぶ教材一覧画面" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+              <div class="device-iphone mt-8 w-[50%] max-w-[245px] rotate-1 transition duration-500 hover:rotate-0">
+                <div class="device-iphone-screen">
+                  <img data-screen="problem-grid" data-alt-ja="問題ごとの正誤と復習回復度を5段階カラーで見える化する問題集グリッド" data-alt-en="Workbook problem grid with 5-stage mastery colors" src="assets/screens/problem-grid.webp" alt="問題ごとの正誤と復習回復度を5段階カラーで見える化する問題集グリッド" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 lg:col-span-6">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-study-amber-soft px-3 py-1 text-xs font-bold text-[#9A5B00] dark:bg-[#3E2B12] dark:text-[#FFB340]">
+                <i class="ri-book-open-line text-sm"></i>
+                <span data-lang-ja>02 · 参考書・問題集グリッド＆自動復習</span>
+                <span data-lang-en>02 · Workbooks, Problem Grid &amp; Spaced Review</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-[#111815] dark:text-white sm:text-3xl">
+                <span data-lang-ja>参考書の「何周目」も、<br>弱点も、ひと目でわかる。</span>
+                <span data-lang-en>Every question tracked.<br>Every review timed for you.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
+                <span data-lang-ja>ISBN バーコードスキャンで参考書をかんたん登録。ページ単位・問題番号・小問単位まで細かく記録でき、間違えた問題の回復度を赤から黄緑の5段階カラーで可視化します。</span>
+                <span data-lang-en>Scan ISBN barcodes to add books in seconds. Track pages, chapters, questions, and sub-questions—and watch missed problems recover across 5 color stages.</span>
+              </p>
+
+              <!-- 1-3-7-14 Spaced Review Visual -->
+              <div class="mt-6 rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <span class="text-xs font-bold text-[#111815] dark:text-white">
+                    <i class="ri-repeat-2-line mr-1 text-forest-800 dark:text-forest-300"></i>
+                    <span data-lang-ja>自動復習サイクル（間隔反復）</span>
+                    <span data-lang-en>Automatic Spaced Review</span>
+                  </span>
+                  <span class="text-[11px] font-semibold text-[#5C6B65] dark:text-[#9CB0A6]">
+                    <span data-lang-ja>「次の一歩」へ自動表示</span>
+                    <span data-lang-en>Surfaces on Home</span>
+                  </span>
+                </div>
+                <div class="mt-3 grid grid-cols-4 gap-2 text-center">
+                  <div class="rounded-xl border border-study-red/25 bg-study-red-soft px-2 py-2.5 dark:border-[#FF6B64]/25 dark:bg-[#3D1F20]">
+                    <div class="tabular-nums-clean text-base font-extrabold text-study-red dark:text-[#FF6B64]">1<span class="text-[11px] font-semibold" data-lang-ja>日後</span><span class="text-[11px] font-semibold" data-lang-en>d</span></div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#7C3A3A] dark:text-[#E5A7A4]" data-lang-ja>初回復習</div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#7C3A3A] dark:text-[#E5A7A4]" data-lang-en>1st review</div>
+                  </div>
+                  <div class="rounded-xl border border-study-amber/30 bg-study-amber-soft px-2 py-2.5 dark:border-[#FFB340]/25 dark:bg-[#3E2B12]">
+                    <div class="tabular-nums-clean text-base font-extrabold text-[#B46900] dark:text-[#FFB340]">3<span class="text-[11px] font-semibold" data-lang-ja>日後</span><span class="text-[11px] font-semibold" data-lang-en>d</span></div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#7F4D0A] dark:text-[#E9C483]" data-lang-ja>定着確認</div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#7F4D0A] dark:text-[#E9C483]" data-lang-en>Reinforce</div>
+                  </div>
+                  <div class="rounded-xl border border-forest-800/20 bg-forest-50 px-2 py-2.5 dark:border-forest-300/20 dark:bg-[#1E332B]">
+                    <div class="tabular-nums-clean text-base font-extrabold text-forest-800 dark:text-forest-300">7<span class="text-[11px] font-semibold" data-lang-ja>日後</span><span class="text-[11px] font-semibold" data-lang-en>d</span></div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#3D5A4F] dark:text-[#A9CBB8]" data-lang-ja>記憶強化</div>
+                    <div class="mt-0.5 text-[10px] font-medium text-[#3D5A4F] dark:text-[#A9CBB8]" data-lang-en>Consolidate</div>
+                  </div>
+                  <div class="rounded-xl border border-forest-800/25 bg-forest-800 px-2 py-2.5 text-white dark:border-forest-300/30 dark:bg-forest-300 dark:text-forest-950">
+                    <div class="tabular-nums-clean text-base font-extrabold">14<span class="text-[11px] font-semibold" data-lang-ja>日後</span><span class="text-[11px] font-semibold" data-lang-en>d</span></div>
+                    <div class="mt-0.5 text-[10px] font-medium opacity-85" data-lang-ja>長期定着</div>
+                    <div class="mt-0.5 text-[10px] font-medium opacity-85" data-lang-en>Long-term</div>
+                  </div>
+                </div>
+              </div>
+
+              <ul class="mt-5 space-y-2.5 text-sm text-[#394842] dark:text-[#C5D5CD]">
+                <li class="flex items-start gap-2.5"><i class="ri-barcode-box-line mt-0.5 text-base text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ISBN バーコードスキャン＆Google Books 検索で書誌情報を自動入力</span><span data-lang-en>ISBN barcode scanning &amp; book search for instant setup</span></li>
+                <li class="flex items-start gap-2.5"><i class="ri-checkbox-multiple-line mt-0.5 text-base text-forest-800 dark:text-forest-300"></i><span data-lang-ja>章ごとの問題構成、正答率、5段階評価、メモ付き履歴をすべて整理</span><span data-lang-en>Organize by chapter with accuracy rates, 5-star ratings, and session notes</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 3: SCREEN TIME FOCUS BLOCKER (Custom StudyTrail UI Architecture Showcase) -->
+        <div class="reveal mt-8 st-forest-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-6">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-forest-100">
+                <i class="ri-shield-keyhole-line text-sm"></i>
+                <span data-lang-ja>03 · スマホの集中制限（iOS スクリーンタイム連携）</span>
+                <span data-lang-en>03 · Screen Time Focus Blocker (iOS)</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-white sm:text-3xl">
+                <span data-lang-ja>勉強した分だけスマホが使える。<br>意志力に頼らない集中設計。</span>
+                <span data-lang-en>Earn screen time by studying.<br>Stay focused without willpower.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#CFE0D7] sm:text-base">
+                <span data-lang-ja>Apple Family Controls と連携し、勉強タイマー・時間帯・1日の目標・場所の4つのルールで誘惑アプリをブロック。さらにチケット制や設定の期間固定ロックで、つい解除してしまう抜け道まで防ぎます。</span>
+                <span data-lang-en>Powered by Apple Family Controls, StudyTrail blocks distracting apps across four independent rules—timer, schedule, daily goals, and location—backed by unlock tickets and strict settings lock.</span>
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-2">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-forest-100">
+                  <i class="ri-exchange-line"></i>
+                  <span data-lang-ja>勉強→持ち時間の交換レート</span><span data-lang-en>Study-to-screen exchange rate</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-forest-100">
+                  <i class="ri-gift-line"></i>
+                  <span data-lang-ja>目標達成ボーナス</span><span data-lang-en>Daily goal bonus</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-forest-100">
+                  <i class="ri-ticket-2-line"></i>
+                  <span data-lang-ja>時間制解除チケット</span><span data-lang-en>Timed unlock tickets</span>
+                </span>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-xs font-semibold text-forest-100">
+                  <i class="ri-lock-2-line"></i>
+                  <span data-lang-ja>設定の期間固定ロック</span><span data-lang-en>Strict settings lock</span>
+                </span>
+              </div>
+              <p class="mt-4 text-xs text-[#9BB5A8]">
+                <span data-lang-ja>※ 場所ルール（ジオフェンス判定）の位置情報は端末内のみで処理され、サーバーや外部へ送信されません。</span>
+                <span data-lang-en>* Location-based focus zones use strictly on-device geofencing. Location data is never sent to any server.</span>
+              </p>
+            </div>
+
+            <!-- StudyTrail ScreenTime Rules Architecture Card -->
+            <div class="lg:col-span-6">
+              <div class="rounded-[24px] border border-white/12 bg-white/[0.06] p-5 backdrop-blur-md sm:p-6">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div class="flex items-center gap-3">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-forest-100 text-forest-950">
+                      <i class="ri-shield-check-fill text-xl"></i>
+                    </span>
+                    <div>
+                      <div class="text-sm font-bold text-white" data-lang-ja>4つの独立した「壁のルール」</div>
+                      <div class="text-sm font-bold text-white" data-lang-en>4 Independent Wall Rules</div>
+                      <div class="text-[11px] text-[#A9CBB8]" data-lang-ja>許可した学習アプリ以外は自動で制限</div>
+                      <div class="text-[11px] text-[#A9CBB8]" data-lang-en>Only allowed apps stay open during focus</div>
+                    </div>
+                  </div>
+                  <span class="rounded-full bg-study-lime/20 px-2.5 py-1 text-[11px] font-bold text-study-lime">ACTIVE</span>
+                </div>
+
+                <div class="mt-4 grid gap-3 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-black/20 p-3.5">
+                    <div class="flex items-center gap-2 text-xs font-bold text-forest-100">
+                      <i class="ri-timer-flash-line text-base text-study-lime"></i>
+                      <span data-lang-ja>タイマー連動ブロック</span>
+                      <span data-lang-en>During Study Timer</span>
+                    </div>
+                    <p class="mt-1.5 text-[11px] leading-relaxed text-[#C2D6CB]">
+                      <span data-lang-ja>タイマー計測中は自動でSNSや動画を遮断。集中が途切れません。</span>
+                      <span data-lang-en>Automatically blocks distractions whenever your study timer is running.</span>
+                    </p>
+                  </div>
+
+                  <div class="rounded-2xl border border-white/10 bg-black/20 p-3.5">
+                    <div class="flex items-center gap-2 text-xs font-bold text-forest-100">
+                      <i class="ri-time-line text-base text-study-lime"></i>
+                      <span data-lang-ja>時間帯スケジュール</span>
+                      <span data-lang-en>Scheduled Hours</span>
+                    </div>
+                    <p class="mt-1.5 text-[11px] leading-relaxed text-[#C2D6CB]">
+                      <span data-lang-ja>夜の勉強時間や就寝前の「使用禁止」と、休憩の「無料開放」を設定。</span>
+                      <span data-lang-en>Define strict block windows and free-access break hours by weekday.</span>
+                    </p>
+                  </div>
+
+                  <div class="rounded-2xl border border-white/10 bg-black/20 p-3.5">
+                    <div class="flex items-center gap-2 text-xs font-bold text-forest-100">
+                      <i class="ri-flag-2-line text-base text-study-lime"></i>
+                      <span data-lang-ja>1日の目標達成まで制限</span>
+                      <span data-lang-en>Until Daily Goal Met</span>
+                    </div>
+                    <p class="mt-1.5 text-[11px] leading-relaxed text-[#C2D6CB]">
+                      <span data-lang-ja>今日の目標時間をクリアするまでロック。達成でボーナス持ち時間を付与。</span>
+                      <span data-lang-en>Keep apps locked until your daily study target is completed.</span>
+                    </p>
+                  </div>
+
+                  <div class="rounded-2xl border border-white/10 bg-black/20 p-3.5">
+                    <div class="flex items-center gap-2 text-xs font-bold text-forest-100">
+                      <i class="ri-map-pin-2-line text-base text-study-lime"></i>
+                      <span data-lang-ja>場所ルール（学校・図書館）</span>
+                      <span data-lang-en>Location Focus Zones</span>
+                    </div>
+                    <p class="mt-1.5 text-[11px] leading-relaxed text-[#C2D6CB]">
+                      <span data-lang-ja>地図で指定した場所に入ると自動制限。端末内処理でプライバシーも安心。</span>
+                      <span data-lang-en>Auto-restrict at school or the library via on-device geofencing.</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 4: CALENDAR HEATMAP & REPORTS -->
+        <div class="reveal mt-8 st-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-6">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-study-blue-soft px-3 py-1 text-xs font-bold text-study-blue dark:bg-[#15324E] dark:text-[#5EADF2]">
+                <i class="ri-bar-chart-grouped-line text-sm"></i>
+                <span data-lang-ja>04 · カレンダー＆振り返りレポート</span>
+                <span data-lang-en>04 · Calendar Heatmap &amp; Reports</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-[#111815] dark:text-white sm:text-3xl">
+                <span data-lang-ja>積み上げた毎日が、<br>色とグラフで自信になる。</span>
+                <span data-lang-en>See every day add up<br>in color and clarity.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
+                <span data-lang-ja>学習量の濃淡がひと目でわかるカレンダーヒートマップと、空き時間まで可視化する日別タイムライン。さらに日・週・月の科目別レポートと連続学習日数でペースを掴めます。</span>
+                <span data-lang-en>Review your consistency on a color-graded heatmap and a daily timeline that even shows idle gaps—alongside streaks and daily, weekly, and monthly subject charts.</span>
+              </p>
+
+              <div class="mt-6 space-y-3">
+                <div class="flex items-start gap-3 rounded-2xl bg-[#F2F3F7] p-3.5 dark:bg-[#17211E]">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-forest-800 text-white dark:bg-forest-300 dark:text-forest-950">
+                    <i class="ri-calendar-2-line text-base"></i>
+                  </span>
+                  <div>
+                    <div class="text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>空き時間も見える時系列タイムライン</div>
+                    <div class="text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Daily Timeline &amp; Idle Gap View</div>
+                    <p class="mt-0.5 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>「集計」と「時系列」をワンタップで切替。解いた問題番号・正誤バッジ・評価まで1日の流れで振り返れます。</p>
+                    <p class="mt-0.5 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Switch between summary and chronological timeline with solved problem tags and star ratings.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 rounded-2xl bg-[#F2F3F7] p-3.5 dark:bg-[#17211E]">
+                  <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-forest-800 text-white dark:bg-forest-300 dark:text-forest-950">
+                    <i class="ri-share-box-line text-base"></i>
+                  </span>
+                  <div>
+                    <div class="text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>プライバシー配慮の週間シェアカード</div>
+                    <div class="text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Privacy-Safe Weekly Share Cards</div>
+                    <p class="mt-0.5 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>1週間の記録を美しい画像にしてSNS共有。個人的なメモや教材名は自動で除かれるため安心です。</p>
+                    <p class="mt-0.5 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Export clean weekly summary images—notes and textbook titles stay private automatically.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 sm:gap-5 lg:col-span-6">
+              <div class="device-iphone w-[48%] max-w-[235px]">
+                <div class="device-iphone-screen">
+                  <img data-screen="calendar" data-alt-ja="緑色の濃淡ヒートマップと時系列タイムラインを表示するカレンダー画面" data-alt-en="Calendar heatmap and daily chronological timeline" src="assets/screens/calendar.webp" alt="緑色の濃淡ヒートマップと時系列タイムラインを表示するカレンダー画面" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+              <div class="device-iphone mt-8 w-[48%] max-w-[235px]">
+                <div class="device-iphone-screen">
+                  <img data-screen="reports" data-alt-ja="連続学習日数と科目別学習時間グラフのレポート画面" data-alt-en="Study streaks and stacked subject charts report" src="assets/screens/reports.webp" alt="連続学習日数と科目別学習時間グラフのレポート画面" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 5: TIMETABLE, EXAMS & GOALS -->
+        <div class="reveal mt-8 st-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="order-2 flex justify-center lg:order-1 lg:col-span-5">
+              <div class="device-iphone w-[256px] sm:w-[276px]">
+                <div class="device-iphone-screen">
+                  <img data-screen="timetable" data-alt-ja="月曜から土曜の時限別時間割と授業復習タブを表示する時間割画面" data-alt-en="Term class timetable and lesson review tabs" src="assets/screens/timetable.webp" alt="月曜から土曜の時限別時間割と授業復習タブを表示する時間割画面" width="720" height="1559" loading="lazy">
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2 lg:col-span-7">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-[#EFEAFE] px-3 py-1 text-xs font-bold text-[#5B3CC4] dark:bg-[#2C2446] dark:text-[#C5B3FF]">
+                <i class="ri-table-line text-sm"></i>
+                <span data-lang-ja>05 · 時間割・試験カウントダウン・目標管理</span>
+                <span data-lang-en>05 · Timetable, Exams &amp; Weekly Plans</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-[#111815] dark:text-white sm:text-3xl">
+                <span data-lang-ja>学校の授業も、本番の試験も。<br>計画通りに走り切る。</span>
+                <span data-lang-en>From daily classes<br>to exam day—all aligned.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
+                <span data-lang-ja>学期ごとの時間割と授業復習リマインド、受験や定期テストのカウントダウン、曜日別の1日目標・週間学習計画まで、学生と資格受験者に必要な予定管理を網羅しています。</span>
+                <span data-lang-en>Manage term timetables with overdue lesson review reminders, exam countdowns, weekday-specific daily targets, and weekly study plans in one place.</span>
+              </p>
+
+              <div class="mt-6 grid gap-3 sm:grid-cols-3">
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                  <i class="ri-calendar-todo-line text-xl text-forest-800 dark:text-forest-300"></i>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>学期別時間割＆復習</h4>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Term Timetable</h4>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>月〜土・時限カスタム対応。未復習の授業をリマインド通知。</p>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Mon–Sat custom periods with overdue lesson review alerts.</p>
+                </div>
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                  <i class="ri-alarm-warning-line text-xl text-study-red dark:text-[#FF6B64]"></i>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>試験カウントダウン</h4>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Exam Countdowns</h4>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>共テ・入試・定期テスト・資格試験の残り日数を一覧＆ウィジェット表示。</p>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Track days left to exams right on Home and widgets.</p>
+                </div>
+                <div class="rounded-2xl bg-[#F2F3F7] p-4 dark:bg-[#17211E]">
+                  <i class="ri-route-line text-xl text-study-blue dark:text-[#5EADF2]"></i>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>曜日別目標＆週間計画</h4>
+                  <h4 class="mt-2 text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Goals &amp; Weekly Plan</h4>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>平日・休日ごとの目標時間や科目別の週間計画を無理なく運用。</p>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Customize daily targets per weekday and weekly subject plans.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PILLAR 6: IPAD, 9 WIDGETS & PRIVACY-FIRST ECOSYSTEM -->
+        <div class="reveal mt-8 st-card overflow-hidden p-6 sm:p-10 lg:p-12">
+          <div class="grid items-center gap-10 lg:grid-cols-12">
+            <div class="lg:col-span-6">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-forest-800/10 px-3 py-1 text-xs font-bold text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+                <i class="ri-layout-masonry-line text-sm"></i>
+                <span data-lang-ja>06 · 9種のウィジェット・iPad大画面・安心設計</span>
+                <span data-lang-en>06 · 9 Widgets, iPad &amp; Local-First Privacy</span>
+              </span>
+              <h3 class="mt-4 text-2xl font-extrabold text-[#111815] dark:text-white sm:text-3xl">
+                <span data-lang-ja>iPad でも、ホーム画面でも。<br>データはいつでもあなたの手元に。</span>
+                <span data-lang-en>Optimized for iPad.<br>Your data stays yours.</span>
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
+                <span data-lang-ja>iPad の大画面・Split View・サイドバー操作に最適化。さらに9種類のホーム画面・ロック画面ウィジェットで、アプリを開かずに今日の学習や試験までの残り日数を確認できます。</span>
+                <span data-lang-en>Enjoy native iPad Split View and sidebar navigation, plus 9 Home and Lock Screen widgets that keep your study pace visible at a glance.</span>
+              </p>
+
+              <!-- 9 Widgets Pill Grid -->
+              <div class="mt-5">
+                <div class="text-xs font-bold text-[#5C6B65] dark:text-[#9CB0A6]">
+                  <span data-lang-ja>搭載ウィジェット（全9種）</span>
+                  <span data-lang-en>9 Included Widgets</span>
+                </div>
+                <div class="mt-2.5 flex flex-wrap gap-1.5 text-xs font-medium">
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>今日の学習</span><span data-lang-en>Today's Study</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>1日の目標</span><span data-lang-en>Daily Goal</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>週間目標</span><span data-lang-en>Weekly Goal</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>連続学習</span><span data-lang-en>Study Streak</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>試験カウントダウン</span><span data-lang-en>Exam Countdown</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>今後の試験一覧</span><span data-lang-en>Upcoming Exams</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>週間アクティビティ</span><span data-lang-en>Weekly Activity</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>学習サマリー</span><span data-lang-en>Study Summary</span></span>
+                  <span class="rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-3 py-1 text-[#263530] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#CFE0D7]"><span data-lang-ja>週間ペース</span><span data-lang-en>Weekly Pace</span></span>
+                </div>
+              </div>
+
+              <!-- Local-first + Sync + Export -->
+              <div class="mt-6 grid gap-3 sm:grid-cols-2">
+                <div class="rounded-2xl bg-[#F2F3F7] p-3.5 dark:bg-[#17211E]">
+                  <div class="flex items-center gap-2 text-xs font-bold text-[#111815] dark:text-white">
+                    <i class="ri-cloud-line text-base text-forest-800 dark:text-forest-300"></i>
+                    <span data-lang-ja>任意の Firebase 差分同期</span>
+                    <span data-lang-en>Optional Cloud Sync</span>
+                  </div>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>複数端末で必要なときだけ同期。競合解決UIとアプリ内アカウント完全削除にも対応。</p>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Sync across devices only when you want, with conflict resolution and in-app account deletion.</p>
+                </div>
+                <div class="rounded-2xl bg-[#F2F3F7] p-3.5 dark:bg-[#17211E]">
+                  <div class="flex items-center gap-2 text-xs font-bold text-[#111815] dark:text-white">
+                    <i class="ri-download-cloud-2-line text-base text-forest-800 dark:text-forest-300"></i>
+                    <span data-lang-ja>JSON / CSV 書き出し＆復元</span>
+                    <span data-lang-en>JSON / CSV Export &amp; Restore</span>
+                  </div>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>全データをJSONバックアップ・CSV出力可能。復元前には自動セーフティバックアップを作成。</p>
+                  <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Full JSON backups with automatic pre-restore snapshots, plus CSV export for spreadsheets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex justify-center lg:col-span-6">
+              <div class="device-ipad w-full max-w-[440px]">
+                <div class="device-ipad-screen">
+                  <img data-screen="ipad-home" data-alt-ja="iPadの大画面に最適化されたStudyTrailのホーム画面" data-alt-en="StudyTrail Home screen optimized for iPad" src="assets/screens/ipad-home.webp" alt="iPadの大画面に最適化されたStudyTrailのホーム画面" width="1080" height="1439" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPLETE FEATURE DIRECTORY -->
+    <section id="all-features" class="border-y border-[#E4E8E5] bg-white/60 py-16 dark:border-[#26322D] dark:bg-[#18231F]/70 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-bold tracking-widest text-forest-800 uppercase dark:text-forest-300">
+              <span data-lang-ja>機能一覧</span>
+              <span data-lang-en>Complete Feature List</span>
+            </p>
+            <h2 class="mt-2 text-3xl font-extrabold text-[#111815] dark:text-white sm:text-4xl">
+              <span data-lang-ja>StudyTrail の全機能</span>
+              <span data-lang-en>Everything included in StudyTrail</span>
+            </h2>
+          </div>
+          <p class="max-w-md text-sm text-[#54645E] dark:text-[#9CB0A6]">
+            <span data-lang-ja>毎日の計測から、参考書の周回、スマホ制限、バックアップまで。必要な機能をすべて丁寧に揃えています。</span>
+            <span data-lang-en>From daily tracking and workbook rounds to Screen Time controls and full backups—every feature in one view.</span>
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Cat 1 -->
+          <article class="reveal st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+              <i class="ri-timer-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>タイマー＆集中モード</span>
+              <span data-lang-en>Timer &amp; Focus Modes</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ストップウォッチ（カウントアップ）</span><span data-lang-en>Stopwatch (count-up)</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>カウントダウン（ポモドーロ法対応）</span><span data-lang-en>Countdown timer (Pomodoro ready)</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>過去の学習時間を手動入力・編集</span><span data-lang-en>Manual session logging &amp; editing</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>計測中の問題正誤・小問進捗記録</span><span data-lang-en>In-session problem &amp; sub-question logging</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>横画面集中表示＆置き時計モード</span><span data-lang-en>Landscape focus &amp; minimalist desk clock</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ロック画面＆Dynamic Island ライブアクティビティ</span><span data-lang-en>Lock Screen &amp; Dynamic Island Live Activities</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>見守りペット（オンデバイス人物検出・映像保存なし）</span><span data-lang-en>Study Pet (on-device detection, zero video saved)</span></li>
+            </ul>
+          </article>
+
+          <!-- Cat 2 -->
+          <article class="reveal reveal-delay-1 st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-study-amber-soft text-[#B46900] dark:bg-[#3E2B12] dark:text-[#FFB340]">
+              <i class="ri-book-2-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>教材・問題集＆自動復習</span>
+              <span data-lang-en>Textbooks &amp; Spaced Review</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ISBN バーコードスキャン＆書籍検索登録</span><span data-lang-en>ISBN barcode scanner &amp; book lookup</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>科目別のアイコン・カラーカスタマイズ</span><span data-lang-en>Custom subject colors &amp; icons</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ページ数・章・問題数・小問単位の進捗管理</span><span data-lang-en>Page, chapter, question &amp; sub-item progress</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>5段階カラーで復習回復度が見える問題集グリッド</span><span data-lang-en>5-stage color mastery problem grid</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>1日・3日・7日・14日後の間隔反復自動復習</span><span data-lang-en>Automated 1, 3, 7 &amp; 14-day spaced review</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ホーム「次の一歩」へ今日の復習を自動集約</span><span data-lang-en>Due reviews grouped in Home "Next Steps"</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>正答率・5段階評価・メモ付き学習履歴</span><span data-lang-en>Accuracy stats, 5-star ratings &amp; notes</span></li>
+            </ul>
+          </article>
+
+          <!-- Cat 3 -->
+          <article class="reveal reveal-delay-2 st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest-800 text-forest-100 dark:bg-forest-300/20 dark:text-forest-300">
+              <i class="ri-shield-keyhole-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>スマホの集中制限（iOS）</span>
+              <span data-lang-en>Screen Time Blocker (iOS)</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>勉強時間連動の持ち時間チャージ＆目標達成ボーナス</span><span data-lang-en>Earn screen time from study &amp; goal bonuses</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>タイマー計測中の自動アプリ・Web制限</span><span data-lang-en>Auto-block apps &amp; websites during timer</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>時間帯スケジュール（使用禁止／無料開放）</span><span data-lang-en>Scheduled block &amp; free-access hours</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>1日の学習目標未達成の間の自動ロック</span><span data-lang-en>Block until daily study goal is met</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>場所ルール（学校・図書館のオンデバイス判定）</span><span data-lang-en>Location zones (strictly on-device geofencing)</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>時間制解除チケット＆解除不可ルール</span><span data-lang-en>Timed unlock tickets &amp; non-negotiable blocks</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>設定変更を一定期間防ぐ期間固定ロック</span><span data-lang-en>Strict settings lock for chosen duration</span></li>
+            </ul>
+          </article>
+
+          <!-- Cat 4 -->
+          <article class="reveal st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#EFEAFE] text-[#5B3CC4] dark:bg-[#2C2446] dark:text-[#C5B3FF]">
+              <i class="ri-table-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>時間割・試験・目標計画</span>
+              <span data-lang-en>Timetable, Exams &amp; Goals</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>学期別の時間割（月〜土、時限時間カスタム）</span><span data-lang-en>Term-based Mon–Sat timetable &amp; custom periods</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>授業ごとの復習管理＆未復習リマインド通知</span><span data-lang-en>Per-lesson review tracking &amp; overdue alerts</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>受験・定期テスト・資格試験カウントダウン</span><span data-lang-en>Exam &amp; certification countdown cards</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>曜日別の1日目標＆週間学習目標</span><span data-lang-en>Per-weekday daily goals &amp; weekly targets</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>科目別の週間学習計画と実績比較</span><span data-lang-en>Weekly subject study plans vs actuals</span></li>
+            </ul>
+          </article>
+
+          <!-- Cat 5 -->
+          <article class="reveal reveal-delay-1 st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-study-blue-soft text-study-blue dark:bg-[#15324E] dark:text-[#5EADF2]">
+              <i class="ri-pie-chart-2-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>カレンダー・レポート・共有</span>
+              <span data-lang-en>Calendar, Reports &amp; Sharing</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>学習量の濃淡が見えるカレンダーヒートマップ</span><span data-lang-en>Study intensity calendar heatmap</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>空き時間まで可視化する日別時系列タイムライン</span><span data-lang-en>Chronological daily timeline with idle gaps</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>連続学習日数（ストリーク）＆最長記録</span><span data-lang-en>Current streak &amp; all-time longest streak</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>日・週・月の科目別積み上げ棒グラフ＆評価分析</span><span data-lang-en>Daily, weekly &amp; monthly stacked subject charts</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>9種のホーム画面・ロック画面ウィジェット</span><span data-lang-en>9 Home &amp; Lock Screen widgets</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>メモ・教材名を伏せた週間記録SNSシェア画像</span><span data-lang-en>Privacy-safe weekly study share cards</span></li>
+            </ul>
+          </article>
+
+          <!-- Cat 6 -->
+          <article class="reveal reveal-delay-2 st-card st-card-hover p-6">
+            <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-forest-50 text-forest-600 dark:bg-[#1B312A] dark:text-forest-300">
+              <i class="ri-database-2-line text-xl"></i>
+            </div>
+            <h3 class="mt-4 text-lg font-bold text-[#111815] dark:text-white">
+              <span data-lang-ja>データ管理・対応環境</span>
+              <span data-lang-en>Data, Privacy &amp; Platforms</span>
+            </h3>
+            <ul class="mt-3 space-y-2 text-sm text-[#4D5D57] dark:text-[#A9BCB2]">
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>完全ローカルファースト（ログイン不要・広告なし）</span><span data-lang-en>Local-first storage (no account, no ads)</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>任意の Firebase 差分同期＆競合解決UI</span><span data-lang-en>Optional Firebase delta sync &amp; conflict resolver</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>アプリ内からのアカウント・全データ完全削除</span><span data-lang-en>In-app full account &amp; cloud data deletion</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>JSON バックアップ復元＆CSV 書き出し</span><span data-lang-en>JSON backup/restore &amp; CSV export</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>iPad 大画面・Split View・サイドバー対応</span><span data-lang-en>Full iPad Split View &amp; adaptive sidebar</span></li>
+              <li class="flex gap-2"><i class="ri-check-line mt-0.5 text-forest-800 dark:text-forest-300"></i><span data-lang-ja>ライト／ダーク／システムテーマ＆50言語対応</span><span data-lang-en>Light/Dark/System themes &amp; 50 languages</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- 50 Languages Disclosure -->
+        <div class="reveal mt-8 st-card p-5 sm:p-6">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+                <i class="ri-global-line text-xl"></i>
+              </span>
+              <div>
+                <h3 class="text-sm font-bold text-[#111815] dark:text-white" data-lang-ja>世界中の学習者のために、アプリは 50 言語にネイティブ対応</h3>
+                <h3 class="text-sm font-bold text-[#111815] dark:text-white" data-lang-en>Natively localized into 50 languages inside the app</h3>
+                <p class="text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>日本語・英語・韓国語・中国語（簡体字/繁体字）・欧州言語・インド諸語・アラビア語・ヘブライ語（RTL）まで対応</p>
+                <p class="text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Including Japanese, English, Korean, Chinese, European languages, Indian languages, Arabic &amp; Hebrew (RTL)</p>
+              </div>
+            </div>
+            <button type="button" data-toggle-langs aria-expanded="false" class="inline-flex items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-[#F8F9FA] px-4 py-2 text-xs font-semibold text-[#1E2D28] transition hover:bg-white dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#DCE6E1]">
+              <span data-lang-ja>50言語の一覧を見る</span>
+              <span data-lang-en>View all 50 languages</span>
+              <i class="ri-arrow-down-s-line text-sm"></i>
+            </button>
+          </div>
+          <div data-langs-panel class="mt-4 hidden border-t border-[#E8EBE9] pt-4 dark:border-[#303E37]">
+            <div class="flex flex-wrap gap-1.5 text-[11px] font-medium text-[#4A5A54] dark:text-[#A9BCB2]">
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">日本語</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">English (US / UK / AU / CA)</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">한국어</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">简体中文</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">繁體中文</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Deutsch</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Français (FR / CA)</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Español (ES / MX)</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Italiano</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Português (BR / PT)</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Nederlands</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Svenska</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Norsk</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Dansk</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Suomi</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Polski</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Čeština</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Slovenčina</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Slovenščina</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Hrvatski</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Magyar</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Română</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Ελληνικά</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Català</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Türkçe</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Русский</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Українська</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">العربية</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">עברית</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">اردو</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">हिन्दी</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">বাংলা</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">தமிழ்</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">తెలుగు</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">मराठी</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">ગુજરાતી</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">ಕನ್ನಡ</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">മലയാളം</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">ਪੰਜਾਬੀ</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">ଓଡ଼ିଆ</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Bahasa Indonesia</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Bahasa Melayu</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">Tiếng Việt</span>
+              <span class="rounded-lg bg-[#F2F3F7] px-2.5 py-1 dark:bg-[#17211E]">ไทย</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal text-center">
+          <p class="text-xs font-bold tracking-widest text-forest-800 uppercase dark:text-forest-300">
+            <span data-lang-ja>こんな方におすすめ</span>
+            <span data-lang-en>Built for Every Learner</span>
+          </p>
+          <h2 class="mt-2 text-3xl font-extrabold text-[#111815] dark:text-white sm:text-4xl">
+            <span data-lang-ja>受験から資格まで、毎日の学習に寄り添う</span>
+            <span data-lang-en>Designed for exams, classes, and daily mastery</span>
+          </h2>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal st-card p-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300">
+              <i class="ri-graduation-cap-line text-xl"></i>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-ja>大学受験・共通テスト・高校受験</h3>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-en>SAT, ACT, AP &amp; University Entrance</h3>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>科目別の勉強時間と参考書の周回状況を一元管理。試験カウントダウンで本番までのペースを崩しません。</p>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Track subject hours, workbook rounds, and exam countdowns so every week counts toward test day.</p>
+          </div>
+
+          <div class="reveal reveal-delay-1 st-card p-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-study-blue-soft text-study-blue dark:bg-[#15324E] dark:text-[#5EADF2]">
+              <i class="ri-calendar-check-line text-xl"></i>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-ja>中高生の定期テスト＆授業復習</h3>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-en>High School &amp; College Classes</h3>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>時間割と授業復習リマインドで日々の抜け漏れを防止。テスト前だけ慌てない習慣が身につきます。</p>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Pair your class timetable with lesson review reminders so you stay ahead all semester.</p>
+          </div>
+
+          <div class="reveal reveal-delay-2 st-card p-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-study-amber-soft text-[#B46900] dark:bg-[#3E2B12] dark:text-[#FFB340]">
+              <i class="ri-award-line text-xl"></i>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-ja>TOEIC・英検・簿記・国家資格</h3>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-en>MCAT, LSAT &amp; Certifications</h3>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>問題集の間違えた問題だけを 1・3・7・14日後に自動提案。限られた社会人の勉強時間でも効率よく定着します。</p>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Turn missed practice questions into automatic 1/3/7/14-day review queues for high-retention prep.</p>
+          </div>
+
+          <div class="reveal reveal-delay-3 st-card p-6">
+            <span class="flex h-10 w-10 items-center justify-center rounded-2xl bg-study-red-soft text-study-red dark:bg-[#3D1F20] dark:text-[#FF6B64]">
+              <i class="ri-focus-3-line text-xl"></i>
+            </span>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-ja>スマホ依存対策・集中習慣化</h3>
+            <h3 class="mt-4 text-base font-bold text-[#111815] dark:text-white" data-lang-en>Distraction-Free Focus Habits</h3>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>勉強中や学校・図書館でのSNSブロックと持ち時間ルールで、自然と机に向かえる環境を作れます。</p>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Combine timer blocks, campus geofences, and earned screen time to break phone-checking habits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA CARD (Mirrors StudyTrail Home "今日の学習" Card) -->
+    <section id="download" class="pb-20 sm:pb-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="reveal st-forest-card relative overflow-hidden p-8 sm:p-12 lg:p-14">
+          <div class="grid items-center gap-8 lg:grid-cols-12">
+            <div class="lg:col-span-8">
+              <div class="flex items-center gap-4">
+                <img src="assets/app-icon.webp" alt="StudyTrail アイコン" width="68" height="68" class="h-16 w-16 rounded-[18px] shadow-lg ring-1 ring-white/20">
+                <div>
+                  <p class="text-xs font-bold tracking-widest text-forest-300 uppercase">StudyTrail</p>
+                  <h2 class="mt-1 text-2xl font-extrabold text-white sm:text-4xl">
+                    <span data-lang-ja>今日の学習から、始めよう。</span>
+                    <span data-lang-en>Start with today's study session.</span>
+                  </h2>
+                </div>
+              </div>
+              <p class="mt-5 max-w-xl text-sm leading-relaxed text-[#CFE0D7] sm:text-base">
+                <span data-lang-ja>アカウント作成なし・広告なし。インストールしてすぐ、最初の1分から記録できます。日々の小さな積み上げを、確かな自信へ。</span>
+                <span data-lang-en>No signup, no ads. Open the app and log your first minute right away. Turn quiet daily focus into lasting progress.</span>
+              </p>
+            </div>
+
+            <div class="flex flex-col gap-3 lg:col-span-4 lg:items-end">
+              <a href="https://apps.apple.com/jp/app/id6771300607" target="_blank" rel="noopener noreferrer" class="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-forest-100 px-6 py-4 text-sm font-extrabold text-forest-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-white lg:w-auto">
+                <i class="ri-apple-fill text-xl" aria-hidden="true"></i>
+                <span data-lang-ja>App Store で入手する</span>
+                <span data-lang-en>Download on App Store</span>
+                <i class="ri-arrow-right-line text-base" aria-hidden="true"></i>
+              </a>
+              <div class="flex items-center justify-center gap-4 text-xs font-medium text-[#B8D0C3] lg:justify-end">
+                <a href="support.html" class="underline-offset-4 hover:text-white hover:underline">
+                  <span data-lang-ja>使い方・FAQを見る</span><span data-lang-en>Read Support &amp; FAQ</span>
+                </a>
+                <span aria-hidden="true">·</span>
+                <a href="privacy.html" class="underline-offset-4 hover:text-white hover:underline">
+                  <span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#E4E8E5] bg-white/70 py-10 dark:border-[#26322D] dark:bg-[#141D1A]">
+    <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5 text-base font-bold text-[#111815] dark:text-white">
+          <img src="assets/app-icon.webp" alt="" width="28" height="28" class="h-7 w-7 rounded-lg">
+          <span>StudyTrail</span>
+        </a>
+        <p class="mt-2 text-xs text-[#64756F] dark:text-[#8CA096]">
+          <span data-lang-ja>© 2025–2026 StudyTrail 開発者. All rights reserved.</span>
+          <span data-lang-en>© 2025–2026 StudyTrail Developer. All rights reserved.</span>
+        </p>
+      </div>
+      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-[#4D5D57] dark:text-[#A9BCB2]" aria-label="Footer navigation">
+        <a href="index.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>ホーム</span><span data-lang-en>Home</span></a>
+        <a href="support.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>サポート</span><span data-lang-en>Support</span></a>
+        <a href="privacy.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+        <a href="mailto:toiawasestudyapp@rarari.org" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>お問い合わせ</span><span data-lang-en>Contact</span></a>
+      </nav>
     </div>
-    <div class="platform-card reveal">
-      <span class="platform-icon">🤖</span>
-      <div class="platform-name">Android</div>
-      <ul class="platform-items">
-        <li>Jetpack Compose (Material3)</li>
-        <li>6種の Glance ウィジェット</li>
-        <li>バーコードスキャン (ML Kit)</li>
-        <li>AnkiDroid 連携</li>
-        <li>フォアグラウンドタイマーサービス</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="download" class="cta-section">
-  <div class="section-label">Download</div>
-  <h2 class="cta-title reveal">今すぐ始めよう</h2>
-  <p class="cta-sub reveal">StudyTrail で、あなたの学習習慣をアップグレード。</p>
-  <div class="hero-buttons reveal">
-    <a href="https://apps.apple.com/app/id6771300607" class="btn-primary" id="cta-appstore-btn" rel="noopener">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-      App Store で入手
-    </a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 StudyTrail. All rights reserved.</p>
-  <p style="margin-top:8px">
-    <a href="support.html">サポート</a> &nbsp;·&nbsp;
-    <a href="privacy.html">プライバシーポリシー</a>
-  </p>
-</footer>
-
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+  </footer>
 </body>
 </html>
