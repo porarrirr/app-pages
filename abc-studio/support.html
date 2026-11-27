@@ -1,242 +1,27 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>サポート — ABC Studio</title>
-  <meta name="description" content="ABC StudioでABC、MusicXML、LilyPondの楽譜を開く方法と、再生・編集・書き出しに関するよくある質問をご案内します。お問い合わせは support@rarari.org へ。">
-  <meta name="theme-color" content="#faf9f5">
-  <meta property="og:title" content="サポート — ABC Studio">
-  <meta property="og:description" content="ABC StudioでABC、MusicXML、LilyPondの楽譜を開く方法と、再生・編集・書き出しに関するよくある質問をご案内します。">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://porarrirr.github.io/app-pages/abc-studio/support.html">
-  <meta property="og:image" content="https://porarrirr.github.io/app-pages/abc-studio/icon.png">
-  <link rel="canonical" href="https://porarrirr.github.io/app-pages/abc-studio/support.html">
-  <link rel="icon" href="icon.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <a class="skip" href="#main">本文へスキップ</a>
-
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html" aria-label="ABC Studio トップページ">
-        <img src="icon.png" width="36" height="36" alt="">
-        <span>ABC Studio</span>
-      </a>
-      <nav aria-label="メインナビゲーション">
-        <a href="index.html">紹介</a>
-        <a href="support.html" aria-current="page">サポート</a>
-        <a href="privacy.html">プライバシー</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <section class="page-header" aria-labelledby="page-title">
-      <div class="container">
-        <div class="eyebrow">HERE TO HELP</div>
-        <h1 id="page-title">サポート・よくある質問</h1>
-        <p class="lead">ABC、MusicXML、LilyPondの楽譜を開いて、再生・編集・書き出しする手順をご案内します。</p>
-        
-        <div class="actions" style="margin-top: 24px; margin-bottom: 0;">
-          <a class="pill-badge" href="#start" style="text-decoration: none; padding: 6px 14px;">
-            <span>1. 使い方ガイド</span>
-          </a>
-          <a class="pill-badge" href="#faq" style="text-decoration: none; padding: 6px 14px;">
-            <span>2. よくある質問 (FAQ)</span>
-          </a>
-          <a class="pill-badge" href="#contact" style="text-decoration: none; padding: 6px 14px;">
-            <span>3. お問い合わせ</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <div class="container prose-container prose">
-      <!-- Getting Started Section -->
-      <section id="start" aria-labelledby="start-title">
-        <h2 id="start-title">まずは、曲を再生してみましょう</h2>
-        <p>アプリを起動したら、5つのステップですぐに楽譜の表示・演奏・編集を体験できます。</p>
-
-        <ol class="steps-list">
-          <li class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-body">
-              <strong>楽譜を開く</strong>
-              <p>画面上部の「＋」から「ファイルから読み込む」「クリップボードから読み込む」「サンプルを開く」を選べます。ファイルを選ぶと、アプリが楽譜の形式を判別します。</p>
-            </div>
-          </li>
-          <li class="step-card">
-            <div class="step-number">2</div>
-            <div class="step-body">
-              <strong>演奏を聴く・操作する</strong>
-              <p>画面下部の再生バーにある再生ボタンをタップすると演奏が始まります。再生設定で速度を50〜200%に調整でき、ループ再生も選べます。再生バーから位置を移動でき、ABCの譜面では音符をタップして移動することもできます。</p>
-            </div>
-          </li>
-          <li class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-body">
-              <strong>パート音量・楽器を調整する</strong>
-              <p>「ミキサー」タブでパートごとの音量スライダーや楽器（78種類）を設定します。特定のパートだけを集中して聴きたいときは「ソロ」ボタン、不要なパートは「ミュート」ボタンで切り替えられます。「楽器の配置」や「イヤホンの定位を調整」から、音の聞こえる位置も調整できます。</p>
-            </div>
-          </li>
-          <li class="step-card">
-            <div class="step-number">4</div>
-            <div class="step-body">
-              <strong>楽譜ソースを編集する</strong>
-              <p>「エディタ」タブで楽譜のソースを編集し、「楽譜に反映」を押します。「記譜を検証」で診断結果を確認でき、入力中の下書きは自動保存されます。</p>
-            </div>
-          </li>
-          <li class="step-card">
-            <div class="step-number">5</div>
-            <div class="step-body">
-              <strong>ファイルに書き出す・共有する</strong>
-              <p>「書き出し・共有」から、楽譜ソース、MusicXML、圧縮MusicXML（MXL）、MIDI、WAVを選べます。PDFは全ページを1つにまとめ、PNGは1ページずつ画像にします。PDFとPNGは共有前にプレビューできます。</p>
-            </div>
-          </li>
-        </ol>
-
-        <div class="info-box">
-          <p><strong>対応フォーマット</strong> ABC（<code>.abc</code>、<code>.txt</code>）、MusicXML（<code>.musicxml</code>、<code>.xml</code>、<code>.mxl</code>）、LilyPond（<code>.ly</code>、プロジェクトフォルダ、ABC Studioが書き出したZIP）。入力の上限は8 MiBです。</p>
-        </div>
-      </section>
-
-      <!-- FAQ Section -->
-      <section id="faq" aria-labelledby="faq-title" style="margin-top: 56px;">
-        <h2 id="faq-title">よくある質問</h2>
-
-        <div class="faq-list">
-          <details class="faq-item" open>
-            <summary class="faq-question">どのデバイス・OSバージョンで使えますか？</summary>
-            <div class="faq-answer">
-              <p>iOS 17 以降、または iPadOS 17 以降を搭載した iPhone および iPad で動作します。</p>
-              <p>楽譜の表示、編集、再生、保存、書き出しは端末内で処理します。LilyPondのコンパイラもアプリに同梱されています。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">読み込めるファイル形式とABC記法の制限は？</summary>
-            <div class="faq-answer">
-              <p>ABCはUTF-8またはBOM付きUTF-16のテキストを読み込めます。1つのファイルに複数の曲（<code>X:</code>）があるときは、楽譜画面の曲選択から切り替えられます。</p>
-              <p>複数声部（<code>V:</code>）、タイ、連符、装飾音（トリル・モルデント等）、フェルマータ、反復記号と番号付き括弧（<code>|1 |2</code>）などを扱えます。<code>P:</code> によるパートの演奏順指定や、小節内で <code>&amp;</code> を使った声部の重ね合わせにも対応しています。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">MusicXMLやLilyPondの楽譜を開くときの注意点は？</summary>
-            <div class="faq-answer">
-              <p>MusicXMLは圧縮形式のMXLも開けます。特殊な記譜や演奏指示、細かな紙面の配置は、元のソフトと同じように表示・再生できない場合があります。MusicXMLへの変換でも、すべての記譜やレイアウトが引き継がれるわけではありません。</p>
-              <p>LilyPondで相対パスの <code>\include</code> や画像を使う場合は、<code>main.ly</code> または <code>score.ly</code> と関連ファイルが入ったフォルダをまとめて選んでください。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">選べる楽器は何種類ですか？ 合唱は歌詞を歌えますか？</summary>
-            <div class="faq-answer">
-              <p>ピアノ、オルガン、バイオリンやチェロなどの弦楽器、フルートやトランペットなどの管楽器、ギター、ドラムキットなど 78 種類の楽器割り当てから選択できます。一部の楽器は General MIDI（GM）仕様に基づき同一音色を共有します。</p>
-              <p>合唱は「Choir Aahs」音色での楽器演奏となり、歌詞を音声合成で歌い上げる機能はありません。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">音が出ないときはどうすればよいですか？</summary>
-            <div class="faq-answer">
-              <p>まずは端末のメディア音量と、Bluetoothイヤホンなどの出力先をご確認ください。</p>
-              <p>「ミキサー」タブで「マスター音量」、各パートのミュート、他のパートのソロ設定をご確認ください。電話や Siri による割り込み後は、もう一度再生ボタンを押すことで再開されます。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">譜面が正しく表示されない・エラーが出るときは？</summary>
-            <div class="faq-answer">
-              <p>「エディタ」タブで構文診断メッセージをご確認ください。ABCでは、ヘッダー（曲番号 <code>X:</code>、曲名 <code>T:</code>、拍子 <code>M:</code>、基準音長 <code>L:</code>、調性 <code>K:</code>）や音符の記述に誤りがある場合、問題のある行番号と内容が表示されます。</p>
-              <p>不具合としてお問い合わせいただく際は、問題を再現できる最小限の楽譜ソースを添えていただけると調査がスムーズです。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">保存した曲の名前変更や削除はできますか？</summary>
-            <div class="faq-answer">
-              <p>「ライブラリ」タブで対象の曲を長押しするか、各行の「…」メニューから名前の変更および削除を行えます。削除前には確認のアラートが表示されます。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">譜面の自動追従（オートスクロール）を一時停止できますか？</summary>
-            <div class="faq-answer">
-              <p>楽譜画面の「表示」メニューで「再生位置に自動追従」を切り替えられます。</p>
-              <p>iOS・iPadOS 18以降でABCの譜面を手動でスクロールすると、一時的に追従が止まります。「再生位置へ戻る」を押すと追従を再開できます。</p>
-            </div>
-          </details>
-
-          <details class="faq-item">
-            <summary class="faq-question">アカウント登録やインターネット接続は必要ですか？</summary>
-            <div class="faq-answer">
-              <p>いいえ、一切不要です。ABC Studio は完全ローカルで動作する設計となっており、アカウント作成、ログイン、クラウド認証などを求められることはありません。</p>
-              <p>なお、書き出したファイルをメールやクラウドストレージへ送信する場合や、Webサイト・問い合わせメールを開く場合は各外部サービスの通信が発生します。</p>
-            </div>
-          </details>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="eyebrow">LET’S SORT IT OUT</div>
-        <h2 id="contact-title">お問い合わせ窓口</h2>
-        <p>アプリの操作方法についてのご質問や、不具合・改善のご要望は以下の窓口へお気軽にご連絡ください。</p>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <span class="badge">サポート窓口</span>
-            <a class="mail-link" href="mailto:support@rarari.org?subject=ABC%20Studio%20Support">support@rarari.org</a>
-            <p>アプリの使い方、トラブル、表示の不具合などに関するお問い合わせ</p>
-          </div>
-
-          <div class="contact-card">
-            <span class="badge">共通窓口</span>
-            <a class="mail-link" href="mailto:musicabc@rarari.org">musicabc@rarari.org</a>
-            <p>一般的なご質問、取材、その他のお問い合わせ</p>
-          </div>
-
-          <div class="contact-card">
-            <span class="badge">プライバシー窓口</span>
-            <a class="mail-link" href="mailto:privacy@rarari.org?subject=ABC%20Studio%20Privacy">privacy@rarari.org</a>
-            <p>情報の取り扱い、ポリシーに関するお問い合わせ</p>
-          </div>
-        </div>
-
-        <div class="info-box" style="margin-top: 16px;">
-          <p><strong>スムーズな調査のためのお願い：</strong><br>
-          不具合のお問い合わせの際は、可能であれば以下の情報をお知らせください。</p>
-          <ul style="margin: 8px 0 0; padding-left: 20px;">
-            <li>ご利用のデバイス機種名（例: iPhone 16 Pro, iPad Air 第5世代）</li>
-            <li>OSのバージョン（例: iOS 18.1）</li>
-            <li>問題の発生手順と、再現に必要な最小限の楽譜ソース（パスワード等の個人情報は含めないでください）</li>
-          </ul>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <a class="brand" href="index.html">
-          <img src="icon.png" width="30" height="30" alt="">
-          <span>ABC Studio</span>
-        </a>
-        <nav aria-label="フッターナビゲーション">
-          <a href="index.html">紹介</a>
-          <a href="support.html" aria-current="page">サポート</a>
-          <a href="privacy.html">プライバシーポリシー</a>
-          <a href="mailto:musicabc@rarari.org">お問い合わせ</a>
-        </nav>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 porari · iPhone / iPad 向け楽譜アプリ</p>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+<!DOCTYPE html><html lang="ja"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>サポート — ABC Studio</title><meta name="description" content="ABC StudioでABC、MusicXML、LilyPondの楽譜を開く方法と、再生・編集・書き出しに関するよくある質問をご案内します。お問い合わせは support@rarari.org へ。"><meta name="theme-color" content="#faf9f5"><meta name="author" content="porari"><meta name="application-name" content="ABC Studio"><meta property="og:title" content="サポート — ABC Studio"><meta property="og:description" content="ABC StudioでABC、MusicXML、LilyPondの楽譜を開く方法と、再生・編集・書き出しに関するよくある質問をご案内します。お問い合わせは support@rarari.org へ。"><meta property="og:type" content="website"><meta property="og:site_name" content="ABC Studio"><meta property="og:locale" content="ja_JP"><meta property="og:url" content="https://porarrirr.github.io/app-pages/abc-studio/support.html"><meta property="og:image" content="https://porarrirr.github.io/app-pages/abc-studio/icon.png"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="サポート — ABC Studio"><meta name="twitter:description" content="ABC StudioでABC、MusicXML、LilyPondの楽譜を開く方法と、再生・編集・書き出しに関するよくある質問をご案内します。お問い合わせは support@rarari.org へ。"><meta name="twitter:image" content="https://porarrirr.github.io/app-pages/abc-studio/icon.png"><link rel="canonical" href="https://porarrirr.github.io/app-pages/abc-studio/support.html"><link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="icon" type="image/png" href="icon.png"><link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"><link rel="stylesheet" href="/app-pages/abc-studio/_astro/BaseLayout.C19jr2NN.css"></head> <body class="min-h-screen flex flex-col bg-paper text-ink antialiased selection:bg-accent-light selection:text-accent-hover"> <a class="skip-link" href="#main">本文へスキップ</a> <header class="sticky top-0 z-50 border-b border-ink/[0.08] bg-paper/85 backdrop-blur-xl supports-[backdrop-filter]:bg-paper/80"> <div class="mx-auto flex min-h-[72px] w-full max-w-[1140px] flex-wrap items-center justify-between gap-x-6 gap-y-2.5 px-6 py-2.5 max-sm:justify-center"> <a href="index.html" aria-label="ABC Studio トップページ" class="group inline-flex items-center gap-3 text-[19px] font-bold tracking-[-0.025em] text-ink no-underline transition-colors hover:text-accent"> <img src="icon.png" width="36" height="36" alt="ABC Studio アイコン" class="h-9 w-9 rounded-[9px] ring-1 ring-ink/10 shadow-[0_2px_8px_rgba(18,40,39,0.14)] transition-transform duration-200 group-hover:scale-105"> <span>ABC Studio</span> </a> <nav aria-label="メインナビゲーション" class="flex items-center gap-1.5"> <a href="index.html" class="inline-flex items-center rounded-full px-4 py-1.5 text-[14px] no-underline transition-all duration-150 font-medium text-ink-secondary hover:bg-ink/[0.05] hover:text-ink"> 紹介 </a><a href="support.html" aria-current="page" class="inline-flex items-center rounded-full px-4 py-1.5 text-[14px] no-underline transition-all duration-150 bg-accent-light font-semibold text-accent shadow-[inset_0_0_0_1px_rgba(19,106,99,0.14)]"> サポート </a><a href="privacy.html" class="inline-flex items-center rounded-full px-4 py-1.5 text-[14px] no-underline transition-all duration-150 font-medium text-ink-secondary hover:bg-ink/[0.05] hover:text-ink"> プライバシー </a> </nav> </div> </header> <main id="main" class="flex-1" tabindex="-1">   <section aria-labelledby="page-title" class="staff-backdrop bg-[position:center_24px] border-b border-ink/[0.08] bg-gradient-to-b from-wash to-paper py-14 sm:py-16"> <div class="mx-auto w-full max-w-[1140px] px-6"> <div class="mb-3 inline-flex items-center gap-1.5 rounded-full bg-surface/90 px-3 py-1 text-[11px] font-bold tracking-[0.14em] uppercase text-accent ring-1 ring-accent/15">
+HERE TO HELP
+</div> <h1 id="page-title" class="m-0 mb-3.5 text-[clamp(30px,4vw,46px)] font-extrabold leading-[1.2] tracking-[-0.035em] text-ink">
+サポート・よくある質問
+</h1> <p class="m-0 max-w-[740px] text-[17px] leading-[1.82] text-ink-secondary">
+ABC、MusicXML、LilyPondの楽譜を開いて、再生・編集・書き出しする手順をご案内します。
+</p> <nav aria-label="ページ内目次" class="mt-6 flex flex-wrap gap-2.5"> <a href="#start" class="inline-flex items-center gap-1.5 rounded-full border border-ink/[0.1] bg-surface/90 px-4 py-1.5 text-[13px] font-semibold text-ink-secondary no-underline shadow-[0_1px_3px_rgba(18,40,39,0.04)] transition-all hover:border-accent/40 hover:bg-accent-light hover:text-accent"> <span class="font-mono text-[11px] text-accent">01</span> <span>使い方ガイド</span> </a> <a href="#faq" class="inline-flex items-center gap-1.5 rounded-full border border-ink/[0.1] bg-surface/90 px-4 py-1.5 text-[13px] font-semibold text-ink-secondary no-underline shadow-[0_1px_3px_rgba(18,40,39,0.04)] transition-all hover:border-accent/40 hover:bg-accent-light hover:text-accent"> <span class="font-mono text-[11px] text-accent">02</span> <span>よくある質問 (FAQ)</span> </a> <a href="#contact" class="inline-flex items-center gap-1.5 rounded-full border border-ink/[0.1] bg-surface/90 px-4 py-1.5 text-[13px] font-semibold text-ink-secondary no-underline shadow-[0_1px_3px_rgba(18,40,39,0.04)] transition-all hover:border-accent/40 hover:bg-accent-light hover:text-accent"> <span class="font-mono text-[11px] text-accent">03</span> <span>お問い合わせ</span> </a> </nav> </div> </section>  <div class="mx-auto w-full max-w-[820px] px-6 pt-12 pb-20"> <!-- Getting Started Section --><section id="start" aria-labelledby="start-title"> <h2 id="start-title" class="mt-0 mb-3 border-b border-ink/[0.08] pb-3 text-[clamp(22px,2.5vw,28px)] font-bold tracking-[-0.025em] text-ink">
+まずは、曲を再生してみましょう
+</h2> <p class="mt-0 mb-7 text-[15.5px] leading-[1.82] text-ink-secondary">
+アプリを起動したら、5つのステップですぐに楽譜の表示・演奏・編集を体験できます。
+</p> <ol class="relative m-0 mb-8 list-none space-y-4 p-0"> <li class="group relative flex items-start gap-4 rounded-[16px] border border-ink/[0.08] bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[var(--shadow-card-hover)] sm:gap-5 sm:p-6"> <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[14px] font-bold text-white shadow-[0_3px_10px_rgba(19,106,99,0.28)]"> 1 </div> <div> <strong class="mb-1.5 block text-[17px] font-bold text-ink"> 楽譜を開く </strong> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> 画面上部の「＋」から「ファイルから読み込む」「クリップボードから読み込む」「サンプルを開く」を選べます。ファイルを選ぶと、アプリが楽譜の形式を判別します。 </p> </div> </li><li class="group relative flex items-start gap-4 rounded-[16px] border border-ink/[0.08] bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[var(--shadow-card-hover)] sm:gap-5 sm:p-6"> <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[14px] font-bold text-white shadow-[0_3px_10px_rgba(19,106,99,0.28)]"> 2 </div> <div> <strong class="mb-1.5 block text-[17px] font-bold text-ink"> 演奏を聴く・操作する </strong> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> 画面下部の再生バーにある再生ボタンをタップすると演奏が始まります。再生設定で速度を50〜200%に調整でき、ループ再生も選べます。再生バーから位置を移動でき、ABCの譜面では音符をタップして移動することもできます。 </p> </div> </li><li class="group relative flex items-start gap-4 rounded-[16px] border border-ink/[0.08] bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[var(--shadow-card-hover)] sm:gap-5 sm:p-6"> <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[14px] font-bold text-white shadow-[0_3px_10px_rgba(19,106,99,0.28)]"> 3 </div> <div> <strong class="mb-1.5 block text-[17px] font-bold text-ink"> パート音量・楽器を調整する </strong> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> 「ミキサー」タブでパートごとの音量スライダーや楽器（78種類）を設定します。特定のパートだけを集中して聴きたいときは「ソロ」ボタン、不要なパートは「ミュート」ボタンで切り替えられます。「楽器の配置」や「イヤホンの定位を調整」から、音の聞こえる位置も調整できます。 </p> </div> </li><li class="group relative flex items-start gap-4 rounded-[16px] border border-ink/[0.08] bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[var(--shadow-card-hover)] sm:gap-5 sm:p-6"> <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[14px] font-bold text-white shadow-[0_3px_10px_rgba(19,106,99,0.28)]"> 4 </div> <div> <strong class="mb-1.5 block text-[17px] font-bold text-ink"> 楽譜ソースを編集する </strong> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> 「エディタ」タブで楽譜のソースを編集し、「楽譜に反映」を押します。「記譜を検証」で診断結果を確認でき、入力中の下書きは自動保存されます。 </p> </div> </li><li class="group relative flex items-start gap-4 rounded-[16px] border border-ink/[0.08] bg-surface p-5 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/25 hover:shadow-[var(--shadow-card-hover)] sm:gap-5 sm:p-6"> <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent font-mono text-[14px] font-bold text-white shadow-[0_3px_10px_rgba(19,106,99,0.28)]"> 5 </div> <div> <strong class="mb-1.5 block text-[17px] font-bold text-ink"> ファイルに書き出す・共有する </strong> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> 「書き出し・共有」から、楽譜ソース、MusicXML、圧縮MusicXML（MXL）、MIDI、WAVを選べます。PDFは全ページを1つにまとめ、PNGは1ページずつ画像にします。PDFとPNGは共有前にプレビューできます。 </p> </div> </li> </ol> <div class="rounded-[16px] border border-ink/[0.08] border-l-4 border-l-accent bg-surface p-6 shadow-[var(--shadow-card)]"> <p class="m-0 text-[14.5px] leading-[1.8] text-ink-secondary"> <strong class="text-ink">対応フォーマット：</strong>
+ABC（<code>.abc</code>、<code>.txt</code>）、MusicXML（<code>.musicxml</code>、<code>.xml</code>、<code>.mxl</code>）、LilyPond（<code>.ly</code>、プロジェクトフォルダ、ABC Studioが書き出したZIP）。入力の上限は 8 MiB です。
+</p> </div> </section> <!-- FAQ Section --> <section id="faq" aria-labelledby="faq-title" class="mt-16"> <h2 id="faq-title" class="mt-0 mb-6 border-b border-ink/[0.08] pb-3 text-[clamp(22px,2.5vw,28px)] font-bold tracking-[-0.025em] text-ink">
+よくある質問
+</h2> <div class="flex flex-col gap-3.5"> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]" open> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>どのデバイス・OSバージョンで使えますか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">iOS 17 以降、または iPadOS 17 以降を搭載した iPhone および iPad で動作します。</p> <p class="m-0">楽譜の表示、編集、再生、保存、書き出しは端末内で処理します。LilyPondのコンパイラもアプリに同梱されています。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>読み込めるファイル形式とABC記法の制限は？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">ABCはUTF-8またはBOM付きUTF-16のテキストを読み込めます。1つのファイルに複数の曲（<code>X:</code>）があるときは、楽譜画面の曲選択から切り替えられます。</p> <p class="m-0">複数声部（<code>V:</code>）、タイ、連符、装飾音（トリル・モルデント等）、フェルマータ、反復記号と番号付き括弧（<code>|1 |2</code>）などを扱えます。<code>P:</code> によるパートの演奏順指定や、小節内で <code>&amp;</code> を使った声部の重ね合わせにも対応しています。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>MusicXMLやLilyPondの楽譜を開くときの注意点は？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">MusicXMLは圧縮形式のMXLも開けます。特殊な記譜や演奏指示、細かな紙面の配置は、元のソフトと同じように表示・再生できない場合があります。MusicXMLへの変換でも、すべての記譜やレイアウトが引き継がれるわけではありません。</p> <p class="m-0">LilyPondで相対パスの <code>\include</code> や画像を使う場合は、<code>main.ly</code> または <code>score.ly</code> と関連ファイルが入ったフォルダをまとめて選んでください。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>選べる楽器は何種類ですか？ 合唱は歌詞を歌えますか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">ピアノ、オルガン、バイオリンやチェロなどの弦楽器、フルートやトランペットなどの管楽器、ギター、ドラムキットなど 78 種類の楽器割り当てから選択できます。一部の楽器は General MIDI（GM）仕様に基づき同一音色を共有します。</p> <p class="m-0">合唱は「Choir Aahs」音色での楽器演奏となり、歌詞を音声合成で歌い上げる機能はありません。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>音が出ないときはどうすればよいですか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">まずは端末のメディア音量と、Bluetoothイヤホンなどの出力先をご確認ください。</p> <p class="m-0">「ミキサー」タブで「マスター音量」、各パートのミュート、他のパートのソロ設定をご確認ください。電話や Siri による割り込み後は、もう一度再生ボタンを押すことで再開されます。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>譜面が正しく表示されない・エラーが出るときは？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">「エディタ」タブで構文診断メッセージをご確認ください。ABCでは、ヘッダー（曲番号 <code>X:</code>、曲名 <code>T:</code>、拍子 <code>M:</code>、基準音長 <code>L:</code>、調性 <code>K:</code>）や音符の記述に誤りがある場合、問題のある行番号と内容が表示されます。</p> <p class="m-0">不具合としてお問い合わせいただく際は、問題を再現できる最小限の楽譜ソースを添えていただけると調査がスムーズです。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>保存した曲の名前変更や削除はできますか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">「ライブラリ」タブで対象の曲を長押しするか、各行の「…」メニューから名前の変更および削除を行えます。削除前には確認のアラートが表示されます。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>譜面の自動追従（オートスクロール）を一時停止できますか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">楽譜画面の「表示」メニューで「再生位置に自動追従」を切り替えられます。</p> <p class="m-0">iOS・iPadOS 18以降でABCの譜面を手動でスクロールすると、一時的に追従が止まります。「再生位置へ戻る」を押すと追従を再開できます。</p> </div> </details> <details class="faq-item overflow-hidden rounded-[16px] border border-ink/[0.08] bg-surface shadow-[var(--shadow-card)] transition-all open:border-accent/35 open:shadow-[var(--shadow-card-hover)]"> <summary class="flex items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink select-none hover:text-accent"> <span>アカウント登録やインターネット接続は必要ですか？</span> <span class="faq-icon inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent-light text-accent transition-transform duration-200" aria-hidden="true"> <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg> </span> </summary> <div class="space-y-2.5 border-t border-ink/[0.07] px-6 pt-4 pb-5 text-[14.5px] leading-[1.82] text-ink-secondary"> <p class="m-0">いいえ、一切不要です。ABC Studio は完全ローカルで動作する設計となっており、アカウント作成、ログイン、クラウド認証などを求められることはありません。</p> <p class="m-0">なお、書き出したファイルをメールやクラウドストレージへ送信する場合や、Webサイト・問い合わせメールを開く場合は各外部サービスの通信が発生します。</p> </div> </details> </div> </section> <!-- Contact Section --> <section id="contact" aria-labelledby="contact-title" class="mt-16 rounded-[22px] border border-ink/[0.08] bg-surface p-7 shadow-[var(--shadow-card)] sm:p-9"> <div class="mb-3 inline-flex items-center gap-1.5 rounded-full bg-accent-light px-3 py-1 text-[11px] font-bold tracking-[0.14em] uppercase text-accent">
+LET’S SORT IT OUT
+</div> <h2 id="contact-title" class="mt-0 mb-2.5 text-[clamp(22px,2.5vw,28px)] font-bold tracking-[-0.025em] text-ink">
+お問い合わせ窓口
+</h2> <p class="mt-0 mb-2 text-[15px] leading-[1.82] text-ink-secondary">
+アプリの操作方法についてのご質問や、不具合・改善のご要望は以下の窓口へお気軽にご連絡ください。
+</p> <div class="my-6 grid grid-cols-1 gap-4 sm:grid-cols-3"> <a href="mailto:support@rarari.org?subject=ABC%20Studio%20Support" class="group flex flex-col rounded-[16px] border border-ink/[0.08] bg-paper p-5 no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/45 hover:bg-surface hover:shadow-[var(--shadow-card-hover)]"> <div class="mb-2.5 flex items-center justify-between gap-2"> <span class="inline-flex items-center rounded-full bg-accent-light px-2.5 py-0.5 text-[11px] font-bold tracking-[0.04em] text-accent"> サポート窓口 </span> <svg class="h-4 w-4 text-ink-tertiary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M7 17 17 7"></path> <path d="M7 7h10v10"></path> </svg> </div> <span class="break-all font-mono text-[14px] font-semibold text-ink transition-colors group-hover:text-accent"> support@rarari.org </span> <p class="mt-2 mb-0 text-[12.5px] leading-[1.6] text-ink-tertiary"> アプリの使い方、トラブル、表示の不具合などに関するお問い合わせ </p> </a><a href="mailto:musicabc@rarari.org" class="group flex flex-col rounded-[16px] border border-ink/[0.08] bg-paper p-5 no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/45 hover:bg-surface hover:shadow-[var(--shadow-card-hover)]"> <div class="mb-2.5 flex items-center justify-between gap-2"> <span class="inline-flex items-center rounded-full bg-accent-light px-2.5 py-0.5 text-[11px] font-bold tracking-[0.04em] text-accent"> 共通窓口 </span> <svg class="h-4 w-4 text-ink-tertiary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M7 17 17 7"></path> <path d="M7 7h10v10"></path> </svg> </div> <span class="break-all font-mono text-[14px] font-semibold text-ink transition-colors group-hover:text-accent"> musicabc@rarari.org </span> <p class="mt-2 mb-0 text-[12.5px] leading-[1.6] text-ink-tertiary"> 一般的なご質問、取材、その他のお問い合わせ </p> </a><a href="mailto:privacy@rarari.org?subject=ABC%20Studio%20Privacy" class="group flex flex-col rounded-[16px] border border-ink/[0.08] bg-paper p-5 no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-accent/45 hover:bg-surface hover:shadow-[var(--shadow-card-hover)]"> <div class="mb-2.5 flex items-center justify-between gap-2"> <span class="inline-flex items-center rounded-full bg-accent-light px-2.5 py-0.5 text-[11px] font-bold tracking-[0.04em] text-accent"> プライバシー窓口 </span> <svg class="h-4 w-4 text-ink-tertiary transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"> <path d="M7 17 17 7"></path> <path d="M7 7h10v10"></path> </svg> </div> <span class="break-all font-mono text-[14px] font-semibold text-ink transition-colors group-hover:text-accent"> privacy@rarari.org </span> <p class="mt-2 mb-0 text-[12.5px] leading-[1.6] text-ink-tertiary"> 情報の取り扱い、ポリシーに関するお問い合わせ </p> </a> </div> <div class="rounded-[14px] border border-ink/[0.08] border-l-4 border-l-accent bg-paper p-5"> <p class="mt-0 mb-2 text-[14px] font-bold text-ink">
+スムーズな調査のためのお願い
+</p> <p class="mt-0 mb-2.5 text-[14px] leading-[1.75] text-ink-secondary">
+不具合のお問い合わせの際は、可能であれば以下の情報をお知らせください。
+</p> <ul class="m-0 list-disc space-y-1.5 pl-5 text-[14px] leading-[1.75] text-ink-secondary"> <li>ご利用のデバイス機種名（例: iPhone 16 Pro, iPad Air 第5世代）</li> <li>OSのバージョン（例: iOS 18.1）</li> <li>問題の発生手順と、再現に必要な最小限の楽譜ソース（パスワード等の個人情報は含めないでください）</li> </ul> </div> </section> </div>  </main> <footer class="mt-16 border-t border-ink/[0.08] bg-subtle py-12"> <div class="mx-auto flex w-full max-w-[1140px] flex-col gap-7 px-6"> <div class="flex flex-wrap items-center justify-between gap-5 max-sm:flex-col max-sm:text-center"> <a href="index.html" aria-label="ABC Studio トップへ" class="group inline-flex items-center gap-2.5 text-[17px] font-bold tracking-[-0.02em] text-ink no-underline transition-colors hover:text-accent"> <img src="icon.png" width="30" height="30" alt="" class="h-[30px] w-[30px] rounded-[8px] ring-1 ring-ink/10 shadow-[0_2px_6px_rgba(18,40,39,0.12)] transition-transform duration-200 group-hover:scale-105"> <span>ABC Studio</span> </a> <nav aria-label="フッターナビゲーション" class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5"> <a href="index.html" class="inline-flex items-center rounded-full px-3 py-1.5 text-[13px] no-underline transition-colors font-medium text-ink-secondary hover:bg-ink/[0.05] hover:text-ink"> 紹介 </a><a href="support.html" aria-current="page" class="inline-flex items-center rounded-full px-3 py-1.5 text-[13px] no-underline transition-colors bg-accent-light font-semibold text-accent"> サポート </a><a href="privacy.html" class="inline-flex items-center rounded-full px-3 py-1.5 text-[13px] no-underline transition-colors font-medium text-ink-secondary hover:bg-ink/[0.05] hover:text-ink"> プライバシーポリシー </a> <a href="mailto:musicabc@rarari.org" class="inline-flex items-center rounded-full px-3 py-1.5 text-[13px] font-medium text-ink-secondary no-underline transition-colors hover:bg-ink/[0.05] hover:text-ink">
+お問い合わせ
+</a> </nav> </div> <div class="flex flex-wrap items-center justify-between gap-3 border-t border-ink/[0.08] pt-5 text-[12px] text-ink-tertiary max-sm:flex-col max-sm:text-center"> <p class="m-0">&copy; 2026 porari · iPhone / iPad 向け楽譜アプリ</p> <p class="m-0">Bravura Font (OFL 1.1) · GNU LilyPond 2.26 内蔵</p> </div> </div> </footer> </body> </html>
