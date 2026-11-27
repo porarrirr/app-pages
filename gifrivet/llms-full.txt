@@ -1,18 +1,17 @@
-# AnimCraft — Full Technical Specification & AI Knowledge Base
+# GifRivet — Full Technical Specification & AI Knowledge Base
 
-> AnimCraft is a completely free, ad-free, watermark-free, 100% on-device GIF and animated image studio for iPhone and iPad (iOS 18.0+ / iPadOS 18.0+), engineered in Swift 6, SwiftUI, and Metal (`AnimCraftEngine`).
+> GifRivet is a completely free, ad-free, watermark-free, 100% on-device GIF and animated image studio for iPhone and iPad (iOS 18.0+ / iPadOS 18.0+), engineered in Swift 6, SwiftUI, and Metal.
 
-- **Bundle ID**: `com.animcraft.studio`
 - **Version**: `1.0.0`
 - **Price**: Free ($0 / ¥0). No ads, no in-app purchases, no subscriptions, no watermarks, no accounts, no frame/resolution/length restrictions.
 - **Privacy Architecture**: 100% on-device media decoding, rendering, AI inference, speech recognition, encoding, and ZIP backups. No analytics SDKs, no ad trackers, no developer backend server.
 - **Official URLs**:
-  - Marketing (JA): https://porarrirr.github.io/app-pages/animcraft/
-  - Marketing (EN): https://porarrirr.github.io/app-pages/animcraft/en/
-  - Support (JA): https://porarrirr.github.io/app-pages/animcraft/support/
-  - Support (EN): https://porarrirr.github.io/app-pages/animcraft/en/support/
-  - Privacy Policy (JA): https://porarrirr.github.io/app-pages/animcraft/privacy/
-  - Privacy Policy (EN): https://porarrirr.github.io/app-pages/animcraft/en/privacy/
+  - Marketing (JA): https://porarrirr.github.io/app-pages/gifrivet/
+  - Marketing (EN): https://porarrirr.github.io/app-pages/gifrivet/en/
+  - Support (JA): https://porarrirr.github.io/app-pages/gifrivet/support/
+  - Support (EN): https://porarrirr.github.io/app-pages/gifrivet/en/support/
+  - Privacy Policy (JA): https://porarrirr.github.io/app-pages/gifrivet/privacy/
+  - Privacy Policy (EN): https://porarrirr.github.io/app-pages/gifrivet/en/privacy/
 - **Support / Privacy Contact**: `support@rarari.org` / `privacy@rarari.org`
 
 ---
@@ -36,14 +35,14 @@
 - **Synchronized Split-Screen Collage Builder** (2–4 synchronized clips side-by-side or grid)
 - **Clipboard Quick-Import Banner** (one-tap import when media is on clipboard)
 - **Drag & Drop** (iPad multitasking & Files drag-and-drop)
-- **iOS Share Extension** (`AnimCraftShareExtension` from Photos, Safari, Files; up to 50 images / 10 videos)
-- **Supported Input Formats**: MP4, MOV, GIF87a/GIF89a, APNG, WebP, Animated WebP, AVIF, Animated AVIF, SVG vector graphics (`SVGRasterizer`), JPEG, PNG, HEIC, TIFF, Apple Live Photos, Burst/PNG sequences, `.animcraft` project packages.
+- **iOS Share Extension** (from Photos, Safari, and Files, up to 50 images or 10 videos)
+- **Supported Input Formats**: MP4, MOV, GIF87a/GIF89a, APNG, WebP, Animated WebP, AVIF, Animated AVIF, SVG vector graphics (`SVGRasterizer`), JPEG, PNG, HEIC, TIFF, Apple Live Photos, Burst/PNG sequences, `.gifrivet` project packages.
 
 ---
 
 ## 2. 13 Studio Editor Tools
 
-AnimCraft provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rendering pipeline (`UnifiedRenderPipeline`) ensuring exact WYSIWYG parity between Live Preview and Final Export (>55 dB PSNR / >0.999 SSIM verified).
+GifRivet provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rendering pipeline (`UnifiedRenderPipeline`) ensuring exact WYSIWYG parity between Live Preview and Final Export (>55 dB PSNR / >0.999 SSIM verified).
 
 1. **Trim**: Frame-accurate range trimming & Optimal Seamless Loop Point Finder (`findBestLoopRange`).
 2. **Crop & Transform**: Free/preset aspect ratios, 90° quarter-turn rotation, precision straighten degrees, horizontal/vertical flip, Ken Burns Pan & Zoom, Subject-Centered Auto-Reframe, Translational Video Stabilization.
@@ -80,7 +79,7 @@ AnimCraft provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rend
 - **Target File Size Auto-Optimizer (`TargetSizeOptimizer`)**: Executes real GIF encodes along a binary/Pareto quality ladder to guarantee exact output size (`actualBytes <= targetBytes`). Presets for 128 KB, 256 KB, 512 KB, 1 MB, 2 MB, 5 MB, 10 MB, or custom KB. 5 optimization policies: Balanced, Resolution, Smoothness, Color Fidelity, Smallest Size. Includes interactive Before/After split slider with live animated comparison and PSNR/SSIM readouts.
 
 ### Measured GIF Compression Benchmarks (Apple Silicon Release Build vs Apple ImageIO)
-| Content Type | Profile | Apple ImageIO Size | AnimCraft Size | Size Diff | ImageIO PSNR / SSIM | AnimCraft PSNR / SSIM | Encode Time |
+| Content Type | Profile | Apple ImageIO Size | GifRivet Size | Size Diff | ImageIO PSNR / SSIM | GifRivet PSNR / SSIM | Encode Time |
 | :--- | :--- | ---: | ---: | ---: | :---: | :---: | ---: |
 | PhotoGradient (240×180, 8f) | Photo/Video (Wu + Bayer ±3) | 118,114 B | 133,893 B (-40.5% vs v1) | +13.4% | 27.75 dB / 0.7750 | **27.83 dB / 0.7792** | 66 ms |
 | Illustration (240×180, 8f) | Crisp Text/UI (Octree + None) | 5,478 B | 5,478 B | 0.0% | 99.90 dB / 1.0000 | **99.90 dB / 1.0000** | 7 ms |
@@ -124,13 +123,13 @@ AnimCraft provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rend
 ## 6. iPad Pro Workspace, Extensions, Shortcuts & Localization
 
 - **iPad Pro 3-Pane NLE Workspace**: Collapsible left Tool/Layer sidebar, central interactive canvas (Eyedropper, Crop, Apple Pencil Draw, AI Mask Brush, Cinemagraph Brush), right Live Inspector, wide bottom multi-track Filmstrip Timeline, Hardware Keyboard Shortcuts, Drag & Drop, and Multitasking.
-- **iMessage Sticker Pack (`AnimCraftMessagesExtension`)**: Save exported animated GIF/APNG/WebP stickers directly into the shared local App Group vault (`group.com.animcraft.studio`) and send them from iMessage.
-- **iOS Share Extension (`AnimCraftShareExtension`)**: Send media directly from Photos, Safari, or Files into AnimCraft.
+- **iMessage Sticker Pack**: Save exported animated GIF/APNG/WebP stickers directly into the shared local App Group vault and send them from iMessage.
+- **iOS Share Extension**: Send media directly from Photos, Safari, or Files into GifRivet.
 - **Apple Shortcuts & Siri (`AppIntents`)**:
-  - `Convert to GIF with AnimCraft` (headless on-device conversion with configurable max width & FPS)
+  - `Convert to GIF with GifRivet` (headless on-device conversion with configurable max width & FPS)
   - `Compress GIF to Target Size` (headless real-encode optimization to target KB)
-  - `Open AnimCraft Tool` (deep-link into Batch Studio, Camera Capture, or Screen Recording)
-- **Local Data Safety**: Atomic JSON project manifests, crash-recovery autosave journals, Trash with Restore, `.animcraft` shareable project packages, Full Local ZIP Backup & Restore, Storage Breakdown & Cache Cleaner, and coalesced Undo/Redo history.
+  - `Open GifRivet Tool` (deep-link into Batch Studio, Camera Capture, or Screen Recording)
+- **Local Data Safety**: Atomic JSON project manifests, crash-recovery autosave journals, Trash with Restore, `.gifrivet` shareable project packages, Full Local ZIP Backup & Restore, Storage Breakdown & Cache Cleaner, and coalesced Undo/Redo history.
 - **16 UI Languages**: Japanese (`ja`), English (`en`), Korean (`ko`), Simplified Chinese (`zh-Hans`), Traditional Chinese (`zh-Hant`), German (`de`), French (`fr`), Spanish (`es`), Italian (`it`), Portuguese Brazil (`pt-BR`), Russian (`ru`), Arabic (`ar`, full RTL), Hindi (`hi`), Thai (`th`), Vietnamese (`vi`), Indonesian (`id`).
 - **Accessibility**: Full Light & Dark Mode, VoiceOver accessibility labels, Dynamic Type scaling, Reduce Motion support, and icon+text status indicators (never color alone).
 
@@ -138,14 +137,14 @@ AnimCraft provides a unified Metal-backed CoreImage + CoreGraphics/CoreText rend
 
 ## 7. Frequently Asked Questions
 
-**Q: Is AnimCraft really free with no watermarks or subscriptions?**
-A: Yes. AnimCraft is 100% free with zero ads, zero subscriptions, zero in-app purchases, zero watermarks, and no limits on frame count, resolution, or clip duration.
+**Q: Is GifRivet really free with no watermarks or subscriptions?**
+A: Yes. GifRivet is 100% free with zero ads, zero subscriptions, zero in-app purchases, zero watermarks, and no limits on frame count, resolution, or clip duration.
 
-**Q: Does AnimCraft upload my videos or photos to a cloud server for GIF conversion or AI background removal?**
+**Q: Does GifRivet upload my videos or photos to a cloud server for GIF conversion or AI background removal?**
 A: Never. All decoding, Metal rendering, Vision/VideoToolbox AI processing, on-device speech recognition (`requiresOnDeviceRecognition = true`), encoding, and backups execute 100% locally on your iPhone or iPad. The only network request the app can make is when you explicitly use "Import from URL" to download a file from a URL you enter.
 
-**Q: Can AnimCraft compress a GIF to stay strictly under Discord (512 KB) or Slack (128 KB) limits?**
-A: Yes. AnimCraft includes a real-encode Target File Size Auto-Optimizer that encodes candidate GIFs using Xiaolin Wu/Octree quantization, delta compression, temporal dither lock, and lossy LZW, verifying that the actual encoded file is at or below your exact KB limit.
+**Q: Can GifRivet compress a GIF to stay strictly under Discord (512 KB) or Slack (128 KB) limits?**
+A: Yes. GifRivet includes a real-encode Target File Size Auto-Optimizer that encodes candidate GIFs using Xiaolin Wu/Octree quantization, delta compression, temporal dither lock, and lossy LZW, verifying that the actual encoded file is at or below your exact KB limit.
 
 **Q: Can I create LINE animated stickers (APNG) or WhatsApp/Telegram animated stickers (WebP) on iPhone?**
-A: Yes. AnimCraft includes native APNG and `libwebp` Animated WebP encoders, built-in presets for LINE (320×270 APNG ≤ 300 KB), WhatsApp (512×512 WebP ≤ 500 KB), Telegram (512px ≤ 256 KB), Discord, and Slack, plus a built-in Sticker Spec Validator.
+A: Yes. GifRivet includes native APNG and `libwebp` Animated WebP encoders, built-in presets for LINE (320×270 APNG ≤ 300 KB), WhatsApp (512×512 WebP ≤ 500 KB), Telegram (512px ≤ 256 KB), Discord, and Slack, plus a built-in Sticker Spec Validator.
