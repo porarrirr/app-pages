@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>プライバシーポリシー・免責事項｜StudyTrail</title>
   <meta name="description" content="StudyTrailのプライバシーポリシー、免責事項、オンデバイス処理（カメラ・位置情報・スクリーンタイム）、第三者サービスおよび個人情報に関するお問い合わせ先。">
-  <meta name="st-title-ja" content="プライバシーポリシー・免責事項｜StudyTrail">
-  <meta name="st-title-en" content="Privacy Policy &amp; Terms — StudyTrail">
-  <meta name="st-desc-ja" content="StudyTrailのプライバシーポリシー、免責事項、オンデバイス処理（カメラ・位置情報・スクリーンタイム）、第三者サービスおよび個人情報に関するお問い合わせ先。">
-  <meta name="st-desc-en" content="StudyTrail Privacy Policy, on-device processing guarantees (camera, location, Screen Time), third-party services, disclaimer, and contact details.">
   <meta name="apple-itunes-app" content="app-id=6771300607">
   <meta name="theme-color" content="#F2F3F7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141D1A" media="(prefers-color-scheme: dark)">
@@ -33,11 +29,15 @@
         if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark');
         }
+        const RTL = new Set(['ar-SA', 'he', 'ur-PK']);
+        const ALIAS = { en: 'en-US', zh: 'zh-Hans', pt: 'pt-BR', ar: 'ar-SA', ur: 'ur-PK', es: 'es-ES', fr: 'fr-FR', de: 'de-DE' };
         const p = new URLSearchParams(location.search).get('lang');
-        const l = (p === 'en' || p === 'ja') ? p : localStorage.getItem('studytrail-lang');
-        if (l === 'en') {
-          document.documentElement.dataset.lang = 'en';
-          document.documentElement.lang = 'en';
+        let l = (p || localStorage.getItem('studytrail-lang') || '').trim();
+        l = ALIAS[l.toLowerCase()] || l;
+        if (/^[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})?$/.test(l)) {
+          document.documentElement.dataset.lang = l;
+          document.documentElement.lang = l;
+          document.documentElement.dir = RTL.has(l) ? 'rtl' : 'ltr';
         }
       } catch (_) {}
     })();
@@ -46,8 +46,7 @@
 </head>
 <body class="min-h-screen selection:bg-forest-800 selection:text-white dark:selection:bg-forest-300 dark:selection:text-forest-950">
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-forest-800 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
-    <span data-lang-ja>本文へ移動</span><span data-lang-en>Skip to content</span>
-  </a>
+    <span data-i18n="s010">本文へ移動</span>  </a>
 
   <!-- Header -->
   <header class="st-glass-nav sticky top-0 z-40">
@@ -57,24 +56,22 @@
         <span>StudyTrail</span>
       </a>
 
-      <nav class="hidden items-center gap-1 rounded-full bg-black/[0.04] p-1 dark:bg-white/[0.06] md:flex" aria-label="Main navigation">
+      <nav class="hidden items-center gap-1 rounded-full bg-black/[0.04] p-1 dark:bg-white/[0.06] md:flex" aria-label="Main navigation" data-i18n-aria="aria.mainnav">
         <a href="index.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
-          <span data-lang-ja>ホーム</span><span data-lang-en>Home</span>
-        </a>
+          <span data-i18n="s034">ホーム</span>        </a>
         <a href="support.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
-          <span data-lang-ja>サポート</span><span data-lang-en>Support</span>
-        </a>
+          <span data-i18n="s013">サポート</span>        </a>
         <a href="privacy.html" aria-current="page" class="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-[#111815] shadow-xs dark:bg-[#2A3733] dark:text-[#F1F5F3]">
-          <span data-lang-ja>プライバシー</span><span data-lang-en>Privacy</span>
-        </a>
+          <span data-i18n="s014">プライバシー</span>        </a>
       </nav>
 
       <div class="flex items-center gap-2">
-        <button type="button" data-lang-toggle class="inline-flex h-9 items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-white/80 px-3 text-xs font-semibold text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+        <label class="relative inline-flex h-9 items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-white/80 pl-3 pr-1.5 text-xs font-semibold text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
           <i class="ri-translate-2 text-sm text-forest-800 dark:text-forest-300" aria-hidden="true"></i>
-          <span data-lang-label>EN</span>
-        </button>
-        <button type="button" data-theme-toggle aria-label="Toggle color theme" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+          <select data-lang-select data-i18n-aria="aria.lang" aria-label="Language" class="cursor-pointer appearance-none bg-transparent py-1 pl-0.5 pr-5 text-xs font-semibold text-inherit outline-none"></select>
+          <i class="ri-arrow-down-s-line pointer-events-none absolute right-2.5 text-sm" aria-hidden="true"></i>
+        </label>
+        <button type="button" data-theme-toggle aria-label="Toggle color theme" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]" data-i18n-aria="aria.theme">
           <i class="ri-sun-line hidden text-base" data-icon-sun aria-hidden="true"></i>
           <i class="ri-moon-clear-line text-base" data-icon-moon aria-hidden="true"></i>
         </button>
@@ -82,7 +79,7 @@
           <i class="ri-apple-fill text-sm" aria-hidden="true"></i>
           <span>App Store</span>
         </a>
-        <button type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Menu" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#111815] dark:border-[#303E37] dark:bg-[#202A27] dark:text-white md:hidden">
+        <button type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Menu" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#111815] dark:border-[#303E37] dark:bg-[#202A27] dark:text-white md:hidden" data-i18n-aria="aria.menu">
           <i class="ri-menu-3-line text-lg" data-menu-open aria-hidden="true"></i>
           <i class="ri-close-line hidden text-lg" data-menu-close aria-hidden="true"></i>
         </button>
@@ -91,9 +88,9 @@
 
     <div data-mobile-menu class="hidden border-t border-[#E8EBE9] bg-white/95 px-4 py-4 backdrop-blur-xl dark:border-[#303E37] dark:bg-[#141D1A]/95 md:hidden">
       <div class="flex flex-col gap-1.5">
-        <a href="index.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-lang-ja>ホーム</span><span data-lang-en>Home</span></a>
-        <a href="support.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-lang-ja>サポート・FAQ</span><span data-lang-en>Support &amp; FAQ</span></a>
-        <a href="privacy.html" class="rounded-2xl bg-[#F2F3F7] px-4 py-2.5 text-sm font-semibold text-[#111815] dark:bg-[#202A27] dark:text-white"><span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+        <a href="index.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-i18n="s034">ホーム</span></a>
+        <a href="support.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-i18n="s017">サポート・FAQ</span></a>
+        <a href="privacy.html" class="rounded-2xl bg-[#F2F3F7] px-4 py-2.5 text-sm font-semibold text-[#111815] dark:bg-[#202A27] dark:text-white"><span data-i18n="s018">プライバシーポリシー</span></a>
       </div>
     </div>
   </header>
@@ -106,25 +103,22 @@
           <div>
             <p class="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-forest-800 uppercase dark:text-forest-300">
               <i class="ri-shield-check-line text-sm"></i>
-              <span data-lang-ja>Legal &amp; Privacy</span>
-              <span data-lang-en>Legal &amp; Privacy</span>
-            </p>
+              <span data-i18n="s183">Legal &amp; Privacy</span>
+                          </p>
             <h1 class="mt-2.5 text-3xl font-extrabold text-[#111815] dark:text-white sm:text-5xl">
-              <span data-lang-ja>プライバシーポリシー＆免責事項</span>
-              <span data-lang-en>Privacy Policy &amp; Disclaimer</span>
-            </h1>
+              <span data-i18n="s184">プライバシーポリシー＆免責事項</span>
+                          </h1>
             <p class="mt-3 max-w-xl text-sm text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
-              <span data-lang-ja>StudyTrail におけるデータの取り扱い、オンデバイス処理の原則、および免責事項（利用規約）について定めています。</span>
-              <span data-lang-en>How StudyTrail protects your study data, handles on-device features, and outlines terms of use.</span>
-            </p>
+              <span data-i18n="s185">StudyTrail におけるデータの取り扱い、オンデバイス処理の原則、および免責事項（利用規約）について定めています。</span>
+                          </p>
           </div>
           <dl class="st-card flex shrink-0 gap-6 px-5 py-3.5 text-xs">
             <div>
-              <dt class="font-semibold text-[#64756F] dark:text-[#8CA096]"><span data-lang-ja>制定日</span><span data-lang-en>Effective</span></dt>
+              <dt class="font-semibold text-[#64756F] dark:text-[#8CA096]"><span data-i18n="s186">制定日</span></dt>
               <dd class="mt-0.5 font-bold tabular-nums-clean text-[#111815] dark:text-white"><time datetime="2025-05-20">2025-05-20</time></dd>
             </div>
             <div class="border-l border-[#E8EBE9] pl-6 dark:border-[#303E37]">
-              <dt class="font-semibold text-[#64756F] dark:text-[#8CA096]"><span data-lang-ja>最終改訂日</span><span data-lang-en>Last Updated</span></dt>
+              <dt class="font-semibold text-[#64756F] dark:text-[#8CA096]"><span data-i18n="s187">最終改訂日</span></dt>
               <dd class="mt-0.5 font-bold tabular-nums-clean text-[#111815] dark:text-white"><time datetime="2026-11-26">2026-11-26</time></dd>
             </div>
           </dl>
@@ -135,30 +129,24 @@
           <div class="st-card p-5">
             <div class="flex items-center gap-2.5 text-sm font-bold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-smartphone-line text-base"></i></span>
-              <span data-lang-ja>ローカルファースト設計</span>
-              <span data-lang-en>Local-First by Default</span>
-            </div>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>学習記録は端末内に保存され、アカウント登録なしで利用できます。クラウド同期はユーザーが明示的に有効にした場合のみ動作します。</p>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Study records stay on your device with no account required. Cloud sync runs only when you explicitly turn it on.</p>
-          </div>
+              <span data-i18n="s188">ローカルファースト設計</span>
+                          </div>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-i18n="s189">学習記録は端末内に保存され、アカウント登録なしで利用できます。クラウド同期はユーザーが明示的に有効にした場合のみ動作します。</p>
+                      </div>
           <div class="st-card p-5">
             <div class="flex items-center gap-2.5 text-sm font-bold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-eye-off-line text-base"></i></span>
-              <span data-lang-ja>カメラ・位置情報は端末内完結</span>
-              <span data-lang-en>On-Device Camera &amp; Location</span>
-            </div>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>見守りペットの人物検出や集中制限の場所判定・スクリーンタイム制御はすべて端末内で完結し、映像や位置情報を外部送信しません。</p>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Study Pet vision, location focus zones, and Screen Time rules run strictly on-device—never uploaded or saved externally.</p>
-          </div>
+              <span data-i18n="s190">カメラ・位置情報は端末内完結</span>
+                          </div>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-i18n="s191">見守りペットの人物検出や集中制限の場所判定・スクリーンタイム制御はすべて端末内で完結し、映像や位置情報を外部送信しません。</p>
+                      </div>
           <div class="st-card p-5">
             <div class="flex items-center gap-2.5 text-sm font-bold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-delete-bin-line text-base"></i></span>
-              <span data-lang-ja>いつでも削除・書き出し可能</span>
-              <span data-lang-en>Full Control &amp; Deletion</span>
-            </div>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>アプリ内からいつでもアカウントとクラウド・端末データを完全削除でき、JSON / CSV でのデータ持ち出しにも対応しています。</p>
-            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Delete your account and synced data anytime directly inside Settings, or export everything in JSON/CSV.</p>
-          </div>
+              <span data-i18n="s192">いつでも削除・書き出し可能</span>
+                          </div>
+            <p class="mt-2 text-xs leading-relaxed text-[#5C6B65] dark:text-[#9CB0A6]" data-i18n="s193">アプリ内からいつでもアカウントとクラウド・端末データを完全削除でき、JSON / CSV でのデータ持ち出しにも対応しています。</p>
+                      </div>
         </div>
       </div>
     </section>
@@ -170,45 +158,32 @@
         <aside class="lg:col-span-4 xl:col-span-3">
           <div class="st-card p-5 lg:sticky lg:top-24">
             <p class="text-xs font-bold tracking-wider text-[#64756F] uppercase dark:text-[#8CA096]">
-              <span data-lang-ja>目次</span><span data-lang-en>Contents</span>
-            </p>
-            <nav class="mt-3 flex flex-col gap-1 text-sm" aria-label="Privacy policy table of contents">
+              <span data-i18n="s194">目次</span>            </p>
+            <nav class="mt-3 flex flex-col gap-1 text-sm" aria-label="Privacy policy table of contents" data-i18n-aria="aria.toc">
               <a href="#privacy" class="rounded-xl px-3 py-2 font-bold text-[#111815] hover:bg-[#F2F3F7] dark:text-white dark:hover:bg-[#17211E]">
-                <span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span>
-              </a>
+                <span data-i18n="s018">プライバシーポリシー</span>              </a>
               <a href="#data" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>1. 取得する情報と利用目的</span><span data-lang-en>1. Data Collected &amp; Purpose</span>
-              </a>
+                <span data-i18n="s195">1. 取得する情報と利用目的</span>              </a>
               <a href="#services" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>2. 利用する第三者サービス</span><span data-lang-en>2. Third-Party Services</span>
-              </a>
+                <span data-i18n="s196">2. 利用する第三者サービス</span>              </a>
               <a href="#international-transfer" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>3. 外国にある第三者への提供</span><span data-lang-en>3. International Transfers</span>
-              </a>
+                <span data-i18n="s197">3. 外国にある第三者への提供</span>              </a>
               <a href="#disclosure" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>4. 第三者提供について</span><span data-lang-en>4. Disclosure Policy</span>
-              </a>
+                <span data-i18n="s198">4. 第三者提供について</span>              </a>
               <a href="#security" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>5. 安全管理措置</span><span data-lang-en>5. Security Measures</span>
-              </a>
+                <span data-i18n="s199">5. 安全管理措置</span>              </a>
               <a href="#requests" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>6. 開示等の請求手続き</span><span data-lang-en>6. User Rights &amp; Requests</span>
-              </a>
+                <span data-i18n="s200">6. 開示等の請求手続き</span>              </a>
               <a href="#retention" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>7. データの保管・削除</span><span data-lang-en>7. Retention &amp; Deletion</span>
-              </a>
+                <span data-i18n="s201">7. データの保管・削除</span>              </a>
               <a href="#identifiers" class="rounded-xl py-1.5 pr-3 pl-6 text-xs font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>8. Cookie・端末識別子等</span><span data-lang-en>8. Cookies &amp; Identifiers</span>
-              </a>
+                <span data-i18n="s202">8. Cookie・端末識別子等</span>              </a>
               <a href="#disclaimer" class="mt-1 rounded-xl px-3 py-2 font-bold text-[#111815] hover:bg-[#F2F3F7] dark:text-white dark:hover:bg-[#17211E]">
-                <span data-lang-ja>免責事項（利用規約）</span><span data-lang-en>Disclaimer &amp; Terms</span>
-              </a>
+                <span data-i18n="s203">免責事項（利用規約）</span>              </a>
               <a href="#changes" class="rounded-xl px-3 py-2 font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>ポリシーの変更</span><span data-lang-en>Policy Changes</span>
-              </a>
+                <span data-i18n="s204">ポリシーの変更</span>              </a>
               <a href="#contact" class="rounded-xl px-3 py-2 font-medium text-[#54645E] hover:bg-[#F2F3F7] hover:text-[#111815] dark:text-[#9CB0A6] dark:hover:bg-[#17211E] dark:hover:text-white">
-                <span data-lang-ja>お問い合わせ・苦情窓口</span><span data-lang-en>Contact</span>
-              </a>
+                <span data-i18n="s205">お問い合わせ・苦情窓口</span>              </a>
             </nav>
           </div>
         </aside>
@@ -216,41 +191,32 @@
         <!-- Legal Body -->
         <div class="st-prose space-y-8 lg:col-span-8 xl:col-span-9">
           <!-- English Legal Translation Notice -->
-          <div data-lang-en class="rounded-2xl border border-forest-800/20 bg-forest-50 px-5 py-4 text-xs leading-relaxed text-forest-900 dark:border-forest-300/20 dark:bg-[#1A2A24] dark:text-forest-200">
+          <div class="rounded-2xl border border-forest-800/20 bg-forest-50 px-5 py-4 text-xs leading-relaxed text-forest-900 dark:border-forest-300/20 dark:bg-[#1A2A24] dark:text-forest-200" data-i18n="s247">
             <strong>Note:</strong> This English version is provided for convenience. In the event of any discrepancy, the authoritative Japanese version governs under the laws of Japan.
           </div>
 
           <!-- Privacy Policy Section -->
           <section id="privacy" class="st-card p-6 sm:p-9">
             <h2 class="text-2xl font-extrabold text-[#111815] dark:text-white">
-              <span data-lang-ja>プライバシーポリシー</span>
-              <span data-lang-en>Privacy Policy</span>
-            </h2>
+              <span data-i18n="s018">プライバシーポリシー</span>
+                          </h2>
 
             <div class="mt-5 rounded-2xl border border-[#DDE2DF] bg-[#F6F8F7] p-4 text-sm text-[#2A3934] dark:border-[#303E37] dark:bg-[#17211E] dark:text-[#D1DFD8]">
-              <p data-lang-ja><strong>個人情報取扱事業者:</strong> StudyTrail 開発者（以下「開発者」）<br><strong>お問い合わせ先:</strong> <a href="mailto:toiawasestudyapp@rarari.org" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">toiawasestudyapp@rarari.org</a></p>
-              <p data-lang-en><strong>Data Controller:</strong> StudyTrail Developer ("Developer")<br><strong>Contact:</strong> <a href="mailto:toiawasestudyapp@rarari.org" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">toiawasestudyapp@rarari.org</a></p>
-            </div>
+              <p data-i18n="s206"><strong>個人情報取扱事業者:</strong> StudyTrail 開発者（以下「開発者」）<br><strong>お問い合わせ先:</strong> <a href="mailto:toiawasestudyapp@rarari.org" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">toiawasestudyapp@rarari.org</a></p>
+                          </div>
 
-            <p class="mt-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+            <p class="mt-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s207">
               開発者は、個人情報の保護に関する法律（平成15年法律第57号。以下「個人情報保護法」）その他の関連法令を遵守し、ユーザーの個人情報を適切に取り扱います。
             </p>
-            <p class="mt-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              The Developer complies with Japan's Act on the Protection of Personal Information (APPI) and other applicable laws, and handles user personal information appropriately.
-            </p>
-
+            
             <!-- 1. Data -->
             <h3 id="data" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>1. 取得する情報および利用目的</span>
-              <span data-lang-en>1. Information We Collect &amp; Purposes of Use</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s222">1. 取得する情報および利用目的</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s208">
               開発者は、以下の情報を取得し、それぞれ記載の目的の範囲内で利用します（個人情報保護法第17条・第18条）。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              We collect and process the following information strictly within the stated purposes:
-            </p>
-            <ul class="mt-3 list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+                        <ul class="mt-3 list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s209">
               <li><strong>アカウント情報（メールアドレス・パスワード）:</strong> クラウド同期機能をご利用の場合、Firebase Authentication を通じたユーザー認証およびクラウド同期機能の提供に利用します。パスワードは Firebase のサーバー上でハッシュ化され、開発者が直接閲覧・取得することはありません。</li>
               <li><strong>学習記録データ（科目、教材名、問題進捗、タイマー記録、時間割、学習目標、テスト日程等）:</strong> アプリ内での学習記録の保存・表示、およびクラウド同期機能をご利用の場合はサーバーへの保管に利用します。</li>
               <li><strong>カメラ（ISBN バーコード読取・見守りペット機能をご利用の場合）:</strong> 教材登録時のバーコード読み取り、および見守りペット機能におけるオンデバイス人物検出のみに使用します。カメラ映像の表示（見守りペット時）・録画・保存・外部送信は一切行いません。</li>
@@ -260,103 +226,77 @@
               <li><strong>匿名利用統計情報:</strong> アプリの品質向上および不具合調査のため、Google Analytics for Firebase を通じて、個人を特定できない形での匿名統計情報（画面遷移、機能利用状況等）を収集することがあります。</li>
               <li><strong>クラッシュログ:</strong> アプリの不具合調査・改善のため、Firebase Crashlytics を通じて、クラッシュ発生時の匿名技術情報（端末機種、OSバージョン、スタックトレース等）を自動収集することがあります。</li>
             </ul>
-            <ul class="mt-3 list-disc space-y-2.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              <li><strong>Account Credentials (Email &amp; Password):</strong> Used via Firebase Authentication only when you opt into Cloud Sync. Passwords are hashed by Firebase and are never accessible to the Developer.</li>
-              <li><strong>Study Records (Subjects, textbooks, problem progress, timer sessions, timetable, goals, exams):</strong> Stored locally on-device, and synced to Cloud Firestore only if you enable Cloud Sync.</li>
-              <li><strong>Camera (ISBN Scanner &amp; Optional Study Pet):</strong> Used solely for reading ISBN barcodes and on-device person detection for Study Pet. Study Pet never displays, records, saves, or uploads camera video.</li>
-              <li><strong>Location (Optional iOS Location Focus Zones):</strong> Used strictly for on-device geofencing to apply focus rules at user-selected places (such as school or a library). Location is never sent to our servers or Firebase.</li>
-              <li><strong>Screen Time Controls (Optional iOS Family Controls):</strong> Managed strictly on-device through Apple's Screen Time APIs; selected apps and usage data are never sent to external servers.</li>
-              <li><strong>Book Lookup Queries (Optional ISBN / Title Search):</strong> Sent to Google Books API solely to autofill book metadata when you search for a textbook.</li>
-              <li><strong>Anonymous Usage Analytics &amp; Crash Logs:</strong> Google Analytics for Firebase and Firebase Crashlytics may collect anonymized diagnostics (device model, OS version, stack traces) to improve app stability.</li>
-            </ul>
-
+            
             <!-- 2. Third-party services -->
             <h3 id="services" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>2. 利用する第三者サービス（SDK / API）</span>
-              <span data-lang-en>2. Third-Party Services</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s223">2. 利用する第三者サービス（SDK / API）</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s210">
               当アプリは以下の第三者サービスを利用しており、各サービスにおいて情報が処理されます。各サービスの詳細は、それぞれのプライバシーポリシーをご確認ください。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              StudyTrail integrates the following third-party services provided by Google LLC:
-            </p>
-            <div class="mt-4 overflow-x-auto rounded-2xl border border-[#E8EBE9] dark:border-[#303E37]">
+                        <div class="mt-4 overflow-x-auto rounded-2xl border border-[#E8EBE9] dark:border-[#303E37]">
               <table class="w-full text-left text-sm">
                 <thead class="bg-[#F4F6F5] text-xs font-bold text-[#44544E] dark:bg-[#17211E] dark:text-[#A4B7AE]">
                   <tr>
-                    <th class="px-4 py-3"><span data-lang-ja>サービス名</span><span data-lang-en>Service</span></th>
-                    <th class="px-4 py-3"><span data-lang-ja>提供元</span><span data-lang-en>Provider</span></th>
-                    <th class="px-4 py-3"><span data-lang-ja>利用目的</span><span data-lang-en>Purpose</span></th>
+                    <th class="px-4 py-3"><span data-i18n="s224">サービス名</span></th>
+                    <th class="px-4 py-3"><span data-i18n="s225">提供元</span></th>
+                    <th class="px-4 py-3"><span data-i18n="s226">利用目的</span></th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-[#E8EBE9] text-[#2F3F39] dark:divide-[#303E37] dark:text-[#C5D5CD]">
                   <tr>
                     <td class="px-4 py-3 font-medium">Firebase Authentication</td>
                     <td class="px-4 py-3">Google LLC</td>
-                    <td class="px-4 py-3"><span data-lang-ja>ユーザー認証（クラウド同期利用時）</span><span data-lang-en>Authentication (when Cloud Sync is enabled)</span></td>
+                    <td class="px-4 py-3"><span data-i18n="s227">ユーザー認証（クラウド同期利用時）</span></td>
                   </tr>
                   <tr>
                     <td class="px-4 py-3 font-medium">Cloud Firestore</td>
                     <td class="px-4 py-3">Google LLC</td>
-                    <td class="px-4 py-3"><span data-lang-ja>クラウドデータ同期・保管</span><span data-lang-en>Cloud data sync &amp; storage</span></td>
+                    <td class="px-4 py-3"><span data-i18n="s228">クラウドデータ同期・保管</span></td>
                   </tr>
                   <tr>
                     <td class="px-4 py-3 font-medium">Google Analytics for Firebase</td>
                     <td class="px-4 py-3">Google LLC</td>
-                    <td class="px-4 py-3"><span data-lang-ja>匿名利用統計の収集</span><span data-lang-en>Anonymized usage analytics</span></td>
+                    <td class="px-4 py-3"><span data-i18n="s229">匿名利用統計の収集</span></td>
                   </tr>
                   <tr>
                     <td class="px-4 py-3 font-medium">Firebase Crashlytics</td>
                     <td class="px-4 py-3">Google LLC</td>
-                    <td class="px-4 py-3"><span data-lang-ja>クラッシュログの収集・分析</span><span data-lang-en>Crash diagnostics</span></td>
+                    <td class="px-4 py-3"><span data-i18n="s230">クラッシュログの収集・分析</span></td>
                   </tr>
                   <tr>
                     <td class="px-4 py-3 font-medium">Google Books API</td>
                     <td class="px-4 py-3">Google LLC</td>
-                    <td class="px-4 py-3"><span data-lang-ja>教材登録時の書誌情報検索（任意利用時）</span><span data-lang-en>Optional book metadata lookup</span></td>
+                    <td class="px-4 py-3"><span data-i18n="s231">教材登録時の書誌情報検索（任意利用時）</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <p class="mt-3 text-xs text-[#54645E] dark:text-[#9CB0A6]">
-              <span data-lang-ja>各サービスのプライバシーポリシー: </span><span data-lang-en>Provider Privacy Policy: </span>
-              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">Google Privacy Policy</a>
+              <span data-i18n="s232">各サービスのプライバシーポリシー: </span>              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">Google Privacy Policy</a>
             </p>
 
             <!-- 3. International transfer -->
             <h3 id="international-transfer" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>3. 外国にある第三者への提供（個人情報保護法第28条）</span>
-              <span data-lang-en>3. International Data Transfers</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s233">3. 外国にある第三者への提供（個人情報保護法第28条）</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s211">
               クラウド同期機能をご利用の場合、ユーザーの個人データは、以下の条件のもとで外国にある第三者（Google LLC、米国）に提供されます。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              When you enable Cloud Sync, your synced data is processed by Google LLC (United States) under industry-standard safeguards:
-            </p>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+                        <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s212">
               <li><strong>提供先の国:</strong> アメリカ合衆国（Google LLC の本社所在地。なお、実際のデータ保管場所は Google のインフラにより異なる場合があります）</li>
               <li><strong>当該国の個人情報保護制度:</strong> 米国には、日本の個人情報保護法に相当する包括的な連邦法は存在しませんが、Google LLC は EU-US Data Privacy Framework の認証を受けており、GDPR に準拠した個人データ保護措置を講じています。</li>
               <li><strong>提供先が講じている保護措置:</strong> Google LLC は、SOC 2 / SOC 3 認証、ISO 27001 認証を取得しており、データの暗号化（保管時および転送時）、アクセス制御、定期的なセキュリティ監査等の措置を実施しています。詳細は <a href="https://cloud.google.com/security" target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">Google Cloud セキュリティ</a> をご参照ください。</li>
             </ul>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              <li><strong>Country:</strong> United States (Google LLC headquarters; storage region may vary across Google infrastructure).</li>
-              <li><strong>Safeguards:</strong> Google LLC is certified under the EU-US Data Privacy Framework, SOC 2 / SOC 3, and ISO 27001, enforcing encryption in transit and at rest (<a href="https://cloud.google.com/security" target="_blank" rel="noopener noreferrer" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">Google Cloud Security</a>).</li>
-            </ul>
-
+            
             <!-- 4. Disclosure -->
             <h3 id="disclosure" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>4. 第三者提供について</span>
-              <span data-lang-en>4. Third-Party Disclosure</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s234">4. 第三者提供について</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s213">
               開発者は、以下の場合を除き、取得した個人情報をユーザーの同意なしに第三者に提供・開示することはありません。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              We never sell or disclose personal information to third parties without your consent, except where required by law or necessary to protect life, safety, public health, or lawful government duties.
-            </p>
-            <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+                        <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s214">
               <li>法令に基づく場合</li>
               <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>
               <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>
@@ -365,84 +305,64 @@
 
             <!-- 5. Security -->
             <h3 id="security" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>5. 安全管理措置（個人情報保護法第23条）</span>
-              <span data-lang-en>5. Security Measures</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s235">5. 安全管理措置（個人情報保護法第23条）</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s215">
               開発者は、取り扱う個人データの漏えい、滅失または毀損の防止その他の安全管理のため、以下の措置を講じています。
             </p>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s216">
               <li><strong>通信の暗号化:</strong> アプリとサーバー間の通信は SSL/TLS により暗号化されています。</li>
               <li><strong>アクセス制御:</strong> Firebase Security Rules により、ユーザーは自身のデータにのみアクセスできるよう制御しています。</li>
               <li><strong>認証情報の保護:</strong> パスワードは Firebase Authentication によりハッシュ化して保管され、開発者が平文のパスワードにアクセスすることはありません。</li>
               <li><strong>データ保管:</strong> クラウドデータは Google LLC が運営するデータセンターに保管され、同社の物理的・技術的セキュリティ措置により保護されています。</li>
             </ul>
-            <ul class="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              <li><strong>Encrypted Transit:</strong> All client-server traffic is encrypted with SSL/TLS.</li>
-              <li><strong>Strict Access Control:</strong> Firebase Security Rules restrict access strictly to each authenticated user's own data.</li>
-              <li><strong>Credential Protection:</strong> Passwords are hashed by Firebase Authentication and never visible in plaintext.</li>
-            </ul>
-
+            
             <!-- 6. Requests -->
             <h3 id="requests" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>6. 開示等の請求手続き（個人情報保護法第33条〜第39条）</span>
-              <span data-lang-en>6. User Rights &amp; Data Requests</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s236">6. 開示等の請求手続き（個人情報保護法第33条〜第39条）</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s217">
               ユーザーは、開発者に対して、個人情報保護法に基づき、以下の請求を行うことができます。
             </p>
-            <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+            <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s218">
               <li>保有個人データの利用目的の通知</li>
               <li>保有個人データの開示</li>
               <li>保有個人データの内容の訂正、追加または削除</li>
               <li>保有個人データの利用の停止または消去</li>
               <li>保有個人データの第三者への提供の停止</li>
             </ul>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s219">
               上記の請求を希望される場合は、本人確認のうえ、下記お問い合わせ先までメールにてご連絡ください。合理的な期間内に対応いたします。なお、アプリ内の設定画面から、ご自身のアカウントおよび登録データを直接削除することも可能です。
             </p>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              You may request disclosure, correction, deletion, or cessation of use of your personal data by emailing the contact address below, or delete your account and cloud data directly in Settings.
-            </p>
-
+            
             <!-- 7. Retention -->
             <h3 id="retention" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>7. データの保管・削除</span>
-              <span data-lang-en>7. Data Retention &amp; Deletion</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s237">7. データの保管・削除</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s220">
               クラウド同期機能をご利用の場合、データは Firebase（Google LLC）のサーバーに保管されます。ユーザーはアプリ内の設定画面からいつでもご自身のアカウントおよび登録されたデータを完全に削除することができます。アカウント削除後、サーバー上のデータは速やかに削除されます（ただし、バックアップからの完全消去には一定期間を要する場合があります）。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              Cloud-synced data is stored on Firebase servers until you delete your account. You can permanently delete your account and all synced records anytime inside Settings → Cloud Sync → Delete Account.
-            </p>
-
+            
             <!-- 8. Identifiers -->
             <h3 id="identifiers" class="mt-8 text-lg font-bold text-[#111815] dark:text-white">
-              <span data-lang-ja>8. Cookie・端末識別子等の利用</span>
-              <span data-lang-en>8. Cookies &amp; Device Identifiers</span>
-            </h3>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s238">8. Cookie・端末識別子等の利用</span>
+                          </h3>
+            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s221">
               当アプリは Web ブラウザベースのサービスではないため、Cookie は使用しません。ただし、Google Analytics for Firebase および Firebase Crashlytics は、端末を識別するための匿名識別子（Instance ID 等）を利用します。これらの識別子は個人を特定するものではなく、統計分析およびクラッシュ分析の目的にのみ使用されます。
             </p>
-            <p class="mt-2.5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              The mobile app does not use browser cookies. Firebase Analytics and Crashlytics use anonymous instance identifiers solely for aggregate analytics and crash diagnosis.
-            </p>
-          </section>
+                      </section>
 
           <!-- Disclaimer Section -->
           <section id="disclaimer" class="st-card p-6 sm:p-9">
             <h2 class="text-2xl font-extrabold text-[#111815] dark:text-white">
-              <span data-lang-ja>免責事項（利用規約）</span>
-              <span data-lang-en>Disclaimer &amp; Terms of Use</span>
-            </h2>
+              <span data-i18n="s239">免責事項（利用規約）</span>
+                          </h2>
 
             <div class="mt-5 rounded-2xl border border-study-amber/30 bg-study-amber-soft/60 p-4 text-sm text-[#5E3C00] dark:border-[#FFB340]/25 dark:bg-[#332512] dark:text-[#F4D08B]">
-              <p data-lang-ja><strong>【重要：本アプリの利用に伴う責任の制限】</strong><br>本アプリ（以下「当アプリ」）をご利用いただくことで、お客様は本免責事項および本プライバシーポリシーの内容に同意したものとみなされます。同意されない場合は、直ちにアプリの利用を中止し、アンインストールしてください。</p>
-              <p data-lang-en><strong>Important Notice:</strong> By using StudyTrail, you agree to these terms and our Privacy Policy. If you do not agree, please discontinue use and uninstall the app.</p>
-            </div>
+              <p data-i18n="s240"><strong>【重要：本アプリの利用に伴う責任の制限】</strong><br>本アプリ（以下「当アプリ」）をご利用いただくことで、お客様は本免責事項および本プライバシーポリシーの内容に同意したものとみなされます。同意されない場合は、直ちにアプリの利用を中止し、アンインストールしてください。</p>
+                          </div>
 
-            <ol class="mt-5 list-decimal space-y-3.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+            <ol class="mt-5 list-decimal space-y-3.5 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s241">
               <li><strong>保証の否認:</strong> 当アプリは「現状有姿（As-Is）」で提供されます。開発者は、当アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みますがこれらに限りません）がないことを明示的にも黙示的にも保証しません。開発者は、当アプリに関していかなる種類の保証（商品性、特定目的への適合性、非侵害性を含むがこれらに限らない）も行いません。</li>
               <li><strong>責任の制限（消費者契約法等との調和）:</strong> 当アプリの使用、使用不能、または当アプリから提供される情報に関してユーザーに生じた損害について、開発者の故意または重大な過失による場合を除き、開発者は一切の責任を負いません。ただし、当アプリの提供に関する契約が消費者契約法（平成12年法律第61号）に定める「消費者契約」に該当する場合、本条項のうち開発者の債務不履行または不法行為による賠償責任を完全に免除する部分は、同法第8条の規定により適用されず、開発者の責任は法令で認められる最大限の範囲で制限されます。</li>
               <li><strong>賠償額の上限設定:</strong> 前項に基づき開発者が責任を負う場合であっても、開発者に故意または重大な過失がある場合を除き、開発者が負う賠償責任は、ユーザーに直接かつ現実に生じた通常の損害（付随的損害、間接損害、特別損害、将来の損害および逸失利益にかかる損害は除きます）の範囲内に限られ、かつ当アプリに対してユーザーが実際に支払った金額（有料アドオン等の購入代金の総額。無料版の場合は0円）を上限とします。</li>
@@ -455,55 +375,34 @@
               <li><strong>分離可能性:</strong> 本免責事項またはプライバシーポリシーの一部の条項が法令等により無効または執行不能と判断された場合であっても、その他の条項は引き続き完全に有効であるものとします。</li>
             </ol>
 
-            <ol class="mt-5 list-decimal space-y-3 pl-5 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              <li><strong>Disclaimer of Warranties:</strong> The app is provided "AS-IS" without warranties of any kind, express or implied.</li>
-              <li><strong>Limitation of Liability:</strong> Except in cases of willful misconduct or gross negligence, the Developer is not liable for damages arising from use or inability to use the app, subject to mandatory consumer protection laws (including Japan's Consumer Contract Act).</li>
-              <li><strong>Liability Cap:</strong> Where liability applies without willful misconduct or gross negligence, liability is limited to direct ordinary damages up to the total amount paid by the user for the app (0 JPY for free use).</li>
-              <li><strong>User Backups:</strong> Users are responsible for backing up their own study data regardless of whether Cloud Sync is enabled.</li>
-              <li><strong>External Services:</strong> Third-party services (Firebase, Google Services, etc.) are governed by their respective terms and policies.</li>
-              <li><strong>Force Majeure:</strong> The Developer is not liable for losses caused by events beyond reasonable control.</li>
-              <li><strong>Intellectual Property:</strong> All rights in the app, design, icons, and content belong to the Developer or rightful third parties.</li>
-              <li><strong>Minors:</strong> Minors must use the app with parental or guardian consent.</li>
-              <li><strong>Governing Law &amp; Jurisdiction:</strong> Governed by the laws of Japan, with the Sapporo District Court as the court of first instance, without limiting statutory consumer jurisdiction rights.</li>
-              <li><strong>Severability:</strong> If any provision is held invalid, the remaining provisions stay in full effect.</li>
-            </ol>
-          </section>
+                      </section>
 
           <!-- Changes -->
           <section id="changes" class="st-card p-6 sm:p-9">
             <h2 class="text-xl font-extrabold text-[#111815] dark:text-white">
-              <span data-lang-ja>ポリシーの変更</span>
-              <span data-lang-en>Changes to This Policy</span>
-            </h2>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s242">ポリシーの変更</span>
+                          </h2>
+            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s243">
               開発者は、法令の改正、サービス内容の変更その他の事由により、本プライバシーポリシーおよび免責事項を変更する場合があります。変更後のポリシーは、本ページ上に掲載した時点から効力を生じるものとします。重要な変更がある場合は、アプリ内の通知またはその他適切な方法でユーザーに告知するよう努めます。
             </p>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              We may update this Privacy Policy and Disclaimer due to legal or service changes. Updates take effect when posted on this page, and significant changes will be announced through the app or other appropriate channels.
-            </p>
-          </section>
+                      </section>
 
           <!-- Contact -->
           <section id="contact" class="st-card p-6 sm:p-9">
             <h2 class="text-xl font-extrabold text-[#111815] dark:text-white">
-              <span data-lang-ja>お問い合わせ・苦情窓口</span>
-              <span data-lang-en>Contact &amp; Privacy Inquiries</span>
-            </h2>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-ja>
+              <span data-i18n="s244">お問い合わせ・苦情窓口</span>
+                          </h2>
+            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-i18n="s245">
               当ポリシー、免責事項、または個人情報の取扱いに関するお問い合わせ・苦情は、以下のメールアドレスまでご連絡ください。
             </p>
-            <p class="mt-3 text-sm leading-relaxed text-[#3E4E48] dark:text-[#B5C6BE]" data-lang-en>
-              For questions, complaints, or requests regarding this policy or personal data handling, please contact us at:
-            </p>
-            <div class="mt-4 flex flex-wrap items-center gap-3">
+                        <div class="mt-4 flex flex-wrap items-center gap-3">
               <a href="mailto:toiawasestudyapp@rarari.org" class="inline-flex items-center gap-2 rounded-full bg-forest-800 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-forest-900 dark:bg-forest-300 dark:text-forest-950">
                 <i class="ri-mail-line text-base"></i>
                 <span>toiawasestudyapp@rarari.org</span>
               </a>
               <span class="text-xs font-medium text-[#64756F] dark:text-[#8CA096]">
-                <span data-lang-ja>個人情報取扱事業者: StudyTrail 開発者</span>
-                <span data-lang-en>Data Controller: StudyTrail Developer</span>
-              </span>
+                <span data-i18n="s246">個人情報取扱事業者: StudyTrail 開発者</span>
+                              </span>
             </div>
           </section>
         </div>
@@ -520,10 +419,10 @@
         </a>
         <p class="mt-2 text-xs text-[#64756F] dark:text-[#8CA096]">© 2025–2026 StudyTrail</p>
       </div>
-      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-[#4D5D57] dark:text-[#A9BCB2]" aria-label="Footer navigation">
-        <a href="index.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>ホーム</span><span data-lang-en>Home</span></a>
-        <a href="support.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>サポート</span><span data-lang-en>Support</span></a>
-        <a href="privacy.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-[#4D5D57] dark:text-[#A9BCB2]" aria-label="Footer navigation" data-i18n-aria="aria.footnav">
+        <a href="index.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s034">ホーム</span></a>
+        <a href="support.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s013">サポート</span></a>
+        <a href="privacy.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s018">プライバシーポリシー</span></a>
       </nav>
     </div>
   </footer>

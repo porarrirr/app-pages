@@ -1,0 +1,1435 @@
+{
+ "aria.mainnav": {
+  "ja": "メインナビゲーション",
+  "en": "Main navigation"
+ },
+ "aria.theme": {
+  "ja": "カラーテーマを切り替え",
+  "en": "Toggle color theme"
+ },
+ "aria.menu": {
+  "ja": "メニュー",
+  "en": "Menu"
+ },
+ "aria.tabs": {
+  "ja": "アプリ画面プレビュー",
+  "en": "App screen preview"
+ },
+ "aria.footnav": {
+  "ja": "フッターナビゲーション",
+  "en": "Footer navigation"
+ },
+ "aria.toc": {
+  "ja": "プライバシーポリシーの目次",
+  "en": "Privacy policy table of contents"
+ },
+ "aria.faqcats": {
+  "ja": "FAQカテゴリ",
+  "en": "FAQ categories"
+ },
+ "aria.clearsearch": {
+  "ja": "検索をクリア",
+  "en": "Clear search"
+ },
+ "aria.lang": {
+  "ja": "言語",
+  "en": "Language"
+ },
+ "s010": {
+  "ja": "本文へ移動",
+  "en": "Skip to content"
+ },
+ "s011": {
+  "ja": "機能",
+  "en": "Features"
+ },
+ "s012": {
+  "ja": "全機能一覧",
+  "en": "All Features"
+ },
+ "s013": {
+  "ja": "サポート",
+  "en": "Support"
+ },
+ "s014": {
+  "ja": "プライバシー",
+  "en": "Privacy"
+ },
+ "s015": {
+  "ja": "App Store",
+  "en": "App Store"
+ },
+ "s016": {
+  "ja": "機能紹介",
+  "en": "Features"
+ },
+ "s017": {
+  "ja": "サポート・FAQ",
+  "en": "Support &amp; FAQ"
+ },
+ "s018": {
+  "ja": "プライバシーポリシー",
+  "en": "Privacy Policy"
+ },
+ "s019": {
+  "ja": "App Store で入手",
+  "en": "Download on App Store"
+ },
+ "s020": {
+  "ja": "登録不要・広告なし・50言語対応",
+  "en": "No signup · No ads · 50 languages"
+ },
+ "s021": {
+  "ja": "今日も、<br><span class=\"text-forest-800 dark:text-forest-300\">一歩ずつ。</span>",
+  "en": "Today too,<br><span class=\"text-forest-800 dark:text-forest-300\">one step at a time.</span>"
+ },
+ "s022": {
+  "ja": "勉強タイマー、参考書の問題進捗と自動復習、スマホの集中制限、時間割、試験カウントダウンまで。「どれだけ勉強したか」だけでなく、「次に何を復習すべきか」まで迷わず続けられる学習空間です。",
+  "en": "StudyTrail brings your study timer, textbook problem grid, spaced review, Screen Time app blocker, class timetable, and exam countdowns into one calm, focused workspace—so you always know what to study next."
+ },
+ "s023": {
+  "ja": "App Store で無料ダウンロード",
+  "en": "Download on App Store"
+ },
+ "s024": {
+  "ja": "機能を見る",
+  "en": "Explore features"
+ },
+ "s025": {
+  "ja": "iPhone（iOS 16+）",
+  "en": "iPhone (iOS 16+)"
+ },
+ "s026": {
+  "ja": "iPad（Split View対応）",
+  "en": "iPad (Split View)"
+ },
+ "s027": {
+  "ja": "Android（8.0+）",
+  "en": "Android (8.0+)"
+ },
+ "s028": {
+  "ja": "広告",
+  "en": " ads"
+ },
+ "s029": {
+  "ja": "登録なしですぐ開始",
+  "en": "Start locally, no signup"
+ },
+ "s030": {
+  "ja": "種類",
+  "en": " types"
+ },
+ "s031": {
+  "ja": "ホーム・ロック画面対応",
+  "en": "Home &amp; Lock widgets"
+ },
+ "s032": {
+  "ja": "言語",
+  "en": " langs"
+ },
+ "s033": {
+  "ja": "ネイティブ多言語対応",
+  "en": "Native localization"
+ },
+ "s034": {
+  "ja": "ホーム",
+  "en": "Home"
+ },
+ "s035": {
+  "ja": "タイマー",
+  "en": "Timer"
+ },
+ "s036": {
+  "ja": "問題集",
+  "en": "Problems"
+ },
+ "s037": {
+  "ja": "カレンダー",
+  "en": "Calendar"
+ },
+ "s038": {
+  "ja": "レポート",
+  "en": "Reports"
+ },
+ "s039": {
+  "ja": "時間割",
+  "en": "Timetable"
+ },
+ "s041": {
+  "ja": "StudyTrail の6つの柱",
+  "en": "Six Pillars of StudyTrail"
+ },
+ "s042": {
+  "ja": "記録して終わらない。<br>次の集中と復習までつながる設計。",
+  "en": "More than a log.<br>Built to guide your next step."
+ },
+ "s043": {
+  "ja": "計測・教材管理・復習提案・スマホ制限・時間割・振り返りをひとつの落ち着いたインターフェースに統合しました。",
+  "en": "Timer, textbooks, spaced review, Screen Time blocking, class timetable, and analytics—unified in one calm interface."
+ },
+ "s044": {
+  "ja": "01 · 勉強タイマー＆集中環境",
+  "en": "01 · Study Timer &amp; Deep Focus"
+ },
+ "s045": {
+  "ja": "測る、解く、振り返るを<br>シームレスに。",
+  "en": "Focus deeply without<br>breaking your flow."
+ },
+ "s046": {
+  "ja": "ストップウォッチ・カウントダウン（25分ポモドーロ等）・手動入力に対応。計測しながら解いた問題の正誤や小問の進捗までその場で記録できます。",
+  "en": "Switch seamlessly between stopwatch, countdown (great for 25-minute Pomodoro sessions), and manual entry—and log per-problem answers right while the timer runs."
+ },
+ "s047": {
+  "ja": "横画面集中＆置き時計モード",
+  "en": "Landscape Focus &amp; Desk Clock"
+ },
+ "s048": {
+  "ja": "机に置いて集中できるダーク全画面表示と、余計な情報を省いたシンプルな置き時計表示。",
+  "en": "Dark full-screen landscape timer and minimalist desk clock keep distractions out of sight."
+ },
+ "s049": {
+  "ja": "ライブアクティビティ対応",
+  "en": "Live Activities &amp; Dynamic Island"
+ },
+ "s050": {
+  "ja": "ロック画面や Dynamic Island から残り時間を常時確認。アプリを閉じても計測が継続します。",
+  "en": "Monitor elapsed or remaining time right from your Lock Screen and Dynamic Island."
+ },
+ "s051": {
+  "ja": "見守りペット（オンデバイス人物検出）",
+  "en": "Study Pet Companion (On-Device Vision)"
+ },
+ "s052": {
+  "ja": "映像の表示・保存・送信なし",
+  "en": "Never shown, saved, or uploaded"
+ },
+ "s053": {
+  "ja": "カメラの端末内人物検出だけで勉強中の在席をやさしく見守り。カメラ映像は一切表示・録画・外部送信されない安心設計です。",
+  "en": "Optional on-device person detection keeps a friendly pet beside you while you study—camera frames are never displayed, recorded, or transmitted."
+ },
+ "s054": {
+  "ja": "02 · 参考書・問題集グリッド＆自動復習",
+  "en": "02 · Workbooks, Problem Grid &amp; Spaced Review"
+ },
+ "s055": {
+  "ja": "参考書の「何周目」も、<br>弱点も、ひと目でわかる。",
+  "en": "Every question tracked.<br>Every review timed for you."
+ },
+ "s056": {
+  "ja": "ISBN バーコードスキャンで参考書をかんたん登録。ページ単位・問題番号・小問単位まで細かく記録でき、間違えた問題の回復度を赤から黄緑の5段階カラーで可視化します。",
+  "en": "Scan ISBN barcodes to add books in seconds. Track pages, chapters, questions, and sub-questions—and watch missed problems recover across 5 color stages."
+ },
+ "s057": {
+  "ja": "自動復習サイクル（間隔反復）",
+  "en": "Automatic Spaced Review"
+ },
+ "s058": {
+  "ja": "「次の一歩」へ自動表示",
+  "en": "Surfaces on Home"
+ },
+ "s059": {
+  "ja": "日後",
+  "en": "d"
+ },
+ "s060": {
+  "ja": "初回復習",
+  "en": "1st review"
+ },
+ "s061": {
+  "ja": "定着確認",
+  "en": "Reinforce"
+ },
+ "s062": {
+  "ja": "記憶強化",
+  "en": "Consolidate"
+ },
+ "s063": {
+  "ja": "長期定着",
+  "en": "Long-term"
+ },
+ "s064": {
+  "ja": "ISBN バーコードスキャン＆Google Books 検索で書誌情報を自動入力",
+  "en": "ISBN barcode scanning &amp; book search for instant setup"
+ },
+ "s065": {
+  "ja": "章ごとの問題構成、正答率、5段階評価、メモ付き履歴をすべて整理",
+  "en": "Organize by chapter with accuracy rates, 5-star ratings, and session notes"
+ },
+ "s066": {
+  "ja": "03 · スマホの集中制限（iOS スクリーンタイム連携）",
+  "en": "03 · Screen Time Focus Blocker (iOS)"
+ },
+ "s067": {
+  "ja": "勉強した分だけスマホが使える。<br>意志力に頼らない集中設計。",
+  "en": "Earn screen time by studying.<br>Stay focused without willpower."
+ },
+ "s068": {
+  "ja": "Apple Family Controls と連携し、勉強タイマー・時間帯・1日の目標・場所の4つのルールで誘惑アプリをブロック。さらにチケット制や設定の期間固定ロックで、つい解除してしまう抜け道まで防ぎます。",
+  "en": "Powered by Apple Family Controls, StudyTrail blocks distracting apps across four independent rules—timer, schedule, daily goals, and location—backed by unlock tickets and strict settings lock."
+ },
+ "s069": {
+  "ja": "勉強→持ち時間の交換レート",
+  "en": "Study-to-screen exchange rate"
+ },
+ "s070": {
+  "ja": "目標達成ボーナス",
+  "en": "Daily goal bonus"
+ },
+ "s071": {
+  "ja": "時間制解除チケット",
+  "en": "Timed unlock tickets"
+ },
+ "s072": {
+  "ja": "設定の期間固定ロック",
+  "en": "Strict settings lock"
+ },
+ "s073": {
+  "ja": "※ 場所ルール（ジオフェンス判定）の位置情報は端末内のみで処理され、サーバーや外部へ送信されません。",
+  "en": "* Location-based focus zones use strictly on-device geofencing. Location data is never sent to any server."
+ },
+ "s074": {
+  "ja": "4つの独立した「壁のルール」",
+  "en": "4 Independent Wall Rules"
+ },
+ "s075": {
+  "ja": "許可した学習アプリ以外は自動で制限",
+  "en": "Only allowed apps stay open during focus"
+ },
+ "s076": {
+  "ja": "タイマー連動ブロック",
+  "en": "During Study Timer"
+ },
+ "s077": {
+  "ja": "タイマー計測中は自動でSNSや動画を遮断。集中が途切れません。",
+  "en": "Automatically blocks distractions whenever your study timer is running."
+ },
+ "s078": {
+  "ja": "時間帯スケジュール",
+  "en": "Scheduled Hours"
+ },
+ "s079": {
+  "ja": "夜の勉強時間や就寝前の「使用禁止」と、休憩の「無料開放」を設定。",
+  "en": "Define strict block windows and free-access break hours by weekday."
+ },
+ "s080": {
+  "ja": "1日の目標達成まで制限",
+  "en": "Until Daily Goal Met"
+ },
+ "s081": {
+  "ja": "今日の目標時間をクリアするまでロック。達成でボーナス持ち時間を付与。",
+  "en": "Keep apps locked until your daily study target is completed."
+ },
+ "s082": {
+  "ja": "場所ルール（学校・図書館）",
+  "en": "Location Focus Zones"
+ },
+ "s083": {
+  "ja": "地図で指定した場所に入ると自動制限。端末内処理でプライバシーも安心。",
+  "en": "Auto-restrict at school or the library via on-device geofencing."
+ },
+ "s084": {
+  "ja": "04 · カレンダー＆振り返りレポート",
+  "en": "04 · Calendar Heatmap &amp; Reports"
+ },
+ "s085": {
+  "ja": "積み上げた毎日が、<br>色とグラフで自信になる。",
+  "en": "See every day add up<br>in color and clarity."
+ },
+ "s086": {
+  "ja": "学習量の濃淡がひと目でわかるカレンダーヒートマップと、空き時間まで可視化する日別タイムライン。さらに日・週・月の科目別レポートと連続学習日数でペースを掴めます。",
+  "en": "Review your consistency on a color-graded heatmap and a daily timeline that even shows idle gaps—alongside streaks and daily, weekly, and monthly subject charts."
+ },
+ "s087": {
+  "ja": "空き時間も見える時系列タイムライン",
+  "en": "Daily Timeline &amp; Idle Gap View"
+ },
+ "s088": {
+  "ja": "「集計」と「時系列」をワンタップで切替。解いた問題番号・正誤バッジ・評価まで1日の流れで振り返れます。",
+  "en": "Switch between summary and chronological timeline with solved problem tags and star ratings."
+ },
+ "s089": {
+  "ja": "プライバシー配慮の週間シェアカード",
+  "en": "Privacy-Safe Weekly Share Cards"
+ },
+ "s090": {
+  "ja": "1週間の記録を美しい画像にしてSNS共有。個人的なメモや教材名は自動で除かれるため安心です。",
+  "en": "Export clean weekly summary images—notes and textbook titles stay private automatically."
+ },
+ "s091": {
+  "ja": "05 · 時間割・試験カウントダウン・目標管理",
+  "en": "05 · Timetable, Exams &amp; Weekly Plans"
+ },
+ "s092": {
+  "ja": "学校の授業も、本番の試験も。<br>計画通りに走り切る。",
+  "en": "From daily classes<br>to exam day—all aligned."
+ },
+ "s093": {
+  "ja": "学期ごとの時間割と授業復習リマインド、受験や定期テストのカウントダウン、曜日別の1日目標・週間学習計画まで、学生と資格受験者に必要な予定管理を網羅しています。",
+  "en": "Manage term timetables with overdue lesson review reminders, exam countdowns, weekday-specific daily targets, and weekly study plans in one place."
+ },
+ "s094": {
+  "ja": "学期別時間割＆復習",
+  "en": "Term Timetable"
+ },
+ "s095": {
+  "ja": "月〜土・時限カスタム対応。未復習の授業をリマインド通知。",
+  "en": "Mon–Sat custom periods with overdue lesson review alerts."
+ },
+ "s096": {
+  "ja": "試験カウントダウン",
+  "en": "Exam Countdowns"
+ },
+ "s097": {
+  "ja": "共テ・入試・定期テスト・資格試験の残り日数を一覧＆ウィジェット表示。",
+  "en": "Track days left to exams right on Home and widgets."
+ },
+ "s098": {
+  "ja": "曜日別目標＆週間計画",
+  "en": "Goals &amp; Weekly Plan"
+ },
+ "s099": {
+  "ja": "平日・休日ごとの目標時間や科目別の週間計画を無理なく運用。",
+  "en": "Customize daily targets per weekday and weekly subject plans."
+ },
+ "s100": {
+  "ja": "06 · 9種のウィジェット・iPad大画面・安心設計",
+  "en": "06 · 9 Widgets, iPad &amp; Local-First Privacy"
+ },
+ "s101": {
+  "ja": "iPad でも、ホーム画面でも。<br>データはいつでもあなたの手元に。",
+  "en": "Optimized for iPad.<br>Your data stays yours."
+ },
+ "s102": {
+  "ja": "iPad の大画面・Split View・サイドバー操作に最適化。さらに9種類のホーム画面・ロック画面ウィジェットで、アプリを開かずに今日の学習や試験までの残り日数を確認できます。",
+  "en": "Enjoy native iPad Split View and sidebar navigation, plus 9 Home and Lock Screen widgets that keep your study pace visible at a glance."
+ },
+ "s103": {
+  "ja": "搭載ウィジェット（全9種）",
+  "en": "9 Included Widgets"
+ },
+ "s104": {
+  "ja": "今日の学習",
+  "en": "Today's Study"
+ },
+ "s105": {
+  "ja": "1日の目標",
+  "en": "Daily Goal"
+ },
+ "s106": {
+  "ja": "週間目標",
+  "en": "Weekly Goal"
+ },
+ "s107": {
+  "ja": "連続学習",
+  "en": "Study Streak"
+ },
+ "s108": {
+  "ja": "試験カウントダウン",
+  "en": "Exam Countdown"
+ },
+ "s109": {
+  "ja": "今後の試験一覧",
+  "en": "Upcoming Exams"
+ },
+ "s110": {
+  "ja": "週間アクティビティ",
+  "en": "Weekly Activity"
+ },
+ "s111": {
+  "ja": "学習サマリー",
+  "en": "Study Summary"
+ },
+ "s112": {
+  "ja": "週間ペース",
+  "en": "Weekly Pace"
+ },
+ "s113": {
+  "ja": "任意の Firebase 差分同期",
+  "en": "Optional Cloud Sync"
+ },
+ "s114": {
+  "ja": "複数端末で必要なときだけ同期。競合解決UIとアプリ内アカウント完全削除にも対応。",
+  "en": "Sync across devices only when you want, with conflict resolution and in-app account deletion."
+ },
+ "s115": {
+  "ja": "JSON / CSV 書き出し＆復元",
+  "en": "JSON / CSV Export &amp; Restore"
+ },
+ "s116": {
+  "ja": "全データをJSONバックアップ・CSV出力可能。復元前には自動セーフティバックアップを作成。",
+  "en": "Full JSON backups with automatic pre-restore snapshots, plus CSV export for spreadsheets."
+ },
+ "s117": {
+  "ja": "機能一覧",
+  "en": "Complete Feature List"
+ },
+ "s118": {
+  "ja": "StudyTrail の全機能",
+  "en": "Everything included in StudyTrail"
+ },
+ "s119": {
+  "ja": "毎日の計測から、参考書の周回、スマホ制限、バックアップまで。必要な機能をすべて丁寧に揃えています。",
+  "en": "From daily tracking and workbook rounds to Screen Time controls and full backups—every feature in one view."
+ },
+ "s120": {
+  "ja": "タイマー＆集中モード",
+  "en": "Timer &amp; Focus Modes"
+ },
+ "s121": {
+  "ja": "ストップウォッチ（カウントアップ）",
+  "en": "Stopwatch (count-up)"
+ },
+ "s122": {
+  "ja": "カウントダウン（ポモドーロ法対応）",
+  "en": "Countdown timer (Pomodoro ready)"
+ },
+ "s123": {
+  "ja": "過去の学習時間を手動入力・編集",
+  "en": "Manual session logging &amp; editing"
+ },
+ "s124": {
+  "ja": "計測中の問題正誤・小問進捗記録",
+  "en": "In-session problem &amp; sub-question logging"
+ },
+ "s125": {
+  "ja": "横画面集中表示＆置き時計モード",
+  "en": "Landscape focus &amp; minimalist desk clock"
+ },
+ "s126": {
+  "ja": "ロック画面＆Dynamic Island ライブアクティビティ",
+  "en": "Lock Screen &amp; Dynamic Island Live Activities"
+ },
+ "s127": {
+  "ja": "見守りペット（オンデバイス人物検出・映像保存なし）",
+  "en": "Study Pet (on-device detection, zero video saved)"
+ },
+ "s128": {
+  "ja": "教材・問題集＆自動復習",
+  "en": "Textbooks &amp; Spaced Review"
+ },
+ "s129": {
+  "ja": "ISBN バーコードスキャン＆書籍検索登録",
+  "en": "ISBN barcode scanner &amp; book lookup"
+ },
+ "s130": {
+  "ja": "科目別のアイコン・カラーカスタマイズ",
+  "en": "Custom subject colors &amp; icons"
+ },
+ "s131": {
+  "ja": "ページ数・章・問題数・小問単位の進捗管理",
+  "en": "Page, chapter, question &amp; sub-item progress"
+ },
+ "s132": {
+  "ja": "5段階カラーで復習回復度が見える問題集グリッド",
+  "en": "5-stage color mastery problem grid"
+ },
+ "s133": {
+  "ja": "1日・3日・7日・14日後の間隔反復自動復習",
+  "en": "Automated 1, 3, 7 &amp; 14-day spaced review"
+ },
+ "s134": {
+  "ja": "ホーム「次の一歩」へ今日の復習を自動集約",
+  "en": "Due reviews grouped in Home \"Next Steps\""
+ },
+ "s135": {
+  "ja": "正答率・5段階評価・メモ付き学習履歴",
+  "en": "Accuracy stats, 5-star ratings &amp; notes"
+ },
+ "s136": {
+  "ja": "スマホの集中制限（iOS）",
+  "en": "Screen Time Blocker (iOS)"
+ },
+ "s137": {
+  "ja": "勉強時間連動の持ち時間チャージ＆目標達成ボーナス",
+  "en": "Earn screen time from study &amp; goal bonuses"
+ },
+ "s138": {
+  "ja": "タイマー計測中の自動アプリ・Web制限",
+  "en": "Auto-block apps &amp; websites during timer"
+ },
+ "s139": {
+  "ja": "時間帯スケジュール（使用禁止／無料開放）",
+  "en": "Scheduled block &amp; free-access hours"
+ },
+ "s140": {
+  "ja": "1日の学習目標未達成の間の自動ロック",
+  "en": "Block until daily study goal is met"
+ },
+ "s141": {
+  "ja": "場所ルール（学校・図書館のオンデバイス判定）",
+  "en": "Location zones (strictly on-device geofencing)"
+ },
+ "s142": {
+  "ja": "時間制解除チケット＆解除不可ルール",
+  "en": "Timed unlock tickets &amp; non-negotiable blocks"
+ },
+ "s143": {
+  "ja": "設定変更を一定期間防ぐ期間固定ロック",
+  "en": "Strict settings lock for chosen duration"
+ },
+ "s144": {
+  "ja": "時間割・試験・目標計画",
+  "en": "Timetable, Exams &amp; Goals"
+ },
+ "s145": {
+  "ja": "学期別の時間割（月〜土、時限時間カスタム）",
+  "en": "Term-based Mon–Sat timetable &amp; custom periods"
+ },
+ "s146": {
+  "ja": "授業ごとの復習管理＆未復習リマインド通知",
+  "en": "Per-lesson review tracking &amp; overdue alerts"
+ },
+ "s147": {
+  "ja": "受験・定期テスト・資格試験カウントダウン",
+  "en": "Exam &amp; certification countdown cards"
+ },
+ "s148": {
+  "ja": "曜日別の1日目標＆週間学習目標",
+  "en": "Per-weekday daily goals &amp; weekly targets"
+ },
+ "s149": {
+  "ja": "科目別の週間学習計画と実績比較",
+  "en": "Weekly subject study plans vs actuals"
+ },
+ "s150": {
+  "ja": "カレンダー・レポート・共有",
+  "en": "Calendar, Reports &amp; Sharing"
+ },
+ "s151": {
+  "ja": "学習量の濃淡が見えるカレンダーヒートマップ",
+  "en": "Study intensity calendar heatmap"
+ },
+ "s152": {
+  "ja": "空き時間まで可視化する日別時系列タイムライン",
+  "en": "Chronological daily timeline with idle gaps"
+ },
+ "s153": {
+  "ja": "連続学習日数（ストリーク）＆最長記録",
+  "en": "Current streak &amp; all-time longest streak"
+ },
+ "s154": {
+  "ja": "日・週・月の科目別積み上げ棒グラフ＆評価分析",
+  "en": "Daily, weekly &amp; monthly stacked subject charts"
+ },
+ "s155": {
+  "ja": "9種のホーム画面・ロック画面ウィジェット",
+  "en": "9 Home &amp; Lock Screen widgets"
+ },
+ "s156": {
+  "ja": "メモ・教材名を伏せた週間記録SNSシェア画像",
+  "en": "Privacy-safe weekly study share cards"
+ },
+ "s157": {
+  "ja": "データ管理・対応環境",
+  "en": "Data, Privacy &amp; Platforms"
+ },
+ "s158": {
+  "ja": "完全ローカルファースト（ログイン不要・広告なし）",
+  "en": "Local-first storage (no account, no ads)"
+ },
+ "s159": {
+  "ja": "任意の Firebase 差分同期＆競合解決UI",
+  "en": "Optional Firebase delta sync &amp; conflict resolver"
+ },
+ "s160": {
+  "ja": "アプリ内からのアカウント・全データ完全削除",
+  "en": "In-app full account &amp; cloud data deletion"
+ },
+ "s161": {
+  "ja": "JSON バックアップ復元＆CSV 書き出し",
+  "en": "JSON backup/restore &amp; CSV export"
+ },
+ "s162": {
+  "ja": "iPad 大画面・Split View・サイドバー対応",
+  "en": "Full iPad Split View &amp; adaptive sidebar"
+ },
+ "s163": {
+  "ja": "ライト／ダーク／システムテーマ＆50言語対応",
+  "en": "Light/Dark/System themes &amp; 50 languages"
+ },
+ "s164": {
+  "ja": "世界中の学習者のために、アプリは 50 言語にネイティブ対応",
+  "en": "Natively localized into 50 languages inside the app"
+ },
+ "s165": {
+  "ja": "日本語・英語・韓国語・中国語（簡体字/繁体字）・欧州言語・インド諸語・アラビア語・ヘブライ語（RTL）まで対応",
+  "en": "Including Japanese, English, Korean, Chinese, European languages, Indian languages, Arabic &amp; Hebrew (RTL)"
+ },
+ "s166": {
+  "ja": "50言語の一覧を見る",
+  "en": "View all 50 languages"
+ },
+ "s167": {
+  "ja": "こんな方におすすめ",
+  "en": "Built for Every Learner"
+ },
+ "s168": {
+  "ja": "受験から資格まで、毎日の学習に寄り添う",
+  "en": "Designed for exams, classes, and daily mastery"
+ },
+ "s169": {
+  "ja": "大学受験・共通テスト・高校受験",
+  "en": "SAT, ACT, AP &amp; University Entrance"
+ },
+ "s170": {
+  "ja": "科目別の勉強時間と参考書の周回状況を一元管理。試験カウントダウンで本番までのペースを崩しません。",
+  "en": "Track subject hours, workbook rounds, and exam countdowns so every week counts toward test day."
+ },
+ "s171": {
+  "ja": "中高生の定期テスト＆授業復習",
+  "en": "High School &amp; College Classes"
+ },
+ "s172": {
+  "ja": "時間割と授業復習リマインドで日々の抜け漏れを防止。テスト前だけ慌てない習慣が身につきます。",
+  "en": "Pair your class timetable with lesson review reminders so you stay ahead all semester."
+ },
+ "s173": {
+  "ja": "TOEIC・英検・簿記・国家資格",
+  "en": "MCAT, LSAT &amp; Certifications"
+ },
+ "s174": {
+  "ja": "問題集の間違えた問題だけを 1・3・7・14日後に自動提案。限られた社会人の勉強時間でも効率よく定着します。",
+  "en": "Turn missed practice questions into automatic 1/3/7/14-day review queues for high-retention prep."
+ },
+ "s175": {
+  "ja": "スマホ依存対策・集中習慣化",
+  "en": "Distraction-Free Focus Habits"
+ },
+ "s176": {
+  "ja": "勉強中や学校・図書館でのSNSブロックと持ち時間ルールで、自然と机に向かえる環境を作れます。",
+  "en": "Combine timer blocks, campus geofences, and earned screen time to break phone-checking habits."
+ },
+ "s177": {
+  "ja": "今日の学習から、始めよう。",
+  "en": "Start with today's study session."
+ },
+ "s178": {
+  "ja": "アカウント作成なし・広告なし。インストールしてすぐ、最初の1分から記録できます。日々の小さな積み上げを、確かな自信へ。",
+  "en": "No signup, no ads. Open the app and log your first minute right away. Turn quiet daily focus into lasting progress."
+ },
+ "s179": {
+  "ja": "App Store で入手する",
+  "en": "Download on App Store"
+ },
+ "s180": {
+  "ja": "使い方・FAQを見る",
+  "en": "Read Support &amp; FAQ"
+ },
+ "s181": {
+  "ja": "© 2025–2026 StudyTrail 開発者. All rights reserved.",
+  "en": "© 2025–2026 StudyTrail Developer. All rights reserved."
+ },
+ "s182": {
+  "ja": "お問い合わせ",
+  "en": "Contact"
+ },
+ "s183": {
+  "ja": "Legal &amp; Privacy",
+  "en": "Legal &amp; Privacy"
+ },
+ "s184": {
+  "ja": "プライバシーポリシー＆免責事項",
+  "en": "Privacy Policy &amp; Disclaimer"
+ },
+ "s185": {
+  "ja": "StudyTrail におけるデータの取り扱い、オンデバイス処理の原則、および免責事項（利用規約）について定めています。",
+  "en": "How StudyTrail protects your study data, handles on-device features, and outlines terms of use."
+ },
+ "s186": {
+  "ja": "制定日",
+  "en": "Effective"
+ },
+ "s187": {
+  "ja": "最終改訂日",
+  "en": "Last Updated"
+ },
+ "s188": {
+  "ja": "ローカルファースト設計",
+  "en": "Local-First by Default"
+ },
+ "s189": {
+  "ja": "学習記録は端末内に保存され、アカウント登録なしで利用できます。クラウド同期はユーザーが明示的に有効にした場合のみ動作します。",
+  "en": "Study records stay on your device with no account required. Cloud sync runs only when you explicitly turn it on."
+ },
+ "s190": {
+  "ja": "カメラ・位置情報は端末内完結",
+  "en": "On-Device Camera &amp; Location"
+ },
+ "s191": {
+  "ja": "見守りペットの人物検出や集中制限の場所判定・スクリーンタイム制御はすべて端末内で完結し、映像や位置情報を外部送信しません。",
+  "en": "Study Pet vision, location focus zones, and Screen Time rules run strictly on-device—never uploaded or saved externally."
+ },
+ "s192": {
+  "ja": "いつでも削除・書き出し可能",
+  "en": "Full Control &amp; Deletion"
+ },
+ "s193": {
+  "ja": "アプリ内からいつでもアカウントとクラウド・端末データを完全削除でき、JSON / CSV でのデータ持ち出しにも対応しています。",
+  "en": "Delete your account and synced data anytime directly inside Settings, or export everything in JSON/CSV."
+ },
+ "s194": {
+  "ja": "目次",
+  "en": "Contents"
+ },
+ "s195": {
+  "ja": "1. 取得する情報と利用目的",
+  "en": "1. Data Collected &amp; Purpose"
+ },
+ "s196": {
+  "ja": "2. 利用する第三者サービス",
+  "en": "2. Third-Party Services"
+ },
+ "s197": {
+  "ja": "3. 外国にある第三者への提供",
+  "en": "3. International Transfers"
+ },
+ "s198": {
+  "ja": "4. 第三者提供について",
+  "en": "4. Disclosure Policy"
+ },
+ "s199": {
+  "ja": "5. 安全管理措置",
+  "en": "5. Security Measures"
+ },
+ "s200": {
+  "ja": "6. 開示等の請求手続き",
+  "en": "6. User Rights &amp; Requests"
+ },
+ "s201": {
+  "ja": "7. データの保管・削除",
+  "en": "7. Retention &amp; Deletion"
+ },
+ "s202": {
+  "ja": "8. Cookie・端末識別子等",
+  "en": "8. Cookies &amp; Identifiers"
+ },
+ "s203": {
+  "ja": "免責事項（利用規約）",
+  "en": "Disclaimer &amp; Terms"
+ },
+ "s204": {
+  "ja": "ポリシーの変更",
+  "en": "Policy Changes"
+ },
+ "s205": {
+  "ja": "お問い合わせ・苦情窓口",
+  "en": "Contact"
+ },
+ "s206": {
+  "ja": "<strong>個人情報取扱事業者:</strong> StudyTrail 開発者（以下「開発者」）<br><strong>お問い合わせ先:</strong> <a href=\"mailto:toiawasestudyapp@rarari.org\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">toiawasestudyapp@rarari.org</a>",
+  "en": "<strong>Data Controller:</strong> StudyTrail Developer (\"Developer\")<br><strong>Contact:</strong> <a href=\"mailto:toiawasestudyapp@rarari.org\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">toiawasestudyapp@rarari.org</a>"
+ },
+ "s207": {
+  "ja": "\n              開発者は、個人情報の保護に関する法律（平成15年法律第57号。以下「個人情報保護法」）その他の関連法令を遵守し、ユーザーの個人情報を適切に取り扱います。\n            ",
+  "en": "\n              The Developer complies with Japan's Act on the Protection of Personal Information (APPI) and other applicable laws, and handles user personal information appropriately.\n            "
+ },
+ "s208": {
+  "ja": "\n              開発者は、以下の情報を取得し、それぞれ記載の目的の範囲内で利用します（個人情報保護法第17条・第18条）。\n            ",
+  "en": "\n              We collect and process the following information strictly within the stated purposes:\n            "
+ },
+ "s209": {
+  "ja": "\n              <li><strong>アカウント情報（メールアドレス・パスワード）:</strong> クラウド同期機能をご利用の場合、Firebase Authentication を通じたユーザー認証およびクラウド同期機能の提供に利用します。パスワードは Firebase のサーバー上でハッシュ化され、開発者が直接閲覧・取得することはありません。</li>\n              <li><strong>学習記録データ（科目、教材名、問題進捗、タイマー記録、時間割、学習目標、テスト日程等）:</strong> アプリ内での学習記録の保存・表示、およびクラウド同期機能をご利用の場合はサーバーへの保管に利用します。</li>\n              <li><strong>カメラ（ISBN バーコード読取・見守りペット機能をご利用の場合）:</strong> 教材登録時のバーコード読み取り、および見守りペット機能におけるオンデバイス人物検出のみに使用します。カメラ映像の表示（見守りペット時）・録画・保存・外部送信は一切行いません。</li>\n              <li><strong>位置情報（iOS の集中制限・場所ルールをご利用の場合）:</strong> ユーザーが指定した場所（学校・図書館等）にいるあいだ、許可したアプリ以外を制限するために、端末上でジオフェンス判定を行います。位置情報は端末内のみで処理し、開発者のサーバーおよび Firebase へ送信しません。この機能はユーザーが明示的に有効にした場合に限り動作し、バックグラウンドでの判定には OS の「位置情報の常に許可」が必要です。</li>\n              <li><strong>スクリーンタイム設定（iOS の集中制限機能をご利用の場合）:</strong> Apple Family Controls を用いて、選択されたアプリ・カテゴリの使用制限を端末内のみで実行します。制限対象アプリの一覧や使用状況が開発者のサーバーへ送信されることはありません。</li>\n              <li><strong>書籍検索クエリ（ISBN・書名検索をご利用の場合）:</strong> 教材の書誌情報を自動入力する目的で、入力または読み取った ISBN やキーワードを Google Books API へ送信する場合があります。</li>\n              <li><strong>匿名利用統計情報:</strong> アプリの品質向上および不具合調査のため、Google Analytics for Firebase を通じて、個人を特定できない形での匿名統計情報（画面遷移、機能利用状況等）を収集することがあります。</li>\n              <li><strong>クラッシュログ:</strong> アプリの不具合調査・改善のため、Firebase Crashlytics を通じて、クラッシュ発生時の匿名技術情報（端末機種、OSバージョン、スタックトレース等）を自動収集することがあります。</li>\n            ",
+  "en": "\n              <li><strong>Account Credentials (Email &amp; Password):</strong> Used via Firebase Authentication only when you opt into Cloud Sync. Passwords are hashed by Firebase and are never accessible to the Developer.</li>\n              <li><strong>Study Records (Subjects, textbooks, problem progress, timer sessions, timetable, goals, exams):</strong> Stored locally on-device, and synced to Cloud Firestore only if you enable Cloud Sync.</li>\n              <li><strong>Camera (ISBN Scanner &amp; Optional Study Pet):</strong> Used solely for reading ISBN barcodes and on-device person detection for Study Pet. Study Pet never displays, records, saves, or uploads camera video.</li>\n              <li><strong>Location (Optional iOS Location Focus Zones):</strong> Used strictly for on-device geofencing to apply focus rules at user-selected places (such as school or a library). Location is never sent to our servers or Firebase.</li>\n              <li><strong>Screen Time Controls (Optional iOS Family Controls):</strong> Managed strictly on-device through Apple's Screen Time APIs; selected apps and usage data are never sent to external servers.</li>\n              <li><strong>Book Lookup Queries (Optional ISBN / Title Search):</strong> Sent to Google Books API solely to autofill book metadata when you search for a textbook.</li>\n              <li><strong>Anonymous Usage Analytics &amp; Crash Logs:</strong> Google Analytics for Firebase and Firebase Crashlytics may collect anonymized diagnostics (device model, OS version, stack traces) to improve app stability.</li>\n            "
+ },
+ "s210": {
+  "ja": "\n              当アプリは以下の第三者サービスを利用しており、各サービスにおいて情報が処理されます。各サービスの詳細は、それぞれのプライバシーポリシーをご確認ください。\n            ",
+  "en": "\n              StudyTrail integrates the following third-party services provided by Google LLC:\n            "
+ },
+ "s211": {
+  "ja": "\n              クラウド同期機能をご利用の場合、ユーザーの個人データは、以下の条件のもとで外国にある第三者（Google LLC、米国）に提供されます。\n            ",
+  "en": "\n              When you enable Cloud Sync, your synced data is processed by Google LLC (United States) under industry-standard safeguards:\n            "
+ },
+ "s212": {
+  "ja": "\n              <li><strong>提供先の国:</strong> アメリカ合衆国（Google LLC の本社所在地。なお、実際のデータ保管場所は Google のインフラにより異なる場合があります）</li>\n              <li><strong>当該国の個人情報保護制度:</strong> 米国には、日本の個人情報保護法に相当する包括的な連邦法は存在しませんが、Google LLC は EU-US Data Privacy Framework の認証を受けており、GDPR に準拠した個人データ保護措置を講じています。</li>\n              <li><strong>提供先が講じている保護措置:</strong> Google LLC は、SOC 2 / SOC 3 認証、ISO 27001 認証を取得しており、データの暗号化（保管時および転送時）、アクセス制御、定期的なセキュリティ監査等の措置を実施しています。詳細は <a href=\"https://cloud.google.com/security\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">Google Cloud セキュリティ</a> をご参照ください。</li>\n            ",
+  "en": "\n              <li><strong>Country:</strong> United States (Google LLC headquarters; storage region may vary across Google infrastructure).</li>\n              <li><strong>Safeguards:</strong> Google LLC is certified under the EU-US Data Privacy Framework, SOC 2 / SOC 3, and ISO 27001, enforcing encryption in transit and at rest (<a href=\"https://cloud.google.com/security\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">Google Cloud Security</a>).</li>\n            "
+ },
+ "s213": {
+  "ja": "\n              開発者は、以下の場合を除き、取得した個人情報をユーザーの同意なしに第三者に提供・開示することはありません。\n            ",
+  "en": "\n              We never sell or disclose personal information to third parties without your consent, except where required by law or necessary to protect life, safety, public health, or lawful government duties.\n            "
+ },
+ "s214": {
+  "ja": "\n              <li>法令に基づく場合</li>\n              <li>人の生命、身体または財産の保護のために必要がある場合であって、本人の同意を得ることが困難であるとき</li>\n              <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合であって、本人の同意を得ることが困難であるとき</li>\n              <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合であって、本人の同意を得ることにより当該事務の遂行に支障を及ぼすおそれがあるとき</li>\n            ",
+  "en": "",
+  "hide_non_ja": true
+ },
+ "s215": {
+  "ja": "\n              開発者は、取り扱う個人データの漏えい、滅失または毀損の防止その他の安全管理のため、以下の措置を講じています。\n            ",
+  "en": "",
+  "hide_non_ja": true
+ },
+ "s216": {
+  "ja": "\n              <li><strong>通信の暗号化:</strong> アプリとサーバー間の通信は SSL/TLS により暗号化されています。</li>\n              <li><strong>アクセス制御:</strong> Firebase Security Rules により、ユーザーは自身のデータにのみアクセスできるよう制御しています。</li>\n              <li><strong>認証情報の保護:</strong> パスワードは Firebase Authentication によりハッシュ化して保管され、開発者が平文のパスワードにアクセスすることはありません。</li>\n              <li><strong>データ保管:</strong> クラウドデータは Google LLC が運営するデータセンターに保管され、同社の物理的・技術的セキュリティ措置により保護されています。</li>\n            ",
+  "en": "\n              <li><strong>Encrypted Transit:</strong> All client-server traffic is encrypted with SSL/TLS.</li>\n              <li><strong>Strict Access Control:</strong> Firebase Security Rules restrict access strictly to each authenticated user's own data.</li>\n              <li><strong>Credential Protection:</strong> Passwords are hashed by Firebase Authentication and never visible in plaintext.</li>\n            "
+ },
+ "s217": {
+  "ja": "\n              ユーザーは、開発者に対して、個人情報保護法に基づき、以下の請求を行うことができます。\n            ",
+  "en": "",
+  "hide_non_ja": true
+ },
+ "s218": {
+  "ja": "\n              <li>保有個人データの利用目的の通知</li>\n              <li>保有個人データの開示</li>\n              <li>保有個人データの内容の訂正、追加または削除</li>\n              <li>保有個人データの利用の停止または消去</li>\n              <li>保有個人データの第三者への提供の停止</li>\n            ",
+  "en": "",
+  "hide_non_ja": true
+ },
+ "s219": {
+  "ja": "\n              上記の請求を希望される場合は、本人確認のうえ、下記お問い合わせ先までメールにてご連絡ください。合理的な期間内に対応いたします。なお、アプリ内の設定画面から、ご自身のアカウントおよび登録データを直接削除することも可能です。\n            ",
+  "en": "\n              You may request disclosure, correction, deletion, or cessation of use of your personal data by emailing the contact address below, or delete your account and cloud data directly in Settings.\n            "
+ },
+ "s220": {
+  "ja": "\n              クラウド同期機能をご利用の場合、データは Firebase（Google LLC）のサーバーに保管されます。ユーザーはアプリ内の設定画面からいつでもご自身のアカウントおよび登録されたデータを完全に削除することができます。アカウント削除後、サーバー上のデータは速やかに削除されます（ただし、バックアップからの完全消去には一定期間を要する場合があります）。\n            ",
+  "en": "\n              Cloud-synced data is stored on Firebase servers until you delete your account. You can permanently delete your account and all synced records anytime inside Settings → Cloud Sync → Delete Account.\n            "
+ },
+ "s221": {
+  "ja": "\n              当アプリは Web ブラウザベースのサービスではないため、Cookie は使用しません。ただし、Google Analytics for Firebase および Firebase Crashlytics は、端末を識別するための匿名識別子（Instance ID 等）を利用します。これらの識別子は個人を特定するものではなく、統計分析およびクラッシュ分析の目的にのみ使用されます。\n            ",
+  "en": "\n              The mobile app does not use browser cookies. Firebase Analytics and Crashlytics use anonymous instance identifiers solely for aggregate analytics and crash diagnosis.\n            "
+ },
+ "s222": {
+  "ja": "1. 取得する情報および利用目的",
+  "en": "1. Information We Collect &amp; Purposes of Use"
+ },
+ "s223": {
+  "ja": "2. 利用する第三者サービス（SDK / API）",
+  "en": "2. Third-Party Services"
+ },
+ "s224": {
+  "ja": "サービス名",
+  "en": "Service"
+ },
+ "s225": {
+  "ja": "提供元",
+  "en": "Provider"
+ },
+ "s226": {
+  "ja": "利用目的",
+  "en": "Purpose"
+ },
+ "s227": {
+  "ja": "ユーザー認証（クラウド同期利用時）",
+  "en": "Authentication (when Cloud Sync is enabled)"
+ },
+ "s228": {
+  "ja": "クラウドデータ同期・保管",
+  "en": "Cloud data sync &amp; storage"
+ },
+ "s229": {
+  "ja": "匿名利用統計の収集",
+  "en": "Anonymized usage analytics"
+ },
+ "s230": {
+  "ja": "クラッシュログの収集・分析",
+  "en": "Crash diagnostics"
+ },
+ "s231": {
+  "ja": "教材登録時の書誌情報検索（任意利用時）",
+  "en": "Optional book metadata lookup"
+ },
+ "s232": {
+  "ja": "各サービスのプライバシーポリシー: ",
+  "en": "Provider Privacy Policy: "
+ },
+ "s233": {
+  "ja": "3. 外国にある第三者への提供（個人情報保護法第28条）",
+  "en": "3. International Data Transfers"
+ },
+ "s234": {
+  "ja": "4. 第三者提供について",
+  "en": "4. Third-Party Disclosure"
+ },
+ "s235": {
+  "ja": "5. 安全管理措置（個人情報保護法第23条）",
+  "en": "5. Security Measures"
+ },
+ "s236": {
+  "ja": "6. 開示等の請求手続き（個人情報保護法第33条〜第39条）",
+  "en": "6. User Rights &amp; Data Requests"
+ },
+ "s237": {
+  "ja": "7. データの保管・削除",
+  "en": "7. Data Retention &amp; Deletion"
+ },
+ "s238": {
+  "ja": "8. Cookie・端末識別子等の利用",
+  "en": "8. Cookies &amp; Device Identifiers"
+ },
+ "s239": {
+  "ja": "免責事項（利用規約）",
+  "en": "Disclaimer &amp; Terms of Use"
+ },
+ "s240": {
+  "ja": "<strong>【重要：本アプリの利用に伴う責任の制限】</strong><br>本アプリ（以下「当アプリ」）をご利用いただくことで、お客様は本免責事項および本プライバシーポリシーの内容に同意したものとみなされます。同意されない場合は、直ちにアプリの利用を中止し、アンインストールしてください。",
+  "en": "<strong>Important Notice:</strong> By using StudyTrail, you agree to these terms and our Privacy Policy. If you do not agree, please discontinue use and uninstall the app."
+ },
+ "s241": {
+  "ja": "\n              <li><strong>保証の否認:</strong> 当アプリは「現状有姿（As-Is）」で提供されます。開発者は、当アプリに事実上または法律上の瑕疵（安全性、信頼性、正確性、完全性、有効性、特定の目的への適合性、セキュリティなどに関する欠陥、エラーやバグ、権利侵害などを含みますがこれらに限りません）がないことを明示的にも黙示的にも保証しません。開発者は、当アプリに関していかなる種類の保証（商品性、特定目的への適合性、非侵害性を含むがこれらに限らない）も行いません。</li>\n              <li><strong>責任の制限（消費者契約法等との調和）:</strong> 当アプリの使用、使用不能、または当アプリから提供される情報に関してユーザーに生じた損害について、開発者の故意または重大な過失による場合を除き、開発者は一切の責任を負いません。ただし、当アプリの提供に関する契約が消費者契約法（平成12年法律第61号）に定める「消費者契約」に該当する場合、本条項のうち開発者の債務不履行または不法行為による賠償責任を完全に免除する部分は、同法第8条の規定により適用されず、開発者の責任は法令で認められる最大限の範囲で制限されます。</li>\n              <li><strong>賠償額の上限設定:</strong> 前項に基づき開発者が責任を負う場合であっても、開発者に故意または重大な過失がある場合を除き、開発者が負う賠償責任は、ユーザーに直接かつ現実に生じた通常の損害（付随的損害、間接損害、特別損害、将来の損害および逸失利益にかかる損害は除きます）の範囲内に限られ、かつ当アプリに対してユーザーが実際に支払った金額（有料アドオン等の購入代金の総額。無料版の場合は0円）を上限とします。</li>\n              <li><strong>データの自己管理:</strong> クラウド同期機能の有無に関わらず、当アプリに入力されたデータのバックアップは、ユーザーご自身の責任で適切に行ってください。予期せぬエラー、サーバーの不具合、アプリのアップデート、OS のアップデート、端末の故障、不正アクセス等によるデータ消失・破損について、開発者は一切の復旧・補償義務を負いません（ただし、開発者の故意または重大な過失による場合はこの限りではありません）。</li>\n              <li><strong>外部サービス:</strong> 当アプリが連携または利用する外部サービス（Firebase、Google Services、AnkiDroid等を含みますがこれらに限りません）の利用については、当該外部サービスの提供事業者が定める利用規約およびプライバシーポリシーが適用されます。開発者はこれら外部サービスの動作、仕様変更、サービス停止、データ取扱い、セキュリティおよびそれらに起因する損害について一切の責任を負いません。</li>\n              <li><strong>不可抗力:</strong> 天災、地震、洪水、火災、台風、疫病、戦争、テロ、暴動、法令の制定・改廃、政府機関による命令・処分、通信回線の障害、電力供給の停止、サイバー攻撃、その他当事者の合理的な支配の及ばない事由（以下「不可抗力」）に起因してユーザーに生じた損害について、開発者は一切の責任を負いません。</li>\n              <li><strong>知的財産権:</strong> 当アプリのソフトウェア、デザイン、ロゴ、アイコン、テキスト、画像その他一切のコンテンツに関する著作権、商標権その他の知的財産権は、開発者または正当な権利を有する第三者に帰属します。ユーザーは、法律で認められた私的使用の範囲を超えて、これらを複製、改変、配布、公衆送信等することはできません。</li>\n              <li><strong>未成年者の利用:</strong> 未成年者が当アプリを利用する場合は、保護者（親権者または後見人）の同意のもとで利用してください。未成年者による当アプリの利用は、保護者の同意を得て行われたものとみなされます。</li>\n              <li><strong>準拠法および管轄:</strong> 本免責事項およびプライバシーポリシーの解釈・適用は、日本法に準拠するものとします。当アプリに関する一切の紛争については、札幌地方裁判所を第一審の管轄裁判所とします。ただし、ユーザーが消費者契約法上の「消費者」に該当する場合、本条項はユーザーの法律上の権利（民事訴訟法に基づく管轄裁判所の選択権を含む）を制限するものではありません。</li>\n              <li><strong>分離可能性:</strong> 本免責事項またはプライバシーポリシーの一部の条項が法令等により無効または執行不能と判断された場合であっても、その他の条項は引き続き完全に有効であるものとします。</li>\n            ",
+  "en": "\n              <li><strong>Disclaimer of Warranties:</strong> The app is provided \"AS-IS\" without warranties of any kind, express or implied.</li>\n              <li><strong>Limitation of Liability:</strong> Except in cases of willful misconduct or gross negligence, the Developer is not liable for damages arising from use or inability to use the app, subject to mandatory consumer protection laws (including Japan's Consumer Contract Act).</li>\n              <li><strong>Liability Cap:</strong> Where liability applies without willful misconduct or gross negligence, liability is limited to direct ordinary damages up to the total amount paid by the user for the app (0 JPY for free use).</li>\n              <li><strong>User Backups:</strong> Users are responsible for backing up their own study data regardless of whether Cloud Sync is enabled.</li>\n              <li><strong>External Services:</strong> Third-party services (Firebase, Google Services, etc.) are governed by their respective terms and policies.</li>\n              <li><strong>Force Majeure:</strong> The Developer is not liable for losses caused by events beyond reasonable control.</li>\n              <li><strong>Intellectual Property:</strong> All rights in the app, design, icons, and content belong to the Developer or rightful third parties.</li>\n              <li><strong>Minors:</strong> Minors must use the app with parental or guardian consent.</li>\n              <li><strong>Governing Law &amp; Jurisdiction:</strong> Governed by the laws of Japan, with the Sapporo District Court as the court of first instance, without limiting statutory consumer jurisdiction rights.</li>\n              <li><strong>Severability:</strong> If any provision is held invalid, the remaining provisions stay in full effect.</li>\n            "
+ },
+ "s242": {
+  "ja": "ポリシーの変更",
+  "en": "Changes to This Policy"
+ },
+ "s243": {
+  "ja": "\n              開発者は、法令の改正、サービス内容の変更その他の事由により、本プライバシーポリシーおよび免責事項を変更する場合があります。変更後のポリシーは、本ページ上に掲載した時点から効力を生じるものとします。重要な変更がある場合は、アプリ内の通知またはその他適切な方法でユーザーに告知するよう努めます。\n            ",
+  "en": "\n              We may update this Privacy Policy and Disclaimer due to legal or service changes. Updates take effect when posted on this page, and significant changes will be announced through the app or other appropriate channels.\n            "
+ },
+ "s244": {
+  "ja": "お問い合わせ・苦情窓口",
+  "en": "Contact &amp; Privacy Inquiries"
+ },
+ "s245": {
+  "ja": "\n              当ポリシー、免責事項、または個人情報の取扱いに関するお問い合わせ・苦情は、以下のメールアドレスまでご連絡ください。\n            ",
+  "en": "\n              For questions, complaints, or requests regarding this policy or personal data handling, please contact us at:\n            "
+ },
+ "s246": {
+  "ja": "個人情報取扱事業者: StudyTrail 開発者",
+  "en": "Data Controller: StudyTrail Developer"
+ },
+ "s247": {
+  "ja": "",
+  "en": "\n            <strong>Note:</strong> This English version is provided for convenience. In the event of any discrepancy, the authoritative Japanese version governs under the laws of Japan.\n          ",
+  "hide_ja": true
+ },
+ "s248": {
+  "ja": "StudyTrail ヘルプセンター",
+  "en": "StudyTrail Help Center"
+ },
+ "s249": {
+  "ja": "サポート＆よくある質問",
+  "en": "Support &amp; FAQ"
+ },
+ "s250": {
+  "ja": "学習の始め方から、参考書の自動復習、スマホ集中制限の設定、データの引き継ぎ・アカウント削除まで解決できます。",
+  "en": "Find answers on getting started, timers, spaced review, Screen Time blocking, cloud sync, backups, and account deletion."
+ },
+ "s251": {
+  "ja": "よくある質問を検索",
+  "en": "Search FAQ"
+ },
+ "s252": {
+  "ja": "質問のカテゴリ",
+  "en": "Categories"
+ },
+ "s253": {
+  "ja": "はじめかた",
+  "en": "Getting Started"
+ },
+ "s254": {
+  "ja": "タイマー・集中・見守りペット",
+  "en": "Timer &amp; Study Pet"
+ },
+ "s255": {
+  "ja": "教材・問題集・自動復習",
+  "en": "Books &amp; Spaced Review"
+ },
+ "s256": {
+  "ja": "スマホの集中制限",
+  "en": "Screen Time Blocker"
+ },
+ "s257": {
+  "ja": "時間割・試験・目標",
+  "en": "Timetable &amp; Goals"
+ },
+ "s258": {
+  "ja": "ウィジェット＆Live Activities",
+  "en": "Widgets &amp; Live Activities"
+ },
+ "s259": {
+  "ja": "クラウド同期とアカウント",
+  "en": "Cloud Sync &amp; Account"
+ },
+ "s260": {
+  "ja": "バックアップと書き出し",
+  "en": "Backup &amp; Export"
+ },
+ "s261": {
+  "ja": "お問い合わせ",
+  "en": "Contact Us"
+ },
+ "s262": {
+  "ja": "該当する質問が見つかりませんでした。",
+  "en": "No matching questions found."
+ },
+ "s263": {
+  "ja": "別のキーワードでお試しいただくか、ページ下部のお問い合わせ窓口までご連絡ください。",
+  "en": "Try another keyword or reach out via the contact section below."
+ },
+ "s264": {
+  "ja": "アカウントを作らずに使えますか？",
+  "en": "Can I use StudyTrail without creating an account?"
+ },
+ "s265": {
+  "ja": "はい。学習タイマー、教材管理、自動復習、カレンダー、時間割、集中制限などの基本機能をすべてアカウントなし・広告なしで使えます。複数端末で記録を共有したいときだけ、設定の「クラウド同期」からアカウントを作成してください。",
+  "en": "Yes. All core features—timer, textbooks, spaced review, calendar, timetable, and Screen Time controls—work locally without signup or ads. Only create an account under Settings → Cloud Sync if you want to sync across multiple devices."
+ },
+ "s266": {
+  "ja": "最初の学習記録をつけるには？",
+  "en": "How do I log my first study session?"
+ },
+ "s267": {
+  "ja": "「タイマー」タブを開いて科目（および任意で教材）を選び、計測を開始します。勉強が終わったら「終了して記録」を押すと、学習時間・評価・問題進捗が自動集計されます。ホーム画面の「学習をはじめる」ボタンからもすぐ開始できます。",
+  "en": "Open the Timer tab, choose a subject (and optionally a material), and start tracking. When finished, tap Finish &amp; Save to log time, ratings, and problem progress—or launch directly from Home → Start Studying."
+ },
+ "s268": {
+  "ja": "ダークモードや対応OS・対応言語は？",
+  "en": "Does it support Dark Mode, iPad, Android, and multiple languages?"
+ },
+ "s269": {
+  "ja": "設定からライト／ダーク／システム設定に合わせる表示を選べます。iPhone・iPad（iOS 16以降、Split View・サイドバー対応）および Android（8.0以降）に対応しており、アプリは50言語にネイティブ対応しています。",
+  "en": "Yes. Choose Light, Dark, or System appearance in Settings. StudyTrail supports iPhone and iPad (iOS 16+ with Split View and sidebar), Android 8.0+, and 50 native languages."
+ },
+ "s270": {
+  "ja": "タイマー・集中表示・見守りペット",
+  "en": "Timer, Focus Views &amp; Study Pet"
+ },
+ "s271": {
+  "ja": "ストップウォッチ・カウントダウン・手動入力の違いは？",
+  "en": "What timer modes are available?"
+ },
+ "s272": {
+  "ja": "経過時間を測る「ストップウォッチ」、25分ポモドーロなど時間を決める「カウントダウン」、あとから勉強時間を追加できる「手動入力」の3方式に対応しています。計測中でも「問題の進捗を記録」から正誤をつけられます。",
+  "en": "Use Stopwatch for open-ended sessions, Countdown for timed blocks like 25-minute Pomodoro sprints, or Manual Entry to log past study sessions. You can also record per-problem right/wrong results while the timer runs."
+ },
+ "s273": {
+  "ja": "アプリを閉じてもタイマーは続きますか？",
+  "en": "Does the timer continue in the background?"
+ },
+ "s274": {
+  "ja": "はい。別のアプリに切り替えたり画面をロックしたりしても計測は継続します。iOS版では対応端末のロック画面や Dynamic Island にライブアクティビティとして進行状況を表示できます。端末を横向きにすると集中用の全画面表示・置き時計モードも使えます。",
+  "en": "Yes. Timing continues when switching apps or locking your screen. On iOS, Live Activities display progress on the Lock Screen and Dynamic Island, and rotating to landscape opens full-screen focus and desk clock views."
+ },
+ "s275": {
+  "ja": "「見守りペット」はカメラ映像を録画・送信しますか？",
+  "en": "Does Study Pet record or upload camera video?"
+ },
+ "s276": {
+  "ja": "いいえ、一切ありません。見守りペットは端末内（オンデバイス）での人物検出のみを行い、カメラ映像の表示・保存・外部サーバーへの送信は一切行いません。機能自体も任意でオフのまま利用できます。",
+  "en": "Never. Study Pet uses strictly on-device person detection—camera frames are never shown on screen, saved to disk, or sent anywhere. The feature is completely optional."
+ },
+ "s277": {
+  "ja": "削除した学習記録を元に戻せますか？",
+  "en": "Can I recover a deleted study record?"
+ },
+ "s278": {
+  "ja": "削除前に作成したバックアップがあれば、設定の「バックアップ」から復元できます。復元を実行すると現在のデータも事前に自動バックアップされるため安心です。",
+  "en": "If you have a backup taken before deletion, restore it under Settings → Backup. StudyTrail also creates an automatic safety snapshot before restoring."
+ },
+ "s279": {
+  "ja": "教材・問題集・自動復習",
+  "en": "Textbooks, Problem Grid &amp; Spaced Review"
+ },
+ "s280": {
+  "ja": "問題集グリッドの5段階の色分けと自動復習はどう動きますか？",
+  "en": "How do the 5-stage problem grid colors and spaced review work?"
+ },
+ "s281": {
+  "ja": "問題集を登録して各問題の正解・不正解を記録すると、誤答履歴のある問題は「1日後 → 3日後 → 7日後 → 14日後」の間隔で復習対象として自動スケジュールされ、ホーム画面の「次の一歩（今日の復習）」に表示されます。連続正解に応じて色が赤から黄・緑へと変化し、定着度が一目でわかります。",
+  "en": "When you mark questions right or wrong, missed problems are automatically scheduled for spaced review at 1, 3, 7, and 14 days and appear in Home → Today's Review. Tile colors shift across 5 stages from red toward green as you recover mastery."
+ },
+ "s282": {
+  "ja": "バーコードを読み取れないときはどうすればいいですか？",
+  "en": "What if ISBN barcode scanning doesn't detect my book?"
+ },
+ "s283": {
+  "ja": "端末の設定で StudyTrail のカメラアクセスが許可されているか確認し、明るい場所で上段のISBNバーコード（978または979から始まる13桁）を枠内に合わせてください。読み取れない場合は検索画面からISBN番号や書名を直接入力して登録できます。",
+  "en": "Ensure camera permission is enabled in system settings and scan the 13-digit ISBN barcode (starting with 978/979) in good light. You can also type the ISBN or title manually in the search field."
+ },
+ "s284": {
+  "ja": "科目のアイコンや色を変更できますか？",
+  "en": "Can I customize subject icons and colors?"
+ },
+ "s285": {
+  "ja": "はい。「科目」タブから各科目の編集メニューを開くと、科目名・アイコン・カラーを自由に変更できます。設定した色はレポートグラフや時間割にも自動で反映されます。",
+  "en": "Yes. Open the Subjects tab and edit any subject to change its name, icon, and color. Your chosen color automatically flows into charts and your timetable."
+ },
+ "s286": {
+  "ja": "スマホの集中制限（iOS スクリーンタイム）",
+  "en": "Screen Time Focus Blocker (iOS)"
+ },
+ "s287": {
+  "ja": "集中制限ではどんなルールを組み合わせられますか？",
+  "en": "What blocking rules can I combine?"
+ },
+ "s288": {
+  "ja": "「タイマー計測中」「指定した時間帯（使用禁止・無料開放）」「1日の学習目標未達成の間」「地図で指定した場所（学校・図書館など）」の4つのルールを独立してオン／オフできます。さらに、勉強した分だけスマホの持ち時間が増える交換レート・目標達成ボーナス・時間制解除チケットにも対応しています。",
+  "en": "You can independently enable four rules: during active study timers, scheduled hours (block or free windows), until your daily study goal is met, and inside custom map locations (school/library). You can also earn daily phone time from study sessions, claim goal bonuses, and use timed unlock tickets."
+ },
+ "s289": {
+  "ja": "場所ルールで使う位置情報は外部に送信されますか？",
+  "en": "Is my location ever uploaded when using Location Focus Zones?"
+ },
+ "s290": {
+  "ja": "いいえ。場所ルールのジオフェンス判定は端末内のみで完結し、位置情報が開発者のサーバーや Firebase へ送信されることはありません。アプリを閉じた状態でエリアの出入りを検知するため、iOS の設定で「位置情報を常に許可」にする必要があります。",
+  "en": "No. Geofence checks run strictly on-device and location data is never sent to Firebase or any server. iOS requires \"Always\" location permission only so geofences can trigger while the app is closed."
+ },
+ "s291": {
+  "ja": "「設定の期間固定ロック」を有効にすると解除できますか？",
+  "en": "Can I bypass the Strict Settings Lock once enabled?"
+ },
+ "s292": {
+  "ja": "期間固定ロックは、自分でルールを緩めてしまうのを防ぐための機能です。指定した期限までは集中制限の設定変更や無効化ができなくなりますので、必要な連絡アプリや学習アプリを「許可するアプリ」に登録してから有効にしてください。",
+  "en": "Strict Settings Lock intentionally prevents weakening or disabling rules until your chosen end date. Be sure to add essential communication or study apps to your Allowed list before activating it."
+ },
+ "s293": {
+  "ja": "時間割・試験カウントダウン・目標",
+  "en": "Timetable, Exams &amp; Goals"
+ },
+ "s294": {
+  "ja": "時間割の授業復習機能はどう使いますか？",
+  "en": "How does lesson review in the Timetable work?"
+ },
+ "s295": {
+  "ja": "「学習管理」→「時間割」から学期と時限を設定し、各コマに授業を登録します。画面上部の「復習」タブへ切り替えると授業ごとの復習状況を確認でき、未復習の授業があるときに通知でリマインドすることもできます。",
+  "en": "Open Study Management → Timetable, set up your term and periods, and tap cells to add classes. Switch to the Review tab to track per-lesson review progress and receive overdue reminders."
+ },
+ "s296": {
+  "ja": "曜日によって1日の目標時間を変えられますか？",
+  "en": "Can I set different daily study goals per weekday?"
+ },
+ "s297": {
+  "ja": "はい。「学習管理」→「目標」から、月〜日それぞれ別の1日目標時間と週間目標を設定できます。平日は短め、休日は長めといった無理のないスケジュール設定が可能です。",
+  "en": "Yes. Under Study Management → Goals, configure separate daily targets for Monday through Sunday alongside your overall weekly target."
+ },
+ "s298": {
+  "ja": "ウィジェット＆ライブアクティビティ",
+  "en": "Widgets &amp; Live Activities"
+ },
+ "s299": {
+  "ja": "iPhone・iPadでウィジェットを追加するには？",
+  "en": "How do I add StudyTrail widgets on iPhone or iPad?"
+ },
+ "s300": {
+  "ja": "ホーム画面の空いている場所を長押しし、「編集」→「ウィジェットを追加」を選びます。「StudyTrail」を検索すると、今日の学習・目標・連続学習・試験カウントダウンなど9種類のウィジェットから選んで配置できます。ロック画面のカスタマイズからも追加可能です。",
+  "en": "Touch and hold an empty area on your Home Screen, tap Edit → Add Widget, and search for StudyTrail to pick from 9 widget types. You can also add them from Lock Screen customization."
+ },
+ "s301": {
+  "ja": "Androidでウィジェットを追加するには？",
+  "en": "How do I add widgets on Android?"
+ },
+ "s302": {
+  "ja": "ホーム画面の空いている場所を長押しして「ウィジェット」一覧を開き、StudyTrail のウィジェットを選んでホーム画面へドラッグして配置してください。",
+  "en": "Touch and hold an empty area on your Android Home Screen, open Widgets, and drag a StudyTrail widget onto your screen."
+ },
+ "s303": {
+  "ja": "クラウド同期を使い始めるには？",
+  "en": "How do I enable Cloud Sync?"
+ },
+ "s304": {
+  "ja": "設定の「クラウド同期」にある「サインイン / アカウント作成」を選びます。iPhone・iPad・Android など別の端末でも同じアカウントでサインインすると、差分同期でデータを共有できます。万一オフライン編集で競合が起きた場合は、競合解決画面で残す内容を選択できます。",
+  "en": "Go to Settings → Cloud Sync → Sign In / Create Account. Sign in with the same account on your other iPhone, iPad, or Android devices for delta sync, with a conflict resolution screen if offline edits overlap."
+ },
+ "s305": {
+  "ja": "機種変更したら何をすればいいですか？",
+  "en": "How do I transfer data to a new device?"
+ },
+ "s306": {
+  "ja": "クラウド同期を使っていた場合は、新しい端末で同じアカウントにサインインするだけで引き継げます。ローカルのみで使っていた場合は、古い端末の設定から JSON 形式でバックアップを書き出し、新しい端末でインポートしてください。",
+  "en": "If Cloud Sync was enabled, simply sign in with the same account on your new device. If you used local storage only, export a JSON backup on your old device and import it on the new one."
+ },
+ "s307": {
+  "ja": "アカウントを削除するには？",
+  "en": "How do I permanently delete my account and data?"
+ },
+ "s308": {
+  "ja": "サインインした状態で設定を開き、「クラウド同期」の「アカウントを削除」を選びます。確認画面で現在のパスワードを入力すると、クラウド同期アカウント・クラウド上の同期データ・この端末の学習データが完全に削除されます。残したい記録は事前に JSON で書き出してください。",
+  "en": "While signed in, open Settings → Cloud Sync → Delete Account and confirm with your current password. This permanently deletes your account, cloud sync data, and local study data. Export a JSON backup first if you want to keep a copy."
+ },
+ "s309": {
+  "ja": "アプリから手続きできない場合は、<a href=\"#contact\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">お問い合わせ窓口</a>へご連絡ください。",
+  "en": "If you cannot access the app, please reach out via the <a href=\"#contact\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">contact section below</a>."
+ },
+ "s310": {
+  "ja": "学習記録を JSON / CSV に書き出すには？",
+  "en": "How do I export my records to JSON or CSV?"
+ },
+ "s311": {
+  "ja": "設定の「バックアップ」で「エクスポート」を選び、形式を指定します。完全なバックアップ・別端末への移行には JSON を、Excel や Google スプレッドシートでの集計には CSV を選んでください。",
+  "en": "Go to Settings → Backup → Export. Choose JSON for complete backups and device migration, or CSV for spreadsheet analysis."
+ },
+ "s312": {
+  "ja": "書き出した JSON データを読み込むには？",
+  "en": "How do I import a JSON backup?"
+ },
+ "s313": {
+  "ja": "設定の「バックアップ」で「インポート」を選び、保存しておいた JSON ファイルを指定してください。復元前には現在の状態が自動バックアップされるため、万一間違えた場合も復元画面から元に戻せます。",
+  "en": "Go to Settings → Backup → Import and select your JSON file. Your existing data is automatically backed up beforehand so you can revert if needed."
+ },
+ "s314": {
+  "ja": "お問い合わせ窓口",
+  "en": "Direct Support"
+ },
+ "s315": {
+  "ja": "解決しないときは、<br class=\"hidden sm:inline\">メールでご相談ください",
+  "en": "Still need help? Send us an email"
+ },
+ "s316": {
+  "ja": "お問い合わせの際は、以下の情報を添えていただくとスムーズにご案内できます。",
+  "en": "Including the details below helps us resolve your issue faster:"
+ },
+ "s317": {
+  "ja": "StudyTrail のアプリバージョン",
+  "en": "StudyTrail app version"
+ },
+ "s318": {
+  "ja": "ご利用の端末名と OS バージョン（例：iPhone 16 / iOS 18）",
+  "en": "Device model &amp; OS version"
+ },
+ "s319": {
+  "ja": "困っている画面や操作手順",
+  "en": "Screen name and steps to reproduce"
+ },
+ "s320": {
+  "ja": "メールで問い合わせる",
+  "en": "Email Support"
+ },
+ "s321": {
+  "ja": "toiawasestudyapp@rarari.org をコピー",
+  "en": "Copy toiawasestudyapp@rarari.org"
+ },
+ "s322": {
+  "ja": "コピーしました！",
+  "en": "Copied!"
+ },
+ "s323": {
+  "ja": "個人情報の取り扱い・免責事項については、<a href=\"privacy.html\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">プライバシーポリシー</a>をご覧ください。",
+  "en": "For details on data handling and legal terms, please read our <a href=\"privacy.html\" class=\"font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300\">Privacy Policy</a>."
+ },
+ "alt.tab.home": {
+  "ja": "今日の学習時間155分と今日の復習を確認できるホーム画面",
+  "en": "Home screen showing today's study time and due reviews"
+ },
+ "cap.home": {
+  "ja": "ホーム：今日の学習進捗と「次の一歩」の自動復習を一目で把握",
+  "en": "Home: Today's goal progress and due reviews surfaced under Next Steps"
+ },
+ "alt.tab.timer": {
+  "ja": "科目と教材を選んで学習時間を計測するタイマー画面",
+  "en": "Study timer screen with active focus session and problem logging"
+ },
+ "cap.timer": {
+  "ja": "タイマー：計測しながら問題正誤の記録・集中表示・見守りペットに対応",
+  "en": "Timer: Track sessions, log per-problem answers, full-screen focus & Study Pet"
+ },
+ "alt.tab.problem-grid": {
+  "ja": "問題ごとの正解・不正解・復習回復度を5段階カラーで見える化する問題集グリッド画面",
+  "en": "Workbook problem grid showing 5-stage mastery colors per question"
+ },
+ "cap.problem-grid": {
+  "ja": "問題集グリッド：1問ごとの正誤と復習回復度を5段階の色で一望",
+  "en": "Problem Grid: See every question's status and 5-stage recovery color"
+ },
+ "alt.tab.calendar": {
+  "ja": "学習量の濃淡ヒートマップと1日の時系列タイムラインを表示するカレンダー画面",
+  "en": "Calendar heatmap and daily timeline view"
+ },
+ "cap.calendar": {
+  "ja": "カレンダー：学習量の濃淡ヒートマップと空き時間まで分かる時系列",
+  "en": "Calendar: Study intensity heatmap and full daily timeline with gaps"
+ },
+ "alt.tab.reports": {
+  "ja": "連続学習日数と科目別の日別・週別グラフを表示するレポート画面",
+  "en": "Reports screen showing streaks and subject breakdown charts"
+ },
+ "cap.reports": {
+  "ja": "レポート：連続学習日数・最長記録と科目別の日・週・月グラフ",
+  "en": "Reports: Study streaks and daily, weekly, monthly subject charts"
+ },
+ "alt.tab.timetable": {
+  "ja": "学期別の時間割と授業復習を切り替えて管理できる時間割画面",
+  "en": "Class timetable and lesson review scheduler"
+ },
+ "cap.timetable": {
+  "ja": "時間割：学期別の時間割と授業ごとの復習リマインドを一元管理",
+  "en": "Timetable: Term schedules with built-in per-lesson review tracking"
+ },
+ "alt.img.timer": {
+  "ja": "数学問題集を計測中のStudyTrailタイマー画面",
+  "en": "StudyTrail timer screen actively tracking a Math session"
+ },
+ "alt.img.materials": {
+  "ja": "参考書ごとの問題進捗が並ぶ教材一覧画面",
+  "en": "Textbooks and workbooks progress list"
+ },
+ "alt.img.problem-grid": {
+  "ja": "問題ごとの正誤と復習回復度を5段階カラーで見える化する問題集グリッド",
+  "en": "Workbook problem grid with 5-stage mastery colors"
+ },
+ "alt.img.calendar": {
+  "ja": "緑色の濃淡ヒートマップと時系列タイムラインを表示するカレンダー画面",
+  "en": "Calendar heatmap and daily chronological timeline"
+ },
+ "alt.img.reports": {
+  "ja": "連続学習日数と科目別学習時間グラフのレポート画面",
+  "en": "Study streaks and stacked subject charts report"
+ },
+ "alt.img.timetable": {
+  "ja": "月曜から土曜の時限別時間割と授業復習タブを表示する時間割画面",
+  "en": "Term class timetable and lesson review tabs"
+ },
+ "alt.img.ipad-home": {
+  "ja": "iPadの大画面に最適化されたStudyTrailのホーム画面",
+  "en": "StudyTrail Home screen optimized for iPad"
+ },
+ "ph.search": {
+  "ja": "キーワードで検索（例：集中制限、同期、削除、復習）",
+  "en": "Search FAQ (e.g. Screen Time, sync, delete, review)"
+ },
+ "meta.title.index": {
+  "ja": "StudyTrail｜今日も、一歩ずつ。勉強タイマー・参考書管理・スマホ集中制限",
+  "en": "StudyTrail — Study Timer, Textbook Progress & Focus Blocker"
+ },
+ "meta.desc.index": {
+  "ja": "StudyTrailは、勉強タイマー・参考書の進捗管理と自動復習・スマホの集中制限・時間割・試験カウントダウン・9種のウィジェットをひとつにまとめた学習記録アプリです。登録不要・広告なしですぐ始められます。",
+  "en": "StudyTrail combines a study timer, textbook problem grid, spaced review, Screen Time app blocker, timetable, exam countdowns, and 9 widgets in one calm workspace. No signup, no ads."
+ },
+ "meta.ogTitle.index": {
+  "ja": "StudyTrail｜今日も、一歩ずつ。学習記録・タイマー・スマホ集中制限",
+  "en": "StudyTrail — Study Timer, Textbook Progress & Focus Blocker"
+ },
+ "meta.ogDesc.index": {
+  "ja": "勉強タイマー、参考書の問題進捗グリッドと自動復習、スクリーンタイム集中制限、時間割、9種のウィジェットをひとつに。アカウント不要・広告なし。",
+  "en": "StudyTrail combines a study timer, textbook problem grid, spaced review, Screen Time app blocker, timetable, exam countdowns, and 9 widgets in one calm workspace. No signup, no ads."
+ },
+ "meta.title.privacy": {
+  "ja": "プライバシーポリシー・免責事項｜StudyTrail",
+  "en": "Privacy Policy & Terms — StudyTrail"
+ },
+ "meta.desc.privacy": {
+  "ja": "StudyTrailのプライバシーポリシー、免責事項、オンデバイス処理（カメラ・位置情報・スクリーンタイム）、第三者サービスおよび個人情報に関するお問い合わせ先。",
+  "en": "StudyTrail Privacy Policy, on-device processing guarantees (camera, location, Screen Time), third-party services, disclaimer, and contact details."
+ },
+ "meta.ogTitle.privacy": {
+  "ja": "プライバシーポリシー・免責事項｜StudyTrail",
+  "en": "Privacy Policy & Terms — StudyTrail"
+ },
+ "meta.ogDesc.privacy": {
+  "ja": "StudyTrailにおけるデータの取り扱いと免責事項。",
+  "en": "StudyTrail Privacy Policy, on-device processing guarantees (camera, location, Screen Time), third-party services, disclaimer, and contact details."
+ },
+ "meta.title.support": {
+  "ja": "サポート・FAQ｜StudyTrail",
+  "en": "Support & FAQ — StudyTrail"
+ },
+ "meta.desc.support": {
+  "ja": "StudyTrailの勉強タイマー、参考書・自動復習、スマホ集中制限（スクリーンタイム）、時間割、ウィジェット、クラウド同期、アカウント削除、バックアップに関するよくある質問とお問い合わせ先。",
+  "en": "Frequently asked questions and contact support for StudyTrail: study timer, textbook grid, spaced review, Screen Time focus blocker, timetable, widgets, cloud sync, account deletion, and backups."
+ },
+ "meta.ogTitle.support": {
+  "ja": "サポート・FAQ｜StudyTrail",
+  "en": "Support & FAQ — StudyTrail"
+ },
+ "meta.ogDesc.support": {
+  "ja": "StudyTrailの使い方、よくある質問、お問い合わせ窓口。",
+  "en": "Frequently asked questions and contact support for StudyTrail: study timer, textbook grid, spaced review, Screen Time focus blocker, timetable, widgets, cloud sync, account deletion, and backups."
+ },
+ "js.search.none": {
+  "ja": "「{q}」に一致する質問は見つかりませんでした。",
+  "en": "No results for \"{q}\"."
+ },
+ "js.search.some": {
+  "ja": "「{q}」に一致する質問が {n} 件あります。",
+  "en": "{n} matching question(s) found."
+ },
+ "alt.icon": {
+  "ja": "StudyTrail アイコン",
+  "en": "StudyTrail icon"
+ }
+}

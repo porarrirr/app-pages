@@ -1,23 +1,49 @@
 (function () {
     "use strict";
 
-    var LOCALES = ["ja", "en", "zh-Hans", "zh-Hant", "ko"];
+    var LOCALES = ["ja", "en", "zh-Hans", "zh-Hant", "ko",
+        "ar-SA", "bn-BD", "ca", "cs", "da", "de-DE", "el", "es-ES", "es-MX",
+        "fi", "fr-CA", "fr-FR", "gu-IN", "he", "hi", "hr", "hu", "id", "it",
+        "kn-IN", "ml-IN", "mr-IN", "ms", "nl-NL", "no", "or-IN", "pa-IN",
+        "pl", "pt-BR", "pt-PT", "ro", "ru", "sk", "sl-SI", "sv", "ta-IN",
+        "te-IN", "th", "tr", "uk", "ur-PK", "vi"];
     var DEFAULT_LOCALE = "ja";
     var STORAGE_KEY = "tmf-web-locale";
+    var RTL_LOCALES = ["ar-SA", "he", "ur-PK"];
+
+    // Lowercase aliases for tags that differ from the canonical ASC codes.
+    var LOCALE_ALIASES = {
+        "ar": "ar-SA", "bn": "bn-BD", "de": "de-DE", "es": "es-ES",
+        "es-419": "es-MX", "fr": "fr-FR", "gu": "gu-IN", "in": "id",
+        "iw": "he", "kn": "kn-IN", "ml": "ml-IN", "mr": "mr-IN",
+        "nb": "no", "nn": "no", "nl": "nl-NL", "no": "no", "or": "or-IN",
+        "pa": "pa-IN", "pt": "pt-PT", "sl": "sl-SI", "ta": "ta-IN",
+        "te": "te-IN", "ur": "ur-PK"
+    };
 
     var strings = null;
     var originalMainHTML = null;
     var currentPage = null;
 
+    function canonicalLocale(tag) {
+        for (var i = 0; i < LOCALES.length; i += 1) {
+            if (LOCALES[i].toLowerCase() === tag) return LOCALES[i];
+        }
+        return null;
+    }
+
     function normalizeLocale(raw) {
         if (!raw) return DEFAULT_LOCALE;
-        var value = String(raw).trim();
-        if (value === "zh" || value === "zh-CN" || value === "zh-Hans") return "zh-Hans";
-        if (value === "zh-TW" || value === "zh-HK" || value === "zh-Hant") return "zh-Hant";
-        if (LOCALES.indexOf(value) !== -1) return value;
+        var value = String(raw).trim().toLowerCase();
+        if (value === "zh" || value === "zh-cn" || value === "zh-hans" || value === "zh-sg") return "zh-Hans";
+        if (value === "zh-tw" || value === "zh-hk" || value === "zh-mo" || value === "zh-hant") return "zh-Hant";
+        var canonical = canonicalLocale(value);
+        if (canonical) return canonical;
+        if (LOCALE_ALIASES[value]) return LOCALE_ALIASES[value];
         var base = value.split("-")[0];
-        if (base === "zh") return "zh-Hans";
-        if (LOCALES.indexOf(base) !== -1) return base;
+        if (LOCALE_ALIASES[base]) return LOCALE_ALIASES[base];
+        canonical = canonicalLocale(base);
+        if (canonical) return canonical;
         return DEFAULT_LOCALE;
     }
 
@@ -76,6 +102,7 @@
             if (meta) meta.setAttribute("content", description);
         }
         document.documentElement.lang = locale;
+        document.documentElement.dir = RTL_LOCALES.indexOf(locale) !== -1 ? "rtl" : "ltr";
     }
 
     function applyShared(locale) {

@@ -4,6 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>サポート | スマホセンサー比較</title>
+  <link rel="alternate" hreflang="ja" href="./support.html">
+  <link rel="alternate" hreflang="en-US" href="./en/support.html">
+  <link rel="alternate" hreflang="zh-Hant" href="./zh-hant/support.html">
+  <link rel="alternate" hreflang="x-default" href="./support.html">
   <style>
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; line-height: 1.8; color: #172033; background: #f6f8fb; }
     main { max-width: 860px; margin: 0 auto; padding: 44px 20px 64px; }
@@ -12,15 +16,25 @@
     h2 { margin-top: 32px; font-size: 1.2rem; }
     a { color: #2563eb; }
     p, li { color: #4d586b; }
+    .lang { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; font-size: .92rem; }
+    .lang a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 12px; border: 1px solid #d7deea; border-radius: 8px; background: #fff; color: #5b6578; text-decoration: none; font-weight: 700; }
+    .lang a[aria-current="true"] { color: #172033; border-color: #2563eb; }
     @media (prefers-color-scheme: dark) {
       body { color: #f4f7fb; background: #10141d; }
       article { background: #171d29; border-color: #2b3546; }
       p, li { color: #bcc7d8; }
+      .lang a { background: #171d29; border-color: #2b3546; color: #bcc7d8; }
+      .lang a[aria-current="true"] { color: #f4f7fb; border-color: #2563eb; }
     }
   </style>
 </head>
 <body>
   <main>
+    <nav class="lang" aria-label="言語 / Language / 語言">
+      <a href="./support.html" hreflang="ja" lang="ja" aria-current="true">日本語</a>
+      <a href="./en/support.html" hreflang="en-US" lang="en">English</a>
+      <a href="./zh-hant/support.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    </nav>
     <article>
       <h1>スマホセンサー比較 サポート</h1>
       <p>スマホセンサー比較は、スマートフォンカメラのセンサーサイズ、焦点距離、F値をもとに、有効センサー面積や集光力を比較するiOSアプリです。</p>

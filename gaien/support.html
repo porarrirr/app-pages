@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>サポート・FAQ｜StudyTrail</title>
   <meta name="description" content="StudyTrailの勉強タイマー、参考書・自動復習、スマホ集中制限（スクリーンタイム）、時間割、ウィジェット、クラウド同期、アカウント削除、バックアップに関するよくある質問とお問い合わせ先。">
-  <meta name="st-title-ja" content="サポート・FAQ｜StudyTrail">
-  <meta name="st-title-en" content="Support &amp; FAQ — StudyTrail">
-  <meta name="st-desc-ja" content="StudyTrailの勉強タイマー、参考書・自動復習、スマホ集中制限（スクリーンタイム）、時間割、ウィジェット、クラウド同期、アカウント削除、バックアップに関するよくある質問とお問い合わせ先。">
-  <meta name="st-desc-en" content="Frequently asked questions and contact support for StudyTrail: study timer, textbook grid, spaced review, Screen Time focus blocker, timetable, widgets, cloud sync, account deletion, and backups.">
   <meta name="apple-itunes-app" content="app-id=6771300607">
   <meta name="theme-color" content="#F2F3F7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#141D1A" media="(prefers-color-scheme: dark)">
@@ -33,11 +29,15 @@
         if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark');
         }
+        const RTL = new Set(['ar-SA', 'he', 'ur-PK']);
+        const ALIAS = { en: 'en-US', zh: 'zh-Hans', pt: 'pt-BR', ar: 'ar-SA', ur: 'ur-PK', es: 'es-ES', fr: 'fr-FR', de: 'de-DE' };
         const p = new URLSearchParams(location.search).get('lang');
-        const l = (p === 'en' || p === 'ja') ? p : localStorage.getItem('studytrail-lang');
-        if (l === 'en') {
-          document.documentElement.dataset.lang = 'en';
-          document.documentElement.lang = 'en';
+        let l = (p || localStorage.getItem('studytrail-lang') || '').trim();
+        l = ALIAS[l.toLowerCase()] || l;
+        if (/^[a-zA-Z]{2,3}(-[a-zA-Z0-9]{2,8})?$/.test(l)) {
+          document.documentElement.dataset.lang = l;
+          document.documentElement.lang = l;
+          document.documentElement.dir = RTL.has(l) ? 'rtl' : 'ltr';
         }
       } catch (_) {}
     })();
@@ -46,8 +46,7 @@
 </head>
 <body class="min-h-screen selection:bg-forest-800 selection:text-white dark:selection:bg-forest-300 dark:selection:text-forest-950">
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-forest-800 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
-    <span data-lang-ja>本文へ移動</span><span data-lang-en>Skip to content</span>
-  </a>
+    <span data-i18n="s010">本文へ移動</span>  </a>
 
   <!-- Header -->
   <header class="st-glass-nav sticky top-0 z-40">
@@ -57,24 +56,22 @@
         <span>StudyTrail</span>
       </a>
 
-      <nav class="hidden items-center gap-1 rounded-full bg-black/[0.04] p-1 dark:bg-white/[0.06] md:flex" aria-label="Main navigation">
+      <nav class="hidden items-center gap-1 rounded-full bg-black/[0.04] p-1 dark:bg-white/[0.06] md:flex" aria-label="Main navigation" data-i18n-aria="aria.mainnav">
         <a href="index.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
-          <span data-lang-ja>ホーム</span><span data-lang-en>Home</span>
-        </a>
+          <span data-i18n="s034">ホーム</span>        </a>
         <a href="support.html" aria-current="page" class="rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-[#111815] shadow-xs dark:bg-[#2A3733] dark:text-[#F1F5F3]">
-          <span data-lang-ja>サポート</span><span data-lang-en>Support</span>
-        </a>
+          <span data-i18n="s013">サポート</span>        </a>
         <a href="privacy.html" class="rounded-full px-4 py-1.5 text-sm font-medium text-[#54645E] transition hover:text-[#111815] dark:text-[#A4B7AE] dark:hover:text-white">
-          <span data-lang-ja>プライバシー</span><span data-lang-en>Privacy</span>
-        </a>
+          <span data-i18n="s014">プライバシー</span>        </a>
       </nav>
 
       <div class="flex items-center gap-2">
-        <button type="button" data-lang-toggle class="inline-flex h-9 items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-white/80 px-3 text-xs font-semibold text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+        <label class="relative inline-flex h-9 items-center gap-1.5 rounded-full border border-[#DDE2DF] bg-white/80 pl-3 pr-1.5 text-xs font-semibold text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
           <i class="ri-translate-2 text-sm text-forest-800 dark:text-forest-300" aria-hidden="true"></i>
-          <span data-lang-label>EN</span>
-        </button>
-        <button type="button" data-theme-toggle aria-label="Toggle color theme" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]">
+          <select data-lang-select data-i18n-aria="aria.lang" aria-label="Language" class="cursor-pointer appearance-none bg-transparent py-1 pl-0.5 pr-5 text-xs font-semibold text-inherit outline-none"></select>
+          <i class="ri-arrow-down-s-line pointer-events-none absolute right-2.5 text-sm" aria-hidden="true"></i>
+        </label>
+        <button type="button" data-theme-toggle aria-label="Toggle color theme" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#2C3A35] transition hover:bg-white dark:border-[#303E37] dark:bg-[#202A27] dark:text-[#DCE6E1] dark:hover:bg-[#2A3733]" data-i18n-aria="aria.theme">
           <i class="ri-sun-line hidden text-base" data-icon-sun aria-hidden="true"></i>
           <i class="ri-moon-clear-line text-base" data-icon-moon aria-hidden="true"></i>
         </button>
@@ -82,7 +79,7 @@
           <i class="ri-apple-fill text-sm" aria-hidden="true"></i>
           <span>App Store</span>
         </a>
-        <button type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Menu" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#111815] dark:border-[#303E37] dark:bg-[#202A27] dark:text-white md:hidden">
+        <button type="button" data-mobile-menu-toggle aria-expanded="false" aria-label="Menu" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#DDE2DF] bg-white/80 text-[#111815] dark:border-[#303E37] dark:bg-[#202A27] dark:text-white md:hidden" data-i18n-aria="aria.menu">
           <i class="ri-menu-3-line text-lg" data-menu-open aria-hidden="true"></i>
           <i class="ri-close-line hidden text-lg" data-menu-close aria-hidden="true"></i>
         </button>
@@ -91,9 +88,9 @@
 
     <div data-mobile-menu class="hidden border-t border-[#E8EBE9] bg-white/95 px-4 py-4 backdrop-blur-xl dark:border-[#303E37] dark:bg-[#141D1A]/95 md:hidden">
       <div class="flex flex-col gap-1.5">
-        <a href="index.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-lang-ja>ホーム</span><span data-lang-en>Home</span></a>
-        <a href="support.html" class="rounded-2xl bg-[#F2F3F7] px-4 py-2.5 text-sm font-semibold text-[#111815] dark:bg-[#202A27] dark:text-white"><span data-lang-ja>サポート・FAQ</span><span data-lang-en>Support &amp; FAQ</span></a>
-        <a href="privacy.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+        <a href="index.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-i18n="s034">ホーム</span></a>
+        <a href="support.html" class="rounded-2xl bg-[#F2F3F7] px-4 py-2.5 text-sm font-semibold text-[#111815] dark:bg-[#202A27] dark:text-white"><span data-i18n="s017">サポート・FAQ</span></a>
+        <a href="privacy.html" class="rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4A5953] dark:text-[#B4C5BC]"><span data-i18n="s018">プライバシーポリシー</span></a>
       </div>
     </div>
   </header>
@@ -106,36 +103,30 @@
           <div class="lg:col-span-7">
             <p class="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-forest-800 uppercase dark:text-forest-300">
               <i class="ri-customer-service-2-line text-sm"></i>
-              <span data-lang-ja>StudyTrail ヘルプセンター</span>
-              <span data-lang-en>StudyTrail Help Center</span>
-            </p>
+              <span data-i18n="s248">StudyTrail ヘルプセンター</span>
+                          </p>
             <h1 class="mt-2.5 text-3xl font-extrabold text-[#111815] dark:text-white sm:text-5xl">
-              <span data-lang-ja>サポート＆よくある質問</span>
-              <span data-lang-en>Support &amp; FAQ</span>
-            </h1>
+              <span data-i18n="s249">サポート＆よくある質問</span>
+                          </h1>
             <p class="mt-3 max-w-xl text-sm leading-relaxed text-[#54645E] dark:text-[#A4B7AE] sm:text-base">
-              <span data-lang-ja>学習の始め方から、参考書の自動復習、スマホ集中制限の設定、データの引き継ぎ・アカウント削除まで解決できます。</span>
-              <span data-lang-en>Find answers on getting started, timers, spaced review, Screen Time blocking, cloud sync, backups, and account deletion.</span>
-            </p>
+              <span data-i18n="s250">学習の始め方から、参考書の自動復習、スマホ集中制限の設定、データの引き継ぎ・アカウント削除まで解決できます。</span>
+                          </p>
           </div>
 
           <div class="lg:col-span-5">
             <div class="st-card p-2">
               <label for="support-search" class="sr-only">
-                <span data-lang-ja>よくある質問を検索</span>
-                <span data-lang-en>Search FAQ</span>
-              </label>
+                <span data-i18n="s251">よくある質問を検索</span>
+                              </label>
               <div class="relative flex items-center">
                 <i class="ri-search-line pointer-events-none absolute left-3.5 text-lg text-[#6B7C76] dark:text-[#8CA096]" aria-hidden="true"></i>
                 <input
                   type="search"
                   id="support-search"
-                  data-placeholder-ja="キーワードで検索（例：集中制限、同期、削除、復習）"
-                  data-placeholder-en="Search FAQ (e.g. Screen Time, sync, delete, review)"
                   placeholder="キーワードで検索（例：集中制限、同期、削除、復習）"
                   class="w-full rounded-2xl bg-transparent py-3 pr-10 pl-11 text-sm text-[#111815] placeholder:text-[#7A8A84] focus:outline-none dark:text-white dark:placeholder:text-[#7D9188]"
-                >
-                <button type="button" id="support-search-clear" aria-label="Clear search" class="hidden absolute right-2.5 h-7 w-7 items-center justify-center rounded-full bg-[#ECEFEF] text-[#4C5C56] hover:bg-[#DFE4E2] dark:bg-[#2C3A35] dark:text-[#C5D5CD]">
+                 data-i18n-ph="ph.search">
+                <button type="button" id="support-search-clear" aria-label="Clear search" class="hidden absolute right-2.5 h-7 w-7 items-center justify-center rounded-full bg-[#ECEFEF] text-[#4C5C56] hover:bg-[#DFE4E2] dark:bg-[#2C3A35] dark:text-[#C5D5CD]" data-i18n-aria="aria.clearsearch">
                   <i class="ri-close-line text-sm"></i>
                 </button>
               </div>
@@ -152,47 +143,37 @@
         <aside class="lg:col-span-4 xl:col-span-3">
           <div class="st-card p-5 lg:sticky lg:top-24">
             <p class="text-xs font-bold tracking-wider text-[#64756F] uppercase dark:text-[#8CA096]">
-              <span data-lang-ja>質問のカテゴリ</span>
-              <span data-lang-en>Categories</span>
-            </p>
-            <nav class="mt-3 flex flex-col gap-1 text-sm font-medium" aria-label="FAQ categories">
+              <span data-i18n="s252">質問のカテゴリ</span>
+                          </p>
+            <nav class="mt-3 flex flex-col gap-1 text-sm font-medium" aria-label="FAQ categories" data-i18n-aria="aria.faqcats">
               <a href="#faq-start" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-sparkling-2-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>はじめかた</span><span data-lang-en>Getting Started</span>
-              </a>
+                <span data-i18n="s253">はじめかた</span>              </a>
               <a href="#faq-timer" id="guide-timer" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-timer-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>タイマー・集中・見守りペット</span><span data-lang-en>Timer &amp; Study Pet</span>
-              </a>
+                <span data-i18n="s254">タイマー・集中・見守りペット</span>              </a>
               <a href="#faq-materials" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-book-open-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>教材・問題集・自動復習</span><span data-lang-en>Books &amp; Spaced Review</span>
-              </a>
+                <span data-i18n="s255">教材・問題集・自動復習</span>              </a>
               <a href="#faq-screentime" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-shield-keyhole-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>スマホの集中制限</span><span data-lang-en>Screen Time Blocker</span>
-              </a>
+                <span data-i18n="s256">スマホの集中制限</span>              </a>
               <a href="#faq-timetable" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-table-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>時間割・試験・目標</span><span data-lang-en>Timetable &amp; Goals</span>
-              </a>
+                <span data-i18n="s257">時間割・試験・目標</span>              </a>
               <a href="#faq-widget" id="guide-widget" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-layout-masonry-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>ウィジェット＆Live Activities</span><span data-lang-en>Widgets &amp; Live Activities</span>
-              </a>
+                <span data-i18n="s258">ウィジェット＆Live Activities</span>              </a>
               <a href="#faq-sync" id="guide-sync" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-cloud-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>クラウド同期とアカウント</span><span data-lang-en>Cloud Sync &amp; Account</span>
-              </a>
+                <span data-i18n="s259">クラウド同期とアカウント</span>              </a>
               <a href="#faq-export" id="guide-export" class="flex items-center gap-2.5 rounded-xl px-3 py-2 text-[#2E3D38] transition hover:bg-[#F2F3F7] dark:text-[#CBE0D5] dark:hover:bg-[#17211E]">
                 <i class="ri-download-cloud-2-line text-forest-800 dark:text-forest-300"></i>
-                <span data-lang-ja>バックアップと書き出し</span><span data-lang-en>Backup &amp; Export</span>
-              </a>
+                <span data-i18n="s260">バックアップと書き出し</span>              </a>
               <hr class="my-2 border-[#E8EBE9] dark:border-[#303E37]">
               <a href="#contact" class="flex items-center gap-2.5 rounded-xl bg-forest-800/8 px-3 py-2 font-semibold text-forest-800 transition hover:bg-forest-800/15 dark:bg-forest-300/12 dark:text-forest-300">
                 <i class="ri-mail-send-line"></i>
-                <span data-lang-ja>お問い合わせ</span><span data-lang-en>Contact Us</span>
-              </a>
+                <span data-i18n="s261">お問い合わせ</span>              </a>
             </nav>
           </div>
         </aside>
@@ -202,51 +183,42 @@
           <p id="search-status" role="status" class="hidden rounded-2xl bg-forest-800/8 px-4 py-3 text-sm font-semibold text-forest-800 dark:bg-forest-300/15 dark:text-forest-200"></p>
           <div id="faq-empty" class="hidden st-card p-8 text-center">
             <i class="ri-search-eye-line text-3xl text-[#7A8A84]"></i>
-            <p class="mt-2 text-sm font-semibold text-[#111815] dark:text-white" data-lang-ja>該当する質問が見つかりませんでした。</p>
-            <p class="mt-2 text-sm font-semibold text-[#111815] dark:text-white" data-lang-en>No matching questions found.</p>
-            <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-ja>別のキーワードでお試しいただくか、ページ下部のお問い合わせ窓口までご連絡ください。</p>
-            <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-lang-en>Try another keyword or reach out via the contact section below.</p>
-          </div>
+            <p class="mt-2 text-sm font-semibold text-[#111815] dark:text-white" data-i18n="s262">該当する質問が見つかりませんでした。</p>
+                        <p class="mt-1 text-xs text-[#5C6B65] dark:text-[#9CB0A6]" data-i18n="s263">別のキーワードでお試しいただくか、ページ下部のお問い合わせ窓口までご連絡ください。</p>
+                      </div>
 
           <!-- 1. Getting Started -->
           <section data-faq-group id="faq-start" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-sparkling-2-line text-base"></i></span>
-              <span data-lang-ja>はじめかた</span><span data-lang-en>Getting Started</span>
-            </h2>
+              <span data-i18n="s253">はじめかた</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group" id="faq-account">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>アカウントを作らずに使えますか？</span>
-                  <span data-lang-en>Can I use StudyTrail without creating an account?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s264">アカウントを作らずに使えますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>はい。学習タイマー、教材管理、自動復習、カレンダー、時間割、集中制限などの基本機能をすべてアカウントなし・広告なしで使えます。複数端末で記録を共有したいときだけ、設定の「クラウド同期」からアカウントを作成してください。</p>
-                  <p data-lang-en>Yes. All core features—timer, textbooks, spaced review, calendar, timetable, and Screen Time controls—work locally without signup or ads. Only create an account under Settings → Cloud Sync if you want to sync across multiple devices.</p>
-                </div>
+                  <p data-i18n="s265">はい。学習タイマー、教材管理、自動復習、カレンダー、時間割、集中制限などの基本機能をすべてアカウントなし・広告なしで使えます。複数端末で記録を共有したいときだけ、設定の「クラウド同期」からアカウントを作成してください。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>最初の学習記録をつけるには？</span>
-                  <span data-lang-en>How do I log my first study session?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s266">最初の学習記録をつけるには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>「タイマー」タブを開いて科目（および任意で教材）を選び、計測を開始します。勉強が終わったら「終了して記録」を押すと、学習時間・評価・問題進捗が自動集計されます。ホーム画面の「学習をはじめる」ボタンからもすぐ開始できます。</p>
-                  <p data-lang-en>Open the Timer tab, choose a subject (and optionally a material), and start tracking. When finished, tap Finish &amp; Save to log time, ratings, and problem progress—or launch directly from Home → Start Studying.</p>
-                </div>
+                  <p data-i18n="s267">「タイマー」タブを開いて科目（および任意で教材）を選び、計測を開始します。勉強が終わったら「終了して記録」を押すと、学習時間・評価・問題進捗が自動集計されます。ホーム画面の「学習をはじめる」ボタンからもすぐ開始できます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>ダークモードや対応OS・対応言語は？</span>
-                  <span data-lang-en>Does it support Dark Mode, iPad, Android, and multiple languages?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s268">ダークモードや対応OS・対応言語は？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>設定からライト／ダーク／システム設定に合わせる表示を選べます。iPhone・iPad（iOS 16以降、Split View・サイドバー対応）および Android（8.0以降）に対応しており、アプリは50言語にネイティブ対応しています。</p>
-                  <p data-lang-en>Yes. Choose Light, Dark, or System appearance in Settings. StudyTrail supports iPhone and iPad (iOS 16+ with Split View and sidebar), Android 8.0+, and 50 native languages.</p>
-                </div>
+                  <p data-i18n="s269">設定からライト／ダーク／システム設定に合わせる表示を選べます。iPhone・iPad（iOS 16以降、Split View・サイドバー対応）および Android（8.0以降）に対応しており、アプリは50言語にネイティブ対応しています。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -255,52 +227,43 @@
           <section data-faq-group id="faq-timer" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-timer-line text-base"></i></span>
-              <span data-lang-ja>タイマー・集中表示・見守りペット</span><span data-lang-en>Timer, Focus Views &amp; Study Pet</span>
-            </h2>
+              <span data-i18n="s270">タイマー・集中表示・見守りペット</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>ストップウォッチ・カウントダウン・手動入力の違いは？</span>
-                  <span data-lang-en>What timer modes are available?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s271">ストップウォッチ・カウントダウン・手動入力の違いは？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>経過時間を測る「ストップウォッチ」、25分ポモドーロなど時間を決める「カウントダウン」、あとから勉強時間を追加できる「手動入力」の3方式に対応しています。計測中でも「問題の進捗を記録」から正誤をつけられます。</p>
-                  <p data-lang-en>Use Stopwatch for open-ended sessions, Countdown for timed blocks like 25-minute Pomodoro sprints, or Manual Entry to log past study sessions. You can also record per-problem right/wrong results while the timer runs.</p>
-                </div>
+                  <p data-i18n="s272">経過時間を測る「ストップウォッチ」、25分ポモドーロなど時間を決める「カウントダウン」、あとから勉強時間を追加できる「手動入力」の3方式に対応しています。計測中でも「問題の進捗を記録」から正誤をつけられます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>アプリを閉じてもタイマーは続きますか？</span>
-                  <span data-lang-en>Does the timer continue in the background?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s273">アプリを閉じてもタイマーは続きますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>はい。別のアプリに切り替えたり画面をロックしたりしても計測は継続します。iOS版では対応端末のロック画面や Dynamic Island にライブアクティビティとして進行状況を表示できます。端末を横向きにすると集中用の全画面表示・置き時計モードも使えます。</p>
-                  <p data-lang-en>Yes. Timing continues when switching apps or locking your screen. On iOS, Live Activities display progress on the Lock Screen and Dynamic Island, and rotating to landscape opens full-screen focus and desk clock views.</p>
-                </div>
+                  <p data-i18n="s274">はい。別のアプリに切り替えたり画面をロックしたりしても計測は継続します。iOS版では対応端末のロック画面や Dynamic Island にライブアクティビティとして進行状況を表示できます。端末を横向きにすると集中用の全画面表示・置き時計モードも使えます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>「見守りペット」はカメラ映像を録画・送信しますか？</span>
-                  <span data-lang-en>Does Study Pet record or upload camera video?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s275">「見守りペット」はカメラ映像を録画・送信しますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>いいえ、一切ありません。見守りペットは端末内（オンデバイス）での人物検出のみを行い、カメラ映像の表示・保存・外部サーバーへの送信は一切行いません。機能自体も任意でオフのまま利用できます。</p>
-                  <p data-lang-en>Never. Study Pet uses strictly on-device person detection—camera frames are never shown on screen, saved to disk, or sent anywhere. The feature is completely optional.</p>
-                </div>
+                  <p data-i18n="s276">いいえ、一切ありません。見守りペットは端末内（オンデバイス）での人物検出のみを行い、カメラ映像の表示・保存・外部サーバーへの送信は一切行いません。機能自体も任意でオフのまま利用できます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>削除した学習記録を元に戻せますか？</span>
-                  <span data-lang-en>Can I recover a deleted study record?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s277">削除した学習記録を元に戻せますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>削除前に作成したバックアップがあれば、設定の「バックアップ」から復元できます。復元を実行すると現在のデータも事前に自動バックアップされるため安心です。</p>
-                  <p data-lang-en>If you have a backup taken before deletion, restore it under Settings → Backup. StudyTrail also creates an automatic safety snapshot before restoring.</p>
-                </div>
+                  <p data-i18n="s278">削除前に作成したバックアップがあれば、設定の「バックアップ」から復元できます。復元を実行すると現在のデータも事前に自動バックアップされるため安心です。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -309,41 +272,34 @@
           <section data-faq-group id="faq-materials" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-study-amber-soft text-[#B46900] dark:bg-[#3E2B12] dark:text-[#FFB340]"><i class="ri-book-open-line text-base"></i></span>
-              <span data-lang-ja>教材・問題集・自動復習</span><span data-lang-en>Textbooks, Problem Grid &amp; Spaced Review</span>
-            </h2>
+              <span data-i18n="s279">教材・問題集・自動復習</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>問題集グリッドの5段階の色分けと自動復習はどう動きますか？</span>
-                  <span data-lang-en>How do the 5-stage problem grid colors and spaced review work?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s280">問題集グリッドの5段階の色分けと自動復習はどう動きますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>問題集を登録して各問題の正解・不正解を記録すると、誤答履歴のある問題は「1日後 → 3日後 → 7日後 → 14日後」の間隔で復習対象として自動スケジュールされ、ホーム画面の「次の一歩（今日の復習）」に表示されます。連続正解に応じて色が赤から黄・緑へと変化し、定着度が一目でわかります。</p>
-                  <p data-lang-en>When you mark questions right or wrong, missed problems are automatically scheduled for spaced review at 1, 3, 7, and 14 days and appear in Home → Today's Review. Tile colors shift across 5 stages from red toward green as you recover mastery.</p>
-                </div>
+                  <p data-i18n="s281">問題集を登録して各問題の正解・不正解を記録すると、誤答履歴のある問題は「1日後 → 3日後 → 7日後 → 14日後」の間隔で復習対象として自動スケジュールされ、ホーム画面の「次の一歩（今日の復習）」に表示されます。連続正解に応じて色が赤から黄・緑へと変化し、定着度が一目でわかります。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>バーコードを読み取れないときはどうすればいいですか？</span>
-                  <span data-lang-en>What if ISBN barcode scanning doesn't detect my book?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s282">バーコードを読み取れないときはどうすればいいですか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>端末の設定で StudyTrail のカメラアクセスが許可されているか確認し、明るい場所で上段のISBNバーコード（978または979から始まる13桁）を枠内に合わせてください。読み取れない場合は検索画面からISBN番号や書名を直接入力して登録できます。</p>
-                  <p data-lang-en>Ensure camera permission is enabled in system settings and scan the 13-digit ISBN barcode (starting with 978/979) in good light. You can also type the ISBN or title manually in the search field.</p>
-                </div>
+                  <p data-i18n="s283">端末の設定で StudyTrail のカメラアクセスが許可されているか確認し、明るい場所で上段のISBNバーコード（978または979から始まる13桁）を枠内に合わせてください。読み取れない場合は検索画面からISBN番号や書名を直接入力して登録できます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>科目のアイコンや色を変更できますか？</span>
-                  <span data-lang-en>Can I customize subject icons and colors?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s284">科目のアイコンや色を変更できますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>はい。「科目」タブから各科目の編集メニューを開くと、科目名・アイコン・カラーを自由に変更できます。設定した色はレポートグラフや時間割にも自動で反映されます。</p>
-                  <p data-lang-en>Yes. Open the Subjects tab and edit any subject to change its name, icon, and color. Your chosen color automatically flows into charts and your timetable.</p>
-                </div>
+                  <p data-i18n="s285">はい。「科目」タブから各科目の編集メニューを開くと、科目名・アイコン・カラーを自由に変更できます。設定した色はレポートグラフや時間割にも自動で反映されます。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -352,41 +308,34 @@
           <section data-faq-group id="faq-screentime" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800 text-forest-100 dark:bg-forest-300/20 dark:text-forest-300"><i class="ri-shield-keyhole-line text-base"></i></span>
-              <span data-lang-ja>スマホの集中制限（iOS スクリーンタイム）</span><span data-lang-en>Screen Time Focus Blocker (iOS)</span>
-            </h2>
+              <span data-i18n="s286">スマホの集中制限（iOS スクリーンタイム）</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>集中制限ではどんなルールを組み合わせられますか？</span>
-                  <span data-lang-en>What blocking rules can I combine?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s287">集中制限ではどんなルールを組み合わせられますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>「タイマー計測中」「指定した時間帯（使用禁止・無料開放）」「1日の学習目標未達成の間」「地図で指定した場所（学校・図書館など）」の4つのルールを独立してオン／オフできます。さらに、勉強した分だけスマホの持ち時間が増える交換レート・目標達成ボーナス・時間制解除チケットにも対応しています。</p>
-                  <p data-lang-en>You can independently enable four rules: during active study timers, scheduled hours (block or free windows), until your daily study goal is met, and inside custom map locations (school/library). You can also earn daily phone time from study sessions, claim goal bonuses, and use timed unlock tickets.</p>
-                </div>
+                  <p data-i18n="s288">「タイマー計測中」「指定した時間帯（使用禁止・無料開放）」「1日の学習目標未達成の間」「地図で指定した場所（学校・図書館など）」の4つのルールを独立してオン／オフできます。さらに、勉強した分だけスマホの持ち時間が増える交換レート・目標達成ボーナス・時間制解除チケットにも対応しています。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>場所ルールで使う位置情報は外部に送信されますか？</span>
-                  <span data-lang-en>Is my location ever uploaded when using Location Focus Zones?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s289">場所ルールで使う位置情報は外部に送信されますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>いいえ。場所ルールのジオフェンス判定は端末内のみで完結し、位置情報が開発者のサーバーや Firebase へ送信されることはありません。アプリを閉じた状態でエリアの出入りを検知するため、iOS の設定で「位置情報を常に許可」にする必要があります。</p>
-                  <p data-lang-en>No. Geofence checks run strictly on-device and location data is never sent to Firebase or any server. iOS requires "Always" location permission only so geofences can trigger while the app is closed.</p>
-                </div>
+                  <p data-i18n="s290">いいえ。場所ルールのジオフェンス判定は端末内のみで完結し、位置情報が開発者のサーバーや Firebase へ送信されることはありません。アプリを閉じた状態でエリアの出入りを検知するため、iOS の設定で「位置情報を常に許可」にする必要があります。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>「設定の期間固定ロック」を有効にすると解除できますか？</span>
-                  <span data-lang-en>Can I bypass the Strict Settings Lock once enabled?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s291">「設定の期間固定ロック」を有効にすると解除できますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>期間固定ロックは、自分でルールを緩めてしまうのを防ぐための機能です。指定した期限までは集中制限の設定変更や無効化ができなくなりますので、必要な連絡アプリや学習アプリを「許可するアプリ」に登録してから有効にしてください。</p>
-                  <p data-lang-en>Strict Settings Lock intentionally prevents weakening or disabling rules until your chosen end date. Be sure to add essential communication or study apps to your Allowed list before activating it.</p>
-                </div>
+                  <p data-i18n="s292">期間固定ロックは、自分でルールを緩めてしまうのを防ぐための機能です。指定した期限までは集中制限の設定変更や無効化ができなくなりますので、必要な連絡アプリや学習アプリを「許可するアプリ」に登録してから有効にしてください。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -395,30 +344,25 @@
           <section data-faq-group id="faq-timetable" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EFEAFE] text-[#5B3CC4] dark:bg-[#2C2446] dark:text-[#C5B3FF]"><i class="ri-table-line text-base"></i></span>
-              <span data-lang-ja>時間割・試験カウントダウン・目標</span><span data-lang-en>Timetable, Exams &amp; Goals</span>
-            </h2>
+              <span data-i18n="s293">時間割・試験カウントダウン・目標</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>時間割の授業復習機能はどう使いますか？</span>
-                  <span data-lang-en>How does lesson review in the Timetable work?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s294">時間割の授業復習機能はどう使いますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>「学習管理」→「時間割」から学期と時限を設定し、各コマに授業を登録します。画面上部の「復習」タブへ切り替えると授業ごとの復習状況を確認でき、未復習の授業があるときに通知でリマインドすることもできます。</p>
-                  <p data-lang-en>Open Study Management → Timetable, set up your term and periods, and tap cells to add classes. Switch to the Review tab to track per-lesson review progress and receive overdue reminders.</p>
-                </div>
+                  <p data-i18n="s295">「学習管理」→「時間割」から学期と時限を設定し、各コマに授業を登録します。画面上部の「復習」タブへ切り替えると授業ごとの復習状況を確認でき、未復習の授業があるときに通知でリマインドすることもできます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>曜日によって1日の目標時間を変えられますか？</span>
-                  <span data-lang-en>Can I set different daily study goals per weekday?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s296">曜日によって1日の目標時間を変えられますか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>はい。「学習管理」→「目標」から、月〜日それぞれ別の1日目標時間と週間目標を設定できます。平日は短め、休日は長めといった無理のないスケジュール設定が可能です。</p>
-                  <p data-lang-en>Yes. Under Study Management → Goals, configure separate daily targets for Monday through Sunday alongside your overall weekly target.</p>
-                </div>
+                  <p data-i18n="s297">はい。「学習管理」→「目標」から、月〜日それぞれ別の1日目標時間と週間目標を設定できます。平日は短め、休日は長めといった無理のないスケジュール設定が可能です。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -427,30 +371,25 @@
           <section data-faq-group id="faq-widget" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-study-blue-soft text-study-blue dark:bg-[#15324E] dark:text-[#5EADF2]"><i class="ri-layout-masonry-line text-base"></i></span>
-              <span data-lang-ja>ウィジェット＆ライブアクティビティ</span><span data-lang-en>Widgets &amp; Live Activities</span>
-            </h2>
+              <span data-i18n="s298">ウィジェット＆ライブアクティビティ</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>iPhone・iPadでウィジェットを追加するには？</span>
-                  <span data-lang-en>How do I add StudyTrail widgets on iPhone or iPad?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s299">iPhone・iPadでウィジェットを追加するには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>ホーム画面の空いている場所を長押しし、「編集」→「ウィジェットを追加」を選びます。「StudyTrail」を検索すると、今日の学習・目標・連続学習・試験カウントダウンなど9種類のウィジェットから選んで配置できます。ロック画面のカスタマイズからも追加可能です。</p>
-                  <p data-lang-en>Touch and hold an empty area on your Home Screen, tap Edit → Add Widget, and search for StudyTrail to pick from 9 widget types. You can also add them from Lock Screen customization.</p>
-                </div>
+                  <p data-i18n="s300">ホーム画面の空いている場所を長押しし、「編集」→「ウィジェットを追加」を選びます。「StudyTrail」を検索すると、今日の学習・目標・連続学習・試験カウントダウンなど9種類のウィジェットから選んで配置できます。ロック画面のカスタマイズからも追加可能です。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>Androidでウィジェットを追加するには？</span>
-                  <span data-lang-en>How do I add widgets on Android?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s301">Androidでウィジェットを追加するには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>ホーム画面の空いている場所を長押しして「ウィジェット」一覧を開き、StudyTrail のウィジェットを選んでホーム画面へドラッグして配置してください。</p>
-                  <p data-lang-en>Touch and hold an empty area on your Android Home Screen, open Widgets, and drag a StudyTrail widget onto your screen.</p>
-                </div>
+                  <p data-i18n="s302">ホーム画面の空いている場所を長押しして「ウィジェット」一覧を開き、StudyTrail のウィジェットを選んでホーム画面へドラッグして配置してください。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -459,43 +398,35 @@
           <section data-faq-group id="faq-sync" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-cloud-line text-base"></i></span>
-              <span data-lang-ja>クラウド同期とアカウント</span><span data-lang-en>Cloud Sync &amp; Account</span>
-            </h2>
+              <span data-i18n="s259">クラウド同期とアカウント</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>クラウド同期を使い始めるには？</span>
-                  <span data-lang-en>How do I enable Cloud Sync?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s303">クラウド同期を使い始めるには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>設定の「クラウド同期」にある「サインイン / アカウント作成」を選びます。iPhone・iPad・Android など別の端末でも同じアカウントでサインインすると、差分同期でデータを共有できます。万一オフライン編集で競合が起きた場合は、競合解決画面で残す内容を選択できます。</p>
-                  <p data-lang-en>Go to Settings → Cloud Sync → Sign In / Create Account. Sign in with the same account on your other iPhone, iPad, or Android devices for delta sync, with a conflict resolution screen if offline edits overlap.</p>
-                </div>
+                  <p data-i18n="s304">設定の「クラウド同期」にある「サインイン / アカウント作成」を選びます。iPhone・iPad・Android など別の端末でも同じアカウントでサインインすると、差分同期でデータを共有できます。万一オフライン編集で競合が起きた場合は、競合解決画面で残す内容を選択できます。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>機種変更したら何をすればいいですか？</span>
-                  <span data-lang-en>How do I transfer data to a new device?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s305">機種変更したら何をすればいいですか？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>クラウド同期を使っていた場合は、新しい端末で同じアカウントにサインインするだけで引き継げます。ローカルのみで使っていた場合は、古い端末の設定から JSON 形式でバックアップを書き出し、新しい端末でインポートしてください。</p>
-                  <p data-lang-en>If Cloud Sync was enabled, simply sign in with the same account on your new device. If you used local storage only, export a JSON backup on your old device and import it on the new one.</p>
-                </div>
+                  <p data-i18n="s306">クラウド同期を使っていた場合は、新しい端末で同じアカウントにサインインするだけで引き継げます。ローカルのみで使っていた場合は、古い端末の設定から JSON 形式でバックアップを書き出し、新しい端末でインポートしてください。</p>
+                                  </div>
               </details>
               <details class="st-faq group" id="delete-account">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>アカウントを削除するには？</span>
-                  <span data-lang-en>How do I permanently delete my account and data?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s307">アカウントを削除するには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 space-y-2 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>サインインした状態で設定を開き、「クラウド同期」の「アカウントを削除」を選びます。確認画面で現在のパスワードを入力すると、クラウド同期アカウント・クラウド上の同期データ・この端末の学習データが完全に削除されます。残したい記録は事前に JSON で書き出してください。</p>
-                  <p data-lang-en>While signed in, open Settings → Cloud Sync → Delete Account and confirm with your current password. This permanently deletes your account, cloud sync data, and local study data. Export a JSON backup first if you want to keep a copy.</p>
-                  <p data-lang-ja>アプリから手続きできない場合は、<a href="#contact" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">お問い合わせ窓口</a>へご連絡ください。</p>
-                  <p data-lang-en>If you cannot access the app, please reach out via the <a href="#contact" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">contact section below</a>.</p>
-                </div>
+                  <p data-i18n="s308">サインインした状態で設定を開き、「クラウド同期」の「アカウントを削除」を選びます。確認画面で現在のパスワードを入力すると、クラウド同期アカウント・クラウド上の同期データ・この端末の学習データが完全に削除されます。残したい記録は事前に JSON で書き出してください。</p>
+                                    <p data-i18n="s309">アプリから手続きできない場合は、<a href="#contact" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">お問い合わせ窓口</a>へご連絡ください。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -504,30 +435,25 @@
           <section data-faq-group id="faq-export" class="scroll-mt-24">
             <h2 class="flex items-center gap-2.5 text-xl font-extrabold text-[#111815] dark:text-white">
               <span class="flex h-8 w-8 items-center justify-center rounded-xl bg-forest-800/10 text-forest-800 dark:bg-forest-300/15 dark:text-forest-300"><i class="ri-download-cloud-2-line text-base"></i></span>
-              <span data-lang-ja>バックアップと書き出し</span><span data-lang-en>Backup &amp; Export</span>
-            </h2>
+              <span data-i18n="s260">バックアップと書き出し</span>            </h2>
             <div class="mt-4 st-card divide-y divide-[#E8EBE9] overflow-hidden dark:divide-[#303E37]">
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>学習記録を JSON / CSV に書き出すには？</span>
-                  <span data-lang-en>How do I export my records to JSON or CSV?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s310">学習記録を JSON / CSV に書き出すには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>設定の「バックアップ」で「エクスポート」を選び、形式を指定します。完全なバックアップ・別端末への移行には JSON を、Excel や Google スプレッドシートでの集計には CSV を選んでください。</p>
-                  <p data-lang-en>Go to Settings → Backup → Export. Choose JSON for complete backups and device migration, or CSV for spreadsheet analysis.</p>
-                </div>
+                  <p data-i18n="s311">設定の「バックアップ」で「エクスポート」を選び、形式を指定します。完全なバックアップ・別端末への移行には JSON を、Excel や Google スプレッドシートでの集計には CSV を選んでください。</p>
+                                  </div>
               </details>
               <details class="st-faq group">
                 <summary class="flex items-center justify-between gap-4 px-5 py-4 text-sm font-bold text-[#111815] hover:bg-[#F8FAF9] dark:text-white dark:hover:bg-[#25312D] sm:px-6">
-                  <span data-lang-ja>書き出した JSON データを読み込むには？</span>
-                  <span data-lang-en>How do I import a JSON backup?</span>
-                  <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
+                  <span data-i18n="s312">書き出した JSON データを読み込むには？</span>
+                                    <i class="ri-arrow-down-s-line faq-chevron shrink-0 text-lg text-[#6A7B75]"></i>
                 </summary>
                 <div class="px-5 pb-5 text-sm leading-relaxed text-[#4D5D57] dark:text-[#A9BCB2] sm:px-6">
-                  <p data-lang-ja>設定の「バックアップ」で「インポート」を選び、保存しておいた JSON ファイルを指定してください。復元前には現在の状態が自動バックアップされるため、万一間違えた場合も復元画面から元に戻せます。</p>
-                  <p data-lang-en>Go to Settings → Backup → Import and select your JSON file. Your existing data is automatically backed up beforehand so you can revert if needed.</p>
-                </div>
+                  <p data-i18n="s313">設定の「バックアップ」で「インポート」を選び、保存しておいた JSON ファイルを指定してください。復元前には現在の状態が自動バックアップされるため、万一間違えた場合も復元画面から元に戻せます。</p>
+                                  </div>
               </details>
             </div>
           </section>
@@ -538,44 +464,37 @@
               <div class="md:col-span-7">
                 <p class="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest text-forest-300 uppercase">
                   <i class="ri-mail-send-line text-sm"></i>
-                  <span data-lang-ja>お問い合わせ窓口</span><span data-lang-en>Direct Support</span>
-                </p>
+                  <span data-i18n="s314">お問い合わせ窓口</span>                </p>
                 <h2 class="mt-2 text-2xl font-extrabold text-white">
-                  <span data-lang-ja>解決しないときは、<br class="hidden sm:inline">メールでご相談ください</span>
-                  <span data-lang-en>Still need help? Send us an email</span>
-                </h2>
+                  <span data-i18n="s315">解決しないときは、<br class="hidden sm:inline">メールでご相談ください</span>
+                                  </h2>
                 <p class="mt-2.5 text-sm leading-relaxed text-[#CFE0D7]">
-                  <span data-lang-ja>お問い合わせの際は、以下の情報を添えていただくとスムーズにご案内できます。</span>
-                  <span data-lang-en>Including the details below helps us resolve your issue faster:</span>
-                </p>
+                  <span data-i18n="s316">お問い合わせの際は、以下の情報を添えていただくとスムーズにご案内できます。</span>
+                                  </p>
                 <ul class="mt-3 space-y-1 text-xs text-[#B8D0C3]">
-                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-lang-ja>StudyTrail のアプリバージョン</span><span data-lang-en>StudyTrail app version</span></li>
-                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-lang-ja>ご利用の端末名と OS バージョン（例：iPhone 16 / iOS 18）</span><span data-lang-en>Device model &amp; OS version</span></li>
-                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-lang-ja>困っている画面や操作手順</span><span data-lang-en>Screen name and steps to reproduce</span></li>
+                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-i18n="s317">StudyTrail のアプリバージョン</span></li>
+                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-i18n="s318">ご利用の端末名と OS バージョン（例：iPhone 16 / iOS 18）</span></li>
+                  <li class="flex items-center gap-2"><i class="ri-check-line text-study-lime"></i><span data-i18n="s319">困っている画面や操作手順</span></li>
                 </ul>
               </div>
 
               <div class="flex flex-col gap-2.5 md:col-span-5 md:items-end">
                 <a href="mailto:toiawasestudyapp@rarari.org" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-forest-100 px-5 py-3.5 text-sm font-extrabold text-forest-950 transition hover:bg-white md:w-auto">
                   <i class="ri-mail-line text-base"></i>
-                  <span data-lang-ja>メールで問い合わせる</span>
-                  <span data-lang-en>Email Support</span>
-                </a>
+                  <span data-i18n="s320">メールで問い合わせる</span>
+                                  </a>
                 <button type="button" data-copy-text="toiawasestudyapp@rarari.org" class="inline-flex w-full items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/8 px-4 py-2.5 text-xs font-semibold text-[#E1ECE6] transition hover:bg-white/15 md:w-auto">
                   <i class="ri-file-copy-line text-sm"></i>
-                  <span data-lang-ja data-copy-default-ja>toiawasestudyapp@rarari.org をコピー</span>
-                  <span data-lang-ja data-copy-feedback-ja class="hidden text-study-lime">コピーしました！</span>
-                  <span data-lang-en data-copy-default-en>Copy toiawasestudyapp@rarari.org</span>
-                  <span data-lang-en data-copy-feedback-en class="hidden text-study-lime">Copied!</span>
-                </button>
+                  <span data-copy-default data-i18n="s321">toiawasestudyapp@rarari.org をコピー</span>
+                  <span data-copy-feedback class="hidden text-study-lime" data-i18n="s322">コピーしました！</span>
+                                                    </button>
               </div>
             </div>
           </section>
 
           <p id="privacy" class="text-sm text-[#54645E] dark:text-[#9CB0A6]">
-            <span data-lang-ja>個人情報の取り扱い・免責事項については、<a href="privacy.html" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">プライバシーポリシー</a>をご覧ください。</span>
-            <span data-lang-en>For details on data handling and legal terms, please read our <a href="privacy.html" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">Privacy Policy</a>.</span>
-          </p>
+            <span data-i18n="s323">個人情報の取り扱い・免責事項については、<a href="privacy.html" class="font-semibold text-forest-800 underline underline-offset-4 dark:text-forest-300">プライバシーポリシー</a>をご覧ください。</span>
+                      </p>
         </div>
       </div>
     </div>
@@ -590,10 +509,10 @@
         </a>
         <p class="mt-2 text-xs text-[#64756F] dark:text-[#8CA096]">© 2025–2026 StudyTrail</p>
       </div>
-      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-[#4D5D57] dark:text-[#A9BCB2]" aria-label="Footer navigation">
-        <a href="index.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>ホーム</span><span data-lang-en>Home</span></a>
-        <a href="support.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>サポート</span><span data-lang-en>Support</span></a>
-        <a href="privacy.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-lang-ja>プライバシーポリシー</span><span data-lang-en>Privacy Policy</span></a>
+      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-[#4D5D57] dark:text-[#A9BCB2]" aria-label="Footer navigation" data-i18n-aria="aria.footnav">
+        <a href="index.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s034">ホーム</span></a>
+        <a href="support.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s013">サポート</span></a>
+        <a href="privacy.html" class="hover:text-forest-800 dark:hover:text-forest-300"><span data-i18n="s018">プライバシーポリシー</span></a>
       </nav>
     </div>
   </footer>

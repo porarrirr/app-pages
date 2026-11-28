@@ -163,6 +163,39 @@ a:hover {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
 }
 
+.lang-switch select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background-color: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 550;
+  padding: 8px 30px 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  max-width: min(320px, 72vw);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+.lang-switch select:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+.lang-switch select:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+}
+
+[dir="rtl"] .lang-switch select {
+  padding: 8px 14px 8px 30px;
+  background-position: left 10px center;
+}
+
 /* ——— Type ——— */
 .hero {
   margin-bottom: 36px;

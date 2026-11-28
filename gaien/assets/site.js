@@ -2,6 +2,14 @@
   const root = document.documentElement;
   const THEME_KEY = 'studytrail-theme';
   const LANG_KEY = 'studytrail-lang';
+  const RTL_LOCALES = new Set(['ar-SA', 'he', 'ur-PK']);
+  const LANG_ALIASES = {
+    en: 'en-US', 'en-us': 'en-US', 'en-gb': 'en-GB', 'en-au': 'en-AU', 'en-ca': 'en-CA',
+    zh: 'zh-Hans', 'zh-cn': 'zh-Hans', 'zh-sg': 'zh-Hans', 'zh-tw': 'zh-Hant',
+    'zh-hk': 'zh-Hant', 'zh-mo': 'zh-Hant',
+    pt: 'pt-BR', ar: 'ar-SA', ur: 'ur-PK', es: 'es-ES', 'es-419': 'es-MX',
+    fr: 'fr-FR', de: 'de-DE', it: 'it', ja: 'ja', ko: 'ko',
+  };
 
   /* ---------- Theme (Light / Dark) ---------- */
   function getPreferredTheme() {
@@ -25,62 +33,176 @@
     });
   }
 
-  /* ---------- Language (JA / EN) + Localized Screenshots ---------- */
+  /* ---------- i18n ---------- */
+  let locales = [];
+  const dictCache = {};
+  let currentLang = 'ja';
+  let currentDict = null;
+  let enDict = null;
+  let jaDict = null;
+
+  function normalizeLang(code) {
+    if (!code) return null;
+    const c = String(code).trim();
+    if (LANG_ALIASES[c.toLowerCase()]) return LANG_ALIASES[c.toLowerCase()];
+    const exact = locales.find((l) => l.code === c);
+    if (exact) return c;
+    const base = c.split('-')[0].toLowerCase();
+    const byBase = locales.find((l) => l.code.split('-')[0].toLowerCase() === base);
+    if (byBase) return byBase.code;
+    const alias = LANG_ALIASES[base];
+    return alias || null;
+  }
+
+  function matchBrowserLang() {
+    const prefs = navigator.languages && navigator.languages.length
+      ? navigator.languages
+      : [navigator.language || ''];
+    for (const pref of prefs) {
+      const hit = normalizeLang(pref);
+      if (hit) return hit;
+    }
+    return null;
+  }
+
   function getInitialLang() {
     const params = new URLSearchParams(window.location.search);
-    const paramLang = params.get('lang');
-    if (paramLang === 'en' || paramLang === 'ja') return paramLang;
-    const saved = localStorage.getItem(LANG_KEY);
-    if (saved === 'en' || saved === 'ja') return saved;
-    return 'ja';
+    const fromParam = normalizeLang(params.get('lang'));
+    if (fromParam) return fromParam;
+    const saved = normalizeLang(localStorage.getItem(LANG_KEY));
+    if (saved) return saved;
+    return matchBrowserLang() || 'ja';
+  }
+
+  function fetchDict(code) {
+    if (dictCache[code]) return dictCache[code];
+    dictCache[code] = fetch(`assets/i18n/${code}.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .catch(() => null);
+    return dictCache[code];
+  }
+
+  function t(key) {
+    if (currentDict && currentDict[key] !== undefined) return currentDict[key];
+    if (enDict && enDict[key] !== undefined) return enDict[key];
+    if (jaDict && jaDict[key] !== undefined) return jaDict[key];
+    return undefined;
+  }
+
+  function currentPage() {
+    const file = location.pathname.split('/').pop() || 'index.html';
+    return file.replace(/\.html$/, '') || 'index';
+  }
+
+  function applyStrings(dict) {
+    currentDict = dict;
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const v = t(el.dataset.i18n);
+      if (v === undefined) return;
+      if (v === '') {
+        el.hidden = true;
+      } else {
+        el.hidden = false;
+        el.innerHTML = v;
+      }
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+      const v = t(el.dataset.i18nAria);
+      if (v) el.setAttribute('aria-label', v);
+    });
+    document.querySelectorAll('[data-i18n-alt]').forEach((el) => {
+      const v = t(el.dataset.i18nAlt);
+      if (v) el.setAttribute('alt', v);
+    });
+    document.querySelectorAll('[data-i18n-ph]').forEach((el) => {
+      const v = t(el.dataset.i18nPh);
+      if (v !== undefined) el.setAttribute('placeholder', v);
+    });
+
+    const page = currentPage();
+    const title = t(`meta.title.${page}`);
+    if (title) document.title = title;
+    const desc = t(`meta.desc.${page}`);
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (desc && metaDesc) metaDesc.content = desc;
+    const ogTitle = t(`meta.ogTitle.${page}`);
+    const ogTitleEl = document.querySelector('meta[property="og:title"]');
+    if (ogTitle && ogTitleEl) ogTitleEl.content = ogTitle;
+    const ogDesc = t(`meta.ogDesc.${page}`);
+    const ogDescEl = document.querySelector('meta[property="og:description"]');
+    if (ogDesc && ogDescEl) ogDescEl.content = ogDesc;
+
+    syncHero();
+    syncScreenAlts();
+
+    const select = document.querySelector('[data-lang-select]');
+    if (select) select.value = currentLang;
   }
 
   function screenPath(screenKey, lang) {
-    return lang === 'en'
-      ? `assets/screens/en/${screenKey}.webp`
-      : `assets/screens/${screenKey}.webp`;
+    return lang === 'ja'
+      ? `assets/screens/${screenKey}.webp`
+      : `assets/screens/en/${screenKey}.webp`;
   }
 
-  function applyLang(lang, persist = false) {
-    const normalized = lang === 'en' ? 'en' : 'ja';
+  function syncHero() {
+    const img = document.querySelector('[data-hero-screen]');
+    const active = document.querySelector('[data-hero-tab][aria-selected="true"]');
+    if (!img || !active) return;
+    const key = active.dataset.heroTab;
+    img.setAttribute('src', screenPath(key, currentLang));
+    const alt = t(`alt.tab.${key}`);
+    if (alt) img.setAttribute('alt', alt);
+    const cap = document.querySelector('[data-hero-caption]');
+    if (cap) {
+      const capText = t(`cap.${key}`);
+      if (capText !== undefined) cap.textContent = capText;
+    }
+  }
+
+  function syncScreenAlts() {
+    document.querySelectorAll('img[data-screen]:not([data-hero-screen])').forEach((img) => {
+      const v = t(`alt.img.${img.dataset.screen}`);
+      if (v) img.setAttribute('alt', v);
+    });
+  }
+
+  async function applyLang(lang, persist = false) {
+    const normalized = normalizeLang(lang) || 'ja';
+    currentLang = normalized;
     root.dataset.lang = normalized;
     root.lang = normalized;
+    root.dir = RTL_LOCALES.has(normalized) ? 'rtl' : 'ltr';
     if (persist) localStorage.setItem(LANG_KEY, normalized);
 
-    // Update page title & meta description if provided
-    const titleEl = document.querySelector('meta[name="st-title-' + normalized + '"]');
-    if (titleEl && titleEl.content) document.title = titleEl.content;
-    const descEl = document.querySelector('meta[name="st-desc-' + normalized + '"]');
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (descEl && metaDesc && descEl.content) metaDesc.content = descEl.content;
+    const [dict, en, ja] = await Promise.all([
+      fetchDict(normalized),
+      fetchDict('en-US'),
+      fetchDict('ja'),
+    ]);
+    enDict = en;
+    jaDict = ja;
+    if (normalized === 'en-US' && dict) enDict = dict;
+    if (normalized === 'ja' && dict) jaDict = dict;
+    applyStrings(dict || enDict || jaDict || {});
 
-    // Update localized screenshots
-    document.querySelectorAll('img[data-screen]').forEach((img) => {
-      const key = img.dataset.screen;
-      const nextSrc = screenPath(key, normalized);
-      if (img.getAttribute('src') !== nextSrc) {
-        img.setAttribute('src', nextSrc);
-      }
-      const altAttr = normalized === 'en' ? img.dataset.altEn : img.dataset.altJa;
-      if (altAttr) img.setAttribute('alt', altAttr);
-    });
-
-    // Update placeholders
-    document.querySelectorAll('[data-placeholder-ja]').forEach((input) => {
-      input.placeholder = normalized === 'en'
-        ? (input.dataset.placeholderEn || input.dataset.placeholderJa)
-        : input.dataset.placeholderJa;
-    });
-
-    // Update language toggle buttons
-    document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
-      const label = btn.querySelector('[data-lang-label]');
-      if (label) label.textContent = normalized === 'en' ? '日本語' : 'EN';
-      btn.setAttribute('aria-label', normalized === 'en' ? '日本語に切り替え' : 'Switch to English');
-    });
-
-    // Re-sync hero showcase caption & FAQ status if present
     window.dispatchEvent(new CustomEvent('studytrail:langchange', { detail: { lang: normalized } }));
+  }
+
+  /* ---------- Language selector ---------- */
+  function initLangSelect() {
+    const select = document.querySelector('[data-lang-select]');
+    if (!select) return;
+    locales.forEach((l) => {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.name;
+      select.appendChild(opt);
+    });
+    select.value = currentLang;
+    select.addEventListener('change', () => {
+      applyLang(select.value, true);
+    });
   }
 
   /* ---------- Mobile Menu ---------- */
@@ -113,17 +235,9 @@
   function initHeroShowcase() {
     const img = document.querySelector('[data-hero-screen]');
     const tabs = Array.from(document.querySelectorAll('[data-hero-tab]'));
-    const captionJa = document.querySelector('[data-hero-caption-ja]');
-    const captionEn = document.querySelector('[data-hero-caption-en]');
     if (!img || tabs.length === 0) return;
 
-    let activeTab = tabs[0];
-
     function activate(tab, animate = true) {
-      activeTab = tab;
-      const key = tab.dataset.heroTab;
-      const lang = root.dataset.lang || 'ja';
-
       tabs.forEach((btn) => {
         const isCurrent = btn === tab;
         btn.setAttribute('aria-selected', String(isCurrent));
@@ -139,11 +253,10 @@
         btn.classList.toggle('dark:text-[#B4C5BC]', !isCurrent);
       });
 
-      img.dataset.screen = key;
-      img.dataset.altJa = tab.dataset.altJa || '';
-      img.dataset.altEn = tab.dataset.altEn || '';
-      img.setAttribute('src', screenPath(key, lang));
-      img.setAttribute('alt', lang === 'en' ? (tab.dataset.altEn || '') : (tab.dataset.altJa || ''));
+      const key = tab.dataset.heroTab;
+      img.setAttribute('src', screenPath(key, currentLang));
+      const alt = t(`alt.tab.${key}`);
+      if (alt) img.setAttribute('alt', alt);
 
       if (animate) {
         img.classList.remove('screen-fade-enter');
@@ -151,18 +264,18 @@
         img.classList.add('screen-fade-enter');
       }
 
-      if (captionJa && tab.dataset.captionJa) captionJa.textContent = tab.dataset.captionJa;
-      if (captionEn && tab.dataset.captionEn) captionEn.textContent = tab.dataset.captionEn;
+      syncHero();
     }
 
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => activate(tab, true));
     });
 
-    activate(activeTab, false);
+    const initial = tabs.find((b) => b.getAttribute('aria-selected') === 'true') || tabs[0];
+    activate(initial, false);
   }
 
-  /* ---------- Scroll Reveal (Framer-like spring) ---------- */
+  /* ---------- Scroll Reveal ---------- */
   function initReveal() {
     const els = document.querySelectorAll('.reveal');
     if (els.length === 0) return;
@@ -187,7 +300,7 @@
     els.forEach((el) => observer.observe(el));
   }
 
-  /* ---------- FAQ Search & Category Filter (support.html) ---------- */
+  /* ---------- FAQ Search ---------- */
   function initSupportFaq() {
     const searchInput = document.getElementById('support-search');
     const clearBtn = document.getElementById('support-search-clear');
@@ -196,11 +309,9 @@
     const groups = Array.from(document.querySelectorAll('[data-faq-group]'));
     if (!searchInput || groups.length === 0) return;
 
-    const items = Array.from(document.querySelectorAll('details.st-faq'));
-
     function runFilter() {
       const q = searchInput.value.trim().toLowerCase();
-      const lang = root.dataset.lang || 'ja';
+      const query = searchInput.value.trim();
       if (clearBtn) {
         clearBtn.classList.toggle('hidden', q.length === 0);
         clearBtn.classList.toggle('inline-flex', q.length > 0);
@@ -229,9 +340,10 @@
           statusEl.classList.add('hidden');
         } else {
           statusEl.classList.remove('hidden');
-          statusEl.textContent = lang === 'en'
-            ? (matches === 0 ? `No results for "${searchInput.value.trim()}".` : `${matches} matching question${matches === 1 ? '' : 's'} found.`)
-            : (matches === 0 ? `「${searchInput.value.trim()}」に一致する質問は見つかりませんでした。` : `「${searchInput.value.trim()}」に一致する質問が ${matches} 件あります。`);
+          const key = matches === 0 ? 'js.search.none' : 'js.search.some';
+          let msg = t(key) || '';
+          msg = msg.replaceAll('{q}', query).replaceAll('{n}', String(matches));
+          statusEl.textContent = msg;
         }
       }
     }
@@ -240,13 +352,12 @@
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
         searchInput.value = '';
-        items.forEach((item) => { item.open = false; });
+        document.querySelectorAll('details.st-faq').forEach((item) => { item.open = false; });
         runFilter();
         searchInput.focus();
       });
     }
 
-    // Open target FAQ if linked by hash
     function openHashTarget() {
       const hash = window.location.hash.replace(/^#/, '');
       if (!hash) return;
@@ -273,26 +384,16 @@
         if (!text) return;
         try {
           await navigator.clipboard.writeText(text);
-          const feedbackJa = btn.querySelector('[data-copy-feedback-ja]');
-          const feedbackEn = btn.querySelector('[data-copy-feedback-en]');
-          const defaultJa = btn.querySelector('[data-copy-default-ja]');
-          const defaultEn = btn.querySelector('[data-copy-default-en]');
-          if (feedbackJa && defaultJa) {
-            defaultJa.classList.add('hidden');
-            feedbackJa.classList.remove('hidden');
-          }
-          if (feedbackEn && defaultEn) {
-            defaultEn.classList.add('hidden');
-            feedbackEn.classList.remove('hidden');
+          const feedback = btn.querySelector('[data-copy-feedback]');
+          const dflt = btn.querySelector('[data-copy-default]');
+          if (feedback && dflt) {
+            dflt.classList.add('hidden');
+            feedback.classList.remove('hidden');
           }
           setTimeout(() => {
-            if (feedbackJa && defaultJa) {
-              defaultJa.classList.remove('hidden');
-              feedbackJa.classList.add('hidden');
-            }
-            if (feedbackEn && defaultEn) {
-              defaultEn.classList.remove('hidden');
-              feedbackEn.classList.add('hidden');
+            if (feedback && dflt) {
+              dflt.classList.remove('hidden');
+              feedback.classList.add('hidden');
             }
           }, 2000);
         } catch (_) {
@@ -314,19 +415,26 @@
   }
 
   /* ---------- Bootstrap ---------- */
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
     applyTheme(getPreferredTheme(), false);
-    applyLang(getInitialLang(), false);
+
+    try {
+      const res = await fetch('assets/i18n/locales.json');
+      if (res.ok) {
+        const data = await res.json();
+        locales = data.locales || [];
+      }
+    } catch (_) {}
+    if (!locales.length) {
+      locales = [{ code: 'ja', name: '日本語', dir: 'ltr' }, { code: 'en-US', name: 'English (US)', dir: 'ltr' }];
+    }
+
+    await applyLang(getInitialLang(), false);
+    initLangSelect();
 
     document.querySelectorAll('[data-theme-toggle]').forEach((btn) => {
       btn.addEventListener('click', () => {
         applyTheme(root.classList.contains('dark') ? 'light' : 'dark', true);
-      });
-    });
-
-    document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        applyLang(root.dataset.lang === 'en' ? 'ja' : 'en', true);
       });
     });
 
@@ -336,5 +444,17 @@
     initSupportFaq();
     initCopyButtons();
     initLanguagesModal();
+
+    // refresh hero caption/alt after dict is applied (applyLang already ran syncHero,
+    // but tabs may not have been activated yet on index)
+    window.addEventListener('studytrail:langchange', () => {
+      const active = document.querySelector('[data-hero-tab][aria-selected="true"]');
+      if (active) {
+        const img = document.querySelector('[data-hero-screen]');
+        if (img) img.setAttribute('src', screenPath(active.dataset.heroTab, currentLang));
+      }
+      syncHero();
+      syncScreenAlts();
+    });
   });
 })();

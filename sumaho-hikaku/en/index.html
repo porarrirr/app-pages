@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smartphone Sensor Compare</title>
+  <meta name="description" content="An iOS app that compares the effective sensor area and light-gathering power of smartphone cameras based on sensor size, focal length, and aperture.">
+  <meta name="apple-itunes-app" content="app-id=6771400812">
+  <link rel="alternate" hreflang="ja" href="../index.html">
+  <link rel="alternate" hreflang="en-US" href="./index.html">
+  <link rel="alternate" hreflang="zh-Hant" href="../zh-hant/index.html">
+  <link rel="alternate" hreflang="x-default" href="../index.html">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --accent: #2563eb;
+      --text: #172033;
+      --muted: #5b6578;
+      --bg: #f6f8fb;
+      --surface: #ffffff;
+      --border: #d7deea;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #f4f7fb;
+        --muted: #bcc7d8;
+        --bg: #10141d;
+        --surface: #171d29;
+        --border: #2b3546;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+    header {
+      padding: 44px 0 32px;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 1.35rem;
+    }
+    p { color: var(--muted); }
+    a { color: var(--accent); }
+    .lead {
+      max-width: 760px;
+      font-size: 1.12rem;
+    }
+    .lang {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+      font-size: .92rem;
+    }
+    .lang a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .lang a[aria-current="true"] {
+      color: var(--text);
+      border-color: var(--accent);
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .panel {
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav class="lang" aria-label="Language">
+      <a href="../index.html" hreflang="ja" lang="ja">日本語</a>
+      <a href="./index.html" hreflang="en-US" lang="en" aria-current="true">English</a>
+      <a href="../zh-hant/index.html" hreflang="zh-Hant" lang="zh-Hant">繁體中文</a>
+    </nav>
+    <header>
+      <h1>Smartphone Sensor Compare</h1>
+      <p class="lead">An iOS app that lets you compare the effective sensor area and light-gathering power of smartphone cameras based on sensor size, focal length, and aperture.</p>
+      <nav class="links" aria-label="Related pages">
+        <a href="https://apps.apple.com/app/id6771400812" rel="noopener">Download on the App Store</a>
+        <a href="./support.html">Support</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./terms.html">Disclaimer</a>
+      </nav>
+    </header>
+
+    <section class="panel">
+      <h2>Features</h2>
+      <ul>
+        <li>Compare multiple devices and multi-lens configurations</li>
+        <li>Graphs of effective sensor area and light-gathering power</li>
+        <li>Detailed specs such as sensor size and pixel pitch</li>
+        <li>Save device configuration presets</li>
+        <li>Share comparison images</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Data handling</h2>
+      <p>This app does not require sign-in, and it contains no ads, analytics, or tracking. Your entries and settings are stored locally on your device and are never sent to external servers.</p>
+      <p>Sensor specifications and calculation results are provided for reference and comparison only. Actual image quality and performance vary depending on the device, lens, and shooting conditions.</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 haruto nomura. Smartphone Sensor Compare</p>
+    </footer>
+  </main>
+</body>
+</html>
