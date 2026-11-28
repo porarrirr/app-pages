@@ -11,7 +11,7 @@
     var STORAGE_KEY = "tmf-web-locale";
     var RTL_LOCALES = ["ar-SA", "he", "ur-PK"];
 
-    // Lowercase aliases for tags that differ from the canonical ASC codes.
+
     var LOCALE_ALIASES = {
         "ar": "ar-SA", "bn": "bn-BD", "de": "de-DE", "es": "es-ES",
         "es-419": "es-MX", "fr": "fr-FR", "gu": "gu-IN", "in": "id",
@@ -56,7 +56,7 @@
             var stored = localStorage.getItem(STORAGE_KEY);
             if (stored) return normalizeLocale(stored);
         } catch (error) {
-            /* ignore */
+
         }
         var languages = navigator.languages || [navigator.language || DEFAULT_LOCALE];
         for (var i = 0; i < languages.length; i += 1) {
@@ -165,7 +165,7 @@
         try {
             localStorage.setItem(STORAGE_KEY, locale);
         } catch (error) {
-            /* ignore */
+
         }
         var url = new URL(window.location.href);
         if (locale === DEFAULT_LOCALE) {
@@ -226,7 +226,7 @@
                 applyLocale(detectLocale());
             })
             .catch(function () {
-                /* Japanese HTML remains as fallback */
+
             });
     }
 

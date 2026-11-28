@@ -7,7 +7,7 @@
   var STORAGE_KEY = "soniclens-lang";
   var DEFAULT_LOCALE = "ja";
 
-  // App Store Connect locale codes. Order is the order shown in the picker.
+
   var LOCALES = [
     "ja", "en", "es", "zh", "fr",
     "ar-SA", "bn-BD", "ca", "cs", "da", "de-DE", "el",
@@ -26,10 +26,10 @@
 
   var RTL_LOCALES = { "ar-sa": true, "he": true, "ur-pk": true };
 
-  // <html lang> overrides where the picker code differs from a good BCP-47 tag.
+
   var LANG_ATTR = { "zh": "zh-Hans" };
 
-  // Base-language fallbacks for region-qualified codes (e.g. browser "de-AT" -> de-DE).
+
   var BASE_ALIAS = {
     de: "de-DE", pt: "pt-BR", nb: "no", nn: "no", no: "no",
     ar: "ar-SA", bn: "bn-BD", gu: "gu-IN", kn: "kn-IN",

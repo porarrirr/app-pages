@@ -1,4 +1,4 @@
-/* kaosuke web styles */
+
 
 :root {
     --base: #071635;
@@ -11,7 +11,7 @@
     --sparkle: #FFD114;
     --accent-cyan: #05B8C2;
     --success: #00C785;
-    /* Aliases used in HTML / legacy selectors */
+
     --accent-rose: var(--brand-pink);
     --accent-sage: var(--success);
     --hairline: rgba(255, 255, 255, 0.18);

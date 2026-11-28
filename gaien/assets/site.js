@@ -11,7 +11,7 @@
     fr: 'fr-FR', de: 'de-DE', it: 'it', ja: 'ja', ko: 'ko',
   };
 
-  /* ---------- Theme (Light / Dark) ---------- */
+
   function getPreferredTheme() {
     const saved = localStorage.getItem(THEME_KEY);
     if (saved === 'dark' || saved === 'light') return saved;
@@ -33,7 +33,7 @@
     });
   }
 
-  /* ---------- i18n ---------- */
+
   let locales = [];
   const dictCache = {};
   let currentLang = 'ja';
@@ -189,7 +189,7 @@
     window.dispatchEvent(new CustomEvent('studytrail:langchange', { detail: { lang: normalized } }));
   }
 
-  /* ---------- Language selector ---------- */
+
   function initLangSelect() {
     const select = document.querySelector('[data-lang-select]');
     if (!select) return;
@@ -205,7 +205,7 @@
     });
   }
 
-  /* ---------- Mobile Menu ---------- */
+
   function initMobileMenu() {
     const toggle = document.querySelector('[data-mobile-menu-toggle]');
     const drawer = document.querySelector('[data-mobile-menu]');
@@ -231,7 +231,7 @@
     });
   }
 
-  /* ---------- Interactive Hero Phone Preview ---------- */
+
   function initHeroShowcase() {
     const img = document.querySelector('[data-hero-screen]');
     const tabs = Array.from(document.querySelectorAll('[data-hero-tab]'));
@@ -275,7 +275,7 @@
     activate(initial, false);
   }
 
-  /* ---------- Scroll Reveal ---------- */
+
   function initReveal() {
     const els = document.querySelectorAll('.reveal');
     if (els.length === 0) return;
@@ -300,7 +300,7 @@
     els.forEach((el) => observer.observe(el));
   }
 
-  /* ---------- FAQ Search ---------- */
+
   function initSupportFaq() {
     const searchInput = document.getElementById('support-search');
     const clearBtn = document.getElementById('support-search-clear');
@@ -376,7 +376,7 @@
     window.addEventListener('studytrail:langchange', runFilter);
   }
 
-  /* ---------- Copy Email Helper ---------- */
+
   function initCopyButtons() {
     document.querySelectorAll('[data-copy-text]').forEach((btn) => {
       btn.addEventListener('click', async () => {
@@ -397,13 +397,13 @@
             }
           }, 2000);
         } catch (_) {
-          // Clipboard unavailable; mailto link remains clickable
+
         }
       });
     });
   }
 
-  /* ---------- Languages Disclosure Toggle ---------- */
+
   function initLanguagesModal() {
     const btn = document.querySelector('[data-toggle-langs]');
     const panel = document.querySelector('[data-langs-panel]');
@@ -414,7 +414,7 @@
     });
   }
 
-  /* ---------- Bootstrap ---------- */
+
   document.addEventListener('DOMContentLoaded', async () => {
     applyTheme(getPreferredTheme(), false);
 
@@ -445,8 +445,8 @@
     initCopyButtons();
     initLanguagesModal();
 
-    // refresh hero caption/alt after dict is applied (applyLang already ran syncHero,
-    // but tabs may not have been activated yet on index)
+
+
     window.addEventListener('studytrail:langchange', () => {
       const active = document.querySelector('[data-hero-tab][aria-selected="true"]');
       if (active) {

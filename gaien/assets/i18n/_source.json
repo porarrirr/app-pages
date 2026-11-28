@@ -84,7 +84,7 @@
   "en": "Today too,<br><span class=\"text-forest-800 dark:text-forest-300\">one step at a time.</span>"
  },
  "s022": {
-  "ja": "勉強タイマー、参考書の問題進捗と自動復習、スマホの集中制限、時間割、試験カウントダウンまで。「どれだけ勉強したか」だけでなく、「次に何を復習すべきか」まで迷わず続けられる学習空間です。",
+  "ja": "勉強タイマー、参考書の問題進捗と自動復習、スマホの集中制限、時間割、試験までの日数表示を利用できます。「どれだけ勉強したか」だけでなく、「次に何を復習すべきか」まで迷わず続けられる学習空間です。",
   "en": "StudyTrail brings your study timer, textbook problem grid, spaced review, Screen Time app blocker, class timetable, and exam countdowns into one calm, focused workspace—so you always know what to study next."
  },
  "s023": {
@@ -172,7 +172,7 @@
   "en": "01 · Study Timer &amp; Deep Focus"
  },
  "s045": {
-  "ja": "測る、解く、振り返るを<br>シームレスに。",
+  "ja": "勉強時間を測り、問題を解き、<br>結果を振り返れます。",
   "en": "Focus deeply without<br>breaking your flow."
  },
  "s046": {
@@ -332,7 +332,7 @@
   "en": "04 · Calendar Heatmap &amp; Reports"
  },
  "s085": {
-  "ja": "積み上げた毎日が、<br>色とグラフで自信になる。",
+  "ja": "日々の学習の積み重ねを<br>色とグラフで確認できます。",
   "en": "See every day add up<br>in color and clarity."
  },
  "s086": {
@@ -396,7 +396,7 @@
   "en": "06 · 9 Widgets, iPad &amp; Local-First Privacy"
  },
  "s101": {
-  "ja": "iPad でも、ホーム画面でも。<br>データはいつでもあなたの手元に。",
+  "ja": "iPad やホーム画面からも学習状況を確認できます。<br>学習データはいつでも確認できます。",
   "en": "Optimized for iPad.<br>Your data stays yours."
  },
  "s102": {
@@ -468,7 +468,7 @@
   "en": "Everything included in StudyTrail"
  },
  "s119": {
-  "ja": "毎日の計測から、参考書の周回、スマホ制限、バックアップまで。必要な機能をすべて丁寧に揃えています。",
+  "ja": "毎日の学習時間の計測、参考書の繰り返し学習、スマホの利用制限、データのバックアップができます。",
   "en": "From daily tracking and workbook rounds to Screen Time controls and full backups—every feature in one view."
  },
  "s120": {
@@ -704,7 +704,7 @@
   "en": "Start with today's study session."
  },
  "s178": {
-  "ja": "アカウント作成なし・広告なし。インストールしてすぐ、最初の1分から記録できます。日々の小さな積み上げを、確かな自信へ。",
+  "ja": "アカウント作成なし・広告なし。インストールしてすぐ、最初の1分から記録できます。日々の勉強を記録すると、積み重ねを振り返れます。",
   "en": "No signup, no ads. Open the app and log your first minute right away. Turn quiet daily focus into lasting progress."
  },
  "s179": {
@@ -1385,7 +1385,7 @@
   "en": "StudyTrail — Study Timer, Textbook Progress & Focus Blocker"
  },
  "meta.ogDesc.index": {
-  "ja": "勉強タイマー、参考書の問題進捗グリッドと自動復習、スクリーンタイム集中制限、時間割、9種のウィジェットをひとつに。アカウント不要・広告なし。",
+  "ja": "勉強タイマー、参考書の問題進捗グリッドと自動復習、スクリーンタイム集中制限、時間割、9種のウィジェットを一つのアプリで使えます。アカウント不要・広告なし。",
   "en": "StudyTrail combines a study timer, textbook problem grid, spaced review, Screen Time app blocker, timetable, exam countdowns, and 9 widgets in one calm workspace. No signup, no ads."
  },
  "meta.title.privacy": {

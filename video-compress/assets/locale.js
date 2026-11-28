@@ -21,7 +21,7 @@
     if (details && !details.contains(event.target)) details.removeAttribute("open");
   });
 
-  // Only the English root pages redirect, and only on a first visit without a stored choice.
+
   if (document.documentElement.lang !== "en") return;
   var stored = null;
   try {

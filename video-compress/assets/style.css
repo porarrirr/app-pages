@@ -100,7 +100,7 @@ svg {
   top: 12px;
 }
 
-/* Header */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -236,7 +236,7 @@ svg {
   font-weight: 600;
 }
 
-/* Layout */
+
 main {
   max-width: 1040px;
   margin: 0 auto;
@@ -264,7 +264,7 @@ main {
   margin-bottom: 20px;
 }
 
-/* Hero */
+
 .hero {
   text-align: center;
   padding: 64px 0 8px;
@@ -373,7 +373,7 @@ main {
   font-size: 14px;
 }
 
-/* Features */
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -482,7 +482,7 @@ main {
   font-size: 16px;
 }
 
-/* Documents (support / privacy) */
+
 .doc {
   max-width: 760px;
 }
@@ -608,7 +608,7 @@ main {
   stroke-width: 2.6;
 }
 
-/* Footer */
+
 .site-footer {
   border-top: 0.5px solid var(--separator);
 }

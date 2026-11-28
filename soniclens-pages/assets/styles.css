@@ -1,4 +1,4 @@
-/* MusicAnalysis site styles */
+
 :root {
   --bg: #12141a;
   --bg-top: #1a1c21;
@@ -57,7 +57,7 @@ a:hover {
   color: #7eb3b8;
 }
 
-/* ——— Shell ——— */
+
 .page {
   width: min(100% - 40px, var(--max));
   margin: 0 auto;
@@ -124,7 +124,7 @@ a:hover {
   stroke-width: 1.7;
 }
 
-/* ——— Language switch ——— */
+
 .lang-switch {
   display: flex;
   flex-wrap: wrap;
@@ -196,7 +196,7 @@ a:hover {
   background-position: left 10px center;
 }
 
-/* ——— Type ——— */
+
 .hero {
   margin-bottom: 36px;
 }
@@ -229,7 +229,7 @@ a:hover {
   white-space: pre-line;
 }
 
-/* ——— Cards ——— */
+
 .card {
   background: var(--glass);
   border: 1px solid var(--stroke);
@@ -286,7 +286,7 @@ a:hover {
   letter-spacing: -0.025em;
 }
 
-/* ——— Features (support home) ——— */
+
 .feature-grid {
   display: grid;
   gap: 12px;
@@ -340,7 +340,7 @@ a:hover {
   line-height: 1.45;
 }
 
-/* ——— FAQ ——— */
+
 .faq-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   padding: 16px 0;
@@ -368,7 +368,7 @@ a:hover {
   font-size: 0.93rem;
 }
 
-/* ——— Contact ——— */
+
 .contact-box {
   display: flex;
   flex-direction: column;
@@ -419,7 +419,7 @@ a:hover {
   color: var(--ink-3);
 }
 
-/* ——— Disclaimer callout ——— */
+
 .callout {
   border-left: 3px solid var(--ochre);
   background: rgba(171, 135, 92, 0.08);
@@ -438,7 +438,7 @@ a:hover {
   color: var(--ink);
 }
 
-/* ——— Nav links ——— */
+
 .page-nav {
   display: flex;
   flex-wrap: wrap;
@@ -476,7 +476,7 @@ a:hover {
   font-size: 0.95rem;
 }
 
-/* ——— Footer ——— */
+
 .footer {
   margin-top: 40px;
   padding-top: 20px;
@@ -503,7 +503,7 @@ a:hover {
   color: var(--ink);
 }
 
-/* ——— Meta list (privacy) ——— */
+
 .meta-list {
   list-style: none;
   margin: 0;
@@ -536,7 +536,7 @@ a:hover {
   color: var(--ink-2);
 }
 
-/* ——— TOC ——— */
+
 .toc {
   display: flex;
   flex-wrap: wrap;
@@ -559,7 +559,7 @@ a:hover {
   border-color: var(--stroke);
 }
 
-/* ——— Utility ——— */
+
 .mono {
   font-variant-numeric: tabular-nums;
   font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;

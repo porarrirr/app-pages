@@ -11,7 +11,7 @@
   "index": {
     "eyebrow": "MusicAnalysis for iPhone",
     "title": "音楽を、読み解く。",
-    "lead": "テンポ、キー、曲の構成。\n気になる曲を選んで、音の中身を見てみよう。\n解析も保存も、この端末の中だけで。",
+    "lead": "テンポ、キー、曲の構成。\n気になる曲を選んで、音の中身を見てみよう。\n解析と保存はこの端末内で行います。",
     "storeLabel": "App Store で入手",
     "linksTitle": "サポート・ポリシー",
     "linksBody": "使い方やよくある質問、データの取り扱いについてご案内しています。言語は上のボタンで切り替えられます。",
@@ -25,7 +25,7 @@
   "privacy": {
     "pageTitle": "MusicAnalysis — プライバシーポリシー",
     "eyebrow": "プライバシーポリシー",
-    "title": "あなたの音は、あなたの端末に。",
+    "title": "音源はお使いの端末に保存されます。",
     "lead": "MusicAnalysis はアカウントもサーバー送信も行いません。\n音源と解析結果は、すべてこの iPhone の中にだけ残ります。",
     "navSupportHint": "お困りのときは",
     "navSupport": "サポート",
